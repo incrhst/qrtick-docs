@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Qrtick Event Management Guide</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+        .header {
+            padding: 2rem;
+            text-align: center;
+            background-color: #ffffff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .logo {
+            max-width: 200px;
+            height: auto;
+        }
+        .logo-link {
+            display: inline-block;
+            transition: opacity 0.2s;
+        }
+        .logo-link:hover {
+            opacity: 0.8;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        .back-link {
+            display: inline-block;
+            margin-bottom: 2rem;
+            color: #2c5282;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        .back-link:hover {
+            text-decoration: underline;
+        }
+        h1, h2 {
+            color: #2c5282;
+        }
+        h2 {
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid #e2e8f0;
+        }
+        ul, ol {
+            padding-left: 1.5rem;
+        }
+        li {
+            margin-bottom: 0.5rem;
+        }
+        .checklist {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+        }
+        .checklist li {
+            list-style-type: none;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+        .checklist li::before {
+            content: "☐";
+            position: absolute;
+            left: 0;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <a href="https://qrtick.com" class="logo-link" target="_blank" rel="noopener noreferrer">
+            <img src="https://cdn.prod.website-files.com/663e51d3a107afd82b7ea0e4/663e530561808d3614beec2e_qrticklogo.svg" alt="Qrtick Logo" class="logo">
+        </a>
+    </header>
+    <main class="container">
+        <a href="index.html" class="back-link">← Back to Documentation Home</a>
+        
+        <h1>QRTick: Event Management Guide</h1>
+
+        <h2>How We Set Up Your Event</h2>
+        <p>At QRTick, we handle the technical setup for you:</p>
+        <ol>
+            <li><strong>Initial Setup:</strong> Our team creates your event in our system based on your requirements</li>
+            <li><strong>Customization:</strong> We configure your event details, ticket types, and pricing structure</li>
+            <li><strong>Payment Configuration:</strong> We set up your payment provider integration and ensure funds route correctly</li>
+            <li><strong>Preflight Testing:</strong> We conduct thorough payment tests to verify the entire purchase flow works properly</li>
+            <li><strong>Final Review:</strong> We ensure everything is working properly before going live</li>
+        </ol>
+
+        <h2>Managing Your Event</h2>
+        <h3>Event Details</h3>
+        <ul>
+            <li>Your event includes name, description, date, location, and an optional banner image</li>
+            <li>Events are marked as "Published" to make them visible to customers</li>
+            <li>Custom branding options available for Premium tier customers</li>
+        </ul>
+
+        <h3>Ticket Configuration</h3>
+        <ul>
+            <li>Each event can have multiple ticket types (e.g., Regular, VIP, Early Bird) depending on your tier</li>
+            <li>Lite tier allows only one ticket type per event, while Standard and Premium tiers support multiple ticket types</li>
+            <li>Each ticket type has a defined capacity (total available tickets)</li>
+            <li>Tickets are marked as "Active" when they're available for purchase</li>
+            <li>Visual distinction between ticket types using pastel color coding</li>
+            <li>Support for digital and printable ticket formats</li>
+        </ul>
+
+        <h3>QRTick Thing</h3>
+        <ul>
+            <li>Mobile-friendly web application - no app installation needed</li>
+            <li>Works with any modern mobile phone through your web browser</li>
+            <li>Separate dedicated platform for real-time ticket management and sales tracking</li>
+            <li>Access granted by associating your email address with Thing</li>
+            <li>Simple login process using your registered email</li>
+            <li>View sales data and scan tickets after logging in</li>
+            <li>Live ticket scanning and validation</li>
+            <li>Up-to-the-minute sales statistics</li>
+            <li>Attendee check-in tracking</li>
+            <li>Multiple device support for simultaneous scanning</li>
+            <li>Works offline with automatic sync when connection is restored</li>
+        </ul>
+
+        <h2>Launch Checklist</h2>
+        <div class="checklist">
+            <h3>Payment System Setup</h3>
+            <ul>
+                <li>Switch payment environment from sandbox to production</li>
+                <li>Verify bank account details are correct</li>
+                <li>Confirm payment routing is properly configured</li>
+                <li>Test a real payment with minimal amount</li>
+                <li>Verify the test payment appears in your bank account</li>
+                <li>Check refund functionality is working</li>
+            </ul>
+
+            <h3>Event Configuration</h3>
+            <ul>
+                <li>Verify event name and description are correct</li>
+                <li>Confirm event date and time are accurate</li>
+                <li>Check location details are complete</li>
+                <li>Validate ticket types and pricing</li>
+                <li>Verify ticket quantities and limits</li>
+                <li>Test promo codes if being used</li>
+                <li>Review custom branding elements</li>
+            </ul>
+        </div>
+
+        <h2>Need Help?</h2>
+        <p>Contact our support team at <a href="mailto:support@qrtick.com">support@qrtick.com</a> for assistance with:</p>
+        <ul>
+            <li>Setting up new events</li>
+            <li>Modifying existing events</li>
+            <li>Technical support during your event</li>
+            <li>Custom requirements</li>
+            <li>WhatsApp sharing setup</li>
+            <li>Color coding customization</li>
+            <li>Integration questions</li>
+        </ul>
+    </main>
+</body>
+</html> 
