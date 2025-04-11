@@ -10,6 +10,7 @@
             padding: 0;
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
             line-height: 1.6;
+            color: #333;
         }
         .header {
             padding: 2rem;
@@ -21,14 +22,110 @@
             max-width: 200px;
             height: auto;
         }
+        .logo-link {
+            display: inline-block;
+            transition: opacity 0.2s;
+        }
+        .logo-link:hover {
+            opacity: 0.8;
+        }
+        .home-link {
+            display: block;
+            margin-top: 0.5rem;
+            color: #2c5282;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        .home-link:hover {
+            text-decoration: underline;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+        .feature {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+        .feature h3 {
+            margin-top: 0;
+            color: #2c5282;
+        }
+        .cta-button {
+            display: inline-block;
+            background-color: #2c5282;
+            color: white;
+            padding: 1rem 2rem;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 600;
+            transition: background-color 0.2s;
+        }
+        .cta-button:hover {
+            background-color: #1a365d;
+        }
     </style>
 </head>
 <body>
     <header class="header">
-        <img src="https://cdn.prod.website-files.com/663e51d3a107afd82b7ea0e4/663e530561808d3614beec2e_qrticklogo.svg" alt="Qrtick Logo" class="logo">
+        <a href="https://qrtick.com" class="logo-link" target="_blank" rel="noopener noreferrer">
+            <img src="https://cdn.prod.website-files.com/663e51d3a107afd82b7ea0e4/663e530561808d3614beec2e_qrticklogo.svg" alt="Qrtick Logo" class="logo">
+        </a>
+        <a href="https://qrtick.com" class="home-link" target="_blank" rel="noopener noreferrer">Visit Qrtick.com →</a>
     </header>
-    <main>
-        <!-- Content will go here -->
+    <main class="container">
+        <h1>Welcome to Qrtick</h1>
+        <p>Qrtick is your comprehensive event management solution that simplifies ticket sales, attendee tracking, and event organization. Our platform combines powerful features with ease of use, making event management seamless and efficient.</p>
+
+        <div class="features">
+            <div class="feature">
+                <h3>Easy Setup</h3>
+                <p>Our team handles the technical setup for you, from initial configuration to payment integration and testing.</p>
+            </div>
+            <div class="feature">
+                <h3>QRTick Thing</h3>
+                <p>Access our mobile-friendly web application for real-time ticket management, scanning, and sales tracking - no app installation needed.</p>
+            </div>
+            <div class="feature">
+                <h3>Flexible Ticketing</h3>
+                <p>Support for multiple ticket types, digital and printable formats, and secure QR code validation.</p>
+            </div>
+            <div class="feature">
+                <h3>Real-time Tracking</h3>
+                <p>Monitor sales, track attendance, and manage check-ins in real-time across multiple devices.</p>
+            </div>
+        </div>
+
+        <h2>Ready to Learn More?</h2>
+        <p>Our comprehensive Event Management Guide covers everything you need to know about setting up and running your events with Qrtick.</p>
+        
+        <p style="text-align: center; margin: 2rem 0;">
+            <a href="event-management-guide.md" class="cta-button">Read the Event Management Guide</a>
+        </p>
+
+        <h2>Key Features</h2>
+        <ul>
+            <li>Secure ticket generation and validation</li>
+            <li>Multiple ticket types with color coding</li>
+            <li>WhatsApp integration for easy ticket sharing</li>
+            <li>Offline support with automatic syncing</li>
+            <li>Real-time sales and attendance analytics</li>
+            <li>Multi-device support for staff</li>
+            <li>Automated email communications</li>
+            <li>Comprehensive security features</li>
+        </ul>
+
+        <h2>Need Help?</h2>
+        <p>Our support team is ready to assist you with any questions or concerns. Contact us at <a href="mailto:support@qrtick.com">support@qrtick.com</a>.</p>
     </main>
 </body>
 </html> 
