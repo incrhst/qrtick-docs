@@ -74,6 +74,33 @@
             position: absolute;
             left: 0;
         }
+        .section-nav {
+            background: #f8f9fa;
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 2rem 0;
+        }
+        .section-nav ul {
+            list-style: none;
+            padding: 0;
+        }
+        .section-nav li {
+            margin: 0.5rem 0;
+        }
+        .section-nav a {
+            color: #2c5282;
+            text-decoration: none;
+        }
+        .section-nav a:hover {
+            text-decoration: underline;
+        }
+        .tip-box {
+            background: #ebf8ff;
+            border-left: 4px solid #4299e1;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 0 8px 8px 0;
+        }
     </style>
 </head>
 <body>
@@ -87,7 +114,21 @@
         
         <h1>Qrtick: Fundraiser Guide</h1>
 
-        <h2>How We Support Your Mission</h2>
+        <nav class="section-nav">
+            <h2>Quick Navigation</h2>
+            <ul>
+                <li><a href="#setup">How We Support Your Mission</a></li>
+                <li><a href="#managing">Managing Your Fundraiser</a></li>
+                <li><a href="#sales">How Sales Work</a></li>
+                <li><a href="#sharing">Ticket Sharing Features</a></li>
+                <li><a href="#checkin">Checking In Attendees</a></li>
+                <li><a href="#promoting">Promoting Your Event</a></li>
+                <li><a href="#checklist">Launch Checklist</a></li>
+                <li><a href="#help">Need Help?</a></li>
+            </ul>
+        </nav>
+
+        <h2 id="setup">How We Support Your Mission</h2>
         <p>We handle all the technical details so you can focus on your cause:</p>
         <ol>
             <li><strong>Quick Setup:</strong> Your fundraiser will be ready in 5 business days</li>
@@ -97,7 +138,7 @@
             <li><strong>Launch Ready:</strong> Full support as you start selling tickets</li>
         </ol>
 
-        <h2>Managing Your Fundraiser</h2>
+        <h2 id="managing">Managing Your Fundraiser</h2>
         <h3>Event Setup</h3>
         <ul>
             <li>Simple event details: name, description, date, and location</li>
@@ -125,13 +166,88 @@
             <li>Everything syncs when internet connection returns</li>
         </ul>
 
-        <h2>Launch Checklist</h2>
+        <h2 id="sales">How Sales Work</h2>
+        <h3>Event Listing</h3>
+        <ul>
+            <li>Your event appears on your custom ticket page once published</li>
+            <li>Real-time ticket count shows how many are still available</li>
+            <li>Events automatically show as "SOLD OUT" when all tickets are gone</li>
+            <li>System prevents overselling by tracking inventory in real-time</li>
+        </ul>
+
+        <h3>Purchase Process</h3>
+        <ol>
+            <li>Supporter clicks your ticket link or finds your event on tickets.qrtick.com</li>
+            <li>They select ticket type and quantity</li>
+            <li>Enter their email address</li>
+            <li>Complete payment</li>
+            <li>Receive confirmation email with QR-coded tickets</li>
+        </ol>
+
+        <div class="tip-box">
+            <strong>Pro Tip:</strong> Each order gets a unique ID (e.g., "7630001ab") that helps track purchase details and quantity.
+        </div>
+
+        <h2 id="sharing">Ticket Sharing Features</h2>
+        <h3>Digital Sharing Options</h3>
+        <ul>
+            <li>Direct WhatsApp sharing with pre-written message</li>
+            <li>Easy sharing on mobile devices</li>
+            <li>Simple copy-paste option for desktop users</li>
+            <li>Each ticket maintains its unique color for easy identification</li>
+        </ul>
+
+        <h3>Security Features</h3>
+        <ul>
+            <li>Secure validation for all shared tickets</li>
+            <li>Clear sharing responsibility messages</li>
+            <li>Tracking of shared tickets for security</li>
+            <li>Check-in status visible on shared tickets</li>
+        </ul>
+
+        <h2 id="checkin">Checking In Attendees</h2>
+        <h3>Using Your Phone to Scan</h3>
+        <ul>
+            <li>Open Thing in your phone's web browser</li>
+            <li>Log in with your registered email</li>
+            <li>Scan QR codes from printed tickets or phone displays</li>
+            <li>Get instant validation results</li>
+            <li>System prevents duplicate check-ins</li>
+            <li>Works even without internet connection</li>
+        </ul>
+
+        <h3>Manual Check-in Options</h3>
+        <ul>
+            <li>Search by ticket number if QR code won't scan</li>
+            <li>Look up attendees by name</li>
+            <li>Works offline with automatic sync when connection returns</li>
+            <li>Quick access to all ticket details</li>
+        </ul>
+
+        <h3>Real-time Dashboard</h3>
+        <ul>
+            <li>See how many guests have arrived</li>
+            <li>Track multiple check-in points</li>
+            <li>Monitor staff activity</li>
+            <li>Get alerts for any issues (duplicates, invalid tickets)</li>
+            <li>Export attendance data after the event</li>
+        </ul>
+
+        <h2 id="promoting">Promoting Your Ticket Page</h2>
+        <p>We make it easy to share your ticket page with potential supporters:</p>
+        <ul>
+            <li>Use your custom direct link (e.g., tickets.qrtick.com/your-event-name)</li>
+            <li>Or simply tell supporters to visit tickets.qrtick.com and search for your event</li>
+            <li>Share your link directly through WhatsApp, email, or social media</li>
+            <li>Your ticket page works perfectly on both mobile phones and computers</li>
+            <li>Supporters can purchase multiple tickets in one transaction</li>
+        </ul>
+
+        <h2 id="checklist">Launch Checklist</h2>
         <div class="checklist">
             <h3>Payment Setup</h3>
             <ul>
                 <li>Confirm your bank account details</li>
-                <li>Test the payment system</li>
-                <li>Verify deposits are working</li>
                 <li>Set up refund process (if needed)</li>
             </ul>
 
@@ -154,7 +270,7 @@
             </ul>
         </div>
 
-        <h2>Need Help?</h2>
+        <h2 id="help">Need Help?</h2>
         <p>Our Jamaica-based support team is here to help with:</p>
         <ul>
             <li>Setting up your fundraiser</li>
@@ -163,8 +279,15 @@
             <li>WhatsApp sharing assistance</li>
             <li>Payment questions</li>
             <li>Check-in system training</li>
+            <li>Custom requirements for larger events</li>
+            <li>Data exports and reporting</li>
         </ul>
-        <p>Contact us anytime at <a href="mailto:support@qrtick.com">support@qrtick.com</a></p>
+
+        <div class="tip-box">
+            <strong>Important:</strong> We recommend completing the launch checklist at least 48 hours before starting ticket sales to ensure everything is ready.
+        </div>
+
+        <p>Contact us anytime at <a href="mailto:service@qrtick.com">service@qrtick.com</a></p>
     </main>
 </body>
 </html> 
