@@ -44,21 +44,12 @@
             margin: 0 auto;
             padding: 2rem;
         }
-        .features {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin: 3rem 0;
-        }
-        .feature {
+        .cta-section {
+            text-align: center;
+            margin: 2rem 0;
+            padding: 2rem;
             background: #f8f9fa;
-            padding: 1.5rem;
             border-radius: 8px;
-            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-        }
-        .feature h3 {
-            margin-top: 0;
-            color: #2c5282;
         }
         .cta-button {
             display: inline-block;
@@ -69,9 +60,26 @@
             border-radius: 6px;
             font-weight: 600;
             transition: background-color 0.2s;
+            margin: 0.5rem;
         }
         .cta-button:hover {
             background-color: #1a365d;
+        }
+        .benefits {
+            margin: 2rem 0;
+            padding: 0;
+            list-style: none;
+        }
+        .benefits li {
+            margin-bottom: 0.5rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+        .benefits li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: #2c5282;
         }
     </style>
 </head>
@@ -84,52 +92,26 @@
     </header>
     <main class="container">
         <h1>Digital Ticketing for Jamaican Fundraisers</h1>
-        <p>Designed specifically for Jamaican fundraisers, Qrtick handles everything from setup to check-in at the door. We take care of the technical details so you can stay focused on your mission. Launch your event in just 5 business days, with proceeds directly deposited to your bank account.</p>
+        <p>Qrtick handles everything from setup to check-in, with proceeds directly deposited to your bank account. Launch your event in just 5 business days.</p>
 
-        <div class="features">
-            <div class="feature">
-                <h3>Quick Setup</h3>
-                <p>Get your event up and running in 5 business days. We handle all technical details, from payment setup to testing.</p>
-            </div>
-            <div class="feature">
-                <h3>Digital Tickets</h3>
-                <p>Easy distribution via WhatsApp and email. Perfect for reaching your community across Jamaica with just a few clicks.</p>
-            </div>
-            <div class="feature">
-                <h3>Simple Check-in</h3>
-                <p>Quick entry verification at your event using any smartphone. Works even without internet connection.</p>
-            </div>
-            <div class="feature">
-                <h3>Direct Deposits</h3>
-                <p>Secure payments with proceeds automatically deposited to your Jamaican bank account.</p>
-            </div>
+        <div class="cta-section">
+            <h2>Documentation</h2>
+            <a href="guide.html" class="cta-button">Fundraiser Guide</a>
+            <a href="manager-guide.html" class="cta-button">Manager Guide</a>
         </div>
 
-        <h2>Guides & Information</h2>
-        <p>Find detailed instructions and information to help you manage your fundraising events successfully.</p>
-        <ul style="list-style: none; padding-left: 0; text-align: center;">
-            <li style="margin: 1rem 0;">
-                <a href="guide.html" class="cta-button">Read the Fundraiser Guide</a>
-            </li>
-            <li style="margin: 1rem 0;">
-                <a href="manager-guide.html" class="cta-button" style="background-color: #3182ce;">Manager Quickstart Guide</a>
-            </li>
-        </ul>
-
-        <h2>Built for Your Success</h2>
-        <ul>
-            <li>WhatsApp integration for easy ticket sharing across Jamaica</li>
-            <li>Works with or without internet connection</li>
-            <li>Real-time sales tracking to monitor your fundraising progress</li>
+        <h2>Key Features</h2>
+        <ul class="benefits">
+            <li>5-day setup with all technical details handled for you</li>
+            <li>Digital tickets easily shared via WhatsApp and email</li>
+            <li>Check-in using any smartphone, works offline</li>
+            <li>Direct deposits to your Jamaican bank account</li>
             <li>Multiple ticket types for different donor levels</li>
-            <li>Quick check-in process for smooth event entry</li>
-            <li>Automated confirmation messages to donors</li>
-            <li>Support for multiple team members at check-in</li>
-            <li>Secure payment processing with local bank deposits</li>
+            <li>Real-time sales tracking and attendance monitoring</li>
         </ul>
 
         <h2>Need Support?</h2>
-        <p>Our Jamaica-based support team is ready to help with any questions. Contact us at <a href="mailto:service@qrtick.com">service@qrtick.com</a>.</p>
+        <p>Our Jamaica-based support team is ready to help at <a href="mailto:service@qrtick.com">service@qrtick.com</a></p>
     </main>
 </body>
 </html> 
