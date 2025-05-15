@@ -96,7 +96,7 @@ function calculateFees(orderTotal: number, currency: 'JMD' | 'USD') {
   // Determine which platform fee applies
   let platformFeeComponent;
   if (currency === 'JMD') {
-    platformFeeComponent = orderTotal < 4000
+    platformFeeComponent = orderTotal < 3000
       ? components.find(c => c.id === 'platform_fee_small_jmd')
       : components.find(c => c.id === 'platform_fee_large_jmd');
   } else {
