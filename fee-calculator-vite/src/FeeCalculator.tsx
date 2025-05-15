@@ -17,7 +17,7 @@ const FEE_CONFIG = {
     // JMD
     { component_name: 'processor_fee_jmd', component_type: 'PERCENTAGE', currency: 'JMD', order_of_application: 1, value: 0.0425, id: 'processor_fee_jmd' },
     { component_name: 'transaction_fee_jmd', component_type: 'FIXED', currency: 'JMD', order_of_application: 2, value: 135.0, id: 'transaction_fee_jmd' },
-    { component_name: 'platform_fee_small_jmd', component_type: 'FIXED', currency: 'JMD', order_of_application: 3, value: 50.0, id: 'platform_fee_small_jmd' },
+    { component_name: 'platform_fee_small_jmd', component_type: 'FIXED', currency: 'JMD', order_of_application: 3, value: 100.0, id: 'platform_fee_small_jmd' },
     { component_name: 'platform_fee_large_jmd', component_type: 'PERCENTAGE', currency: 'JMD', order_of_application: 3, value: 0.027, id: 'platform_fee_large_jmd' },
     // USD
     { component_name: 'processor_fee_usd', component_type: 'PERCENTAGE', currency: 'USD', order_of_application: 1, value: 0.0425, id: 'processor_fee_usd' },
@@ -36,7 +36,7 @@ function calculateFees(orderTotal: number, currency: 'JMD' | 'USD') {
   components.sort((a, b) => a.order_of_application - b.order_of_application);
   let platformFeeComponent;
   if (currency === 'JMD') {
-    platformFeeComponent = orderTotal < 3000
+    platformFeeComponent = orderTotal < 4000
       ? components.find(c => c.id === 'platform_fee_small_jmd')
       : components.find(c => c.id === 'platform_fee_large_jmd');
   } else {
