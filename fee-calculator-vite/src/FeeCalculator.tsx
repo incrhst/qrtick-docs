@@ -278,6 +278,54 @@ export const FeeCalculator: React.FC = () => {
               </tr>
             </tbody>
           </table>
+          {/* Comparison Section */}
+          <div style={{
+            marginTop: 32,
+            background: '#fff',
+            border: `1.5px solid ${COLORS.primary}`,
+            borderRadius: 10,
+            boxShadow: '0 2px 8px rgba(26,115,232,0.07)',
+            padding: 20,
+            textAlign: 'center',
+          }}>
+            <div style={{ fontWeight: 600, color: COLORS.primary, fontSize: 16, marginBottom: 10 }}>
+              QRTick vs Flat 10% Fee Comparison
+            </div>
+            <table style={{ width: '100%', fontSize: 15, borderCollapse: 'collapse', margin: '0 auto' }}>
+              <thead>
+                <tr style={{ background: '#F8FAFC' }}>
+                  <th style={{ padding: 6, borderRadius: 6, color: COLORS.primary, fontWeight: 600, border: 'none' }}></th>
+                  <th style={{ padding: 6, color: COLORS.primary, fontWeight: 600, border: 'none' }}>QRTick</th>
+                  <th style={{ padding: 6, color: COLORS.primary, fontWeight: 600, border: 'none' }}>Flat 10% Fee</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style={{ textAlign: 'left', padding: 6 }}>Order Total (You Receive)</td>
+                  <td style={{ textAlign: 'right', padding: 6 }}>{currency} {orderTotal.toLocaleString(undefined, { minimumFractionDigits: 0, maximumFractionDigits: 0 })}</td>
+                  <td style={{ textAlign: 'right', padding: 6 }}>{currency} {orderTotal.toLocaleString(undefined, { minimumFractionDigits: 0, maximumFractionDigits: 0 })}</td>
+                </tr>
+                <tr>
+                  <td style={{ textAlign: 'left', padding: 6 }}>Total Fees (Customer Pays)</td>
+                  <td style={{ textAlign: 'right', padding: 6 }}>{currency} {fees.totalFees.toFixed(2)}</td>
+                  <td style={{ textAlign: 'right', padding: 6 }}>{currency} {(round2(orderTotal * 0.10)).toFixed(2)}</td>
+                </tr>
+                <tr>
+                  <td style={{ textAlign: 'left', padding: 6 }}>Final Amount (Customer Pays)</td>
+                  <td style={{ textAlign: 'right', padding: 6 }}>{currency} {fees.finalAmount.toFixed(2)}</td>
+                  <td style={{ textAlign: 'right', padding: 6 }}>{currency} {(round2(orderTotal * 1.10)).toFixed(2)}</td>
+                </tr>
+                <tr>
+                  <td style={{ textAlign: 'left', padding: 6 }}>Effective Fee %</td>
+                  <td style={{ textAlign: 'right', padding: 6 }}>{((fees.totalFees / orderTotal) * 100).toFixed(2)}%</td>
+                  <td style={{ textAlign: 'right', padding: 6 }}>10.00%</td>
+                </tr>
+              </tbody>
+            </table>
+            <div style={{ color: '#888', fontSize: 13, marginTop: 10 }}>
+              In both cases, <b>the customer pays the fees</b> and <b>you always receive the full order total</b>.
+            </div>
+          </div>
         </div>
       )}
       <div style={{ marginTop: 32, fontSize: 13, color: '#888', textAlign: 'center' }}>
