@@ -131,14 +131,31 @@ function calculateFees(orderTotal: number, currency: 'JMD' | 'USD') {
   };
 }
 
+const SLIDER_CONFIG = {
+  JMD: { min: 1000, max: 100000, step: 100, default: 1000 },
+  USD: { min: 60, max: 2000, step: 5, default: 60 },
+};
+
 export const FeeCalculator: React.FC = () => {
-  const [orderTotal, setOrderTotal] = useState('');
   const [currency, setCurrency] = useState<'JMD' | 'USD'>('JMD');
+  const [orderTotal, setOrderTotal] = useState<number>(SLIDER_CONFIG['JMD'].default);
   const [touched, setTouched] = useState(false);
 
-  const parsedOrderTotal = parseFloat(orderTotal);
-  const isValid = !isNaN(parsedOrderTotal) && parsedOrderTotal >= 0;
-  const fees = isValid ? calculateFees(parsedOrderTotal, currency) : null;
+  const slider = SLIDER_CONFIG[currency];
+  const isValid = !isNaN(orderTotal) && orderTotal >= slider.min;
+  const fees = isValid ? calculateFees(orderTotal, currency) : null;
+
+  const handleCurrencyChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const newCurrency = e.target.value as 'JMD' | 'USD';
+    setCurrency(newCurrency);
+    setOrderTotal(SLIDER_CONFIG[newCurrency].default);
+    setTouched(false);
+  };
+
+  const handleSliderChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setOrderTotal(Number(e.target.value));
+    setTouched(true);
+  };
 
   return (
     <div style={{
@@ -161,49 +178,48 @@ export const FeeCalculator: React.FC = () => {
         style={{ display: 'flex', flexDirection: 'column', gap: 18 }}
         autoComplete="off"
       >
-        <label style={{ fontWeight: 500 }}>
-          Order Total
+        <div style={{ display: 'flex', gap: 18, alignItems: 'center', marginBottom: 8 }}>
+          <label style={{ fontWeight: 500, display: 'flex', alignItems: 'center', gap: 6 }}>
+            <input
+              type="radio"
+              name="currency"
+              value="JMD"
+              checked={currency === 'JMD'}
+              onChange={handleCurrencyChange}
+              style={{ accentColor: COLORS.primary, marginRight: 4 }}
+            />
+            JMD (J$)
+          </label>
+          <label style={{ fontWeight: 500, display: 'flex', alignItems: 'center', gap: 6 }}>
+            <input
+              type="radio"
+              name="currency"
+              value="USD"
+              checked={currency === 'USD'}
+              onChange={handleCurrencyChange}
+              style={{ accentColor: COLORS.primary, marginRight: 4 }}
+            />
+            USD ($)
+          </label>
+        </div>
+        <label style={{ fontWeight: 500, width: '100%' }}>
+          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 6 }}>
+            <span>Order Total</span>
+            <span style={{ color: COLORS.primary, fontWeight: 600, fontSize: 18 }}>{currency} {orderTotal.toLocaleString(undefined, { minimumFractionDigits: 0, maximumFractionDigits: 0 })}</span>
+          </div>
           <input
-            type="number"
-            min="0"
-            step="0.01"
+            type="range"
+            min={slider.min}
+            max={slider.max}
+            step={slider.step}
             value={orderTotal}
-            onChange={e => {
-              setOrderTotal(e.target.value);
-              setTouched(true);
-            }}
-            onBlur={() => setTouched(true)}
-            placeholder="e.g. 3500"
-            style={{
-              marginTop: 6,
-              padding: '8px 12px',
-              border: `1px solid ${COLORS.border}`,
-              borderRadius: 6,
-              fontSize: 16,
-              width: '100%',
-              outline: 'none',
-              boxSizing: 'border-box',
-            }}
+            onChange={handleSliderChange}
+            style={{ width: '100%', accentColor: COLORS.primary }}
           />
-        </label>
-        <label style={{ fontWeight: 500 }}>
-          Currency
-          <select
-            value={currency}
-            onChange={e => setCurrency(e.target.value as 'JMD' | 'USD')}
-            style={{
-              marginTop: 6,
-              padding: '8px 12px',
-              border: `1px solid ${COLORS.border}`,
-              borderRadius: 6,
-              fontSize: 16,
-              width: '100%',
-              background: '#fff',
-            }}
-          >
-            <option value="JMD">JMD (J$)</option>
-            <option value="USD">USD ($)</option>
-          </select>
+          <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: 13, color: '#888', marginTop: 2 }}>
+            <span>{currency} {slider.min.toLocaleString()}</span>
+            <span>{currency} {slider.max.toLocaleString()}</span>
+          </div>
         </label>
       </form>
       {touched && !isValid && (
