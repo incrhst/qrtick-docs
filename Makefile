@@ -11,7 +11,10 @@ rename:
 
 copy:
 	cp fee-calculator-vite/dist/index.html ./fee-calculator.html
-	@if [ -d fee-calculator-vite/dist/assets ]; then cp -r fee-calculator-vite/dist/assets ./assets; fi
+	@if [ -d fee-calculator-vite/dist/assets ]; then \
+	  rm -rf ./assets; \
+	  cp -r fee-calculator-vite/dist/assets ./assets; \
+	fi
 
 deploy: build copy
 
