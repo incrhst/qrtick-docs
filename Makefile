@@ -4,16 +4,16 @@ install:
 	npm install
 
 build:
-	npm run build
+	cd fee-calculator-vite && npm run build
 
 rename:
 	cp dist/index.html dist/fee-calculator.html
 
 copy:
-	cp dist/fee-calculator.html ./fee-calculator.html
-	@if [ -d dist/assets ]; then cp -r dist/assets ./assets; fi
+	cp fee-calculator-vite/dist/index.html ./fee-calculator.html
+	@if [ -d fee-calculator-vite/dist/assets ]; then cp -r fee-calculator-vite/dist/assets ./assets; fi
 
-deploy: build rename copy
+deploy: build copy
 
 all: install deploy
 

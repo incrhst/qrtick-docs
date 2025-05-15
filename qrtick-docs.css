@@ -1,0 +1,109 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', 'Roboto', Arial, sans-serif;
+    background: #F8FAFC;
+    color: #222;
+}
+.header {
+    padding: 2rem 1rem 1rem 1rem;
+    text-align: center;
+    background-color: #fff;
+    box-shadow: 0 2px 8px rgba(26, 115, 232, 0.07);
+}
+.logo {
+    max-width: 180px;
+    height: auto;
+    margin-bottom: 0.5rem;
+}
+.home-link {
+    color: #1A73E8;
+    text-decoration: none;
+    font-weight: 500;
+    margin-top: 0.5rem;
+    display: inline-block;
+}
+.home-link:hover {
+    text-decoration: underline;
+}
+.container {
+    max-width: 800px;
+    margin: 2rem auto 0 auto;
+    padding: 2rem;
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 2px 12px rgba(26, 115, 232, 0.07);
+}
+.cta-section {
+    text-align: center;
+    margin: 2rem 0;
+    padding: 2rem;
+    background: #F8FAFC;
+    border-radius: 12px;
+    box-shadow: 0 1px 4px rgba(26, 115, 232, 0.04);
+}
+.cta-button {
+    display: inline-block;
+    background-color: #1A73E8;
+    color: white;
+    padding: 1rem 2rem;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: background-color 0.2s;
+    margin: 0.5rem;
+    box-shadow: 0 1px 4px rgba(26, 115, 232, 0.08);
+}
+.cta-button:hover {
+    background-color: #1666c1;
+}
+.benefits {
+    margin: 2rem 0;
+    padding: 0;
+    list-style: none;
+}
+.benefits li {
+    margin-bottom: 0.75rem;
+    padding-left: 1.5rem;
+    position: relative;
+    font-size: 1.05rem;
+}
+.benefits li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: #1A73E8;
+    font-size: 1.2em;
+}
+h1, h2 {
+    color: #1A73E8;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+}
+h2 {
+    margin-top: 2.5rem;
+}
+.footer {
+    margin-top: 3rem;
+    padding: 2rem 1rem 1rem 1rem;
+    background: #fff;
+    border-top: 1px solid #E0E7EF;
+    text-align: center;
+    color: #888;
+    font-size: 1rem;
+}
+.footer-logo {
+    max-width: 120px;
+    margin-bottom: 0.5rem;
+}
+.footer-link {
+    color: #1A73E8;
+    text-decoration: none;
+    font-weight: 600;
+}
+.footer-link:hover {
+    text-decoration: underline;
+} 
