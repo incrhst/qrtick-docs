@@ -5,6 +5,7 @@ const COLORS = {
   primary: '#1A73E8', // blue
   accent: '#00C853', // green
   background: '#F8FAFC', // light gray
+  card: '#fff',
   text: '#222',
   border: '#E0E7EF',
   error: '#D32F2F',
@@ -35,7 +36,7 @@ const FEE_CONFIG = {
       component_type: 'FIXED',
       currency: 'JMD',
       order_of_application: 3,
-      value: 100.0,
+      value: 50.0,
       id: 'platform_fee_small_jmd',
     },
     {
@@ -159,27 +160,27 @@ export const FeeCalculator: React.FC = () => {
 
   return (
     <div style={{
-      background: COLORS.background,
-      borderRadius: 12,
-      maxWidth: 420,
-      margin: '2rem auto',
+      background: COLORS.card,
+      borderRadius: 16,
+      maxWidth: 480,
+      margin: '2.5rem auto',
       boxShadow: '0 2px 12px rgba(26,115,232,0.07)',
-      padding: 32,
+      padding: 36,
       fontFamily: 'Inter, Roboto, Arial, sans-serif',
       color: COLORS.text,
-      border: `1px solid ${COLORS.border}`,
+      border: `2px solid ${COLORS.primary}`,
     }}>
-      <h2 style={{ color: COLORS.primary, marginBottom: 8 }}>QRTick Fee Calculator</h2>
-      <p style={{ color: '#555', fontSize: 15, marginBottom: 24 }}>
+      <h2 style={{ color: COLORS.primary, marginBottom: 8, fontWeight: 700, fontSize: 28, letterSpacing: '-0.5px' }}>QRTick Fee Calculator</h2>
+      <p style={{ color: '#555', fontSize: 16, marginBottom: 28 }}>
         Enter your order total and select currency to see a detailed fee breakdown.
       </p>
       <form
         onSubmit={e => e.preventDefault()}
-        style={{ display: 'flex', flexDirection: 'column', gap: 18 }}
+        style={{ display: 'flex', flexDirection: 'column', gap: 22 }}
         autoComplete="off"
       >
-        <div style={{ display: 'flex', gap: 18, alignItems: 'center', marginBottom: 8 }}>
-          <label style={{ fontWeight: 500, display: 'flex', alignItems: 'center', gap: 6 }}>
+        <div style={{ display: 'flex', gap: 22, alignItems: 'center', marginBottom: 8 }}>
+          <label style={{ fontWeight: 600, display: 'flex', alignItems: 'center', gap: 6, fontSize: 16 }}>
             <input
               type="radio"
               name="currency"
@@ -190,7 +191,7 @@ export const FeeCalculator: React.FC = () => {
             />
             JMD (J$)
           </label>
-          <label style={{ fontWeight: 500, display: 'flex', alignItems: 'center', gap: 6 }}>
+          <label style={{ fontWeight: 600, display: 'flex', alignItems: 'center', gap: 6, fontSize: 16 }}>
             <input
               type="radio"
               name="currency"
@@ -202,10 +203,10 @@ export const FeeCalculator: React.FC = () => {
             USD ($)
           </label>
         </div>
-        <label style={{ fontWeight: 500, width: '100%' }}>
+        <label style={{ fontWeight: 600, width: '100%' }}>
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 6 }}>
             <span>Order Total</span>
-            <span style={{ color: COLORS.primary, fontWeight: 600, fontSize: 18 }}>{currency} {orderTotal.toLocaleString(undefined, { minimumFractionDigits: 0, maximumFractionDigits: 0 })}</span>
+            <span style={{ color: COLORS.primary, fontWeight: 700, fontSize: 20 }}>{currency} {orderTotal.toLocaleString(undefined, { minimumFractionDigits: 0, maximumFractionDigits: 0 })}</span>
           </div>
           <input
             type="range"
@@ -216,37 +217,37 @@ export const FeeCalculator: React.FC = () => {
             onChange={handleSliderChange}
             style={{ width: '100%', accentColor: COLORS.primary }}
           />
-          <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: 13, color: '#888', marginTop: 2 }}>
+          <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: 14, color: '#888', marginTop: 2 }}>
             <span>{currency} {slider.min.toLocaleString()}</span>
             <span>{currency} {slider.max.toLocaleString()}</span>
           </div>
         </label>
       </form>
       {touched && !isValid && (
-        <div style={{ color: COLORS.error, marginTop: 12, fontSize: 15 }}>
+        <div style={{ color: COLORS.error, marginTop: 14, fontSize: 16 }}>
           Please enter a valid order total.
         </div>
       )}
       {isValid && fees && (
-        <div style={{ marginTop: 28 }}>
-          <div style={{ fontWeight: 600, fontSize: 17, marginBottom: 10, color: COLORS.primary }}>
+        <div style={{ marginTop: 34 }}>
+          <div style={{ fontWeight: 700, fontSize: 19, marginBottom: 12, color: COLORS.primary }}>
             Fee Breakdown
           </div>
           <div style={{
             background: '#E8F0FE',
             color: COLORS.primary,
-            borderRadius: 8,
-            padding: '10px 16px',
-            marginBottom: 16,
-            fontWeight: 500,
-            fontSize: 15,
+            borderRadius: 10,
+            padding: '12px 18px',
+            marginBottom: 18,
+            fontWeight: 600,
+            fontSize: 16,
             textAlign: 'center',
             boxShadow: '0 1px 4px rgba(26,115,232,0.06)'
           }}>
             The <b>customer</b> pays the fees.<br />
             <b>You always receive the full order total.</b>
           </div>
-          <table style={{ width: '100%', fontSize: 15, borderCollapse: 'collapse' }}>
+          <table style={{ width: '100%', fontSize: 16, borderCollapse: 'collapse', background: COLORS.card, borderRadius: 8 }}>
             <tbody>
               <tr>
                 <td>Processor Fee (4.25%)</td>
@@ -259,7 +260,7 @@ export const FeeCalculator: React.FC = () => {
               <tr>
                 <td>
                   Platform Fee
-                  <span style={{ color: '#888', fontWeight: 400, fontSize: 13, marginLeft: 4 }}>
+                  <span style={{ color: '#888', fontWeight: 400, fontSize: 14, marginLeft: 4 }}>
                     ({fees.platformFeeType === 'PERCENTAGE' ? '2.7%' : 'fixed'})
                   </span>
                 </td>
@@ -268,11 +269,11 @@ export const FeeCalculator: React.FC = () => {
               <tr>
                 <td colSpan={2}><hr style={{ border: 0, borderTop: `1px solid ${COLORS.border}` }} /></td>
               </tr>
-              <tr style={{ fontWeight: 600 }}>
+              <tr style={{ fontWeight: 700 }}>
                 <td>Total Fees</td>
                 <td style={{ textAlign: 'right', color: COLORS.primary }}>{currency} {fees.totalFees.toFixed(2)}</td>
               </tr>
-              <tr style={{ fontWeight: 600 }}>
+              <tr style={{ fontWeight: 700 }}>
                 <td>Final Amount</td>
                 <td style={{ textAlign: 'right', color: COLORS.accent }}>{currency} {fees.finalAmount.toFixed(2)}</td>
               </tr>
@@ -280,56 +281,56 @@ export const FeeCalculator: React.FC = () => {
           </table>
           {/* Comparison Section */}
           <div style={{
-            marginTop: 32,
-            background: '#fff',
+            marginTop: 36,
+            background: COLORS.background,
             border: `1.5px solid ${COLORS.primary}`,
-            borderRadius: 10,
+            borderRadius: 12,
             boxShadow: '0 2px 8px rgba(26,115,232,0.07)',
-            padding: 20,
+            padding: 22,
             textAlign: 'center',
           }}>
-            <div style={{ fontWeight: 600, color: COLORS.primary, fontSize: 16, marginBottom: 10 }}>
+            <div style={{ fontWeight: 700, color: COLORS.primary, fontSize: 17, marginBottom: 12 }}>
               QRTick vs Flat 10% Fee Comparison
             </div>
             <table style={{ width: '100%', fontSize: 15, borderCollapse: 'collapse', margin: '0 auto' }}>
               <thead>
                 <tr style={{ background: '#F8FAFC' }}>
-                  <th style={{ padding: 6, borderRadius: 6, color: COLORS.primary, fontWeight: 600, border: 'none' }}></th>
-                  <th style={{ padding: 6, color: COLORS.primary, fontWeight: 600, border: 'none' }}>QRTick</th>
-                  <th style={{ padding: 6, color: COLORS.primary, fontWeight: 600, border: 'none' }}>Flat 10% Fee</th>
+                  <th style={{ padding: 7, borderRadius: 7, color: COLORS.primary, fontWeight: 700, border: 'none' }}></th>
+                  <th style={{ padding: 7, color: COLORS.primary, fontWeight: 700, border: 'none' }}>QRTick</th>
+                  <th style={{ padding: 7, color: COLORS.primary, fontWeight: 700, border: 'none' }}>Flat 10% Fee</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
-                  <td style={{ textAlign: 'left', padding: 6 }}>Order Total (You Receive)</td>
-                  <td style={{ textAlign: 'right', padding: 6 }}>{currency} {orderTotal.toLocaleString(undefined, { minimumFractionDigits: 0, maximumFractionDigits: 0 })}</td>
-                  <td style={{ textAlign: 'right', padding: 6 }}>{currency} {orderTotal.toLocaleString(undefined, { minimumFractionDigits: 0, maximumFractionDigits: 0 })}</td>
+                  <td style={{ textAlign: 'left', padding: 7 }}>Order Total (You Receive)</td>
+                  <td style={{ textAlign: 'right', padding: 7 }}>{currency} {orderTotal.toLocaleString(undefined, { minimumFractionDigits: 0, maximumFractionDigits: 0 })}</td>
+                  <td style={{ textAlign: 'right', padding: 7 }}>{currency} {orderTotal.toLocaleString(undefined, { minimumFractionDigits: 0, maximumFractionDigits: 0 })}</td>
                 </tr>
                 <tr>
-                  <td style={{ textAlign: 'left', padding: 6 }}>Total Fees (Customer Pays)</td>
-                  <td style={{ textAlign: 'right', padding: 6 }}>{currency} {fees.totalFees.toFixed(2)}</td>
-                  <td style={{ textAlign: 'right', padding: 6 }}>{currency} {(round2(orderTotal * 0.10)).toFixed(2)}</td>
+                  <td style={{ textAlign: 'left', padding: 7 }}>Total Fees (Customer Pays)</td>
+                  <td style={{ textAlign: 'right', padding: 7 }}>{currency} {fees.totalFees.toFixed(2)}</td>
+                  <td style={{ textAlign: 'right', padding: 7 }}>{currency} {(round2(orderTotal * 0.10)).toFixed(2)}</td>
                 </tr>
                 <tr>
-                  <td style={{ textAlign: 'left', padding: 6 }}>Final Amount (Customer Pays)</td>
-                  <td style={{ textAlign: 'right', padding: 6 }}>{currency} {fees.finalAmount.toFixed(2)}</td>
-                  <td style={{ textAlign: 'right', padding: 6 }}>{currency} {(round2(orderTotal * 1.10)).toFixed(2)}</td>
+                  <td style={{ textAlign: 'left', padding: 7 }}>Final Amount (Customer Pays)</td>
+                  <td style={{ textAlign: 'right', padding: 7 }}>{currency} {fees.finalAmount.toFixed(2)}</td>
+                  <td style={{ textAlign: 'right', padding: 7 }}>{currency} {(round2(orderTotal * 1.10)).toFixed(2)}</td>
                 </tr>
                 <tr>
-                  <td style={{ textAlign: 'left', padding: 6 }}>Effective Fee %</td>
-                  <td style={{ textAlign: 'right', padding: 6 }}>{((fees.totalFees / orderTotal) * 100).toFixed(2)}%</td>
-                  <td style={{ textAlign: 'right', padding: 6 }}>10.00%</td>
+                  <td style={{ textAlign: 'left', padding: 7 }}>Effective Fee %</td>
+                  <td style={{ textAlign: 'right', padding: 7 }}>{((fees.totalFees / orderTotal) * 100).toFixed(2)}%</td>
+                  <td style={{ textAlign: 'right', padding: 7 }}>10.00%</td>
                 </tr>
               </tbody>
             </table>
-            <div style={{ color: '#888', fontSize: 13, marginTop: 10 }}>
+            <div style={{ color: '#888', fontSize: 14, marginTop: 12 }}>
               In both cases, <b>the customer pays the fees</b> and <b>you always receive the full order total</b>.
             </div>
           </div>
         </div>
       )}
-      <div style={{ marginTop: 32, fontSize: 13, color: '#888', textAlign: 'center' }}>
-        Powered by <span style={{ color: COLORS.primary, fontWeight: 600 }}>QRTick</span>
+      <div style={{ marginTop: 36, fontSize: 14, color: '#888', textAlign: 'center' }}>
+        Powered by <span style={{ color: COLORS.primary, fontWeight: 700 }}>QRTick</span>
       </div>
     </div>
   );
