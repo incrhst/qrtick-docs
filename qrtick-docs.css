@@ -4,14 +4,14 @@ body {
     margin: 0;
     padding: 0;
     font-family: 'Inter', 'Roboto', Arial, sans-serif;
-    background: #F8FAFC;
-    color: #222;
+    background: #FFF9EA;
+    color: #3D3939;
 }
 .header {
     padding: 2rem 1rem 1rem 1rem;
     text-align: center;
-    background-color: #fff;
-    box-shadow: 0 2px 8px rgba(26, 115, 232, 0.07);
+    background-color: #3D3939;
+    box-shadow: 0 2px 8px rgba(61, 57, 57, 0.1);
 }
 .logo {
     max-width: 180px;
@@ -19,7 +19,7 @@ body {
     margin-bottom: 0.5rem;
 }
 .home-link {
-    color: #1A73E8;
+    color: #FDC230;
     text-decoration: none;
     font-weight: 500;
     margin-top: 0.5rem;
@@ -34,20 +34,20 @@ body {
     padding: 2rem;
     background: #fff;
     border-radius: 16px;
-    box-shadow: 0 2px 12px rgba(26, 115, 232, 0.07);
+    box-shadow: 0 2px 12px rgba(61, 57, 57, 0.07);
 }
 .cta-section {
     text-align: center;
     margin: 2rem 0;
     padding: 2rem;
-    background: #F8FAFC;
+    background: #EEEEEE;
     border-radius: 12px;
-    box-shadow: 0 1px 4px rgba(26, 115, 232, 0.04);
+    box-shadow: 0 1px 4px rgba(61, 57, 57, 0.04);
 }
 .cta-button {
     display: inline-block;
-    background-color: #1A73E8;
-    color: white;
+    background-color: #FDC230;
+    color: #3D3939;
     padding: 1rem 2rem;
     text-decoration: none;
     border-radius: 8px;
@@ -55,10 +55,10 @@ body {
     font-size: 1rem;
     transition: background-color 0.2s;
     margin: 0.5rem;
-    box-shadow: 0 1px 4px rgba(26, 115, 232, 0.08);
+    box-shadow: 0 1px 4px rgba(253, 194, 48, 0.2);
 }
 .cta-button:hover {
-    background-color: #1666c1;
+    background-color: #e5af2b;
 }
 .benefits {
     margin: 2rem 0;
@@ -75,11 +75,11 @@ body {
     content: "•";
     position: absolute;
     left: 0;
-    color: #1A73E8;
+    color: #FDC230;
     font-size: 1.2em;
 }
 h1, h2 {
-    color: #1A73E8;
+    color: #3D3939;
     font-weight: 700;
     letter-spacing: -0.5px;
 }
@@ -89,10 +89,10 @@ h2 {
 .footer {
     margin-top: 3rem;
     padding: 2rem 1rem 1rem 1rem;
-    background: #fff;
-    border-top: 1px solid #E0E7EF;
+    background: #3D3939;
+    border-top: 1px solid #3D3939;
     text-align: center;
-    color: #888;
+    color: #EEEEEE;
     font-size: 1rem;
 }
 .footer-logo {
@@ -100,7 +100,7 @@ h2 {
     margin-bottom: 0.5rem;
 }
 .footer-link {
-    color: #1A73E8;
+    color: #FDC230;
     text-decoration: none;
     font-weight: 600;
 }

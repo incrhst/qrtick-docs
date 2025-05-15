@@ -2,12 +2,12 @@ import React, { useState } from 'react';
 
 // QRTick branding colors
 const COLORS = {
-  primary: '#1A73E8', // blue
-  accent: '#00C853', // green
-  background: '#F8FAFC', // light gray
-  text: '#222',
-  border: '#E0E7EF',
-  error: '#D32F2F',
+  primary: '#3D3939', // brand dark gray
+  accent: '#FDC230', // brand gold
+  background: '#FFF9EA', // off white
+  text: '#3D3939', // brand dark gray for text
+  border: '#EEEEEE', // light gray
+  error: '#D32F2F', // keeping error color red
 };
 
 // Hardcoded fee config per spec
@@ -146,14 +146,14 @@ export const FeeCalculator: React.FC = () => {
       borderRadius: 12,
       maxWidth: 420,
       margin: '2rem auto',
-      boxShadow: '0 2px 12px rgba(26,115,232,0.07)',
+      boxShadow: '0 2px 12px rgba(61,57,57,0.07)',
       padding: 32,
       fontFamily: 'Inter, Roboto, Arial, sans-serif',
       color: COLORS.text,
       border: `1px solid ${COLORS.border}`,
     }}>
       <h2 style={{ color: COLORS.primary, marginBottom: 8 }}>QRTick Fee Calculator</h2>
-      <p style={{ color: '#555', fontSize: 15, marginBottom: 24 }}>
+      <p style={{ color: '#3D3939', fontSize: 15, marginBottom: 24 }}>
         Enter your order total and select currency to see a detailed fee breakdown.
       </p>
       <form
@@ -229,7 +229,7 @@ export const FeeCalculator: React.FC = () => {
               <tr>
                 <td>
                   Platform Fee
-                  <span style={{ color: '#888', fontWeight: 400, fontSize: 13, marginLeft: 4 }}>
+                  <span style={{ color: '#3D3939', fontWeight: 400, fontSize: 13, marginLeft: 4 }}>
                     ({fees.platformFeeType === 'PERCENTAGE' ? '2.7%' : 'fixed'})
                   </span>
                 </td>
@@ -250,8 +250,8 @@ export const FeeCalculator: React.FC = () => {
           </table>
         </div>
       )}
-      <div style={{ marginTop: 32, fontSize: 13, color: '#888', textAlign: 'center' }}>
-        Powered by <span style={{ color: COLORS.primary, fontWeight: 600 }}>QRTick</span>
+      <div style={{ marginTop: 32, fontSize: 13, color: '#3D3939', textAlign: 'center' }}>
+        Powered by <span style={{ color: COLORS.accent, fontWeight: 600 }}>QRTick</span>
       </div>
     </div>
   );
