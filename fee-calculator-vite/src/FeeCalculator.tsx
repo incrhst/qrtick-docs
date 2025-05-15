@@ -232,6 +232,20 @@ export const FeeCalculator: React.FC = () => {
           <div style={{ fontWeight: 600, fontSize: 17, marginBottom: 10, color: COLORS.primary }}>
             Fee Breakdown
           </div>
+          <div style={{
+            background: '#E8F0FE',
+            color: COLORS.primary,
+            borderRadius: 8,
+            padding: '10px 16px',
+            marginBottom: 16,
+            fontWeight: 500,
+            fontSize: 15,
+            textAlign: 'center',
+            boxShadow: '0 1px 4px rgba(26,115,232,0.06)'
+          }}>
+            The <b>customer</b> pays the fees.<br />
+            <b>You always receive the full order total.</b>
+          </div>
           <table style={{ width: '100%', fontSize: 15, borderCollapse: 'collapse' }}>
             <tbody>
               <tr>

@@ -5,9 +5,43 @@
     <link rel="icon" href="/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>QRTick Fee Calculator</title>
-    <script type="module" crossorigin src="./assets/index-c11d0604.js"></script>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        background: #F8FAFC;
+        font-family: 'Inter', 'Roboto', Arial, sans-serif;
+      }
+      .qrtick-header {
+        text-align: center;
+        margin-top: 2rem;
+        margin-bottom: 1.5rem;
+      }
+      .qrtick-logo {
+        max-width: 160px;
+        height: auto;
+        display: block;
+        margin: 0 auto 0.5rem auto;
+      }
+      .qrtick-link {
+        color: #1A73E8;
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 1.1rem;
+      }
+      .qrtick-link:hover {
+        text-decoration: underline;
+      }
+    </style>
+    <script type="module" crossorigin src="./assets/index-90751ee9.js"></script>
   </head>
-  <body style="background: #F8FAFC;">
+  <body>
+    <div class="qrtick-header">
+      <a href="https://qrtick.com" target="_blank" rel="noopener noreferrer">
+        <img src="https://cdn.prod.website-files.com/663e51d3a107afd82b7ea0e4/663e530561808d3614beec2e_qrticklogo.svg" alt="QRTick Logo" class="qrtick-logo" />
+      </a>
+      <a href="https://qrtick.com" class="qrtick-link" target="_blank" rel="noopener noreferrer">Visit QRTick.com →</a>
+    </div>
     <div id="root"></div>
     
   </body>
