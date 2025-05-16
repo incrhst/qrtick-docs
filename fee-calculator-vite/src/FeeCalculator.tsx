@@ -250,7 +250,7 @@ export const FeeCalculator: React.FC = () => {
                 <tr style={{ background: COLORS.background }}>
                   <th style={{ padding: 7, borderRadius: 7, color: COLORS.primary, fontWeight: 700, border: 'none' }}>Tickets</th>
                   <th style={{ padding: 7, color: COLORS.primary, fontWeight: 700, border: 'none' }}>Order Total</th>
-                  <th style={{ padding: 7, color: COLORS.primary, fontWeight: 700, border: 'none', background: COLORS.gold + '11' }}>QRTick Fees</th>
+                  <th style={{ padding: 7, color: COLORS.gold, fontWeight: 700, border: 'none', background: COLORS.primary }}>QRTick Fees</th>
                   <th style={{ padding: 7, color: COLORS.primary, fontWeight: 700, border: 'none' }}>Flat 10% Fees</th>
                   <th style={{ padding: 7, color: COLORS.primary, fontWeight: 700, border: 'none' }}>Final Amount (Customer Pays)</th>
                   <th style={{ padding: 7, color: COLORS.primary, fontWeight: 700, border: 'none' }}>Effective Fee %</th>
@@ -273,7 +273,7 @@ export const FeeCalculator: React.FC = () => {
                   >
                     <td style={{ textAlign: 'center', padding: 7 }}>{s.count}</td>
                     <td style={{ textAlign: 'right', padding: 7 }}>{currency} {s.orderTotal.toLocaleString(undefined, { minimumFractionDigits: 0, maximumFractionDigits: 0 })}</td>
-                    <td style={{ textAlign: 'right', padding: 7, background: COLORS.gold + '11' }}>{currency} {s.totalFees.toFixed(2)}</td>
+                    <td style={{ textAlign: 'right', padding: 7, background: COLORS.primary, color: COLORS.gold }}>{currency} {s.totalFees.toFixed(2)}</td>
                     <td style={{ textAlign: 'right', padding: 7 }}>{currency} {(round2(s.orderTotal * 0.10)).toFixed(2)}</td>
                     <td style={{ textAlign: 'right', padding: 7 }}>{currency} {s.finalAmount.toFixed(2)}</td>
                     <td style={{ textAlign: 'right', padding: 7 }}>{((s.totalFees / s.orderTotal) * 100).toFixed(2)}%</td>
