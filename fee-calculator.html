@@ -19,36 +19,57 @@
         font-family: 'Inter', 'Roboto', Arial, sans-serif;
       }
       .qrtick-header {
-        text-align: center;
-        margin-top: 2rem;
-        margin-bottom: 1.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin: 2rem auto 2.5rem auto;
+        max-width: 700px;
+        padding: 0.75rem 1.5rem;
+        background: #fff;
+        border-radius: 14px;
+        box-shadow: 0 2px 12px rgba(61,57,57,0.07);
       }
       .qrtick-logo {
-        max-width: 160px;
+        max-width: 140px;
         height: auto;
         display: block;
-        margin: 0 auto 0.5rem auto;
+        margin-right: 1.5rem;
+      }
+      .qrtick-nav {
+        display: flex;
+        gap: 1.2rem;
+        align-items: center;
       }
       .qrtick-link {
         color: #1A73E8;
         text-decoration: none;
         font-weight: 600;
-        font-size: 1.1rem;
+        font-size: 1.08rem;
+        padding: 0.35em 0.9em;
+        border-radius: 6px;
+        transition: background 0.15s, color 0.15s;
+        position: relative;
+        top: 0;
       }
       .qrtick-link:hover {
-        text-decoration: underline;
+        background: #FDC23022;
+        color: #3D3939;
+        text-decoration: none;
+        top: -1px;
       }
     </style>
-    <script type="module" crossorigin src="./assets/index-a665f029.js"></script>
+    <script type="module" crossorigin src="./assets/index-bcb8cd49.js"></script>
   </head>
   <body>
     <div class="qrtick-header">
       <a href="https://qrtick.com" target="_blank" rel="noopener noreferrer">
         <img src="./qrtick-logo-alt.svg" alt="QRTick Logo" class="qrtick-logo" />
       </a>
-      <a href="https://qrtick.com" class="qrtick-link" target="_blank" rel="noopener noreferrer">Visit QRTick.com →</a>
-      <a href="https://docs.qrtick.com" class="qrtick-link" target="_blank" rel="noopener noreferrer">QRTick Docs</a>
-      <a href="https://tickets.qrtick.com" class="qrtick-link" target="_blank" rel="noopener noreferrer">QRTick Tickets</a>
+      <nav class="qrtick-nav">
+        <a href="https://qrtick.com" class="qrtick-link" target="_blank" rel="noopener noreferrer">Home</a>
+        <a href="https://docs.qrtick.com" class="qrtick-link" target="_blank" rel="noopener noreferrer">Docs</a>
+        <a href="https://tickets.qrtick.com" class="qrtick-link" target="_blank" rel="noopener noreferrer">Tickets</a>
+      </nav>
     </div>
     <div id="root"></div>
     

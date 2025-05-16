@@ -251,7 +251,7 @@ export const FeeCalculator: React.FC = () => {
                   <th style={{ padding: 7, borderRadius: 7, color: COLORS.primary, fontWeight: 700, border: 'none' }}>Tickets</th>
                   <th style={{ padding: 7, color: COLORS.primary, fontWeight: 700, border: 'none' }}>Order Total</th>
                   <th style={{ padding: 7, color: COLORS.gold, fontWeight: 700, border: 'none', background: COLORS.primary }}>QRTick Fees</th>
-                  <th style={{ padding: 7, color: COLORS.primary, fontWeight: 700, border: 'none' }}>Flat 10% Fees</th>
+                  <th style={{ padding: 7, color: COLORS.primary, fontWeight: 700, border: 'none' }}>Competitor Fee (10%)</th>
                   <th style={{ padding: 7, color: COLORS.primary, fontWeight: 700, border: 'none' }}>Final Amount (Customer Pays)</th>
                   <th style={{ padding: 7, color: COLORS.primary, fontWeight: 700, border: 'none' }}>Effective Fee %</th>
                 </tr>
@@ -294,7 +294,7 @@ export const FeeCalculator: React.FC = () => {
               </tbody>
             </table>
             <div style={{ color: COLORS.primary, fontSize: 14, marginTop: 12, fontWeight: 500 }}>
-              <span style={{ color: COLORS.gold, fontWeight: 700 }}>Note:</span> The QRTick Fees column is highlighted to help you compare our transparent pricing to the industry standard 10% fee. The more tickets you buy, the better your rate!
+              <span style={{ color: COLORS.gold, fontWeight: 700 }}>Note:</span> The QRTick Fees column is highlighted to help you compare our transparent pricing to the typical competitor fee (10%). The more tickets you buy, the better your rate!
             </div>
           </div>
         </div>
