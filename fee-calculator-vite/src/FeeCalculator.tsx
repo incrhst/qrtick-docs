@@ -133,7 +133,7 @@ export const FeeCalculator: React.FC = () => {
     }}>
       <h2 style={{ color: COLORS.primary, marginBottom: 8, fontWeight: 700, fontSize: 28, letterSpacing: '-0.5px' }}>QRTick Fee Comparison</h2>
       <p style={{ color: COLORS.primary, fontSize: 16, marginBottom: 28, fontWeight: 500 }}>
-        Explore how QRTick fees compare to a flat 10% fee for different order scenarios. Real-world orders often include multiple tickets, so the effective fee can vary.
+        This calculator was created for both ticket buyers and event organizers. Explore how QRTick fees compare to the typical competitor fee (10%) for different order scenarios. Real-world orders often include multiple tickets, so the effective fee can vary.
       </p>
       <form
         onSubmit={e => e.preventDefault()}
