@@ -72,7 +72,7 @@ const SLIDER_CONFIG = {
   USD: { min: 5, max: 200, step: 1, default: 30 },
 };
 
-const TICKET_COUNTS = [1, 2, 3, 4];
+const TICKET_COUNTS = [1, 2, 3, 4, 5, 6];
 
 export const FeeCalculator: React.FC = () => {
   const [currency, setCurrency] = useState<'JMD' | 'USD'>('JMD');
@@ -206,19 +206,24 @@ export const FeeCalculator: React.FC = () => {
         </label>
         <div style={{ display: 'flex', gap: 18, alignItems: 'center', margin: '18px 0 0 0' }}>
           <span style={{ fontWeight: 600, fontSize: 16 }}>Tickets in Order:</span>
-          {TICKET_COUNTS.map(count => (
-            <label key={count} style={{ fontWeight: 600, fontSize: 16, display: 'flex', alignItems: 'center', gap: 4 }}>
-              <input
-                type="radio"
-                name="ticketCount"
-                value={count}
-                checked={ticketCount === count}
-                onChange={handleTicketCountChange}
-                style={{ accentColor: COLORS.gold, marginRight: 2 }}
-              />
-              {count}
-            </label>
-          ))}
+          <input
+            type="number"
+            min={1}
+            max={6}
+            value={ticketCount}
+            onChange={handleTicketCountChange}
+            style={{
+              width: 60,
+              padding: '8px 12px',
+              border: `1px solid ${COLORS.border}`,
+              borderRadius: 6,
+              fontSize: 16,
+              textAlign: 'center',
+              background: COLORS.background,
+              color: COLORS.primary,
+              fontWeight: 600,
+            }}
+          />
         </div>
       </form>
       {touched && !isValid && (
@@ -253,7 +258,19 @@ export const FeeCalculator: React.FC = () => {
               </thead>
               <tbody>
                 {scenarios.map(s => (
-                  <tr key={s.count} style={s.count === ticketCount ? { background: COLORS.gold + '22', fontWeight: 700 } : {}}>
+                  <tr
+                    key={s.count}
+                    style={
+                      s.count === ticketCount
+                        ? {
+                            background: COLORS.gold + '22',
+                            fontWeight: 700,
+                            border: `2px solid ${COLORS.gold}`,
+                            boxShadow: '0 0 0 2px ' + COLORS.gold,
+                          }
+                        : {}
+                    }
+                  >
                     <td style={{ textAlign: 'center', padding: 7 }}>{s.count}</td>
                     <td style={{ textAlign: 'right', padding: 7 }}>{currency} {s.orderTotal.toLocaleString(undefined, { minimumFractionDigits: 0, maximumFractionDigits: 0 })}</td>
                     <td style={{ textAlign: 'right', padding: 7 }}>{currency} {s.totalFees.toFixed(2)}</td>
