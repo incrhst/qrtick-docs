@@ -272,11 +272,23 @@ export const FeeCalculator: React.FC = () => {
                     }
                   >
                     <td style={{ textAlign: 'center', padding: 7 }}>{s.count}</td>
-                    <td style={{ textAlign: 'right', padding: 7 }}>{currency} {s.orderTotal.toLocaleString(undefined, { minimumFractionDigits: 0, maximumFractionDigits: 0 })}</td>
-                    <td style={{ textAlign: 'right', padding: 7, background: COLORS.primary, color: COLORS.gold }}>{currency} {s.totalFees.toFixed(2)}</td>
-                    <td style={{ textAlign: 'right', padding: 7 }}>{currency} {(round2(s.orderTotal * 0.10)).toFixed(2)}</td>
-                    <td style={{ textAlign: 'right', padding: 7 }}>{currency} {s.finalAmount.toFixed(2)}</td>
-                    <td style={{ textAlign: 'right', padding: 7 }}>{((s.totalFees / s.orderTotal) * 100).toFixed(2)}%</td>
+                    <td style={{ textAlign: 'right', padding: 7 }}>
+                      <span style={{ opacity: 0.6, fontSize: '0.92em', marginRight: 2 }}>{currency}</span>
+                      <span style={{ fontWeight: 600 }}>{s.orderTotal.toLocaleString(undefined, { minimumFractionDigits: 0, maximumFractionDigits: 0 })}</span>
+                    </td>
+                    <td style={{ textAlign: 'right', padding: 7, background: COLORS.primary, color: COLORS.gold }}>
+                      <span style={{ opacity: 0.6, fontSize: '0.92em', marginRight: 2 }}>{currency}</span>
+                      <span style={{ fontWeight: 600 }}>{s.totalFees.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</span>
+                    </td>
+                    <td style={{ textAlign: 'right', padding: 7 }}>
+                      <span style={{ opacity: 0.6, fontSize: '0.92em', marginRight: 2 }}>{currency}</span>
+                      <span style={{ fontWeight: 600 }}>{(round2(s.orderTotal * 0.10)).toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</span>
+                    </td>
+                    <td style={{ textAlign: 'right', padding: 7 }}>
+                      <span style={{ opacity: 0.6, fontSize: '0.92em', marginRight: 2 }}>{currency}</span>
+                      <span style={{ fontWeight: 600 }}>{s.finalAmount.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</span>
+                    </td>
+                    <td style={{ textAlign: 'right', padding: 7 }}>{((s.totalFees / s.orderTotal) * 100).toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}%</td>
                   </tr>
                 ))}
               </tbody>
