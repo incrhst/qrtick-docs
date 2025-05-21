@@ -5,6 +5,60 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>QRTick Event Setup Guide - How to Create and Configure Your Events</title>
     <link rel="stylesheet" href="qrtick-docs.css">
+    <style>
+        .checklist {
+            list-style: none;
+            padding: 0;
+            margin: 1.5rem 0;
+        }
+        .checklist li {
+            margin-bottom: 1rem;
+            padding-left: 2rem;
+            position: relative;
+        }
+        .checklist li::before {
+            content: "☐";
+            position: absolute;
+            left: 0;
+            color: #FDC230;
+            font-size: 1.2em;
+        }
+        .tip-box {
+            background-color: #EEEEEE;
+            border-left: 4px solid #FDC230;
+            padding: 1rem;
+            margin: 1.5rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .tip-header {
+            font-weight: 600;
+            color: #3D3939;
+            margin-bottom: 0.5rem;
+        }
+        .section-card {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(61, 57, 57, 0.1);
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-top: 4px solid #FDC230;
+        }
+        .section-card h3 {
+            margin-top: 0;
+            color: #3D3939;
+        }
+        .quick-info {
+            background-color: #FFF9EA;
+            border: 1px solid #EEEEEE;
+            border-radius: 8px;
+            padding: 1rem;
+            margin: 1rem 0;
+        }
+        .quick-info h4 {
+            margin-top: 0;
+            color: #3D3939;
+        }
+    </style>
 </head>
 <body>
     <header class="header">
@@ -17,171 +71,145 @@
     <main class="container">
         <a href="index.html" class="back-link">← Back to Documentation Home</a>
         
-        <h1>QRTick: Event Setup Guide</h1>
+        <h1>QRTick: Event Setup Checklist</h1>
+
+        <div class="quick-info">
+            <h4>⚡ Quick Start</h4>
+            <p>In QRTick, all events are organized as a "Series" with one or more "Performances". A single event is simply a series with one performance.</p>
+        </div>
 
         <nav class="section-nav">
             <h2>Quick Navigation</h2>
             <ul>
-                <li><a href="#series-performances">Understanding Series and Performances</a></li>
-                <li><a href="#event-descriptions">Event Descriptions</a></li>
-                <li><a href="#ticket-types">Setting Up Ticket Types</a></li>
-                <li><a href="#pricing-strategy">Pricing Strategy</a></li>
-                <li><a href="#checklist">Setup Checklist</a></li>
+                <li><a href="#series-setup">Series Setup Checklist</a></li>
+                <li><a href="#performance-setup">Performance Setup Checklist</a></li>
+                <li><a href="#ticket-setup">Ticket Setup Checklist</a></li>
+                <li><a href="#banner-requirements">Banner Requirements</a></li>
+                <li><a href="#pricing-examples">Pricing Examples</a></li>
             </ul>
         </nav>
 
-        <h2 id="series-performances">Understanding Series and Performances</h2>
-        <p>In QRTick, all events are organized using a "Series and Performances" model:</p>
-        
-        <div class="tip-box">
-            <strong>Key Concept:</strong> A "Series" is the overall event container, while "Performances" are the individual occurrences within that series.
-        </div>
-        
-        <h3>Series vs. Performances</h3>
-        <ul>
-            <li><strong>Series:</strong> The overall event concept or program (e.g., "Summer Concert Series" or "Annual Charity Gala")</li>
-            <li><strong>Performances:</strong> Individual occurrences within the series, each with its own date, time, and potentially unique details</li>
-            <li><strong>Single Event:</strong> For a one-time event, you'll create a series with just one performance</li>
-        </ul>
-
-        <h3>Examples</h3>
-        <ul>
-            <li><strong>Multiple Performances:</strong> A theater production running for several nights would be a series with multiple performances (one for each night)</li>
-            <li><strong>Single Performance:</strong> A one-day charity fundraiser would be a series with a single performance</li>
-        </ul>
-
-        <h2 id="event-descriptions">Event Descriptions</h2>
-        
-        <h3>Series Description</h3>
-        <p>The series description provides general information about your overall event:</p>
-        <ul>
-            <li>Overall concept and purpose of the event</li>
-            <li>General information that applies to all performances</li>
-            <li>Host organization or venue details</li>
-            <li>Any overarching themes or information</li>
-        </ul>
-
-        <h3>Event Banner</h3>
-        <p>Each event series requires a banner image:</p>
-        <ul>
-            <li><strong>Required ratio:</strong> 1.2:1 (width:height), such as 600 × 500 pixels</li>
-            <li><strong>Content:</strong> Keep it simple - the event name and date range is usually sufficient</li>
-            <li><strong>Design:</strong> Since the banner will be accompanied by event information text, avoid cluttering it with too much detail</li>
-        </ul>
-        
-        <div style="margin: 1.5rem 0;">
-            <p><strong>Example Banner:</strong></p>
-            <img src="https://wherewekeepourimages.qrtick.com/series/3a3d4c8e-2e9a-4f7b-8d36-a8b7c1e9d5f3/3195cf79-8323-49fd-9446-12d5829333a8_banner.jpg" alt="Example Event Banner" style="max-width: 100%; border-radius: 8px; border: 1px solid #EEEEEE;">
-            <p style="font-size: 0.9rem; color: #666; margin-top: 0.5rem;">Notice how this banner includes just the essential information while maintaining visual appeal.</p>
-        </div>
-
-        <div class="tip-box">
-            <strong>Pro Tip:</strong> The series description appears on all performance pages, so include information relevant to all performances here.
-        </div>
-
-        <h3>Performance Descriptions (Optional)</h3>
-        <p>For each performance, you can optionally add a specific description:</p>
-        <ul>
-            <li>Unique details for this specific date/time</li>
-            <li>Special guests or features for this performance only</li>
-            <li>Any variations from the standard series format</li>
-            <li>Performance-specific instructions or requirements</li>
-        </ul>
-
-        <h2 id="ticket-types">Setting Up Ticket Types</h2>
-        
-        <h3>Single vs. Multiple Ticket Types</h3>
-        <p>You'll need to decide whether your event requires a single ticket type or multiple types:</p>
-        
-        <h4>Single Ticket Type</h4>
-        <ul>
-            <li>Simplest approach - all attendees pay the same price</li>
-            <li>Typically labeled as "General Admission"</li>
-            <li>Best for straightforward events with uniform access</li>
-        </ul>
-
-        <h4>Multiple Ticket Types</h4>
-        <ul>
-            <li>Different pricing tiers based on benefits, timing, or attendee categories</li>
-            <li>Common examples include:</li>
-            <ul>
-                <li><strong>Early Bird:</strong> Discounted tickets available before a certain date</li>
-                <li><strong>VIP:</strong> Premium tickets with additional benefits</li>
-                <li><strong>Standard/Regular:</strong> Normal admission tickets</li>
-                <li><strong>Age-Based:</strong> Different prices for adults, children, seniors, etc.</li>
-                <li><strong>Group Packages:</strong> Discounted rates for multiple tickets</li>
+        <section class="section-card" id="series-setup">
+            <h3>1. Series Setup Checklist</h3>
+            <div class="tip-box">
+                <div class="tip-header">What is a Series?</div>
+                <p>A "Series" is the overall event container (e.g., "Summer Concert Series" or "Annual Charity Gala"). For a one-time event, you'll create a series with just one performance.</p>
+            </div>
+            
+            <ul class="checklist">
+                <li><strong>Series Name:</strong> Create a clear, descriptive title for your overall event</li>
+                <li><strong>Series Description:</strong> Write a compelling description that explains your event's purpose, theme, and general information that applies to all performances</li>
+                <li><strong>Banner Image:</strong> Prepare a banner with 1.2:1 ratio (e.g., 600 × 500 pixels) showing event name and date range</li>
+                <li><strong>Host Details:</strong> Include organization name and contact information</li>
+                <li><strong>Series Type:</strong> Decide if this is a multi-performance series or a single event</li>
             </ul>
-        </ul>
+        </section>
 
-        <div class="tip-box">
-            <strong>Important:</strong> Each ticket type must have a clear, descriptive name that communicates its value to potential attendees.
-        </div>
-
-        <h2 id="pricing-strategy">Pricing Strategy</h2>
-        
-        <h3>Setting Base Prices</h3>
-        <p>For each ticket type, you'll need to set a base price:</p>
-        <ul>
-            <li>Consider your costs, target audience, and event value</li>
-            <li>Research comparable events in your area</li>
-            <li>Account for QRTick processing fees in your pricing strategy</li>
-        </ul>
-
-        <h3>Performance-Specific Pricing</h3>
-        <p>You can optionally set different prices for specific performances:</p>
-        <ul>
-            <li>Higher prices for premium dates (weekends, holidays)</li>
-            <li>Discounted prices for less popular times (weekday matinees)</li>
-            <li>Special promotional pricing for specific performances</li>
-        </ul>
-
-        <p>Example pricing structure for a concert series:</p>
-        <table style="width:100%; border-collapse: collapse; margin: 1rem 0;">
-            <thead style="background-color: #EEEEEE;">
-                <tr>
-                    <th style="border: 1px solid #ddd; padding: 8px; text-align: left;">Ticket Type</th>
-                    <th style="border: 1px solid #ddd; padding: 8px; text-align: left;">Base Price</th>
-                    <th style="border: 1px solid #ddd; padding: 8px; text-align: left;">Friday Night Performance</th>
-                    <th style="border: 1px solid #ddd; padding: 8px; text-align: left;">Saturday Night Performance</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td style="border: 1px solid #ddd; padding: 8px;">Early Bird</td>
-                    <td style="border: 1px solid #ddd; padding: 8px;">$25.00</td>
-                    <td style="border: 1px solid #ddd; padding: 8px;">$25.00</td>
-                    <td style="border: 1px solid #ddd; padding: 8px;">$25.00</td>
-                </tr>
-                <tr>
-                    <td style="border: 1px solid #ddd; padding: 8px;">General Admission</td>
-                    <td style="border: 1px solid #ddd; padding: 8px;">$35.00</td>
-                    <td style="border: 1px solid #ddd; padding: 8px;">$35.00</td>
-                    <td style="border: 1px solid #ddd; padding: 8px;">$40.00</td>
-                </tr>
-                <tr>
-                    <td style="border: 1px solid #ddd; padding: 8px;">VIP</td>
-                    <td style="border: 1px solid #ddd; padding: 8px;">$75.00</td>
-                    <td style="border: 1px solid #ddd; padding: 8px;">$75.00</td>
-                    <td style="border: 1px solid #ddd; padding: 8px;">$85.00</td>
-                </tr>
-            </tbody>
-        </table>
-
-        <h2 id="checklist">Event Setup Checklist</h2>
-        <div class="checklist">
-            <ul>
-                <li>Determine if your event is a series with multiple performances or a single event</li>
-                <li>Create a compelling series description that explains your overall event</li>
-                <li>Prepare a banner image with 1.2:1 ratio (e.g., 600 × 500 pixels)</li>
-                <li>For each performance, decide if you need a specific description</li>
-                <li>Determine how many ticket types you need</li>
-                <li>Name each ticket type clearly (e.g., "General Admission", "VIP", "Early Bird")</li>
-                <li>Set base prices for each ticket type</li>
-                <li>Decide if any performances need special pricing</li>
-                <li>Set ticket availability dates and quantities</li>
-                <li>Review all settings before publishing</li>
+        <section class="section-card" id="performance-setup">
+            <h3>2. Performance Setup Checklist</h3>
+            <div class="tip-box">
+                <div class="tip-header">What are Performances?</div>
+                <p>"Performances" are individual occurrences within a series, each with its own date, time, and potentially unique details. A one-day event has just one performance.</p>
+            </div>
+            
+            <ul class="checklist">
+                <li><strong>Date and Time:</strong> Set the exact date and start time for each performance</li>
+                <li><strong>Venue Details:</strong> Specify location, address, and any access instructions</li>
+                <li><strong>Performance Description (Optional):</strong> Add unique details specific to this date/time only</li>
+                <li><strong>Special Instructions:</strong> Note any performance-specific requirements (e.g., "Doors open 30 minutes early")</li>
+                <li><strong>Capacity:</strong> Set the maximum number of attendees (if applicable)</li>
             </ul>
-        </div>
+        </section>
+
+        <section class="section-card" id="ticket-setup">
+            <h3>3. Ticket Setup Checklist</h3>
+            <div class="tip-box">
+                <div class="tip-header">Ticket Type Decision</div>
+                <p>Decide whether your event needs a single ticket type ("General Admission") or multiple types (Early Bird, VIP, etc.).</p>
+            </div>
+            
+            <ul class="checklist">
+                <li><strong>Ticket Type Names:</strong> Create clear, descriptive names for each ticket type (e.g., "General Admission", "VIP", "Early Bird")</li>
+                <li><strong>Ticket Descriptions:</strong> Explain what each ticket type includes and any special benefits</li>
+                <li><strong>Base Pricing:</strong> Set standard prices for each ticket type</li>
+                <li><strong>Performance-Specific Pricing:</strong> Decide if any performances need special pricing (e.g., higher prices for weekend shows)</li>
+                <li><strong>Availability Dates:</strong> Set when each ticket type goes on sale and when sales end</li>
+                <li><strong>Quantity Limits:</strong> Decide if any ticket types have limited availability</li>
+            </ul>
+        </section>
+
+        <section class="section-card" id="banner-requirements">
+            <h3>4. Banner Requirements</h3>
+            <ul class="checklist">
+                <li><strong>Required Ratio:</strong> 1.2:1 (width:height), such as 600 × 500 pixels</li>
+                <li><strong>Content:</strong> Include event name and date range only (keep it simple)</li>
+                <li><strong>Design:</strong> Use clear, readable text and QRTick brand colors when possible</li>
+                <li><strong>File Format:</strong> JPG or PNG format, optimized for web</li>
+            </ul>
+            
+            <div style="margin: 1.5rem 0;">
+                <p><strong>Example Banner:</strong></p>
+                <img src="https://wherewekeepourimages.qrtick.com/series/3a3d4c8e-2e9a-4f7b-8d36-a8b7c1e9d5f3/3195cf79-8323-49fd-9446-12d5829333a8_banner.jpg" alt="Example Event Banner" style="max-width: 100%; border-radius: 8px; border: 1px solid #EEEEEE;">
+                <p style="font-size: 0.9rem; color: #666; margin-top: 0.5rem;">Notice how this banner includes just the essential information while maintaining visual appeal.</p>
+            </div>
+        </section>
+
+        <section class="section-card" id="pricing-examples">
+            <h3>5. Pricing Examples</h3>
+            <p>Sample pricing structure for a concert series with multiple performances:</p>
+            
+            <table style="width:100%; border-collapse: collapse; margin: 1rem 0;">
+                <thead style="background-color: #EEEEEE;">
+                    <tr>
+                        <th style="border: 1px solid #ddd; padding: 8px; text-align: left;">Ticket Type</th>
+                        <th style="border: 1px solid #ddd; padding: 8px; text-align: left;">Base Price</th>
+                        <th style="border: 1px solid #ddd; padding: 8px; text-align: left;">Friday Night</th>
+                        <th style="border: 1px solid #ddd; padding: 8px; text-align: left;">Saturday Night</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td style="border: 1px solid #ddd; padding: 8px;">Early Bird</td>
+                        <td style="border: 1px solid #ddd; padding: 8px;">$25.00</td>
+                        <td style="border: 1px solid #ddd; padding: 8px;">$25.00</td>
+                        <td style="border: 1px solid #ddd; padding: 8px;">$25.00</td>
+                    </tr>
+                    <tr>
+                        <td style="border: 1px solid #ddd; padding: 8px;">General Admission</td>
+                        <td style="border: 1px solid #ddd; padding: 8px;">$35.00</td>
+                        <td style="border: 1px solid #ddd; padding: 8px;">$35.00</td>
+                        <td style="border: 1px solid #ddd; padding: 8px;">$40.00</td>
+                    </tr>
+                    <tr>
+                        <td style="border: 1px solid #ddd; padding: 8px;">VIP</td>
+                        <td style="border: 1px solid #ddd; padding: 8px;">$75.00</td>
+                        <td style="border: 1px solid #ddd; padding: 8px;">$75.00</td>
+                        <td style="border: 1px solid #ddd; padding: 8px;">$85.00</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="tip-box">
+                <div class="tip-header">Pricing Strategy Tips</div>
+                <ul style="margin-bottom: 0;">
+                    <li>Consider your costs, target audience, and event value</li>
+                    <li>Research comparable events in your area</li>
+                    <li>Account for QRTick processing fees in your pricing</li>
+                    <li>Consider offering early bird discounts to drive early sales</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="section-card">
+            <h3>Final Review Checklist</h3>
+            <ul class="checklist">
+                <li>Verify all series information is complete and accurate</li>
+                <li>Confirm all performance dates, times, and locations</li>
+                <li>Check that all ticket types have clear descriptions and pricing</li>
+                <li>Ensure banner image meets size requirements and looks professional</li>
+                <li>Preview how your event will appear to customers before publishing</li>
+            </ul>
+        </section>
 
         <div class="cta-section">
             <h3>Ready to Set Up Your Event?</h3>
