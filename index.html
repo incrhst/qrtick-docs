@@ -92,6 +92,65 @@
         h2 {
             margin-top: 2.5rem;
         }
+        .overview-section {
+            margin: 2.5rem 0;
+            padding: 2rem;
+            background: #fff;
+            border-radius: 16px;
+            box-shadow: 0 2px 12px rgba(61, 57, 57, 0.07);
+        }
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        .feature-card {
+            background: #FFF9EA;
+            border-radius: 12px;
+            padding: 1.5rem;
+            box-shadow: 0 1px 4px rgba(61, 57, 57, 0.04);
+        }
+        .feature-card h3 {
+            color: #3D3939;
+            margin-top: 0;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+        .feature-card ul {
+            margin: 0;
+            padding-left: 1.5rem;
+        }
+        .feature-card li {
+            margin-bottom: 0.5rem;
+        }
+        .target-market, .advantages {
+            margin: 2rem 0;
+        }
+        .target-market h3, .advantages h3 {
+            color: #3D3939;
+            margin-bottom: 0.75rem;
+        }
+        .cta-container {
+            text-align: center;
+            margin: 2.5rem 0 1rem 0;
+        }
+        .primary-cta {
+            display: inline-block;
+            background-color: #FDC230;
+            color: #3D3939;
+            padding: 1rem 2rem;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: background-color 0.2s, transform 0.2s;
+            box-shadow: 0 2px 6px rgba(253, 194, 48, 0.3);
+        }
+        .primary-cta:hover {
+            background-color: #e5af2b;
+            transform: translateY(-2px);
+        }
         .footer {
             margin-top: 3rem;
             padding: 2rem 1rem 1rem 1rem;
@@ -125,6 +184,70 @@
     <main class="container">
         <h1>Digital Ticketing for Jamaican Fundraisers</h1>
         <p>Qrtick handles everything from setup to check-in, with proceeds directly deposited to your bank account.</p>
+
+        <div class="overview-section">
+            <h2>What QRTick Does</h2>
+            <p>QRTick is Jamaica's premier digital ticketing and event management platform designed specifically for fundraisers and event organizers.</p>
+            
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <h3>Digital Ticketing</h3>
+                    <ul>
+                        <li>QR code-based e-tickets</li>
+                        <li>Multiple ticket types</li>
+                        <li>Mobile-optimized distribution</li>
+                        <li>Offline scanning capability</li>
+                    </ul>
+                </div>
+                
+                <div class="feature-card">
+                    <h3>Payment Processing</h3>
+                    <ul>
+                        <li>Secure online payments</li>
+                        <li>Direct bank deposits</li>
+                        <li>JMD transaction support</li>
+                        <li>Weekly payment settlements</li>
+                    </ul>
+                </div>
+                
+                <div class="feature-card">
+                    <h3>Event Management</h3>
+                    <ul>
+                        <li>Multi-device check-in</li>
+                        <li>Real-time attendance tracking</li>
+                        <li>Email campaign integration</li>
+                        <li>Custom event landing pages</li>
+                    </ul>
+                </div>
+                
+                <div class="feature-card">
+                    <h3>Additional Services</h3>
+                    <ul>
+                        <li>Professional event staffing</li>
+                        <li>Digital program creation</li>
+                        <li>RSVP management</li>
+                        <li>Analytics and reporting</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="target-market">
+                <h3>Perfect For</h3>
+                <p>Fundraising events • Charity organizations • Conferences • Concerts • Theater productions • Community events</p>
+            </div>
+            
+            <div class="advantages">
+                <h3>Why Choose QRTick?</h3>
+                <p>✓ Jamaica-made solution with local support<br>
+                ✓ Environmentally friendly (eliminates paper waste)<br>
+                ✓ Guaranteed launch within 5 business days<br>
+                ✓ Complete ticketing solution from setup to check-in</p>
+            </div>
+            
+            <div class="cta-container">
+                <a href="https://qrtick.com" class="primary-cta" target="_blank" rel="noopener noreferrer">Get Started with QRTick Today →</a>
+            </div>
+        </div>
 
         <div class="cta-section">
             <h2>Documentation</h2>
