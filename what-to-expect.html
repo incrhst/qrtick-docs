@@ -229,6 +229,64 @@
             color: #FDC230;
             text-decoration: none;
         }
+
+        /* Anchor link styles */
+        .header-with-anchor {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            position: relative;
+        }
+
+        .copy-anchor {
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 4px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0.3;
+            transition: opacity 0.2s, transform 0.1s;
+            color: inherit;
+            border-radius: 4px;
+        }
+
+        .copy-anchor:hover {
+            opacity: 1;
+            background-color: rgba(0, 0, 0, 0.05);
+        }
+
+        .copy-anchor:active {
+            transform: scale(0.9);
+        }
+
+        .copy-anchor svg {
+            width: 18px;
+            height: 18px;
+        }
+
+        .toast {
+            position: fixed;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #3D3939;
+            color: #FFF9EA;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            z-index: 1000;
+            opacity: 0;
+            transition: opacity 0.3s;
+            pointer-events: none;
+        }
+
+        .toast.show {
+            opacity: 1;
+        }
     </style>
 </head>
 
@@ -250,7 +308,15 @@
             outlines exactly what you can expect as you transition to our "digital-first" workflow.</p>
 
         <div class="feature-box">
-            <h3>1. Pre-Event: Zero-Inventory Setup</h3>
+            <h3 id="pre-event" class="header-with-anchor">1. Pre-Event: Zero-Inventory Setup
+                <button class="copy-anchor" title="Copy link to this section" onclick="copyAnchor('pre-event')">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+                        <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+                    </svg>
+                </button>
+            </h3>
             <p>Forget the days of counting ticket books and coordinating pickup points.</p>
             <ul>
                 <li><strong>Service Agreement & Validation:</strong> To get started, we'll have you sign a simple
@@ -267,7 +333,16 @@
         </div>
 
         <div class="feature-box">
-            <h3>2. The Attendee Experience: Frictionless Delivery</h3>
+            <h3 id="attendee-experience" class="header-with-anchor">2. The Attendee Experience: Frictionless Delivery
+                <button class="copy-anchor" title="Copy link to this section"
+                    onclick="copyAnchor('attendee-experience')">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+                        <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+                    </svg>
+                </button>
+            </h3>
             <p>We’ve removed the "Where is my ticket?" anxiety for your guests.</p>
             <ul>
                 <li><strong>Immediate Access:</strong> Upon a successful checkout, the attendee’s unique QR ticket is
@@ -282,7 +357,15 @@
         </div>
 
         <div class="feature-box">
-            <h3>3. Gate Management: High-Speed Entry</h3>
+            <h3 id="gate-management" class="header-with-anchor">3. Gate Management: High-Speed Entry
+                <button class="copy-anchor" title="Copy link to this section" onclick="copyAnchor('gate-management')">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+                        <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+                    </svg>
+                </button>
+            </h3>
             <p>Your staff should be hosts, not paperwork experts.</p>
             <ul>
                 <li><strong>Scan-and-Go:</strong> Your staff can turn any smartphone into a secure scanner simply by
@@ -297,7 +380,15 @@
         </div>
 
         <div class="feature-box">
-            <h3>4. Post-Event: Automated Payouts & Insights</h3>
+            <h3 id="post-event" class="header-with-anchor">4. Post-Event: Automated Payouts & Insights
+                <button class="copy-anchor" title="Copy link to this section" onclick="copyAnchor('post-event')">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+                        <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+                    </svg>
+                </button>
+            </h3>
             <p>No more staying up all night counting cash or chasing sub-sellers for "ticket money."</p>
             <ul>
                 <li><strong>Transparent Reporting:</strong> Access live sales data at any time. You’ll know exactly how
@@ -312,26 +403,62 @@
             <p>You control the dial on your costs based on the level of support you need.</p>
 
             <div class="cost-item">
-                <h3>Gate Service & Concierge Scanning <span class="price-tag">10,000 - 100,000 JMD</span></h3>
+                <h3 id="gate-service" class="header-with-anchor">Gate Service & Concierge Scanning <span
+                        class="price-tag">10,000 - 100,000 JMD</span>
+                    <button class="copy-anchor" title="Copy link to this section" onclick="copyAnchor('gate-service')">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+                            <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+                        </svg>
+                    </button>
+                </h3>
                 <p>Need a professional team at the door? Depending on your team size requirements and the number of
                     hours needed, we can provide trained staff to handle concierge scanning and entry management.</p>
             </div>
 
             <div class="cost-item">
-                <h3>Box Office / Day-of Sales Support <span class="price-tag">Starts at ~10,000 JMD</span></h3>
-                <p>We can manage on-site ticket sales on the day of the event or support your physical box office
-                    operations. <strong>We can also provide card machines for secure credit/debit card transactions at
-                        the door.</strong></p>
+                <h3 id="pos-service" class="header-with-anchor">"On the Spot" POS Service <span class="price-tag">10,000
+                        JMD per night + 10% per transaction</span>
+                    <button class="copy-anchor" title="Copy link to this section" onclick="copyAnchor('pos-service')">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+                            <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+                        </svg>
+                    </button>
+                </h3>
+                <p>We provide a complete "On the Spot" POS service for your event-day sales. This can be operated by
+                    your own team, or we can provide one of our team members to manage it for you. We also provide
+                    secure card machines for credit/debit card transactions at the door.</p>
             </div>
 
             <div class="cost-item">
-                <h3>Setup & Management Service <span class="price-tag">10,000 JMD</span></h3>
+                <h3 id="setup-service" class="header-with-anchor">Setup & Management Service <span
+                        class="price-tag">10,000 JMD</span>
+                    <button class="copy-anchor" title="Copy link to this section" onclick="copyAnchor('setup-service')">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+                            <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+                        </svg>
+                    </button>
+                </h3>
                 <p>Prefer a hands-off approach? We can fully set up and manage your digital dashboard, event, or season
                     configuration for you.</p>
             </div>
 
             <div class="cost-item">
-                <h3>Listed Event (Homepage Feature) <span class="price-tag">10,000 - 100,000 JMD/month</span></h3>
+                <h3 id="listed-event" class="header-with-anchor">Listed Event (Homepage Feature) <span
+                        class="price-tag">10,000 - 100,000 JMD/month</span>
+                    <button class="copy-anchor" title="Copy link to this section" onclick="copyAnchor('listed-event')">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+                            <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+                        </svg>
+                    </button>
+                </h3>
                 <p>By default, your event is <strong>unlisted</strong>—it's live and fully functional, but only
                     accessible via your direct link or QR code. This is ideal for private events or promoters who handle
                     their own marketing.</p>
@@ -396,6 +523,24 @@
         &copy; 2024 QRTick. All rights reserved.<br>
         <a href="mailto:service@qrtick.com" class="footer-link">Contact Support</a>
     </footer>
+    <div id="toast" class="toast">Link copied to clipboard!</div>
+
+    <script>
+        function copyAnchor(id) {
+            const url = window.location.origin + window.location.pathname + '#' + id;
+            navigator.clipboard.writeText(url).then(() => {
+                showToast();
+            });
+        }
+
+        function showToast() {
+            const toast = document.getElementById('toast');
+            toast.classList.add('show');
+            setTimeout(() => {
+                toast.classList.remove('show');
+            }, 2000);
+        }
+    </script>
 </body>
 
 </html>
