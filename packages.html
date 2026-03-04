@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QRTick Pricing - Choose Your QRTick Experience</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="./icon-32x32.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="./icon-192x192.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="./icon-180x180.png">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        :root {
+            --black: #3D3939;
+            --white: #FFF9EA;
+            --gold: #FDC230;
+            --gold-light: #fedd85;
+            --mid: #5a5555;
+            --muted: #8a8484;
+            --rule: #EEEEEE;
+            --light-gray: #EEEEEE;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: var(--white);
+            color: var(--black);
+            font-size: 15px;
+            line-height: 1.6;
+        }
+
+        /* ─── HEADER ─── */
+        .header {
+            padding: 2rem;
+            text-align: center;
+            background-color: var(--black);
+            box-shadow: 0 2px 4px rgba(61, 57, 57, 0.1);
+        }
+
+        .logo {
+            max-width: 200px;
+            height: auto;
+        }
+
+        .logo-link {
+            display: inline-block;
+            transition: opacity 0.2s;
+        }
+
+        .logo-link:hover {
+            opacity: 0.8;
+        }
+
+        .home-link {
+            display: block;
+            margin-top: 1rem;
+            color: var(--gold);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .home-link:hover {
+            text-decoration: underline;
+        }
+
+        header.pricing-header {
+            padding: 72px 40px 48px;
+            text-align: center;
+            border-bottom: 1px solid var(--rule);
+            background: var(--white);
+        }
+
+        .eyebrow {
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 16px;
+        }
+
+        header.pricing-header h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: clamp(28px, 5vw, 46px);
+            line-height: 1.15;
+            color: var(--black);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* ─── NAVIGATION ─── */
+        .nav-bar {
+            max-width: 1100px;
+            margin: 2rem auto 0 auto;
+            padding: 0 40px;
+        }
+
+        .back-link {
+            display: inline-block;
+            color: var(--gold);
+            text-decoration: none;
+            font-weight: 500;
+            background-color: var(--black);
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            font-size: 0.9rem;
+        }
+
+        .back-link:hover {
+            background-color: #555;
+        }
+
+        /* ─── TIERS ─── */
+        .tiers {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 0;
+            border-bottom: none;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .tier {
+            padding: 48px 36px;
+            border-bottom: 1px solid var(--rule);
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+        }
+
+        .tier:last-child {
+            border-bottom: none;
+        }
+
+        .tier.featured {
+            background: var(--black);
+            color: var(--white);
+            border-bottom-color: #5a5555;
+        }
+
+        .tier-badge {
+            font-size: 10px;
+            font-weight: 600;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: var(--muted);
+            margin-bottom: 8px;
+        }
+
+        .tier.featured .tier-badge {
+            color: var(--gold);
+        }
+
+        .tier-name {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 26px;
+            margin-bottom: 6px;
+        }
+
+        .tier-tagline {
+            font-size: 13px;
+            color: var(--muted);
+            margin-bottom: 28px;
+            min-height: 38px;
+        }
+
+        .tier.featured .tier-tagline {
+            color: #c8c0b8;
+        }
+
+        .tier-price {
+            font-size: 28px;
+            font-weight: 600;
+            margin-bottom: 4px;
+            letter-spacing: -0.02em;
+        }
+
+        .tier-price-note {
+            font-size: 12px;
+            color: var(--muted);
+            margin-bottom: 32px;
+        }
+
+        .tier.featured .tier-price-note {
+            color: #b0a8a0;
+        }
+
+        .tier-divider {
+            border: none;
+            border-top: 1px solid var(--rule);
+            margin-bottom: 28px;
+        }
+
+        .tier.featured .tier-divider {
+            border-color: #5a5555;
+        }
+
+        .tier-features {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            flex: 1;
+        }
+
+        .tier-features li {
+            font-size: 13.5px;
+            padding-left: 20px;
+            position: relative;
+            color: #333;
+        }
+
+        .tier.featured .tier-features li {
+            color: #e8e0d8;
+        }
+
+        .tier-features li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: var(--gold);
+            font-size: 12px;
+        }
+
+        .tier-cta {
+            margin-top: 36px;
+            padding: 13px 20px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            border: 1.5px solid var(--black);
+            background: transparent;
+            color: var(--black);
+            cursor: pointer;
+            transition: all 0.2s ease;
+            text-align: center;
+            text-decoration: none;
+        }
+
+        .tier.featured .tier-cta {
+            border-color: var(--gold);
+            background: var(--gold);
+            color: var(--black);
+        }
+
+        .tier-cta:hover {
+            background: var(--gold);
+            color: var(--black);
+            border-color: var(--gold);
+        }
+
+        .tier.featured .tier-cta:hover {
+            background: var(--gold);
+            color: var(--black);
+            border-color: var(--gold);
+        }
+
+        /* ─── ADD-ONS ─── */
+        .addons-section {
+            padding: 64px 40px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .section-label {
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 12px;
+        }
+
+        .section-title {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 28px;
+            margin-bottom: 48px;
+        }
+
+        .addon-group {
+            margin-bottom: 48px;
+        }
+
+        .addon-group-title {
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: var(--muted);
+            border-top: 1px solid var(--rule);
+            padding-top: 20px;
+            margin-bottom: 20px;
+        }
+
+        .addon-items {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+        }
+
+        .addon-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            padding: 18px 0;
+            border-bottom: 1px solid var(--rule);
+            gap: 24px;
+        }
+
+        .addon-left {
+            flex: 1;
+        }
+
+        .addon-name {
+            font-weight: 600;
+            font-size: 14px;
+            margin-bottom: 3px;
+        }
+
+        .addon-desc {
+            font-size: 13px;
+            color: var(--muted);
+        }
+
+        .addon-price {
+            font-weight: 600;
+            font-size: 14px;
+            white-space: nowrap;
+            color: var(--black);
+            padding-top: 2px;
+        }
+
+        /* ─── PAYMENT ─── */
+        .payment-section {
+            background: var(--black);
+            color: var(--white);
+            padding: 64px 40px;
+        }
+
+        .payment-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 64px;
+            align-items: start;
+        }
+
+        .payment-section .section-label {
+            color: var(--gold);
+        }
+
+        .payment-section .section-title {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 28px;
+            color: var(--white);
+            margin-bottom: 32px;
+        }
+
+        .payment-terms {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        .payment-term h4 {
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            color: var(--gold);
+            margin-bottom: 6px;
+        }
+
+        .payment-term p {
+            font-size: 14px;
+            color: #c8c0b8;
+            line-height: 1.7;
+        }
+
+        .invoice-cta {
+            background: #2e2a2a;
+            border: 1px solid #5a5555;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .invoice-cta p {
+            font-size: 14.5px;
+            color: #c8c0b8;
+            line-height: 1.7;
+        }
+
+        .invoice-cta p strong {
+            color: var(--white);
+        }
+
+        .cta-btn {
+            display: inline-block;
+            padding: 14px 28px;
+            background: var(--gold);
+            color: var(--black);
+            font-family: 'Montserrat', sans-serif;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            border: none;
+            cursor: pointer;
+            transition: background 0.2s ease;
+            text-align: center;
+            text-decoration: none;
+        }
+
+        .cta-btn:hover {
+            background: var(--gold-light);
+        }
+
+        .footer {
+            padding: 2rem;
+            background: var(--black);
+            text-align: center;
+            color: #EEEEEE;
+        }
+
+        .footer-link {
+            color: var(--gold);
+            text-decoration: none;
+        }
+
+        .footer-logo {
+            max-width: 120px;
+            margin-bottom: 0.5rem;
+        }
+
+        /* ─── RESPONSIVE ─── */
+        @media (max-width: 900px) {
+            .payment-inner {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+        }
+
+        @media (max-width: 600px) {
+
+            header.pricing-header,
+            .addons-section,
+            .payment-section {
+                padding-left: 24px;
+                padding-right: 24px;
+            }
+
+            .tier {
+                padding: 36px 24px;
+            }
+
+            .addon-item {
+                flex-direction: column;
+                gap: 6px;
+            }
+
+            .nav-bar {
+                padding: 0 24px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- SITE HEADER -->
+    <header class="header">
+        <a href="https://qrtick.com" class="logo-link" target="_blank" rel="noopener noreferrer">
+            <img src="./qrtick-logo-alt.svg" alt="Qrtick Logo" class="logo">
+        </a>
+        <a href="https://qrtick.com" class="home-link" target="_blank" rel="noopener noreferrer">Visit Qrtick.com →</a>
+    </header>
+
+    <div class="nav-bar">
+        <a href="index.html" class="back-link">← Back to Documentation</a>
+    </div>
+
+    <!-- PRICING HEADER -->
+    <header class="pricing-header">
+        <p class="eyebrow">QRTick Pricing</p>
+        <h1>Choose Your QRTick Experience</h1>
+    </header>
+
+    <!-- TIERS -->
+    <div class="tiers">
+
+        <div class="tier">
+            <p class="tier-badge">Digital Only</p>
+            <h2 class="tier-name">Digital Core</h2>
+            <p class="tier-tagline">Best for DIY &amp; private events</p>
+            <p class="tier-price">$10,000 <span style="font-size:16px;font-weight:400;">JMD</span></p>
+            <p class="tier-price-note">Platform fee withheld from sales</p>
+            <hr class="tier-divider">
+            <ul class="tier-features">
+                <li>Digital Box Office &amp; QR Links</li>
+                <li>Instant Email Ticket Delivery</li>
+                <li>Live Sales &amp; Entry Insights</li>
+                <li>Staff "Scan-and-Go" Access</li>
+                <li>Self-Service Dashboard</li>
+            </ul>
+            <a href="https://tally.so/r/nW4Nak" class="tier-cta">Get Started</a>
+        </div>
+
+        <div class="tier featured">
+            <p class="tier-badge">Software + Hardware Provided</p>
+            <h2 class="tier-name">Professional</h2>
+            <p class="tier-tagline">Best for theatre, dance &amp; festivals</p>
+            <p class="tier-price">$45,000 <span style="font-size:16px;font-weight:400;">JMD</span></p>
+            <p class="tier-price-note">Includes everything in Digital Core</p>
+            <hr class="tier-divider">
+            <ul class="tier-features">
+                <li>Everything in Digital Core</li>
+                <li>Standard Digital Programme</li>
+                <li>Design Optimization (up to 12 pages)</li>
+                <li>Thermal Ticket Software Access</li>
+                <li>1 Professional Scanner Rental</li>
+                <li>Remote Setup &amp; Management</li>
+            </ul>
+            <a href="https://tally.so/r/nW4Nak" class="tier-cta">Get Started</a>
+        </div>
+
+        <div class="tier">
+            <p class="tier-badge">Full On-Site Logistics</p>
+            <h2 class="tier-name">Premier</h2>
+            <p class="tier-tagline">Best for high-stakes productions</p>
+            <p class="tier-price">Starting at $160,000 <span style="font-size:16px;font-weight:400;">JMD</span></p>
+            <p class="tier-price-note">Tailored to your production</p>
+            <hr class="tier-divider">
+            <ul class="tier-features">
+                <li>Everything in Professional</li>
+                <li>QRTick On-Site Gate Team</li>
+                <li>On-the-Spot POS Management</li>
+                <li>Featured Homepage Placement</li>
+            </ul>
+            <a href="https://tally.so/r/nW4Nak" class="tier-cta">Request a Quote</a>
+        </div>
+
+    </div>
+
+    <!-- ADD-ONS -->
+    <div class="addons-section">
+        <p class="section-label">Customise Any Event</p>
+        <h2 class="section-title">Add-Ons</h2>
+
+        <div class="addon-group">
+            <p class="addon-group-title">Digital Experience &amp; Marketing</p>
+            <div class="addon-items">
+                <div class="addon-item">
+                    <div class="addon-left">
+                        <p class="addon-name">Standard Mobile Programme</p>
+                        <p class="addon-desc">A clean, mobile-optimized webpage for your schedule and bios. Includes
+                            "Total Views" analytics.</p>
+                    </div>
+                    <p class="addon-price">$4,000 JMD</p>
+                </div>
+                <div class="addon-item">
+                    <div class="addon-left">
+                        <p class="addon-name">Programme Design Optimization</p>
+                        <p class="addon-desc">We transform your PDF (up to 12 pages) into a responsive web experience
+                            that matches your brand feel.</p>
+                    </div>
+                    <p class="addon-price">$20,000 JMD</p>
+                </div>
+                <div class="addon-item">
+                    <div class="addon-left">
+                        <p class="addon-name">Featured Homepage Listing</p>
+                        <p class="addon-desc">Boost visibility on the QRTick homepage. Pricing based on placement tier
+                            and duration.</p>
+                    </div>
+                    <p class="addon-price">$10,000–$100,000 JMD/mo</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="addon-group">
+            <p class="addon-group-title">Physical Entry &amp; Hardware</p>
+            <div class="addon-items">
+                <div class="addon-item">
+                    <div class="addon-left">
+                        <p class="addon-name">Thermal Ticket Roll</p>
+                        <p class="addon-desc">Budget-friendly, receipt-style tickets printed on-site. Hardware and
+                            software provided.</p>
+                    </div>
+                    <p class="addon-price">$7,500 JMD / 300</p>
+                </div>
+                <div class="addon-item">
+                    <div class="addon-left">
+                        <p class="addon-name">Premium Card Stock</p>
+                        <p class="addon-desc">High-quality monochrome tickets with perforated stubs and sequential
+                            numbering.</p>
+                    </div>
+                    <p class="addon-price">$12,500 JMD / 300</p>
+                </div>
+                <div class="addon-item">
+                    <div class="addon-left">
+                        <p class="addon-name">Professional Scanner Rental</p>
+                        <p class="addon-desc">High-speed hardware for the fastest possible gate entry.</p>
+                    </div>
+                    <p class="addon-price">$2,500–$4,000 JMD</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="addon-group">
+            <p class="addon-group-title">Support &amp; Rush Services</p>
+            <div class="addon-items">
+                <div class="addon-item">
+                    <div class="addon-left">
+                        <p class="addon-name">Setup &amp; Management</p>
+                        <p class="addon-desc">We handle your digital configuration, tier setup, and dashboard
+                            management.</p>
+                    </div>
+                    <p class="addon-price">$10,000 JMD</p>
+                </div>
+                <div class="addon-item">
+                    <div class="addon-left">
+                        <p class="addon-name">Small Batch Processing</p>
+                        <p class="addon-desc">Applied to card stock orders under 100 tickets.</p>
+                    </div>
+                    <p class="addon-price">$2,500 JMD</p>
+                </div>
+                <div class="addon-item">
+                    <div class="addon-left">
+                        <p class="addon-name">Express Rush</p>
+                        <p class="addon-desc">For physical tickets required in under 48 hours.</p>
+                    </div>
+                    <p class="addon-price">$3,500 JMD</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- PAYMENT -->
+    <div class="payment-section">
+        <div class="payment-inner">
+            <div>
+                <p class="section-label">Payment Terms</p>
+                <p class="section-title">Simple, Flexible Billing</p>
+                <div class="payment-terms">
+                    <div class="payment-term">
+                        <h4>Standard Policy</h4>
+                        <p>No upfront cost. We withhold the platform and service fees directly from your ticket sales.
+                        </p>
+                    </div>
+                    <div class="payment-term">
+                        <h4>Upfront Discount</h4>
+                        <p>Save 5% on your total package and add-ons when you pay in full at the time of booking.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="invoice-cta">
+                <p>Want to see exactly what you'd pay? <strong>Ask us for a sample invoice</strong> — including your 5%
+                    upfront discount applied across your full package.</p>
+                <a href="https://tally.so/r/nW4Nak" class="cta-btn">Request a Sample Invoice</a>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <img src="./qrtick-logo-alt.svg" alt="Qrtick Logo" class="footer-logo"><br>
+        &copy; 2024 QRTick. All rights reserved.<br>
+        <a href="mailto:service@qrtick.com" class="footer-link">Contact Support</a>
+    </footer>
+
+</body>
+
+</html>
