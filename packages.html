@@ -121,17 +121,17 @@
 
         /* ─── TIERS ─── */
         .tiers {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 0;
-            border-bottom: none;
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
             max-width: 1100px;
             margin: 0 auto;
+            padding-bottom: 64px;
         }
 
         .tier {
             padding: 48px 36px;
-            border-bottom: 1px solid var(--rule);
+            border: 1px solid rgba(61, 57, 57, 0.15);
             display: grid;
             grid-template-columns: 1fr 1fr;
             grid-template-areas:
@@ -139,6 +139,7 @@
                 "cta cta";
             gap: 40px;
             align-items: start;
+            background: var(--white);
         }
 
         .tier-info {
@@ -182,7 +183,7 @@
         .tier.featured {
             background: var(--black);
             color: var(--white);
-            border-bottom-color: #5a5555;
+            border-color: var(--black);
         }
 
         .tier-badge {
