@@ -702,13 +702,17 @@
                     if (content) text += content + " ";
                 } else if (node.nodeType === 1) { // Element node
                     const tag = node.tagName;
+                    const isFaqItem = node.classList.contains('faq-item');
+                    const isFaqQuestion = node.classList.contains('faq-question');
+                    const isFaqAnswer = node.classList.contains('faq-answer');
+
                     if (tag.match(/^H[1-6]$/)) text += "\n\n" + "#".repeat(parseInt(tag[1])) + " ";
-                    if (tag === 'P') text += "\n\n";
+                    if (tag === 'P' || isFaqItem || isFaqQuestion || isFaqAnswer) text += "\n\n";
                     if (tag === 'LI') text += "\n- ";
 
                     node.childNodes.forEach(walk);
 
-                    if (tag === 'P' || tag.match(/^H[1-6]$/)) text += "\n";
+                    if (tag === 'P' || tag.match(/^H[1-6]$/) || isFaqItem || isFaqQuestion || isFaqAnswer) text += "\n";
                 }
             };
 
