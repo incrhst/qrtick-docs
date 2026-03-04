@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,28 +17,34 @@
             color: #3D3939;
             background-color: #FFF9EA;
         }
+
         .header {
             padding: 2rem;
             text-align: center;
             background-color: #3D3939;
             box-shadow: 0 2px 4px rgba(61, 57, 57, 0.1);
         }
+
         .logo {
             max-width: 200px;
             height: auto;
         }
+
         .logo-link {
             display: inline-block;
             transition: opacity 0.2s;
         }
+
         .logo-link:hover {
             opacity: 0.8;
         }
+
         .container {
             max-width: 800px;
             margin: 0 auto;
             padding: 2rem;
         }
+
         .back-link {
             display: inline-block;
             margin-bottom: 2rem;
@@ -45,32 +52,40 @@
             text-decoration: none;
             font-weight: 500;
         }
+
         .back-link:hover {
             text-decoration: underline;
         }
-        h1, h2 {
+
+        h1,
+        h2 {
             color: #3D3939;
         }
+
         h2 {
             margin-top: 2rem;
             padding-top: 2rem;
             border-top: 1px solid #EEEEEE;
         }
+
         .checklist {
             list-style: none;
             padding: 0;
         }
+
         .checklist li {
             margin-bottom: 1rem;
             padding-left: 2rem;
             position: relative;
         }
+
         .checklist li::before {
             content: "☐";
             position: absolute;
             left: 0;
             color: #FDC230;
         }
+
         .tip {
             background-color: #EEEEEE;
             border-left: 4px solid #FDC230;
@@ -78,6 +93,7 @@
             margin: 1rem 0;
             border-radius: 0 4px 4px 0;
         }
+
         .tip-header {
             font-weight: 600;
             color: #3D3939;
@@ -85,6 +101,7 @@
         }
     </style>
 </head>
+
 <body>
     <header class="header">
         <a href="https://qrtick.com" class="logo-link" target="_blank" rel="noopener noreferrer">
@@ -93,10 +110,11 @@
         <a href="https://qrtick.com" class="home-link" target="_blank" rel="noopener noreferrer">Visit Qrtick.com →</a>
     </header>
     <main class="container">
-        <a href="index.html" class="back-link">← Back to Documentation Home</a>
-        
+        <a href="index" class="back-link">← Back to Documentation Home</a>
+
         <h1>Event Organizer Checklist</h1>
-        <p>Use this comprehensive checklist to ensure smooth event check-in operations. We recommend reviewing this list at least one week before your event.</p>
+        <p>Use this comprehensive checklist to ensure smooth event check-in operations. We recommend reviewing this list
+            at least one week before your event.</p>
 
         <h2>Pre-Event Setup</h2>
         <ul class="checklist">
@@ -110,7 +128,8 @@
         <h2>Device Management Best Practices</h2>
         <ul class="checklist">
             <li>Download event data on all devices while online before the event</li>
-            <li>Assign specific entry points or ticket types to different devices (e.g., one phone for VIP, another for general admission)</li>
+            <li>Assign specific entry points or ticket types to different devices (e.g., one phone for VIP, another for
+                general admission)</li>
             <li>Regularly sync devices during the event if Wi-Fi or cellular data is available</li>
             <li>Monitor the attendee list in the app to confirm check-ins are accurately recorded</li>
             <li>Test the multi-device setup beforehand for high-volume events</li>
@@ -123,7 +142,8 @@
 
         <div class="tip">
             <div class="tip-header">💡 Pro Tip: Entry Point Organization</div>
-            <p>For events with multiple entry points, create a simple map showing where each team member should be positioned. This helps prevent confusion and ensures all entrances are properly staffed.</p>
+            <p>For events with multiple entry points, create a simple map showing where each team member should be
+                positioned. This helps prevent confusion and ensures all entrances are properly staffed.</p>
         </div>
 
         <h2>Day-of-Event Checklist</h2>
@@ -137,7 +157,8 @@
 
         <div class="tip">
             <div class="tip-header">🔋 Device Preparation</div>
-            <p>Make sure all devices are fully charged and bring backup power banks. For events longer than 4 hours, we recommend having at least one backup device ready.</p>
+            <p>Make sure all devices are fully charged and bring backup power banks. For events longer than 4 hours, we
+                recommend having at least one backup device ready.</p>
         </div>
 
         <h2>Post-Event Tasks</h2>
@@ -151,10 +172,12 @@
 
         <div class="tip">
             <div class="tip-header">📊 Data Verification</div>
-            <p>Always verify that your final check-in numbers match your expected attendance. If there are discrepancies, review the check-in logs while the event is still fresh in everyone's mind.</p>
+            <p>Always verify that your final check-in numbers match your expected attendance. If there are
+                discrepancies, review the check-in logs while the event is still fresh in everyone's mind.</p>
         </div>
 
-        <p>If you need assistance with any of these steps, please contact us at <a href="mailto:service@qrtick.com">service@qrtick.com</a>.</p>
+        <p>If you need assistance with any of these steps, please contact us at <a
+                href="mailto:service@qrtick.com">service@qrtick.com</a>.</p>
     </main>
     <footer class="footer">
         <img src="./qrtick-logo-alt.svg" alt="Qrtick Logo" class="footer-logo"><br>
@@ -162,4 +185,5 @@
         <a href="mailto:service@qrtick.com" class="footer-link">Contact Support</a>
     </footer>
 </body>
-</html> 
+
+</html>

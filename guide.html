@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,28 +14,34 @@
             color: #3D3939;
             background-color: #FFF9EA;
         }
+
         .header {
             padding: 2rem;
             text-align: center;
             background-color: #3D3939;
             box-shadow: 0 2px 4px rgba(61, 57, 57, 0.1);
         }
+
         .logo {
             max-width: 200px;
             height: auto;
         }
+
         .logo-link {
             display: inline-block;
             transition: opacity 0.2s;
         }
+
         .logo-link:hover {
             opacity: 0.8;
         }
+
         .container {
             max-width: 800px;
             margin: 0 auto;
             padding: 2rem;
         }
+
         .back-link {
             display: inline-block;
             margin-bottom: 2rem;
@@ -42,59 +49,75 @@
             text-decoration: none;
             font-weight: 500;
         }
+
         .back-link:hover {
             text-decoration: underline;
         }
-        h1, h2 {
+
+        h1,
+        h2 {
             color: #3D3939;
         }
+
         h2 {
             margin-top: 2rem;
             padding-top: 2rem;
             border-top: 1px solid #EEEEEE;
         }
-        ul, ol {
+
+        ul,
+        ol {
             padding-left: 1.5rem;
         }
+
         li {
             margin-bottom: 0.5rem;
         }
+
         .checklist {
             background: #EEEEEE;
             padding: 1.5rem;
             border-radius: 8px;
             margin: 1rem 0;
         }
+
         .checklist li {
             list-style-type: none;
             position: relative;
             padding-left: 1.5rem;
         }
+
         .checklist li::before {
             content: "☐";
             position: absolute;
             left: 0;
         }
+
         .section-nav {
             background: #EEEEEE;
             padding: 1rem;
             border-radius: 8px;
             margin: 2rem 0;
         }
+
         .section-nav ul {
             list-style: none;
             padding: 0;
         }
+
         .section-nav li {
             margin: 0.5rem 0;
         }
+
         .section-nav a {
             color: #3D3939;
             text-decoration: none;
         }
+
         .section-nav a:hover {
             text-decoration: underline;
         }
+
         .tip-box {
             background: #EEEEEE;
             border-left: 4px solid #FDC230;
@@ -104,6 +127,7 @@
         }
     </style>
 </head>
+
 <body>
     <header class="header">
         <a href="https://qrtick.com" class="logo-link" target="_blank" rel="noopener noreferrer">
@@ -112,8 +136,8 @@
         <a href="https://qrtick.com" class="home-link" target="_blank" rel="noopener noreferrer">Visit Qrtick.com →</a>
     </header>
     <main class="container">
-        <a href="index.html" class="back-link">← Back to Documentation Home</a>
-        
+        <a href="index" class="back-link">← Back to Documentation Home</a>
+
         <h1>Qrtick: Fundraiser Guide</h1>
 
         <nav class="section-nav">
@@ -145,7 +169,8 @@
             <li>Simple event details: name, description, date, and location</li>
             <li>Optional event banner image to showcase your cause</li>
             <li>Custom branding available for larger fundraisers</li>
-            <li><a href="event-setup-guide.html" style="color: #FDC230; font-weight: 600;">View our detailed Event Setup Guide →</a></li>
+            <li><a href="event-setup-guide.html" style="color: #FDC230; font-weight: 600;">View our detailed Event Setup
+                    Guide →</a></li>
         </ul>
 
         <h3>Ticket Options</h3>
@@ -177,7 +202,8 @@
         </ol>
 
         <div class="tip-box">
-            <strong>Pro Tip:</strong> Each order gets a unique ID (e.g., "7630001ab") that helps track purchase details and quantity.
+            <strong>Pro Tip:</strong> Each order gets a unique ID (e.g., "7630001ab") that helps track purchase details
+            and quantity.
         </div>
 
         <h2 id="sharing">Ticket Sharing Features</h2>
@@ -198,23 +224,31 @@
         </ul>
 
         <h2 id="checkin">Checking In Attendees with the QRTick Scanner App (Android)</h2>
-        <p>Our dedicated Scanner App (currently available for Android) provides a robust and reliable way to manage check-ins at your event, even without a stable internet connection.</p>
+        <p>Our dedicated Scanner App (currently available for Android) provides a robust and reliable way to manage
+            check-ins at your event, even without a stable internet connection.</p>
 
         <h3>Getting Started</h3>
         <ul>
-            <li><strong>Secure Login:</strong> Log in with the email and password associated with your QRTick account.</li>
-            <li><strong>Event Selection:</strong> After login, you'll see a list of events you're authorized to scan for. Select the current event to begin. Event banner images are shown for easy identification.</li>
+            <li><strong>Secure Login:</strong> Log in with the email and password associated with your QRTick account.
+            </li>
+            <li><strong>Event Selection:</strong> After login, you'll see a list of events you're authorized to scan
+                for. Select the current event to begin. Event banner images are shown for easy identification.</li>
         </ul>
 
         <h3>Key Feature: Robust Offline Mode</h3>
         <p>One of the core strengths of the scanner app is its ability to function reliably offline:</p>
         <ul>
-            <li><strong>Data Sync:</strong> Before the event (while online), sync the event data. This downloads all ticket information (including validity status) to the device.</li>
-            <li><strong>Offline Scanning:</strong> Scan tickets seamlessly without an internet connection. The app validates tickets against the locally stored data.</li>
+            <li><strong>Data Sync:</strong> Before the event (while online), sync the event data. This downloads all
+                ticket information (including validity status) to the device.</li>
+            <li><strong>Offline Scanning:</strong> Scan tickets seamlessly without an internet connection. The app
+                validates tickets against the locally stored data.</li>
             <li><strong>Local Storage:</strong> Check-ins performed while offline are securely saved on the device.</li>
-            <li><strong>Automatic Sync:</strong> When network connectivity returns, the app automatically syncs the offline check-ins with the server in the background.</li>
-            <li><strong>Offline Indicator:</strong> A clear visual indicator lets you know when the app is operating in offline mode.</li>
-            <li><strong>Manual Refresh:</strong> You can manually trigger a data re-sync when you regain connectivity if needed.</li>
+            <li><strong>Automatic Sync:</strong> When network connectivity returns, the app automatically syncs the
+                offline check-ins with the server in the background.</li>
+            <li><strong>Offline Indicator:</strong> A clear visual indicator lets you know when the app is operating in
+                offline mode.</li>
+            <li><strong>Manual Refresh:</strong> You can manually trigger a data re-sync when you regain connectivity if
+                needed.</li>
         </ul>
 
         <h3>Real-time QR Code Scanning</h3>
@@ -226,23 +260,28 @@
         <h3>Instant Ticket Validation (Online & Offline)</h3>
         <p>Get immediate feedback on every scan:</p>
         <ul>
-            <li><strong>Checks Performed:</strong> Verifies ticket existence, event match, previous check-in status (locally, pending sync, or on the server), and invalid/refunded status.</li>
+            <li><strong>Checks Performed:</strong> Verifies ticket existence, event match, previous check-in status
+                (locally, pending sync, or on the server), and invalid/refunded status.</li>
             <li><strong>Clear Visual Feedback:</strong>
                 <ul>
                     <li>✅ <strong style="color: green;">Valid:</strong> Successful check-in.</li>
                     <li>⚠️ <strong style="color: orange;">Already Checked In:</strong> Ticket previously used.</li>
-                    <li>💳 <strong style="color: red;">Ticket Invalid (Refunded):</strong> Ticket has been marked as invalid.</li>
+                    <li>💳 <strong style="color: red;">Ticket Invalid (Refunded):</strong> Ticket has been marked as
+                        invalid.</li>
                     <li>❌ <strong style="color: red;">Wrong Event:</strong> Ticket is for a different event.</li>
-                    <li>❌ <strong style="color: red;">Invalid Ticket:</strong> QR code is not recognized for this event.</li>
+                    <li>❌ <strong style="color: red;">Invalid Ticket:</strong> QR code is not recognized for this event.
+                    </li>
                     <li>❗ <strong style="color: red;">Error:</strong> System error during validation.</li>
                 </ul>
             </li>
-            <li><strong>Enhanced Feedback:</strong> Scan results feature color-coded backgrounds, relevant emojis, and haptic feedback (vibration) for successful scans.</li>
+            <li><strong>Enhanced Feedback:</strong> Scan results feature color-coded backgrounds, relevant emojis, and
+                haptic feedback (vibration) for successful scans.</li>
         </ul>
 
         <h3>Monitoring Progress</h3>
         <ul>
-            <li><strong>Real-time Stats:</strong> The app displays live statistics for the selected event (Checked-in vs. Total Valid Tickets).</li>
+            <li><strong>Real-time Stats:</strong> The app displays live statistics for the selected event (Checked-in
+                vs. Total Valid Tickets).</li>
             <li><strong>Progress Bar:</strong> A visual progress bar shows the check-in completion percentage.</li>
         </ul>
 
@@ -292,10 +331,14 @@
             </ul>
         </div>
 
-        <div class="cta-section" style="text-align: center; margin: 2rem 0; padding: 2rem; background: #EEEEEE; border-radius: 12px; box-shadow: 0 1px 4px rgba(61, 57, 57, 0.04);">
+        <div class="cta-section"
+            style="text-align: center; margin: 2rem 0; padding: 2rem; background: #EEEEEE; border-radius: 12px; box-shadow: 0 1px 4px rgba(61, 57, 57, 0.04);">
             <h2>Ready to Start Selling Tickets?</h2>
-            <p style="margin-bottom: 1.5rem; color: #444;">Get started with QRTick and launch your event in just 5 business days!</p>
-            <a href="https://tally.so/r/nW4Nak" class="cta-button" style="display: inline-block; background-color: #FDC230; color: #3D3939; padding: 1rem 2rem; text-decoration: none; border-radius: 8px; font-weight: 600; font-size: 1rem; transition: background-color 0.2s; margin: 0.5rem; box-shadow: 0 1px 4px rgba(253, 194, 48, 0.2);" target="_blank" rel="noopener noreferrer">Start Selling Tickets Now</a>
+            <p style="margin-bottom: 1.5rem; color: #444;">Get started with QRTick and launch your event in just 5
+                business days!</p>
+            <a href="https://tally.so/r/nW4Nak" class="cta-button"
+                style="display: inline-block; background-color: #FDC230; color: #3D3939; padding: 1rem 2rem; text-decoration: none; border-radius: 8px; font-weight: 600; font-size: 1rem; transition: background-color 0.2s; margin: 0.5rem; box-shadow: 0 1px 4px rgba(253, 194, 48, 0.2);"
+                target="_blank" rel="noopener noreferrer">Start Selling Tickets Now</a>
         </div>
 
         <h2 id="help">Need Help?</h2>
@@ -312,7 +355,8 @@
         </ul>
 
         <div class="tip-box">
-            <strong>Important:</strong> We recommend completing the launch checklist at least 48 hours before starting ticket sales to ensure everything is ready.
+            <strong>Important:</strong> We recommend completing the launch checklist at least 48 hours before starting
+            ticket sales to ensure everything is ready.
         </div>
 
         <p>Contact us anytime at <a href="mailto:service@qrtick.com">service@qrtick.com</a></p>
@@ -323,4 +367,5 @@
         <a href="mailto:service@qrtick.com" class="footer-link">Contact Support</a>
     </footer>
 </body>
-</html> 
+
+</html>

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,11 +15,13 @@
             padding: 0;
             margin: 1.5rem 0;
         }
+
         .checklist li {
             margin-bottom: 1rem;
             padding-left: 2rem;
             position: relative;
         }
+
         .checklist li::before {
             content: "☐";
             position: absolute;
@@ -26,6 +29,7 @@
             color: #FDC230;
             font-size: 1.2em;
         }
+
         .tip-box {
             background-color: #EEEEEE;
             border-left: 4px solid #FDC230;
@@ -33,11 +37,13 @@
             margin: 1.5rem 0;
             border-radius: 0 8px 8px 0;
         }
+
         .tip-header {
             font-weight: 600;
             color: #3D3939;
             margin-bottom: 0.5rem;
         }
+
         .section-card {
             background-color: #fff;
             border-radius: 8px;
@@ -46,10 +52,12 @@
             margin: 1.5rem 0;
             border-top: 4px solid #FDC230;
         }
+
         .section-card h3 {
             margin-top: 0;
             color: #3D3939;
         }
+
         .quick-info {
             background-color: #FFF9EA;
             border: 1px solid #EEEEEE;
@@ -57,10 +65,12 @@
             padding: 1rem;
             margin: 1rem 0;
         }
+
         .quick-info h4 {
             margin-top: 0;
             color: #3D3939;
         }
+
         /* Email template styles */
         .email-template-container {
             background-color: #FFF9EA;
@@ -70,6 +80,7 @@
             box-shadow: 0 4px 12px rgba(61, 57, 57, 0.1);
             overflow: hidden;
         }
+
         .email-template-header {
             background-color: #FDC230;
             color: #3D3939;
@@ -78,10 +89,12 @@
             justify-content: space-between;
             align-items: center;
         }
+
         .email-template-header h4 {
             margin: 0;
             font-weight: 600;
         }
+
         .email-template-content {
             padding: 1.5rem;
             font-family: monospace;
@@ -92,6 +105,7 @@
             font-size: 0.95rem;
             line-height: 1.5;
         }
+
         .copy-btn {
             background-color: #3D3939;
             color: #FFF9EA;
@@ -106,13 +120,16 @@
             gap: 0.5rem;
             transition: background-color 0.2s;
         }
+
         .copy-btn:hover {
             background-color: #555;
         }
+
         .copy-btn svg {
             width: 14px;
             height: 14px;
         }
+
         /* Toast notification for copy feedback */
         .toast {
             position: fixed;
@@ -129,11 +146,13 @@
             opacity: 0;
             transition: opacity 0.3s ease-in-out;
         }
+
         .toast.show {
             opacity: 1;
         }
     </style>
 </head>
+
 <body>
     <header class="header">
         <a href="https://qrtick.com" class="logo-link" target="_blank" rel="noopener noreferrer">
@@ -143,13 +162,16 @@
     </header>
 
     <main class="container">
-        <a href="index.html" class="back-link">← Back to Documentation Home</a>
-        
+        <a href="index" class="back-link">← Back to Documentation Home</a>
+
         <h1>QRTick: Event Setup Checklist</h1>
 
         <div class="quick-info">
             <h4>⚡ Quick Start</h4>
-            <p>In QRTick, all events are organized as a "Series" with one or more "Performances". Whether you're hosting a one-time event or a multi-day festival, the structure is the same: <strong>a single event is simply a series of one performance</strong>. This consistent approach makes it easy to understand and manage any type of event.</p>
+            <p>In QRTick, all events are organized as a "Series" with one or more "Performances". Whether you're hosting
+                a one-time event or a multi-day festival, the structure is the same: <strong>a single event is simply a
+                    series of one performance</strong>. This consistent approach makes it easy to understand and manage
+                any type of event.</p>
         </div>
 
         <nav class="section-nav">
@@ -169,20 +191,26 @@
             <h3>1. Series Setup Checklist</h3>
             <div class="tip-box">
                 <div class="tip-header">What is a Series?</div>
-                <p>A "Series" is the overall event container that can contain one or more performances. Think of it as the umbrella for your event:</p>
+                <p>A "Series" is the overall event container that can contain one or more performances. Think of it as
+                    the umbrella for your event:</p>
                 <ul style="margin: 0.5rem 0 0 0; padding-left: 1.5rem;">
                     <li><strong>Multi-performance series:</strong> "Summer Concert Series" with 5 different shows</li>
-                    <li><strong>Single event (series of one):</strong> "Annual Charity Gala" with just one performance</li>
+                    <li><strong>Single event (series of one):</strong> "Annual Charity Gala" with just one performance
+                    </li>
                 </ul>
-                <p style="margin-top: 0.5rem; margin-bottom: 0;">Even for a one-time event, you'll create a series with just one performance. This consistent structure makes it easy to manage any type of event.</p>
+                <p style="margin-top: 0.5rem; margin-bottom: 0;">Even for a one-time event, you'll create a series with
+                    just one performance. This consistent structure makes it easy to manage any type of event.</p>
             </div>
-            
+
             <ul class="checklist">
                 <li><strong>Series Name:</strong> Create a clear, descriptive title for your overall event</li>
-                <li><strong>Series Description:</strong> Write a compelling description that explains your event's purpose, theme, and general information that applies to all performances</li>
-                <li><strong>Cover Image:</strong> Prepare a cover image with 6:5 ratio (e.g., 600 × 500 or 1200 × 1000 pixels) showing event name and date range</li>
+                <li><strong>Series Description:</strong> Write a compelling description that explains your event's
+                    purpose, theme, and general information that applies to all performances</li>
+                <li><strong>Cover Image:</strong> Prepare a cover image with 6:5 ratio (e.g., 600 × 500 or 1200 × 1000
+                    pixels) showing event name and date range</li>
                 <li><strong>Host Details:</strong> Include organization name and contact information</li>
-                <li><strong>Series Type:</strong> Decide if this is a multi-performance series or a single event (remember: single events are still series, just with one performance)</li>
+                <li><strong>Series Type:</strong> Decide if this is a multi-performance series or a single event
+                    (remember: single events are still series, just with one performance)</li>
             </ul>
         </section>
 
@@ -190,19 +218,24 @@
             <h3>2. Performance Setup Checklist</h3>
             <div class="tip-box">
                 <div class="tip-header">What are Performances?</div>
-                <p>"Performances" are individual occurrences within a series, each with its own date, time, and potentially unique details. For single events, you'll have just one performance, but the setup process is identical to multi-performance series.</p>
+                <p>"Performances" are individual occurrences within a series, each with its own date, time, and
+                    potentially unique details. For single events, you'll have just one performance, but the setup
+                    process is identical to multi-performance series.</p>
                 <p style="margin-top: 0.5rem; margin-bottom: 0;"><strong>Examples:</strong></p>
                 <ul style="margin: 0.5rem 0 0 0; padding-left: 1.5rem;">
                     <li><strong>Single event:</strong> "Annual Charity Gala" → 1 performance on March 15th</li>
-                    <li><strong>Multi-performance:</strong> "Summer Concert Series" → 5 performances on different dates</li>
+                    <li><strong>Multi-performance:</strong> "Summer Concert Series" → 5 performances on different dates
+                    </li>
                 </ul>
             </div>
-            
+
             <ul class="checklist">
                 <li><strong>Date and Time:</strong> Set the exact date and start time for each performance</li>
                 <li><strong>Venue Details:</strong> Specify location, address, and any access instructions</li>
-                <li><strong>Performance Description (Optional):</strong> Add unique details specific to this date/time only</li>
-                <li><strong>Special Instructions:</strong> Note any performance-specific requirements (e.g., "Doors open 30 minutes early")</li>
+                <li><strong>Performance Description (Optional):</strong> Add unique details specific to this date/time
+                    only</li>
+                <li><strong>Special Instructions:</strong> Note any performance-specific requirements (e.g., "Doors open
+                    30 minutes early")</li>
                 <li><strong>Capacity:</strong> Set the maximum number of attendees (if applicable)</li>
             </ul>
         </section>
@@ -211,14 +244,18 @@
             <h3>3. Ticket Setup Checklist</h3>
             <div class="tip-box">
                 <div class="tip-header">Ticket Type Decision</div>
-                <p>Decide whether your event needs a single ticket type ("General Admission") or multiple types (Early Bird, VIP, etc.).</p>
+                <p>Decide whether your event needs a single ticket type ("General Admission") or multiple types (Early
+                    Bird, VIP, etc.).</p>
             </div>
-            
+
             <ul class="checklist">
-                <li><strong>Ticket Type Names:</strong> Create clear, descriptive names for each ticket type (e.g., "General Admission", "VIP", "Early Bird")</li>
-                <li><strong>Ticket Descriptions:</strong> Explain what each ticket type includes and any special benefits</li>
+                <li><strong>Ticket Type Names:</strong> Create clear, descriptive names for each ticket type (e.g.,
+                    "General Admission", "VIP", "Early Bird")</li>
+                <li><strong>Ticket Descriptions:</strong> Explain what each ticket type includes and any special
+                    benefits</li>
                 <li><strong>Base Pricing:</strong> Set standard prices for each ticket type</li>
-                <li><strong>Performance-Specific Pricing:</strong> Decide if any performances need special pricing (e.g., higher prices for weekend shows)</li>
+                <li><strong>Performance-Specific Pricing:</strong> Decide if any performances need special pricing
+                    (e.g., higher prices for weekend shows)</li>
                 <li><strong>Availability Dates:</strong> Set when each ticket type goes on sale and when sales end</li>
                 <li><strong>Quantity Limits:</strong> Decide if any ticket types have limited availability</li>
             </ul>
@@ -228,27 +265,37 @@
             <h3>4. Registration Forms</h3>
             <div class="tip-box">
                 <div class="tip-header">Registration Form Requirements</div>
-                <p>If you want to collect additional information from attendees during the ticket purchase process, you'll need to specify what data you want to capture. This information will be collected as part of the checkout process.</p>
+                <p>If you want to collect additional information from attendees during the ticket purchase process,
+                    you'll need to specify what data you want to capture. This information will be collected as part of
+                    the checkout process.</p>
             </div>
-            
+
             <ul class="checklist">
-                <li><strong>Required Information:</strong> Decide what information is mandatory for attendees to provide (e.g., full name, email, phone number)</li>
-                <li><strong>Optional Information:</strong> Determine what additional data you'd like to collect (e.g., dietary restrictions, emergency contact, company name)</li>
-                <li><strong>Custom Fields:</strong> Specify any unique fields specific to your event (e.g., "T-shirt size", "Workshop preference", "Accessibility needs")</li>
-                <li><strong>Data Format:</strong> Clarify the expected format for each field (e.g., phone number format, date format for birth date)</li>
-                <li><strong>Validation Rules:</strong> Note any specific validation requirements (e.g., minimum age, required fields for certain ticket types)</li>
-                <li><strong>Privacy Considerations:</strong> Ensure you're only collecting necessary information and have appropriate data handling policies</li>
+                <li><strong>Required Information:</strong> Decide what information is mandatory for attendees to provide
+                    (e.g., full name, email, phone number)</li>
+                <li><strong>Optional Information:</strong> Determine what additional data you'd like to collect (e.g.,
+                    dietary restrictions, emergency contact, company name)</li>
+                <li><strong>Custom Fields:</strong> Specify any unique fields specific to your event (e.g., "T-shirt
+                    size", "Workshop preference", "Accessibility needs")</li>
+                <li><strong>Data Format:</strong> Clarify the expected format for each field (e.g., phone number format,
+                    date format for birth date)</li>
+                <li><strong>Validation Rules:</strong> Note any specific validation requirements (e.g., minimum age,
+                    required fields for certain ticket types)</li>
+                <li><strong>Privacy Considerations:</strong> Ensure you're only collecting necessary information and
+                    have appropriate data handling policies</li>
             </ul>
-            
+
             <div class="tip-box">
                 <div class="tip-header">Common Registration Fields</div>
                 <p>Here are some commonly requested fields for event registration:</p>
                 <ul style="margin-bottom: 0;">
                     <li><strong>Contact Information:</strong> Full name, email address, phone number</li>
                     <li><strong>Demographics:</strong> Age, gender, location (city/state)</li>
-                    <li><strong>Event-Specific:</strong> Dietary restrictions, accessibility needs, emergency contact</li>
+                    <li><strong>Event-Specific:</strong> Dietary restrictions, accessibility needs, emergency contact
+                    </li>
                     <li><strong>Professional:</strong> Company name, job title, industry</li>
-                    <li><strong>Preferences:</strong> Communication preferences, session interests, networking goals</li>
+                    <li><strong>Preferences:</strong> Communication preferences, session interests, networking goals
+                    </li>
                 </ul>
             </div>
         </section>
@@ -256,26 +303,40 @@
         <section class="section-card" id="cover-image-requirements">
             <h3>5. Cover Image Requirements</h3>
             <ul class="checklist">
-                <li><strong>Required Ratio:</strong> 6:5 (width:height), such as 600 × 500 or 1200 × 1000 pixels. For mobile screens and fast loading, we don't need anything wider than 1200px - we automatically resample and optimize images for different screen sizes.</li>
-                <li><strong>Content:</strong> Include event name and dates only - keep it simple and focused. Generally we don't include location or sponsors in the cover image, but they may be included discreetly if necessary. Sometimes sponsors are very integrated into the design and the event itself, which is why we will tolerate them in the cover image.</li>
-                <li><strong>Design:</strong> Use clear, readable text with your event's brand colors or theme. Remember that this is a cover image, not a flyer - it doesn't need comprehensive information. Additional details like venue, event description, and ticket information will be displayed on the ticket landing page, so keep the cover image clean and focused</li>
+                <li><strong>Required Ratio:</strong> 6:5 (width:height), such as 600 × 500 or 1200 × 1000 pixels. For
+                    mobile screens and fast loading, we don't need anything wider than 1200px - we automatically
+                    resample and optimize images for different screen sizes.</li>
+                <li><strong>Content:</strong> Include event name and dates only - keep it simple and focused. Generally
+                    we don't include location or sponsors in the cover image, but they may be included discreetly if
+                    necessary. Sometimes sponsors are very integrated into the design and the event itself, which is why
+                    we will tolerate them in the cover image.</li>
+                <li><strong>Design:</strong> Use clear, readable text with your event's brand colors or theme. Remember
+                    that this is a cover image, not a flyer - it doesn't need comprehensive information. Additional
+                    details like venue, event description, and ticket information will be displayed on the ticket
+                    landing page, so keep the cover image clean and focused</li>
                 <li><strong>File Format:</strong> JPG or PNG format, optimized for web</li>
             </ul>
-            
+
             <div style="margin: 1.5rem 0;">
                 <p><strong>Example Cover Images:</strong></p>
-                <img src="https://wherewekeepourimages.qrtick.com/series/3a3d4c8e-2e9a-4f7b-8d36-a8b7c1e9d5f3/3195cf79-8323-49fd-9446-12d5829333a8_banner.jpg" alt="Example Event Cover Image" style="max-width: 100%; border-radius: 8px; border: 1px solid #EEEEEE; margin-bottom: 1rem;">
-                <p style="font-size: 0.9rem; color: #666; margin-bottom: 1rem;">This example shows a clean, focused cover image with just the essential information.</p>
-                
-                <img src="https://wherewekeepourimages.qrtick.com/series/5d95b6a9-0a7a-4f28-bd7c-4c482fe4999f/22d4b81b-5b2d-4109-b2b7-1e68b9d78f86_banner.jpg" alt="Example Cover Image with Sponsors" style="max-width: 100%; border-radius: 8px; border: 1px solid #EEEEEE;">
-                <p style="font-size: 0.9rem; color: #666; margin-top: 0.5rem;">This example shows how sponsors and event slogans can be included discreetly when they're integrated into the design and event identity.</p>
+                <img src="https://wherewekeepourimages.qrtick.com/series/3a3d4c8e-2e9a-4f7b-8d36-a8b7c1e9d5f3/3195cf79-8323-49fd-9446-12d5829333a8_banner.jpg"
+                    alt="Example Event Cover Image"
+                    style="max-width: 100%; border-radius: 8px; border: 1px solid #EEEEEE; margin-bottom: 1rem;">
+                <p style="font-size: 0.9rem; color: #666; margin-bottom: 1rem;">This example shows a clean, focused
+                    cover image with just the essential information.</p>
+
+                <img src="https://wherewekeepourimages.qrtick.com/series/5d95b6a9-0a7a-4f28-bd7c-4c482fe4999f/22d4b81b-5b2d-4109-b2b7-1e68b9d78f86_banner.jpg"
+                    alt="Example Cover Image with Sponsors"
+                    style="max-width: 100%; border-radius: 8px; border: 1px solid #EEEEEE;">
+                <p style="font-size: 0.9rem; color: #666; margin-top: 0.5rem;">This example shows how sponsors and event
+                    slogans can be included discreetly when they're integrated into the design and event identity.</p>
             </div>
         </section>
 
         <section class="section-card" id="pricing-examples">
             <h3>6. Pricing Examples</h3>
             <p>Here are pricing examples for both single events and multi-performance series:</p>
-            
+
             <h4>Single Event Example: Annual Charity Gala</h4>
             <table style="width:100%; border-collapse: collapse; margin: 1rem 0;">
                 <thead style="background-color: #EEEEEE;">
@@ -294,18 +355,20 @@
                     <tr>
                         <td style="border: 1px solid #ddd; padding: 8px;">General Admission</td>
                         <td style="border: 1px solid #ddd; padding: 8px;">$100</td>
-                        <td style="border: 1px solid #ddd; padding: 8px;">Includes dinner, silent auction, and live entertainment</td>
+                        <td style="border: 1px solid #ddd; padding: 8px;">Includes dinner, silent auction, and live
+                            entertainment</td>
                     </tr>
                     <tr>
                         <td style="border: 1px solid #ddd; padding: 8px;">VIP</td>
                         <td style="border: 1px solid #ddd; padding: 8px;">$150</td>
-                        <td style="border: 1px solid #ddd; padding: 8px;">Includes premium seating, welcome reception, and all benefits</td>
+                        <td style="border: 1px solid #ddd; padding: 8px;">Includes premium seating, welcome reception,
+                            and all benefits</td>
                     </tr>
                 </tbody>
             </table>
-            
+
             <h4>Multi-Performance Series Example: Summer Concert Series</h4>
-            
+
             <table style="width:100%; border-collapse: collapse; margin: 1rem 0;">
                 <thead style="background-color: #EEEEEE;">
                     <tr>
@@ -361,13 +424,15 @@
 
         <section class="section-card" id="email-template">
             <h3>7. Submit Your Event Information</h3>
-            <p>Once you've gathered all the necessary information using the checklists above, send us an email with your event details. Here's a template you can use:</p>
-            
+            <p>Once you've gathered all the necessary information using the checklists above, send us an email with your
+                event details. Here's a template you can use:</p>
+
             <div class="email-template-container">
                 <div class="email-template-header">
                     <h4>Email Template</h4>
                     <button id="copy-template-btn" class="copy-btn" onclick="copyEmailTemplate()">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
                             <path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"></path>
                         </svg>
@@ -375,67 +440,73 @@
                     </button>
                 </div>
                 <div id="email-template-content" class="email-template-content">
-Subject: New Event Setup - [Your Event Name]
+                    Subject: New Event Setup - [Your Event Name]
 
-Hello QRTick Team,
+                    Hello QRTick Team,
 
-I'd like to set up a new event on QRTick. Here are the details:
+                    I'd like to set up a new event on QRTick. Here are the details:
 
---- SERIES INFORMATION ---
-Series Name: [Your Event Series Name, e.g., "Annual Charity Gala" or "Summer Concert Series"]
-Series Description: [Overall description of your event]
-Series Type: [Single event (series of one) OR Multi-performance series]
+                    --- SERIES INFORMATION ---
+                    Series Name: [Your Event Series Name, e.g., "Annual Charity Gala" or "Summer Concert Series"]
+                    Series Description: [Overall description of your event]
+                    Series Type: [Single event (series of one) OR Multi-performance series]
 
---- PERFORMANCE DETAILS ---
-[For each performance, include:]
-Date: [Date, e.g., "March 15, 2025" for single event or "June 1, 2025" for first performance]
-Time: [Start time, e.g., "7:00 PM"]
-Venue: [Location name and address]
-Special Instructions: [Any specific details for this performance, e.g., "Doors open at 6:30 PM" or "VIP reception starts at 6:00 PM"]
+                    --- PERFORMANCE DETAILS ---
+                    [For each performance, include:]
+                    Date: [Date, e.g., "March 15, 2025" for single event or "June 1, 2025" for first performance]
+                    Time: [Start time, e.g., "7:00 PM"]
+                    Venue: [Location name and address]
+                    Special Instructions: [Any specific details for this performance, e.g., "Doors open at 6:30 PM" or
+                    "VIP reception starts at 6:00 PM"]
 
-Note: For single events, you'll only have one performance. For multi-performance series, repeat this section for each performance.
+                    Note: For single events, you'll only have one performance. For multi-performance series, repeat this
+                    section for each performance.
 
---- TICKET TYPES ---
-1. [Ticket Type Name, e.g., "Early Bird"]
-   Description: [What this ticket includes]
-   Price: [Base price]
-   [Any performance-specific pricing]
+                    --- TICKET TYPES ---
+                    1. [Ticket Type Name, e.g., "Early Bird"]
+                    Description: [What this ticket includes]
+                    Price: [Base price]
+                    [Any performance-specific pricing]
 
-2. [Ticket Type Name, e.g., "General Admission"]
-   Description: [What this ticket includes]
-   Price: [Base price]
-   [Any performance-specific pricing]
+                    2. [Ticket Type Name, e.g., "General Admission"]
+                    Description: [What this ticket includes]
+                    Price: [Base price]
+                    [Any performance-specific pricing]
 
-3. [Additional ticket types as needed]
+                    3. [Additional ticket types as needed]
 
---- REGISTRATION FORMS (if applicable) ---
-Do you want to collect additional information during ticket purchase?
-Required Fields: [List any mandatory fields like name, email, phone]
-Optional Fields: [List any optional fields like dietary restrictions, emergency contact]
-Custom Fields: [List any event-specific fields like T-shirt size, workshop preference]
-Data Format Requirements: [Specify any format requirements for fields]
+                    --- REGISTRATION FORMS (if applicable) ---
+                    Do you want to collect additional information during ticket purchase?
+                    Required Fields: [List any mandatory fields like name, email, phone]
+                    Optional Fields: [List any optional fields like dietary restrictions, emergency contact]
+                    Custom Fields: [List any event-specific fields like T-shirt size, workshop preference]
+                    Data Format Requirements: [Specify any format requirements for fields]
 
---- CONTACT INFORMATION ---
-Organization: [Your organization name]
-Contact Person: [Your name]
-Phone: [Your phone number]
-Email: [Your email address]
+                    --- CONTACT INFORMATION ---
+                    Organization: [Your organization name]
+                    Contact Person: [Your name]
+                    Phone: [Your phone number]
+                    Email: [Your email address]
 
-I have attached our event cover image to this email.
+                    I have attached our event cover image to this email.
 
-Thank you,
-[Your Name]
+                    Thank you,
+                    [Your Name]
                 </div>
             </div>
-            
+
             <div class="tip-box">
                 <div class="tip-header">What Happens Next?</div>
                 <ol style="margin-bottom: 0;">
-                    <li><strong>Initial Setup:</strong> Our team will configure your event based on the information you provided</li>
-                    <li><strong>Preview Link:</strong> We'll share a link so you can preview exactly how your event will look to attendees</li>
-                    <li><strong>Account Access:</strong> You'll receive login credentials to access your event dashboard</li>
+                    <li><strong>Initial Setup:</strong> Our team will configure your event based on the information you
+                        provided</li>
+                    <li><strong>Preview Link:</strong> We'll share a link so you can preview exactly how your event will
+                        look to attendees</li>
+                    <li><strong>Account Access:</strong> You'll receive login credentials to access your event dashboard
+                    </li>
                     <li><strong>Make Adjustments:</strong> You'll be able to modify or update details as needed</li>
-                    <li><strong>Go Live:</strong> Once everything looks perfect, we'll make your event live for ticket sales</li>
+                    <li><strong>Go Live:</strong> Once everything looks perfect, we'll make your event live for ticket
+                        sales</li>
                 </ol>
             </div>
         </section>
@@ -443,7 +514,8 @@ Thank you,
         <div class="cta-section">
             <h3>Ready to Start Selling Tickets?</h3>
             <p>Get started with QRTick and launch your event in just 5 business days!</p>
-            <a href="https://tally.so/r/nW4Nak" class="cta-button" target="_blank" rel="noopener noreferrer">Start Selling Tickets Now</a>
+            <a href="https://tally.so/r/nW4Nak" class="cta-button" target="_blank" rel="noopener noreferrer">Start
+                Selling Tickets Now</a>
         </div>
     </main>
 
@@ -451,12 +523,14 @@ Thank you,
         <img src="./qrtick-logo-alt.svg" alt="QRTick Logo" class="footer-logo">
         <p>&copy; 2025 QRTick. All rights reserved.</p>
         <p>
-            <a href="https://qrtick.com/terms" class="footer-link" target="_blank" rel="noopener noreferrer">Terms of Service</a> | 
-            <a href="https://qrtick.com/privacy" class="footer-link" target="_blank" rel="noopener noreferrer">Privacy Policy</a>
+            <a href="https://qrtick.com/terms" class="footer-link" target="_blank" rel="noopener noreferrer">Terms of
+                Service</a> |
+            <a href="https://qrtick.com/privacy" class="footer-link" target="_blank" rel="noopener noreferrer">Privacy
+                Policy</a>
         </p>
     </footer>
     <div id="toast" class="toast">Template copied to clipboard!</div>
-    
+
     <script>
         function copyEmailTemplate() {
             const templateText = document.getElementById('email-template-content').innerText;
@@ -465,12 +539,12 @@ Thank you,
                     // Show toast notification
                     const toast = document.getElementById('toast');
                     toast.classList.add('show');
-                    
+
                     // Change button text temporarily
                     const copyBtn = document.getElementById('copy-template-btn');
                     const originalText = copyBtn.innerHTML;
                     copyBtn.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> Copied!`;
-                    
+
                     // Reset after 2 seconds
                     setTimeout(() => {
                         toast.classList.remove('show');
@@ -486,4 +560,5 @@ Thank you,
         }
     </script>
 </body>
+
 </html>

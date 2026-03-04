@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,28 +18,34 @@
             color: #3D3939;
             background-color: #FFF9EA;
         }
+
         .header {
             padding: 2rem;
             text-align: center;
             background-color: #3D3939;
             box-shadow: 0 2px 4px rgba(61, 57, 57, 0.1);
         }
+
         .logo {
             max-width: 200px;
             height: auto;
         }
+
         .logo-link {
             display: inline-block;
             transition: opacity 0.2s;
         }
+
         .logo-link:hover {
             opacity: 0.8;
         }
+
         .container {
             max-width: 800px;
             margin: 0 auto;
             padding: 2rem;
         }
+
         .back-link {
             display: inline-block;
             margin-bottom: 2rem;
@@ -46,33 +53,43 @@
             text-decoration: none;
             font-weight: 500;
         }
+
         .back-link:hover {
             text-decoration: underline;
         }
-        h1, h2 {
+
+        h1,
+        h2 {
             color: #3D3939;
         }
+
         h2 {
             margin-top: 2rem;
             padding-top: 2rem;
             border-top: 1px solid #EEEEEE;
         }
+
         h3 {
             color: #3D3939;
             margin-top: 1.5rem;
         }
-        ul, ol {
+
+        ul,
+        ol {
             padding-left: 1.5rem;
         }
+
         li {
             margin-bottom: 0.5rem;
         }
+
         code {
             background-color: #EEEEEE;
             padding: 0.2em 0.4em;
             border-radius: 3px;
             font-family: monospace;
         }
+
         video {
             max-width: 100%;
             height: auto;
@@ -82,6 +99,7 @@
         }
     </style>
 </head>
+
 <body>
     <header class="header">
         <a href="https://qrtick.com" class="logo-link" target="_blank" rel="noopener noreferrer">
@@ -90,18 +108,23 @@
         <a href="https://qrtick.com" class="home-link" target="_blank" rel="noopener noreferrer">Visit Qrtick.com →</a>
     </header>
     <main class="container">
-        <a href="index.html" class="back-link">← Back to Documentation Home</a>
-        
+        <a href="index" class="back-link">← Back to Documentation Home</a>
+
         <h1>Manager Quickstart Guide: Viewing Event Stats</h1>
-        <p>Welcome! This guide helps you quickly access and understand the performance statistics for your events using the QRTick system.</p>
-        
-        <div style="background-color: #EEEEEE; padding: 1rem; border-radius: 8px; margin: 1.5rem 0; border-left: 4px solid #FDC230;">
-            <strong>Setting up a new event?</strong> Check out our <a href="event-setup-guide.html" style="color: #3D3939; font-weight: 600; text-decoration: underline;">Event Setup Guide</a> for detailed instructions on creating series, performances, and configuring ticket types.
+        <p>Welcome! This guide helps you quickly access and understand the performance statistics for your events using
+            the QRTick system.</p>
+
+        <div
+            style="background-color: #EEEEEE; padding: 1rem; border-radius: 8px; margin: 1.5rem 0; border-left: 4px solid #FDC230;">
+            <strong>Setting up a new event?</strong> Check out our <a href="event-setup-guide.html"
+                style="color: #3D3939; font-weight: 600; text-decoration: underline;">Event Setup Guide</a> for detailed
+            instructions on creating series, performances, and configuring ticket types.
         </div>
 
         <h2>1. Log In</h2>
         <ol>
-            <li>Go to the QRTick login page: <a href="https://thing.qrtick.com" target="_blank" rel="noopener noreferrer">https://thing.qrtick.com</a></li>
+            <li>Go to the QRTick login page: <a href="https://thing.qrtick.com" target="_blank"
+                    rel="noopener noreferrer">https://thing.qrtick.com</a></li>
             <li>Enter the email address and password associated with your manager account.</li>
             <li>Click "Sign in".</li>
         </ol>
@@ -122,10 +145,12 @@
         <h2>4. Understanding the Stats Page</h2>
         <p>The Event Stats page gives you a snapshot of performance:</p>
         <ul>
-            <li><strong>Overall Stats:</strong> See total tickets sold, how many attendees have checked in, and the check-in percentage.</li>
+            <li><strong>Overall Stats:</strong> See total tickets sold, how many attendees have checked in, and the
+                check-in percentage.</li>
             <li><strong>Capacity:</strong> View progress towards the event's total capacity (if set).</li>
             <li><strong>Ticket Types:</strong> See a breakdown of sales per ticket type.</li>
-            <li><strong>Recent Orders:</strong> View a list of the most recent orders placed, including customer name and number of tickets. (For a full list, click "View All Orders").</li>
+            <li><strong>Recent Orders:</strong> View a list of the most recent orders placed, including customer name
+                and number of tickets. (For a full list, click "View All Orders").</li>
         </ul>
 
         <h2>5. Orders Page</h2>
@@ -137,11 +162,12 @@
             <li>Order ID</li>
         </ul>
 
-        <p>For smaller, intimate events, you can use the swipe-to-check-in mode on the Orders page to manually check in attendees without scanning QR codes.</p>
+        <p>For smaller, intimate events, you can use the swipe-to-check-in mode on the Orders page to manually check in
+            attendees without scanning QR codes.</p>
 
         <h2>6. Ticket Check-in History</h2>
         <p>The ticket check-in history feature provides a complete audit trail of all ticket check-in activities:</p>
-        
+
         <h3>What It Does</h3>
         <ul>
             <li>See when each ticket was checked in or had a check-in undone</li>
@@ -170,7 +196,8 @@
         <h3>Benefits for Management</h3>
         <ul>
             <li><strong>Accountability:</strong> Know exactly who checked in each ticket and when</li>
-            <li><strong>Dispute Resolution:</strong> Easily resolve questions about whether a ticket was previously checked in</li>
+            <li><strong>Dispute Resolution:</strong> Easily resolve questions about whether a ticket was previously
+                checked in</li>
             <li><strong>Security:</strong> Identify any unusual or unauthorized check-in patterns</li>
             <li><strong>Operational Insights:</strong> Understand how different check-in methods are being utilized</li>
         </ul>
@@ -178,38 +205,49 @@
         <p>This feature works automatically in the background with no changes to existing check-in procedures.</p>
 
         <h2>7. Quick Access: Add to Home Screen! ✨</h2>
-        <p>For faster access, add the QRTick dashboard directly to your phone's home screen! It will look and feel like a regular app.</p>
+        <p>For faster access, add the QRTick dashboard directly to your phone's home screen! It will look and feel like
+            a regular app.</p>
 
         <h3>On iPhone/iPad (using Safari):</h3>
         <ol>
-            <li>Navigate to your Dashboard page (<a href="https://thing.qrtick.com" target="_blank" rel="noopener noreferrer">https://thing.qrtick.com</a>).</li>
-            <li>Tap the Share button (<img src="https://img.icons8.com/ios/16/000000/share-rounded.png" alt="Share Icon" style="vertical-align: middle; height: 1em;">, usually at the bottom).</li>
+            <li>Navigate to your Dashboard page (<a href="https://thing.qrtick.com" target="_blank"
+                    rel="noopener noreferrer">https://thing.qrtick.com</a>).</li>
+            <li>Tap the Share button (<img src="https://img.icons8.com/ios/16/000000/share-rounded.png" alt="Share Icon"
+                    style="vertical-align: middle; height: 1em;">, usually at the bottom).</li>
             <li>Scroll down and tap "Add to Home Screen".</li>
             <li>Confirm the name and tap "Add".</li>
         </ol>
 
         <h3>On Android (using Chrome):</h3>
         <ol>
-            <li>Navigate to your Dashboard page (<a href="https://thing.qrtick.com" target="_blank" rel="noopener noreferrer">https://thing.qrtick.com</a>).</li>
-            <li>Chrome will automatically prompt you to 'Install app' or 'Add to Home screen'. Look for this prompt near the address bar or bottom of the screen.</li>
+            <li>Navigate to your Dashboard page (<a href="https://thing.qrtick.com" target="_blank"
+                    rel="noopener noreferrer">https://thing.qrtick.com</a>).</li>
+            <li>Chrome will automatically prompt you to 'Install app' or 'Add to Home screen'. Look for this prompt near
+                the address bar or bottom of the screen.</li>
             <li>Tap the prompt and follow the instructions to install the app to your home screen.</li>
-            <li>If you accidentally dismiss the prompt, you can usually find the 'Install app' option later in the Chrome menu (<img src="https://img.icons8.com/material-outlined/16/000000/more-vert.png" alt="Menu Icon" style="vertical-align: middle; height: 1em;">).</li>
+            <li>If you accidentally dismiss the prompt, you can usually find the 'Install app' option later in the
+                Chrome menu (<img src="https://img.icons8.com/material-outlined/16/000000/more-vert.png" alt="Menu Icon"
+                    style="vertical-align: middle; height: 1em;">).</li>
         </ol>
-        
+
         <p>Now you can launch the dashboard directly from your home screen!</p>
-        
+
         <video controls preload="metadata">
             <source src="qr-tick-add-to-home-screen.mp4" type="video/mp4">
             Your browser does not support the video tag.
         </video>
-        
-        <div style="text-align: center; margin: 2rem 0; padding: 2rem; background: #EEEEEE; border-radius: 12px; box-shadow: 0 1px 4px rgba(61, 57, 57, 0.04);">
+
+        <div
+            style="text-align: center; margin: 2rem 0; padding: 2rem; background: #EEEEEE; border-radius: 12px; box-shadow: 0 1px 4px rgba(61, 57, 57, 0.04);">
             <h2>Ready to Get Started?</h2>
             <p style="margin-bottom: 1.5rem; color: #444;">Set up your first event and start selling tickets today!</p>
-            <a href="https://tally.so/r/nW4Nak" style="display: inline-block; background-color: #FDC230; color: #3D3939; padding: 1rem 2rem; text-decoration: none; border-radius: 8px; font-weight: 600; font-size: 1rem; transition: background-color 0.2s; margin: 0.5rem; box-shadow: 0 1px 4px rgba(253, 194, 48, 0.2);" target="_blank" rel="noopener noreferrer">Start Selling Tickets Now</a>
+            <a href="https://tally.so/r/nW4Nak"
+                style="display: inline-block; background-color: #FDC230; color: #3D3939; padding: 1rem 2rem; text-decoration: none; border-radius: 8px; font-weight: 600; font-size: 1rem; transition: background-color 0.2s; margin: 0.5rem; box-shadow: 0 1px 4px rgba(253, 194, 48, 0.2);"
+                target="_blank" rel="noopener noreferrer">Start Selling Tickets Now</a>
         </div>
 
-        <p>If you need further assistance, please contact us at <a href="mailto:service@qrtick.com">service@qrtick.com</a>.</p>
+        <p>If you need further assistance, please contact us at <a
+                href="mailto:service@qrtick.com">service@qrtick.com</a>.</p>
     </main>
     <footer class="footer">
         <img src="./qrtick-logo-alt.svg" alt="Qrtick Logo" class="footer-logo"><br>
@@ -217,4 +255,5 @@
         <a href="mailto:service@qrtick.com" class="footer-link">Contact Support</a>
     </footer>
 </body>
-</html> 
+
+</html>
