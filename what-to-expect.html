@@ -266,6 +266,40 @@
             height: 18px;
         }
 
+        .action-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .copy-for-ai {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background-color: #3D3939;
+            color: #FDC230;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            cursor: pointer;
+            border: 1px solid #FDC230;
+            transition: background-color 0.2s, color 0.2s;
+        }
+
+        .copy-for-ai:hover {
+            background-color: #FDC230;
+            color: #3D3939;
+        }
+
+        .copy-for-ai svg {
+            width: 16px;
+            height: 16px;
+        }
+
         .toast {
             position: fixed;
             bottom: 2rem;
@@ -299,7 +333,17 @@
     </header>
 
     <main class="container">
-        <a href="index.html" class="back-link">← Back to Documentation</a>
+        <div class="action-bar">
+            <a href="index.html" class="back-link" style="margin-bottom: 0;">← Back to Documentation</a>
+            <button class="copy-for-ai" onclick="copyForAI()">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round">
+                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                </svg>
+                Copy for AI
+            </button>
+        </div>
 
         <h1>What to Expect: Transitions to QRTick</h1>
         <p class="intro-text"><strong>The Hassle-Free Way to Manage Your Event.</strong><br>
@@ -634,12 +678,48 @@
             });
         }
 
-        function showToast() {
+        function showToast(message) {
             const toast = document.getElementById('toast');
+            if (message) toast.textContent = message;
             toast.classList.add('show');
             setTimeout(() => {
                 toast.classList.remove('show');
+                if (message) setTimeout(() => toast.textContent = 'Link copied to clipboard!', 300);
             }, 2000);
+        }
+
+        function copyForAI() {
+            const container = document.querySelector('main.container');
+            const clone = container.cloneNode(true);
+
+            // Remove interactive/UI elements
+            clone.querySelectorAll('.copy-anchor, .back-link, .copy-for-ai, .action-bar, .cta-section, .cta-button, script').forEach(el => el.remove());
+
+            let text = "";
+            const walk = (node) => {
+                if (node.nodeType === 3) { // Text node
+                    const content = node.textContent.trim();
+                    if (content) text += content + " ";
+                } else if (node.nodeType === 1) { // Element node
+                    const tag = node.tagName;
+                    if (tag.match(/^H[1-6]$/)) text += "\n\n" + "#".repeat(parseInt(tag[1])) + " ";
+                    if (tag === 'P') text += "\n\n";
+                    if (tag === 'LI') text += "\n- ";
+
+                    node.childNodes.forEach(walk);
+
+                    if (tag === 'P' || tag.match(/^H[1-6]$/)) text += "\n";
+                }
+            };
+
+            walk(clone);
+
+            // Clean up whitespace
+            text = text.replace(/\n\s+\n/g, '\n\n').replace(/ +/g, ' ').trim();
+
+            navigator.clipboard.writeText(text).then(() => {
+                showToast("Content copied for AI!");
+            });
         }
     </script>
 </body>
