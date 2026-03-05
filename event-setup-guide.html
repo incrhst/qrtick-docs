@@ -154,11 +154,16 @@
 </head>
 
 <body>
-    <header class="header">
-        <a href="https://qrtick.com" class="logo-link" target="_blank" rel="noopener noreferrer">
-            <img src="./qrtick-logo-alt.svg" alt="QRTick Logo" class="logo">
-        </a>
-        <a href="https://qrtick.com" class="home-link" target="_blank" rel="noopener noreferrer">Visit QRTick.com →</a>
+        <header class="header">
+        <div class="header-content">
+            <a href="https://docs.qrtick.com/" class="logo-link">
+                <img src="./qrtick-logo-alt.svg" alt="Qrtick Logo" class="logo">
+                <span class="docs-text">| docs</span>
+            </a>
+            <button id="menu-btn" class="menu-btn" aria-label="Open menu">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+            </button>
+        </div>
     </header>
 
     <main class="container">
@@ -559,6 +564,7 @@
                 });
         }
     </script>
+    <script src="menu.js"></script>
 </body>
 
 </html>

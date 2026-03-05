@@ -20,27 +20,9 @@
             background-color: #FFF9EA;
         }
 
-        .header {
-            padding: 2rem;
-            text-align: center;
-            background-color: #3D3939;
-            box-shadow: 0 2px 4px rgba(61, 57, 57, 0.1);
-        }
-
-        .logo {
-            max-width: 200px;
-            height: auto;
-        }
-
-        .logo-link {
-            display: inline-block;
-            transition: opacity 0.2s;
-        }
-
         .logo-link:hover {
             opacity: 0.8;
         }
-
 
         .back-link {
             display: inline-block;
@@ -97,11 +79,16 @@
 </head>
 
 <body>
-    <header class="header">
-        <a href="https://qrtick.com" class="logo-link" target="_blank" rel="noopener noreferrer">
-            <img src="./qrtick-logo-alt.svg" alt="Qrtick Logo" class="logo">
-        </a>
-        <a href="https://qrtick.com" class="home-link" target="_blank" rel="noopener noreferrer">Visit Qrtick.com →</a>
+        <header class="header">
+        <div class="header-content">
+            <a href="https://docs.qrtick.com/" class="logo-link">
+                <img src="./qrtick-logo-alt.svg" alt="Qrtick Logo" class="logo">
+                <span class="docs-text">| docs</span>
+            </a>
+            <button id="menu-btn" class="menu-btn" aria-label="Open menu">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+            </button>
+        </div>
     </header>
     <main class="container">
         <a href="index" class="back-link">← Back to Documentation Home</a>
@@ -250,6 +237,7 @@
         &copy; 2024 QRTick. All rights reserved.<br>
         <a href="mailto:service@qrtick.com" class="footer-link">Contact Support</a>
     </footer>
+    <script src="menu.js"></script>
 </body>
 
 </html>
