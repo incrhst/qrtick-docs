@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
             </div>
             <div class="side-menu-links">
                 <a href="https://qrtick.com" class="side-menu-link" style="color:#FDC230; font-weight:700;">&larr; Main Site</a>
-                <a href="index" class="side-menu-link">Home / Docs</a>
+                <a href="/" class="side-menu-link">Home / Docs</a>
                 <a href="what-to-expect" class="side-menu-link">What to Expect</a>
                 <a href="packages" class="side-menu-link">Packages & Pricing</a>
                 <a href="guide" class="side-menu-link">Fundraiser Guide</a>
