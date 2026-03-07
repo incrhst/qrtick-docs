@@ -75,6 +75,42 @@
             border-radius: 8px;
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
         }
+
+        .section-nav {
+            background: #EEEEEE;
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 2rem 0;
+        }
+
+        .section-nav h2 {
+            margin-top: 0;
+            padding-top: 0;
+            border-top: none;
+            font-size: 1.2rem;
+        }
+
+        .section-nav ul {
+            list-style: none;
+            padding: 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 0.5rem;
+        }
+
+        .section-nav li {
+            margin: 0;
+        }
+
+        .section-nav a {
+            color: #3D3939;
+            text-decoration: none;
+            font-size: 0.95rem;
+        }
+
+        .section-nav a:hover {
+            text-decoration: underline;
+        }
     </style>
 </head>
 
@@ -114,7 +150,21 @@
             instructions on creating series, performances, and configuring ticket types.
         </div>
 
-        <h2>1. Log In</h2>
+        <nav class="section-nav">
+            <h2>Quick Navigation</h2>
+            <ul>
+                <li><a href="#login">1. Log In</a></li>
+                <li><a href="#dashboard">2. Event Dashboard</a></li>
+                <li><a href="#stats">3. Event Statistics</a></li>
+                <li><a href="#understanding-stats">4. Stats Snapshot</a></li>
+                <li><a href="#orders">5. Orders Page</a></li>
+                <li><a href="#history">6. Check-in History</a></li>
+                <li><a href="#homescreen">7. Add to Home Screen</a></li>
+                <li><a href="#pos-scanners">8. POS & Scanners</a></li>
+            </ul>
+        </nav>
+
+        <h2 id="login">1. Log In</h2>
         <ol>
             <li>Go to the QRTick login page: <a href="https://thing.qrtick.com" target="_blank"
                     rel="noopener noreferrer">https://thing.qrtick.com</a></li>
@@ -122,20 +172,20 @@
             <li>Click "Sign in".</li>
         </ol>
 
-        <h2>2. Find Your Event Dashboard</h2>
+        <h2 id="dashboard">2. Find Your Event Dashboard</h2>
         <ul>
             <li>After logging in, you'll land on your Dashboard.</li>
             <li>This page shows cards for all the events you have access to manage or view.</li>
         </ul>
 
-        <h2>3. Access Event Statistics</h2>
+        <h2 id="stats">3. Access Event Statistics</h2>
         <ol>
             <li>Locate the card for the specific event you want to check.</li>
             <li>On the event card, find the <strong>Stats</strong> button (it might be teal-colored).</li>
             <li>Click the "Stats" button.</li>
         </ol>
 
-        <h2>4. Understanding the Stats Page</h2>
+        <h2 id="understanding-stats">4. Understanding the Stats Page</h2>
         <p>The Event Stats page gives you a snapshot of performance:</p>
         <ul>
             <li><strong>Overall Stats:</strong> See total tickets sold, how many attendees have checked in, and the
@@ -146,7 +196,7 @@
                 and number of tickets. (For a full list, click "View All Orders").</li>
         </ul>
 
-        <h2>5. Orders Page</h2>
+        <h2 id="orders">5. Orders Page</h2>
         <p>Need to find specific tickets? The Orders page lets you quickly search by:</p>
         <ul>
             <li>Customer Name</li>
@@ -158,7 +208,7 @@
         <p>For smaller, intimate events, you can use the swipe-to-check-in mode on the Orders page to manually check in
             attendees without scanning QR codes.</p>
 
-        <h2>6. Ticket Check-in History</h2>
+        <h2 id="history">6. Ticket Check-in History</h2>
         <p>The ticket check-in history feature provides a complete audit trail of all ticket check-in activities:</p>
 
         <h3>What It Does</h3>
@@ -197,7 +247,7 @@
 
         <p>This feature works automatically in the background with no changes to existing check-in procedures.</p>
 
-        <h2>7. Quick Access: Add to Home Screen! ✨</h2>
+        <h2 id="homescreen">7. Quick Access: Add to Home Screen! ✨</h2>
         <p>For faster access, add the QRTick dashboard directly to your phone's home screen! It will look and feel like
             a regular app.</p>
 
