@@ -107,15 +107,25 @@
 </head>
 
 <body>
-        <header class="header">
+    <header class="header">
         <div class="header-content">
             <a href="https://docs.qrtick.com/" class="logo-link">
                 <img src="./qrtick-logo-alt.svg" alt="Qrtick Logo" class="logo">
                 <span class="docs-text">| docs</span>
             </a>
-            <button id="menu-btn" class="menu-btn" aria-label="Open menu">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
-            </button>
+            <div style="display: flex; align-items: center;">
+                <a href="https://qrtick.com"
+                    style="color: #FFF9EA; text-decoration: none; font-size: 0.9rem; opacity: 0.8; transition: opacity 0.2s;"
+                    onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.8'">Buy Tickets</a>
+                <button id="menu-btn" class="menu-btn" aria-label="Open menu">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <line x1="3" y1="12" x2="21" y2="12"></line>
+                        <line x1="3" y1="6" x2="21" y2="6"></line>
+                        <line x1="3" y1="18" x2="21" y2="18"></line>
+                    </svg>
+                </button>
+            </div>
         </div>
     </header>
     <main class="container">
@@ -206,76 +216,21 @@
             <li>Check-in status visible on shared tickets</li>
         </ul>
 
-        <h2 id="checkin">Checking In Attendees with the QRTick Scanner App (Android)</h2>
-        <p>Our dedicated Scanner App (currently available for Android) provides a robust and reliable way to manage
-            check-ins at your event, even without a stable internet connection.</p>
 
-        <h3>Getting Started</h3>
+        <h2 id="checkin">Checking In Attendees</h2>
+        <p>QRTick provides a fast, reliable scanner that works even without internet.</p>
+
         <ul>
-            <li><strong>Secure Login:</strong> Log in with the email and password associated with your QRTick account.
-            </li>
-            <li><strong>Event Selection:</strong> After login, you'll see a list of events you're authorized to scan
-                for. Select the current event to begin. Event banner images are shown for easy identification.</li>
+            <li><strong>Modes:</strong> Use your phone's camera or a professional 2D scanner.</li>
+            <li><strong>Offline Ready:</strong> Tickets are auto-downloaded for offline validation.</li>
+            <li><strong>Instant Feedback:</strong> Clear visual and haptic (vibration) alerts for every scan.</li>
         </ul>
 
-        <h3>Key Feature: Robust Offline Mode</h3>
-        <p>One of the core strengths of the scanner app is its ability to function reliably offline:</p>
-        <ul>
-            <li><strong>Data Sync:</strong> Before the event (while online), sync the event data. This downloads all
-                ticket information (including validity status) to the device.</li>
-            <li><strong>Offline Scanning:</strong> Scan tickets seamlessly without an internet connection. The app
-                validates tickets against the locally stored data.</li>
-            <li><strong>Local Storage:</strong> Check-ins performed while offline are securely saved on the device.</li>
-            <li><strong>Automatic Sync:</strong> When network connectivity returns, the app automatically syncs the
-                offline check-ins with the server in the background.</li>
-            <li><strong>Offline Indicator:</strong> A clear visual indicator lets you know when the app is operating in
-                offline mode.</li>
-            <li><strong>Manual Refresh:</strong> You can manually trigger a data re-sync when you regain connectivity if
-                needed.</li>
-        </ul>
+        <p>For a detailed walkthrough on using the scanner and handling gate sales (POS), see our
+            <a href="manager-guide#pos-scanners" style="color: #FDC230; font-weight: 600;">Gate Management Guide
+                →</a>
+        </p>
 
-        <h3>Real-time QR Code Scanning</h3>
-        <ul>
-            <li><strong>Fast Detection:</strong> Uses the device camera for quick QR code scanning.</li>
-            <li><strong>Optimized Scanning:</strong> Ignores small or distant QR codes to prevent accidental scans.</li>
-        </ul>
-
-        <h3>Instant Ticket Validation (Online & Offline)</h3>
-        <p>Get immediate feedback on every scan:</p>
-        <ul>
-            <li><strong>Checks Performed:</strong> Verifies ticket existence, event match, previous check-in status
-                (locally, pending sync, or on the server), and invalid/refunded status.</li>
-            <li><strong>Clear Visual Feedback:</strong>
-                <ul>
-                    <li>✅ <strong style="color: green;">Valid:</strong> Successful check-in.</li>
-                    <li>⚠️ <strong style="color: orange;">Already Checked In:</strong> Ticket previously used.</li>
-                    <li>💳 <strong style="color: red;">Ticket Invalid (Refunded):</strong> Ticket has been marked as
-                        invalid.</li>
-                    <li>❌ <strong style="color: red;">Wrong Event:</strong> Ticket is for a different event.</li>
-                    <li>❌ <strong style="color: red;">Invalid Ticket:</strong> QR code is not recognized for this event.
-                    </li>
-                    <li>❗ <strong style="color: red;">Error:</strong> System error during validation.</li>
-                </ul>
-            </li>
-            <li><strong>Enhanced Feedback:</strong> Scan results feature color-coded backgrounds, relevant emojis, and
-                haptic feedback (vibration) for successful scans.</li>
-        </ul>
-
-        <h3>Monitoring Progress</h3>
-        <ul>
-            <li><strong>Real-time Stats:</strong> The app displays live statistics for the selected event (Checked-in
-                vs. Total Valid Tickets).</li>
-            <li><strong>Progress Bar:</strong> A visual progress bar shows the check-in completion percentage.</li>
-        </ul>
-
-        <h3>User Experience</h3>
-        <ul>
-            <li>Clean interface with loading indicators.</li>
-            <li>Standard navigation patterns.</li>
-            <li>Adapts to different screen sizes.</li>
-            <li>Handles camera permissions requests.</li>
-            <li>Provides clear error messages if issues arise.</li>
-        </ul>
 
         <h2 id="promoting">Promoting Your Ticket Page</h2>
         <p>We make it easy to share your ticket page with potential supporters:</p>
@@ -338,7 +293,8 @@
         </ul>
 
         <div class="tip-box">
-            <strong>Important:</strong> We recommend completing the launch checklist at least 48 hours before starting
+            <strong>Important:</strong> We recommend completing the launch checklist at least 48 hours before
+            starting
             ticket sales to ensure everything is ready.
         </div>
 
