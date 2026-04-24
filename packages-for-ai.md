@@ -94,7 +94,7 @@ Optional **on top of** a physical ticket order (not part of base print price).
 
 | Item | Price | Notes |
 |------|-------|--------|
-| Gate kit | $15,000 JMD per event | 2 professional scanners + portable charging; high traffic |
+| Gate kit | $15,000 JMD per event | 2 professional scanners; high traffic |
 | Merchant card machine | $10,000 JMD per event | Card at door; 10% processing |
 | Gate supervisor | $15,000 JMD per event | QRTick on-site, flow + staff training, up to ~6 hours |
 | Full gate team | From $35,000 JMD per event | Supervisor + 2–3 trained scanners |
