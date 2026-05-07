@@ -10,24 +10,25 @@ Human-facing onboarding context: see **What to Expect** (`what-to-expect`).
 
 QRTick is positioned as a **Managed Quarterly Partner**, not only a fee-per-ticket tool. The 2026 model uses a **90-day access window** suited to seasons, leagues, or event series.
 
+**Final Offer Policy:** We have moved to **RFID Tap Tickets only** as our physical ticket option. No more standard print-at-home or basic paper tickets.
+
 ---
 
 ## Tier comparison
 
 | Feature | Essentials (DIY) | Professional (Managed) | Elite (Concierge) |
 |--------|------------------|------------------------|-------------------|
-| Access duration | 90 days | 90 days | Annual / custom |
-| Event limit | Single event | Unlimited events | Unlimited |
-| Package price | $10,000 JMD | $40,000 JMD | Starts at $120,000 JMD; custom quote typical |
-| Digital POS | Online sales only | Full “Ticket office” (any device) | Multi-terminal sync |
-| Promo engine | Not available | Basic discount codes | Unlimited discount codes |
-| Comp tickets | Not available | Unlimited digital comps | Unlimited digital comps |
-| Setup & support | Self-service | White-glove setup | Strategic partner |
-| Marketing | Unlisted | 1 week (home page feature) | Full run (home page feature) |
-| Digital program | $4,000 add-on | Included | Custom design |
-| Gate hardware | Add-on | Add-on (gate kit) | All hardware included |
-| Card machine | Not available | Add-on ($10,000 JMD per event) | Included |
-| Physical tickets (print) | Add-on | Add-on | Optional: up to 50 |
+| Price | $10,000 | $40,000 | Starts at $120,000 (custom) |
+| Access Duration | 90 Days | 90 Days | Annual / Custom |
+| Events | Single Event | Unlimited | Unlimited |
+| POS / Ticket Office | Online Sales Only | Full Ticket Office | Multi-Terminal Sync |
+| Promo Engine | Not Available | Basic | Unlimited + Advanced |
+| Comp Tickets | Not Available | Unlimited Digital | Unlimited Digital |
+| Setup & Support | Self-Service | White-Glove | Strategic Partner |
+| Marketing (Home Page) | Unlisted | 1 Week Feature | Full Run Feature |
+| Digital Program | $4,000 add-on | Included | Custom Design |
+| Gate Hardware | Add-on | Add-on | Included |
+| **Physical Tickets** | **RFID Tap Only** | **RFID Tap Only** | **RFID Tap Only** |
 
 ---
 
@@ -39,65 +40,58 @@ QRTick is positioned as a **Managed Quarterly Partner**, not only a fee-per-tick
 
 ---
 
-## Optional services & pricing (à la carte)
+## Gate Team Add-on (Standalone)
 
-Combine with any package tier as applicable. Anchor IDs on the HTML page match the slug in parentheses where useful.
-
-### Gate service & concierge scanning
-
-- **Price:** 10,000 – 100,000 JMD  
-- Trained staff for scanning and entry, sized to team and hours. If QRTick’s gate team is used, a QRTick team member runs gate operations.
-
-### “On the spot” POS service
-
-- **Price:** 6,000 JMD (up to half day) / 10,000 JMD per day + 10% per transaction  
-- Event-day POS; optional QRTick operator; card terminals for door sales.
-
-### Scanning device rental
-
-- **Price:** 2,500 JMD per night / 4,000 JMD (full day) per scanner  
-- Dedicated hardware for high-volume gates.
-
-### Setup & management service
-
-- **Price:** 10,000 JMD  
-- Full setup/management of dashboard, event, or season configuration.
-
-### Listed event (homepage feature)
-
-- **Price:** 10,000 – 100,000 JMD / month  
-- Default is **unlisted** (live via direct link/QR). **Listed** = homepage visibility; final rate depends on demand, duration, placement — account manager quote.
-
-### Digital programme services
-
-- **Range:** 4,000 – 20,000 JMD  
-- **Standard mobile template — 4,000 JMD setup:** schedule, bios, sponsors, analytics.  
-- **Design optimization — 20,000 JMD one-time:** PDF to responsive, on-brand web experience.
-
-### Physical QR tickets
-
-- **Range:** 7,500 – 12,500 JMD (per 300)  
-- **Thermal roll — 7,500 JMD:** receipt-style, on-site print (hardware/software included). **Recommended for the gate** (fast issuance).  
-- **Card stock tickets — 12,500 JMD:** monochrome card stock, sequential numbering.
-
-### Ticket printing add-on fees
-
-Optional **on top of** a physical ticket order (not part of base print price).
-
-- **Add-ons:** 2,500 – 5,000 JMD  
-- **Small batch (add-on) — 2,500 JMD:** flat setup for card stock orders under 100 tickets.  
-- **Express rush (add-on fee) — 5,000 JMD:** physical tickets needed in under 48 hours.
+| Service | Price (JMD) | Savings |
+|---------|-------------|---------|
+| 1 Night | $35,000 | — |
+| 2 Nights | $60,000 | $10,000 |
+| **3 Nights Bundle** | **$80,000** | **$25,000** |
+| 4+ Nights | $100,000 flat | — |
 
 ---
 
-## Gate upgrades (Professional tier clients)
+## Tap RFID Physical Tickets (Only Physical Option)
 
-| Item | Price | Notes |
-|------|-------|--------|
-| Gate kit | $15,000 JMD per event | 2 professional scanners; high traffic |
-| Merchant card machine | $10,000 JMD per event | Card at door; 10% processing |
-| Gate supervisor | $15,000 JMD per event | QRTick on-site, flow + staff training, up to ~6 hours |
-| Full gate team | From $35,000 JMD per event | Supervisor + 2–3 trained scanners |
+| Item | Price (JMD) | Notes |
+|------|-------------|-------|
+| RFID Tap Ticket | **$180** each | Printed + Encoded + Ready to Tap |
+| **Theatre Special Rate** | **$140** each | When purchased with Professional + 3-Night Gate Team |
+| Minimum Order | 100 tickets | — |
+| One-time Setup & Encoding Fee | $12,000 | Waived with Professional + 3-Night Gate Bundle |
+
+---
+
+## Recommended 3-Night Theatre Solutions
+
+| Package | Components | Total Price | Best For |
+|---------|------------|-------------|----------|
+| **Theatre Light** | Professional only | $40,000 | Digital-first shows |
+| **Theatre Standard** (Most Recommended) | Professional + 3-Night Gate Team | **$120,000** | Typical theatre runs |
+| **Theatre Full** | Professional + 3-Night Gate + 250 RFID Tickets @ $140 | **$155,000** | Complete professional experience |
+
+---
+
+## Key Messaging
+
+> We have moved to **RFID Tap Tickets only** as our physical ticket option. Every physical ticket is a premium, secure, tap-to-enter RFID ticket for faster entry and better fraud protection.
+
+---
+
+## Payout Options
+
+| Payout Type | Fee | Notes |
+|-------------|-----|-------|
+| **Standard (Post-Event)** | **0%** | Full proceeds 5–7 days after event ends. Default. |
+| **Early Payout Request** | **2.5%** | Min $5,000 JMD fee. Request funds before/during event. |
+| **Express / Same-Day** | **3.5%** | Priority processing for urgent requests. |
+
+### Early Payout Rules:
+- **Available only on Professional and Elite packages.**
+- Minimum payout amount: **$50,000 JMD**.
+- Maximum per request: 50–75% of available balance.
+- Limit: Max **2 early payout requests** per event.
+- Fee is deducted from the payout amount.
 
 ---
 
@@ -107,6 +101,13 @@ Optional **on top of** a physical ticket order (not part of base print price).
 - **Upfront discount:** 5% off total package and add-ons when paid in full at booking.
 
 **Sample invoice:** organisers can request via the Tally link on the live packages page (`https://tally.so/r/nW4Nak`).
+
+---
+
+## Updated Theatre Example (with Early Payout)
+
+**Theatre Full Package:** $155,000 (Professional + 3-Night Gate + 250 RFID @ $140).
+*Example:* Early Payout of $300,000 in ticket sales @ 2.5% = **+$7,500** fee.
 
 ---
 
