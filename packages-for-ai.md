@@ -47,7 +47,8 @@ QRTick is positioned as a **Managed Quarterly Partner**, not only a fee-per-tick
 | 1 Night | $35,000 | — |
 | 2 Nights | $60,000 | $10,000 |
 | **3 Nights Bundle** | **$80,000** | **$25,000** |
-| 4+ Nights | $100,000 flat | — |
+| 4-6 Nights | $120,000 flat | — |
+| 7+ Nights | Custom Quote | — |
 
 ---
 
@@ -84,7 +85,7 @@ QRTick is positioned as a **Managed Quarterly Partner**, not only a fee-per-tick
 |-------------|-----|-------|
 | **Standard (Post-Event)** | **0%** | Full proceeds 5–7 days after event ends. Default. |
 | **Early Payout Request** | **2.5%** | Min $5,000 JMD fee. Request funds before/during event. |
-| **Express / Same-Day** | **3.5%** | Priority processing for urgent requests. |
+| **Express Payout** | **3.5%** | Priority same-day or next-day processing. Note: subject to availability and clearance of funds. |
 
 ### Early Payout Rules:
 - **Available only on Professional and Elite packages.**
