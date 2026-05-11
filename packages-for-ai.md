@@ -42,12 +42,12 @@ QRTick is positioned as a **Managed Quarterly Partner**, not only a fee-per-tick
 
 ## Gate Team Add-on (Standalone)
 
-| Service | Price (JMD) | Savings |
-|---------|-------------|---------|
-| 1 Night | $35,000 | — |
-| 2 Nights | $60,000 | $10,000 |
-| **3 Nights Bundle** | **$80,000** | **$25,000** |
-| 4-6 Nights | $120,000 flat | — |
+| Service | Price (JMD) | Notes |
+|---------|-------------|-------|
+| 3-Hour Shift | $18,000 | Per event / night |
+| 6-Hour Shift | $35,000 | Per event / night |
+| **3-Night Bundle (6h)** | **$80,000** | Save $25,000 (Popular) |
+| **Volume Discount** | **5% Off** | Applied to gate total for seasons with 4+ events |
 | 7+ Nights | Custom Quote | — |
 
 ---
