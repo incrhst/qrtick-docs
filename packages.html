@@ -633,29 +633,40 @@
     <section id="rfid-tap-tickets" style="max-width: 1000px; margin: 0 auto 6rem; padding: 0 24px; scroll-margin-top: 88px;">
         <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 2rem;">
             <span style="background: var(--gold); color: var(--black); width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; border-radius: 50%; font-weight: 900; font-size: 1.25rem;">3</span>
-            <h2 style="margin: 0; font-size: 2rem;">Upgrade to Physical Entry</h2>
+            <h2 style="margin: 0; font-size: 2rem;">Choose Physical Tickets</h2>
         </div>
 
-        <div style="background: var(--black); color: var(--white); padding: 3.5rem; border-radius: 20px; position: relative; overflow: hidden; border: 1px solid var(--gold);">
-            <div style="position: absolute; right: -20px; bottom: -20px; opacity: 0.1; font-size: 8rem;">🔒</div>
-            <div style="max-width: 600px;">
-                <h3 style="color: var(--gold); font-size: 1.5rem; margin-bottom: 1rem;">Next-Gen RFID Tickets</h3>
-                <p style="font-size: 1.1rem; line-height: 1.6; color: #c8c0b8; margin-bottom: 2.5rem;">
-                    We have moved exclusively to secure RFID-Enabled Tickets. Every paper ticket now carries a secure tap-to-enter chip for elite fraud protection and faster entry.
-                </p>
-                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;">
-                    <div>
-                        <p style="font-size: 0.85rem; color: #888; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.5rem;">Per Ticket</p>
-                        <p style="font-size: 1.75rem; font-weight: 700; color: var(--white);">$140 <span style="font-size: 0.9rem; font-weight: 400; color: #888;">(min 100)</span></p>
-                    </div>
-                    <div>
-                        <p style="font-size: 0.85rem; color: #888; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.5rem;">Setup Fee</p>
-                        <p style="font-size: 1.75rem; font-weight: 700; color: var(--white);">$10,000</p>
-                    </div>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+            <!-- QR Code Option -->
+            <div style="background: var(--white); padding: 2.5rem; border-radius: 16px; border: 1px solid var(--rule); display: flex; flex-direction: column;">
+                <h3 style="margin-bottom: 1rem;">QR Code Physical</h3>
+                <p style="font-size: 0.95rem; color: var(--muted); margin-bottom: 2rem; flex-grow: 1;">Professional <strong>Black & White</strong> paper tickets with secure QR codes. The budget-friendly physical choice.</p>
+                <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 1rem;">
+                    <span style="font-size: 0.85rem; color: var(--muted); text-transform: uppercase;">Per Ticket</span>
+                    <span style="font-size: 2rem; font-weight: 800;">$55</span>
                 </div>
+                <p style="font-size: 0.85rem; color: var(--muted);">*Minimum order 100 tickets</p>
+            </div>
+
+            <!-- RFID Option -->
+            <div style="background: var(--black); color: var(--white); padding: 2.5rem; border-radius: 20px; border: 2px solid var(--gold); display: flex; flex-direction: column; position: relative;">
+                <div style="position: absolute; top: 1.5rem; right: 1.5rem; background: var(--gold); color: var(--black); font-size: 0.7rem; font-weight: 900; padding: 4px 10px; border-radius: 4px; text-transform: uppercase;">Premium</div>
+                <h3 style="color: var(--gold); margin-bottom: 1rem;">Next-Gen RFID</h3>
+                <p style="font-size: 0.95rem; color: #c8c0b8; margin-bottom: 2rem; flex-grow: 1;">Premium <strong>Black & White</strong> tickets with secure tap-to-enter chips. Elite fraud protection and the fastest possible entry.</p>
+                <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 1rem;">
+                    <span style="font-size: 0.85rem; color: #888; text-transform: uppercase;">Per Ticket</span>
+                    <span style="font-size: 2.5rem; font-weight: 800; color: var(--gold);">$140</span>
+                </div>
+                <p style="font-size: 0.85rem; color: #888;">*Includes encoding & encryption</p>
             </div>
         </div>
+        
+        <div style="margin-top: 2rem; padding: 1.5rem; background: #f8f8f8; border-radius: 12px; border: 1px solid var(--rule); display: flex; align-items: center; justify-content: space-between; gap: 1rem; flex-wrap: wrap;">
+            <p style="margin: 0; font-size: 0.95rem; color: var(--mid);"><strong>Ticket Setup Fee:</strong> $10,000 one-time encoding & design setup.</p>
+            <p style="margin: 0; font-size: 0.9rem; color: var(--gold); font-weight: 700;">Waived for Professional Partnership + 3-Night Bundle</p>
+        </div>
     </section>
+
     <!-- STEP 4: MANAGED FINANCE -->
     <section style="max-width: 1000px; margin: 0 auto 6rem; padding: 0 24px;">
         <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 2rem;">
