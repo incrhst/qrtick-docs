@@ -14,8 +14,8 @@
 *   **3-Night Bundle (6h)**: $80,000 (Saves $25,000).
 *   **Volume Discount**: 5% Off gate total for organizers with 4+ events in a season.
 
-## 3. Physical Entry (RFID Only)
-*   **RFID Tap Ticket**: $140 per ticket (Minimum 100).
+## 3. Physical Entry (RFID-Enabled)
+*   **RFID Tap Ticket**: $140 per ticket (Minimum 100). These are high-quality paper tickets with secure RFID labels.
 *   **RFID Setup Fee**: $10,000 (Waived for Professional + 3-Night Bundle).
 
 ## 4. Finance & Payouts
