@@ -1025,10 +1025,16 @@
                     </div>
 
                     <a href="https://tally.so/r/nW4Nak" style="display: block; text-align: center; padding: 1.2rem; background: var(--gold); color: var(--black); text-decoration: none; border-radius: 12px; font-weight: 800; transition: transform 0.2s;">Request Formal Invoice</a>
+                    
+                    <a id="email-link" href="#" style="display: block; text-align: center; padding: 1.2rem; background: transparent; color: var(--gold); text-decoration: none; border: 1px solid var(--gold); border-radius: 12px; font-weight: 700; margin-top: 1rem; transition: all 0.2s;">Email Selection to QRTick</a>
                 </div>
             </div>
         </div>
     </section>
+
+    <footer style="max-width: 1000px; margin: 4rem auto; padding: 2rem 24px; border-top: 1px solid var(--rule); text-align: center; color: var(--muted); font-size: 0.85rem;">
+        <p>&copy; 2024 - 2026 QRTick. All rights reserved.</p>
+    </footer>
 
     <script>
         let config = {
@@ -1122,6 +1128,19 @@
                 </div>` : ''}
             `;
             document.getElementById('line-items').innerHTML = lines;
+
+            // Update Email Link
+            let subject = `Investment Inquiry: ${config.platform.charAt(0).toUpperCase() + config.platform.slice(1)} Config`;
+            let body = `I have selected the following configuration on QRTick.com:
+
+- Platform: ${config.platform.toUpperCase()}
+- Gate Support: ${config.nights} nights (${config.gateType} shifts)
+- Physical Tickets: ${config.qr} QR, ${config.rfid} RFID
+- Estimated Total: $${total.toLocaleString()}
+
+I would like to discuss a formal invoice for this configuration.`;
+
+            document.getElementById('email-link').href = `mailto:hello@qrtick.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
         }
 
         // Init
