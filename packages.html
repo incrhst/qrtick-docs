@@ -605,25 +605,38 @@
             <h2 style="margin: 0; font-size: 2rem;">Add Your Gate Experience</h2>
         </div>
 
-        <div style="background: var(--white); border: 1px solid var(--rule); border-radius: 16px; overflow: hidden; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));">
-            <div style="padding: 2.5rem; border-right: 1px solid var(--rule);">
-                <h3 style="margin-bottom: 0.5rem;">Single Shifts</h3>
-                <p style="color: var(--muted); font-size: 0.95rem; margin-bottom: 2rem;">Professional QRTick staff for individual event days.</p>
-                <div style="display: flex; justify-content: space-between; margin-bottom: 1rem; font-weight: 700; font-size: 1.1rem;">
-                    <span>3-Hour Team</span>
-                    <span>$18,000</span>
-                </div>
-                <div style="display: flex; justify-content: space-between; margin-bottom: 1rem; font-weight: 700; font-size: 1.1rem;">
-                    <span>6-Hour Team</span>
-                    <span>$35,000</span>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem;">
+            <!-- Option 1: Nightly -->
+            <div style="background: var(--white); padding: 2.5rem; border-radius: 16px; border: 1px solid var(--rule); display: flex; flex-direction: column;">
+                <h3 style="margin-bottom: 0.5rem; font-size: 1.2rem;">Book Nightly</h3>
+                <p style="color: var(--muted); font-size: 0.9rem; margin-bottom: 2rem; flex-grow: 1;">Pay as you go for individual event nights.</p>
+                <div style="margin-bottom: 1rem;">
+                    <div style="display: flex; justify-content: space-between; font-weight: 700; border-bottom: 1px solid #eee; padding-bottom: 8px; margin-bottom: 8px;">
+                        <span>3h Team</span>
+                        <span>$18,000</span>
+                    </div>
+                    <div style="display: flex; justify-content: space-between; font-weight: 700;">
+                        <span>6h Team</span>
+                        <span>$35,000</span>
+                    </div>
                 </div>
             </div>
-            <div style="padding: 2.5rem; background: #fffcf5;">
-                <div style="display: inline-block; background: var(--black); color: var(--gold); padding: 4px 12px; border-radius: 4px; font-size: 0.7rem; font-weight: 900; text-transform: uppercase; margin-bottom: 0.5rem;">Theatre Special</div>
-                <h3 style="margin-bottom: 0.5rem;">3-Night Bundle</h3>
-                <p style="color: var(--muted); font-size: 0.95rem; margin-bottom: 2rem;">The standard for theatre runs. Includes management and priority support.</p>
-                <div style="font-size: 2.5rem; font-weight: 800; color: var(--black);">$80,000</div>
-                <p style="font-size: 0.9rem; color: var(--gold); font-weight: 700; margin-top: 0.5rem;">Save $25,000 over single shifts</p>
+
+            <!-- Option 2: 3h Bundle -->
+            <div style="background: var(--white); padding: 2.5rem; border-radius: 16px; border: 1px solid var(--rule); display: flex; flex-direction: column;">
+                <h3 style="margin-bottom: 0.5rem; font-size: 1.2rem;">Full Weekend (3h)</h3>
+                <p style="color: var(--muted); font-size: 0.9rem; margin-bottom: 2rem; flex-grow: 1;">3 nights of coverage. The standard choice for theatre runs.</p>
+                <div style="font-size: 2.5rem; font-weight: 800; color: var(--black);">$48,000</div>
+                <p style="font-size: 0.9rem; color: var(--gold); font-weight: 700; margin-top: 0.5rem;">Save $6,000 vs. nightly</p>
+            </div>
+
+            <!-- Option 3: 6h Bundle -->
+            <div style="background: var(--black); color: var(--white); padding: 2.5rem; border-radius: 20px; border: 2px solid var(--gold); display: flex; flex-direction: column; position: relative;">
+                <div style="position: absolute; top: -12px; right: 20px; background: var(--gold); color: var(--black); padding: 4px 12px; border-radius: 4px; font-size: 0.7rem; font-weight: 900; text-transform: uppercase;">Best Value</div>
+                <h3 style="color: var(--gold); margin-bottom: 0.5rem; font-size: 1.2rem;">Full Weekend (6h)</h3>
+                <p style="color: #c8c0b8; font-size: 0.9rem; margin-bottom: 2rem; flex-grow: 1;">Complete gate management for high-capacity shows.</p>
+                <div style="font-size: 2.5rem; font-weight: 800; color: var(--gold);">$80,000</div>
+                <p style="font-size: 0.9rem; color: var(--gold); font-weight: 700; margin-top: 0.5rem;">Save $25,000 vs. nightly</p>
             </div>
         </div>
         <p style="text-align: center; font-size: 0.85rem; color: var(--muted); margin-top: 2rem;">*5% Seasonal discount automatically applied for seasons with 4+ events.</p>
@@ -663,7 +676,7 @@
         
         <div style="margin-top: 2rem; padding: 1.5rem; background: #f8f8f8; border-radius: 12px; border: 1px solid var(--rule); display: flex; align-items: center; justify-content: space-between; gap: 1rem; flex-wrap: wrap;">
             <p style="margin: 0; font-size: 0.95rem; color: var(--mid);"><strong>Ticket Setup Fee:</strong> $10,000 one-time encoding & design setup.</p>
-            <p style="margin: 0; font-size: 0.9rem; color: var(--gold); font-weight: 700;">Waived for Professional Partnership + 3-Night Bundle</p>
+            <p style="margin: 0; font-size: 0.9rem; color: var(--gold); font-weight: 700;">Waived for Professional Partnership + any 3-Night Bundle</p>
         </div>
     </section>
 
@@ -689,6 +702,78 @@
                     <li style="margin-bottom: 0.75rem;"><strong>Managed:</strong> Fees deducted from ticket sales. No upfront cost.</li>
                     <li style="margin-bottom: 0.75rem;"><strong>Prepaid:</strong> Pay upfront and save 5% on your total.</li>
                 </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- SCENARIOS -->
+    <section style="max-width: 1000px; margin: 0 auto 6rem; padding: 0 24px;">
+        <div style="text-align: center; margin-bottom: 4rem;">
+            <p class="eyebrow" style="color: var(--gold); margin-bottom: 1rem;">Decision Guide</p>
+            <h2 style="font-size: 2.5rem; margin-bottom: 1rem;">Typical Investment Scenarios</h2>
+            <p style="color: var(--muted); font-size: 1.1rem;">See how most organizers build their QRTick experience.</p>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+            <!-- Scenario 1 -->
+            <div style="background: var(--white); padding: 2.5rem; border-radius: 20px; border: 1px solid var(--rule); display: flex; flex-direction: column;">
+                <h3 style="margin-bottom: 1rem; font-size: 1.5rem;">The Theatre Run</h3>
+                <p style="font-size: 0.95rem; color: var(--muted); margin-bottom: 2rem; flex-grow: 1;">Our most popular configuration for a 3-night professional production.</p>
+                
+                <ul style="list-style: none; padding: 0; margin-bottom: 2rem; font-size: 0.95rem; color: var(--mid);">
+                    <li style="display: flex; justify-content: space-between; padding: 12px 0; border-bottom: 1px solid #eee;">
+                        <span>Professional Platform</span>
+                        <span style="font-weight: 700;">$40,000</span>
+                    </li>
+                    <li style="display: flex; justify-content: space-between; padding: 12px 0; border-bottom: 1px solid #eee;">
+                        <span>3-Night Gate (3h)</span>
+                        <span style="font-weight: 700;">$48,000</span>
+                    </li>
+                    <li style="display: flex; justify-content: space-between; padding: 12px 0; border-bottom: 1px solid #eee;">
+                        <span>500 QR Tickets</span>
+                        <span style="font-weight: 700;">$27,500</span>
+                    </li>
+                    <li style="display: flex; justify-content: space-between; padding: 12px 0; color: var(--gold); font-weight: 700;">
+                        <span>Setup Fee Waiver</span>
+                        <span>-$10,000</span>
+                    </li>
+                </ul>
+
+                <div style="display: flex; justify-content: space-between; align-items: baseline; padding-top: 1rem;">
+                    <span style="font-size: 1.1rem; font-weight: 700;">Total Estimate</span>
+                    <span style="font-size: 2.2rem; font-weight: 800; color: var(--black);">$105,500</span>
+                </div>
+            </div>
+
+            <!-- Scenario 2 -->
+            <div style="background: var(--black); color: var(--white); padding: 2.5rem; border-radius: 20px; border: 2px solid var(--gold); display: flex; flex-direction: column; position: relative; box-shadow: 0 20px 40px rgba(0,0,0,0.1);">
+                <div style="position: absolute; top: -15px; left: 50%; transform: translateX(-50%); background: var(--gold); color: var(--black); padding: 4px 20px; border-radius: 20px; font-size: 0.75rem; font-weight: 900; text-transform: uppercase;">Premium Choice</div>
+                <h3 style="margin-bottom: 1rem; font-size: 1.5rem; color: var(--gold);">The Full Production</h3>
+                <p style="font-size: 0.95rem; color: #aaa; margin-bottom: 2rem; flex-grow: 1;">Complete gate management and elite RFID security for a premium audience.</p>
+                
+                <ul style="list-style: none; padding: 0; margin-bottom: 2rem; font-size: 0.95rem; color: #ccc;">
+                    <li style="display: flex; justify-content: space-between; padding: 12px 0; border-bottom: 1px solid #333;">
+                        <span>Professional Platform</span>
+                        <span style="font-weight: 700; color: var(--white);">$40,000</span>
+                    </li>
+                    <li style="display: flex; justify-content: space-between; padding: 12px 0; border-bottom: 1px solid #333;">
+                        <span>3-Night Gate (6h)</span>
+                        <span style="font-weight: 700; color: var(--white);">$80,000</span>
+                    </li>
+                    <li style="display: flex; justify-content: space-between; padding: 12px 0; border-bottom: 1px solid #333;">
+                        <span>500 RFID Tickets</span>
+                        <span style="font-weight: 700; color: var(--white);">$70,000</span>
+                    </li>
+                    <li style="display: flex; justify-content: space-between; padding: 12px 0; color: var(--gold); font-weight: 700;">
+                        <span>Setup Fee Waiver</span>
+                        <span>-$10,000</span>
+                    </li>
+                </ul>
+
+                <div style="display: flex; justify-content: space-between; align-items: baseline; padding-top: 1rem;">
+                    <span style="font-size: 1.1rem; font-weight: 700;">Total Estimate</span>
+                    <span style="font-size: 2.2rem; font-weight: 800; color: var(--gold);">$180,000</span>
+                </div>
             </div>
         </div>
     </section>

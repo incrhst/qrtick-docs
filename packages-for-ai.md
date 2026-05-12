@@ -11,13 +11,14 @@
 ## 2. Gate Experience (Add-ons)
 *   **3-Hour Gate Team**: $18,000 per night.
 *   **6-Hour Gate Team**: $35,000 per night.
+*   **3-Night Bundle (3h)**: $48,000 (Saves $6,000).
 *   **3-Night Bundle (6h)**: $80,000 (Saves $25,000).
 *   **Volume Discount**: 5% Off gate total for organizers with 4+ events in a season.
 
 ## 3. Physical Entry Options
 *   **QR Code Ticket**: $55 per ticket (Minimum 100). Black & White paper tickets with secure QR codes.
 *   **RFID Tap Ticket**: $140 per ticket (Minimum 100). Black & White paper tickets with secure RFID labels for faster entry.
-*   **Ticket Setup Fee**: $10,000 (Waived for Professional + 3-Night Bundle).
+*   **Ticket Setup Fee**: $10,000 (Waived for Professional + any 3-Night Bundle).
 
 ## 4. Finance & Payouts
 *   **Standard Payout**: 5-7 Days Post-Event (Free).
