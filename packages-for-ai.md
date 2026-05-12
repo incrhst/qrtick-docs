@@ -4,11 +4,17 @@
 
 ---
 
-## 1. Platform Choice
-*   **Essentials ($10,000)**: Single event access, self-service tools, digital QR tickets.
-*   **Professional ($40,000) [Recommended]**: Managed partnership, unlimited seasonal events, white-glove setup, digital programs, early payout access.
+## 1. Primary Ballpark Packages
+*   **The Essentials ($10,000)**: Entry tier. Essentials Platform + Self-Managed Gates.
+*   **The Professional ($40,000)**: Managed tier. Professional Platform + White-Glove Setup + Digital Programs.
+*   **The Managed Weekend ($88,000)**: Series tier. Professional Platform + 3-Night Gate Bundle (3h).
 
-## 2. Gate Experience (Add-ons)
+## 2. Component Breakdown (For Custom Scenarios)
+### Platform Choice
+*   **Essentials Platform ($10,000)**: Single event access, self-service tools, digital QR tickets.
+*   **Professional Platform ($40,000)**: Managed partnership, unlimited seasonal events, white-glove setup, digital programs, early payout access.
+
+### Gate Experience (Add-ons)
 *   **3-Hour Gate Team**: $18,000 per night.
 *   **6-Hour Gate Team**: $35,000 per night.
 *   **3-Night Bundle (3h)**: $48,000 (Saves $6,000).
