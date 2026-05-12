@@ -948,6 +948,184 @@
         }
     </script>
     <script src="menu.js"></script>
-</body>
+    <section id="calculator" style="max-width: 1000px; margin: 0 auto 6rem; padding: 4rem 24px; background: #fdfdfd; border-radius: 32px; border: 1px solid var(--rule); box-shadow: 0 40px 100px rgba(0,0,0,0.03);">
+        <div style="text-align: center; margin-bottom: 3rem;">
+            <h2 style="font-size: 2.5rem; margin-bottom: 1rem;">Build Your Quote</h2>
+            <p style="color: var(--muted);">Select your options below to see a real-time estimate of your investment.</p>
+        </div>
 
+        <div style="display: grid; grid-template-columns: 1fr 350px; gap: 3rem;">
+            <!-- Inputs -->
+            <div style="display: flex; flex-direction: column; gap: 2.5rem;">
+                <!-- Platform -->
+                <div>
+                    <label style="display: block; font-weight: 800; margin-bottom: 1rem; text-transform: uppercase; font-size: 0.75rem; letter-spacing: 0.1em;">1. Choose Your Platform</label>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                        <div onclick="setPlatform('essentials')" id="plat-essentials" style="cursor: pointer; padding: 1.5rem; border: 2px solid var(--rule); border-radius: 12px; transition: all 0.2s;">
+                            <div style="font-weight: 800; margin-bottom: 4px;">Essentials</div>
+                            <div style="font-size: 0.85rem; color: var(--muted);">$10,000 (Lite)</div>
+                        </div>
+                        <div onclick="setPlatform('professional')" id="plat-professional" style="cursor: pointer; padding: 1.5rem; border: 2px solid var(--gold); border-radius: 12px; transition: all 0.2s; background: rgba(212, 175, 55, 0.05);">
+                            <div style="font-weight: 800; margin-bottom: 4px;">Professional</div>
+                            <div style="font-size: 0.85rem; color: var(--muted);">$40,000 (Managed)</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Gates -->
+                <div>
+                    <label style="display: block; font-weight: 800; margin-bottom: 1rem; text-transform: uppercase; font-size: 0.75rem; letter-spacing: 0.1em;">2. Gate Support</label>
+                    <div style="display: flex; align-items: center; gap: 2rem; margin-bottom: 1.5rem;">
+                        <div style="flex-grow: 1;">
+                            <div style="font-size: 0.85rem; margin-bottom: 0.5rem; font-weight: 600;">Number of Nights</div>
+                            <input type="range" min="0" max="12" value="0" id="gate-nights" oninput="calculate()" style="width: 100%; accent-color: var(--gold);">
+                            <div style="display: flex; justify-content: space-between; font-size: 0.7rem; color: var(--muted); margin-top: 4px;">
+                                <span>0</span><span>3</span><span>6</span><span>9</span><span>12</span>
+                            </div>
+                        </div>
+                        <div id="night-display" style="font-size: 2rem; font-weight: 800; width: 60px; text-align: center;">0</div>
+                    </div>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                        <div onclick="setGateType('3h')" id="gate-3h" style="cursor: pointer; padding: 1rem; border: 2px solid var(--rule); border-radius: 12px; text-align: center; font-size: 0.9rem; font-weight: 700;">3h Shift ($18k/n)</div>
+                        <div onclick="setGateType('6h')" id="gate-6h" style="cursor: pointer; padding: 1rem; border: 2px solid var(--rule); border-radius: 12px; text-align: center; font-size: 0.9rem; font-weight: 700;">6h Shift ($35k/n)</div>
+                    </div>
+                    <div id="bundle-alert" style="margin-top: 1rem; padding: 10px; background: #fffde7; border-radius: 8px; font-size: 0.8rem; color: #827717; display: none; font-weight: 600;">
+                        ✨ 3-Night Bundle pricing applied!
+                    </div>
+                </div>
+
+                <!-- Tickets -->
+                <div>
+                    <label style="display: block; font-weight: 800; margin-bottom: 1rem; text-transform: uppercase; font-size: 0.75rem; letter-spacing: 0.1em;">3. Physical Tickets</label>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;">
+                        <div>
+                            <div style="font-size: 0.85rem; margin-bottom: 0.5rem; font-weight: 600;">QR Tickets ($55)</div>
+                            <input type="number" id="qr-count" value="0" step="100" min="0" oninput="calculate()" style="width: 100%; padding: 12px; border: 1px solid var(--rule); border-radius: 8px;">
+                        </div>
+                        <div>
+                            <div style="font-size: 0.85rem; margin-bottom: 0.5rem; font-weight: 600;">RFID Tickets ($140)</div>
+                            <input type="number" id="rfid-count" value="0" step="100" min="0" oninput="calculate()" style="width: 100%; padding: 12px; border: 1px solid var(--rule); border-radius: 8px;">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sticky Total -->
+            <div style="position: sticky; top: 2rem; align-self: start;">
+                <div style="background: var(--black); color: var(--white); padding: 2.5rem; border-radius: 24px; box-shadow: 0 30px 60px rgba(0,0,0,0.2);">
+                    <div style="font-size: 0.75rem; font-weight: 900; text-transform: uppercase; color: var(--gold); margin-bottom: 2rem; letter-spacing: 0.1em;">Estimated Investment</div>
+                    
+                    <div id="line-items" style="font-size: 0.85rem; color: #aaa; margin-bottom: 2rem;">
+                        <!-- JS injects here -->
+                    </div>
+
+                    <div style="border-top: 1px solid #333; padding-top: 1.5rem; margin-bottom: 2rem;">
+                        <div style="font-size: 3rem; font-weight: 800; color: var(--gold); line-height: 1;">$<span id="total-val">10,000</span></div>
+                        <div style="font-size: 0.8rem; color: #888; margin-top: 8px;">Subject to final confirmation</div>
+                    </div>
+
+                    <a href="https://tally.so/r/nW4Nak" style="display: block; text-align: center; padding: 1.2rem; background: var(--gold); color: var(--black); text-decoration: none; border-radius: 12px; font-weight: 800; transition: transform 0.2s;">Request Formal Invoice</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        let config = {
+            platform: 'essentials',
+            gateType: '3h',
+            nights: 0,
+            qr: 0,
+            rfid: 0
+        };
+
+        function setPlatform(type) {
+            config.platform = type;
+            document.getElementById('plat-essentials').style.borderColor = type === 'essentials' ? 'var(--gold)' : 'var(--rule)';
+            document.getElementById('plat-essentials').style.background = type === 'essentials' ? 'rgba(212, 175, 55, 0.05)' : 'transparent';
+            document.getElementById('plat-professional').style.borderColor = type === 'professional' ? 'var(--gold)' : 'var(--rule)';
+            document.getElementById('plat-professional').style.background = type === 'professional' ? 'rgba(212, 175, 55, 0.05)' : 'transparent';
+            calculate();
+        }
+
+        function setGateType(type) {
+            config.gateType = type;
+            document.getElementById('gate-3h').style.borderColor = type === '3h' ? 'var(--gold)' : 'var(--rule)';
+            document.getElementById('gate-6h').style.borderColor = type === '6h' ? 'var(--gold)' : 'var(--rule)';
+            calculate();
+        }
+
+        function calculate() {
+            config.nights = parseInt(document.getElementById('gate-nights').value);
+            config.qr = parseInt(document.getElementById('qr-count').value) || 0;
+            config.rfid = parseInt(document.getElementById('rfid-count').value) || 0;
+            
+            document.getElementById('night-display').innerText = config.nights;
+
+            let platformPrice = config.platform === 'essentials' ? 10000 : 40000;
+            let gatePrice = 0;
+            let bundleApplied = false;
+
+            // Gate Logic
+            if (config.nights === 3) {
+                gatePrice = config.gateType === '3h' ? 48000 : 80000;
+                bundleApplied = true;
+            } else if (config.nights > 0) {
+                let nightlyRate = config.gateType === '3h' ? 18000 : 35000;
+                gatePrice = config.nights * nightlyRate;
+                
+                // Seasonal discount for 4+ nights
+                if (config.nights >= 4) {
+                    gatePrice = gatePrice * 0.95;
+                }
+            }
+
+            document.getElementById('bundle-alert').style.display = bundleApplied ? 'block' : 'none';
+
+            // Ticket Logic
+            let ticketPrice = (config.qr * 55) + (config.rfid * 140);
+            let setupFee = (config.qr > 0 || config.rfid > 0) ? 10000 : 0;
+            
+            // Waiver logic: Professional + 3 nights
+            if (config.platform === 'professional' && config.nights >= 3) {
+                setupFee = 0;
+            }
+
+            let total = platformPrice + gatePrice + ticketPrice + setupFee;
+
+            // Update UI
+            document.getElementById('total-val').innerText = total.toLocaleString();
+            
+            let lines = `
+                <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
+                    <span>${config.platform === 'essentials' ? 'Essentials' : 'Professional'} Platform</span>
+                    <span>$${platformPrice.toLocaleString()}</span>
+                </div>
+                ${gatePrice > 0 ? `
+                <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
+                    <span>Gate: ${config.nights} nights (${config.gateType})</span>
+                    <span>$${gatePrice.toLocaleString()}</span>
+                </div>` : ''}
+                ${ticketPrice > 0 ? `
+                <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
+                    <span>Physical Tickets</span>
+                    <span>$${ticketPrice.toLocaleString()}</span>
+                </div>` : ''}
+                ${setupFee > 0 ? `
+                <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
+                    <span>Ticket Setup Fee</span>
+                    <span>$${setupFee.toLocaleString()}</span>
+                </div>` : ''}
+                ${config.platform === 'professional' ? `
+                <div style="margin-top: 1rem; color: var(--gold); font-weight: 700; font-size: 0.75rem;">
+                    ✓ 1-Week Homepage Spotlight Included
+                </div>` : ''}
+            `;
+            document.getElementById('line-items').innerHTML = lines;
+        }
+
+        // Init
+        calculate();
+    </script>
+</body>
 </html>
