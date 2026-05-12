@@ -960,11 +960,11 @@
                 <!-- Identity -->
                 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; padding-bottom: 1.5rem; border-bottom: 1px solid var(--rule);">
                     <div>
-                        <label style="display: block; font-weight: 800; margin-bottom: 0.5rem; text-transform: uppercase; font-size: 0.7rem; letter-spacing: 0.1em;">Contact Name</label>
+                        <label style="display: block; font-weight: 800; margin-bottom: 0.5rem; text-transform: uppercase; font-size: 0.7rem; letter-spacing: 0.1em;">Contact Name <span style="font-weight: 400; color: #888;">(Optional)</span></label>
                         <input type="text" id="user-name" oninput="calculate()" placeholder="Your Name" style="width: 100%; padding: 12px; border: 1px solid var(--rule); border-radius: 8px; font-family: inherit;">
                     </div>
                     <div>
-                        <label style="display: block; font-weight: 800; margin-bottom: 0.5rem; text-transform: uppercase; font-size: 0.7rem; letter-spacing: 0.1em;">Organization</label>
+                        <label style="display: block; font-weight: 800; margin-bottom: 0.5rem; text-transform: uppercase; font-size: 0.7rem; letter-spacing: 0.1em;">Organization <span style="font-weight: 400; color: #888;">(Optional)</span></label>
                         <input type="text" id="user-org" oninput="calculate()" placeholder="Production Co / Org" style="width: 100%; padding: 12px; border: 1px solid var(--rule); border-radius: 8px; font-family: inherit;">
                     </div>
                 </div>
@@ -1050,6 +1050,8 @@
 
     <script>
         let config = {
+            name: '',
+            org: '',
             platform: 'essentials',
             gateType: '3h',
             nights: 0,
@@ -1074,6 +1076,8 @@
         }
 
         function calculate() {
+            config.name = document.getElementById('user-name').value;
+            config.org = document.getElementById('user-org').value;
             config.nights = parseInt(document.getElementById('gate-nights').value);
             config.qr = parseInt(document.getElementById('qr-count').value) || 0;
             config.rfid = parseInt(document.getElementById('rfid-count').value) || 0;
@@ -1142,9 +1146,15 @@
             document.getElementById('line-items').innerHTML = lines;
 
             // Update Email Link
-            let subject = `Investment Inquiry: ${config.platform.charAt(0).toUpperCase() + config.platform.slice(1)} Config`;
-            let body = `I have selected the following configuration on QRTick.com:
+            let namePart = config.name ? `${config.name} ` : '';
+            let orgPart = config.org ? `(${config.org})` : '';
+            let subject = `Investment Inquiry: ${namePart}${orgPart}`;
+            let body = `Hello QRTick Team,
 
+I have built a custom quote on your website:
+
+- Contact: ${config.name || 'Not provided'}
+- Organization: ${config.org || 'Not provided'}
 - Platform: ${config.platform.toUpperCase()}
 - Gate Support: ${config.nights} nights (${config.gateType} shifts)
 - Physical Tickets: ${config.qr} QR, ${config.rfid} RFID
@@ -1158,6 +1168,8 @@ I would like to discuss a formal invoice for this configuration.`;
 
             // Update URL Parameters
             let params = new URLSearchParams();
+            if (config.name) params.set('name', config.name);
+            if (config.org) params.set('org', config.org);
             params.set('p', config.platform === 'essentials' ? 'e' : 'p');
             params.set('n', config.nights);
             params.set('gt', config.gateType === '3h' ? '3' : '6');
@@ -1168,6 +1180,14 @@ I would like to discuss a formal invoice for this configuration.`;
 
         function loadFromURL() {
             let params = new URLSearchParams(window.location.search);
+            if (params.has('name')) {
+                config.name = params.get('name');
+                document.getElementById('user-name').value = config.name;
+            }
+            if (params.has('org')) {
+                config.org = params.get('org');
+                document.getElementById('user-org').value = config.org;
+            }
             if (params.has('p')) config.platform = params.get('p') === 'e' ? 'essentials' : 'professional';
             if (params.has('n')) {
                 config.nights = parseInt(params.get('n'));
