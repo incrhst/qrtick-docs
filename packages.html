@@ -1138,13 +1138,46 @@
 - Physical Tickets: ${config.qr} QR, ${config.rfid} RFID
 - Estimated Total: $${total.toLocaleString()}
 
+Link to my configuration: ${window.location.href}
+
 I would like to discuss a formal invoice for this configuration.`;
 
             document.getElementById('email-link').href = `mailto:hello@qrtick.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
+            // Update URL Parameters
+            let params = new URLSearchParams();
+            params.set('p', config.platform === 'essentials' ? 'e' : 'p');
+            params.set('n', config.nights);
+            params.set('gt', config.gateType === '3h' ? '3' : '6');
+            params.set('qr', config.qr);
+            params.set('rf', config.rfid);
+            history.replaceState(null, '', '?' + params.toString());
+        }
+
+        function loadFromURL() {
+            let params = new URLSearchParams(window.location.search);
+            if (params.has('p')) config.platform = params.get('p') === 'e' ? 'essentials' : 'professional';
+            if (params.has('n')) {
+                config.nights = parseInt(params.get('n'));
+                document.getElementById('gate-nights').value = config.nights;
+            }
+            if (params.has('gt')) config.gateType = params.get('gt') === '3' ? '3h' : '6h';
+            if (params.has('qr')) {
+                config.qr = parseInt(params.get('qr'));
+                document.getElementById('qr-count').value = config.qr;
+            }
+            if (params.has('rf')) {
+                config.rfid = parseInt(params.get('rf'));
+                document.getElementById('rfid-count').value = config.rfid;
+            }
+            
+            // Sync UI
+            setPlatform(config.platform);
+            setGateType(config.gateType);
         }
 
         // Init
-        calculate();
+        loadFromURL();
     </script>
 </body>
 </html>
