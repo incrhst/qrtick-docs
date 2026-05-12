@@ -957,6 +957,18 @@
         <div style="display: grid; grid-template-columns: 1fr 350px; gap: 3rem;">
             <!-- Inputs -->
             <div style="display: flex; flex-direction: column; gap: 2.5rem;">
+                <!-- Identity -->
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; padding-bottom: 1.5rem; border-bottom: 1px solid var(--rule);">
+                    <div>
+                        <label style="display: block; font-weight: 800; margin-bottom: 0.5rem; text-transform: uppercase; font-size: 0.7rem; letter-spacing: 0.1em;">Contact Name</label>
+                        <input type="text" id="user-name" oninput="calculate()" placeholder="Your Name" style="width: 100%; padding: 12px; border: 1px solid var(--rule); border-radius: 8px; font-family: inherit;">
+                    </div>
+                    <div>
+                        <label style="display: block; font-weight: 800; margin-bottom: 0.5rem; text-transform: uppercase; font-size: 0.7rem; letter-spacing: 0.1em;">Organization</label>
+                        <input type="text" id="user-org" oninput="calculate()" placeholder="Production Co / Org" style="width: 100%; padding: 12px; border: 1px solid var(--rule); border-radius: 8px; font-family: inherit;">
+                    </div>
+                </div>
+
                 <!-- Platform -->
                 <div>
                     <label style="display: block; font-weight: 800; margin-bottom: 1rem; text-transform: uppercase; font-size: 0.75rem; letter-spacing: 0.1em;">1. Choose Your Platform</label>
