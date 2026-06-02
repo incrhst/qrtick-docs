@@ -18,8 +18,7 @@ top_block = """    <!-- SITE HEADER -->
 
     <!-- PRICING HEADER -->
     <header class="pricing-header">
-        <p class="eyebrow">QRTick Pricing</p>
-        <h1>Choose Your QRTick Experience</h1>
+        <h1>Choose Your QRTick Pricing Experience</h1>
     </header>"""
 
 new_top_block = """    <!-- SITE HEADER -->
@@ -35,8 +34,7 @@ new_top_block = """    <!-- SITE HEADER -->
 
         <!-- PRICING HEADER -->
         <header class="pricing-header">
-            <p class="eyebrow">QRTick Pricing</p>
-            <h1>Choose Your QRTick Experience</h1>
+            <h1>Choose Your QRTick Pricing Experience</h1>
         </header>"""
 
 content = content.replace(top_block, new_top_block)

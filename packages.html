@@ -750,7 +750,241 @@
             text-decoration: underline;
         }
 
+        .calc-pick {
+            width: 100%;
+            text-align: left;
+            font: inherit;
+            cursor: pointer;
+            padding: 1.5rem;
+            border: 2px solid var(--rule);
+            border-radius: 12px;
+            background: transparent;
+            transition: border-color 0.2s, background 0.2s;
+        }
+
+        .calc-pick--gate {
+            padding: 1rem;
+            text-align: center;
+            font-size: 0.9rem;
+            font-weight: 700;
+        }
+
+        .calc-pick:focus-visible {
+            outline: 2px solid var(--gold);
+            outline-offset: 2px;
+        }
+
+        .price-table-section {
+            max-width: 1000px;
+            margin: 0 auto 2rem;
+            padding: 0 24px 1rem;
+        }
+
+        .price-table-wrap {
+            overflow-x: auto;
+            border: 1px solid var(--rule);
+            border-radius: 12px;
+            background: var(--white);
+        }
+
+        .price-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+
+        .price-table th,
+        .price-table td {
+            padding: 0.85rem 1rem;
+            text-align: left;
+            vertical-align: top;
+            border-bottom: 1px solid var(--rule);
+        }
+
+        .price-table th {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.7rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--mid);
+            background: #f5f5f5;
+        }
+
+        .price-table__group td {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.7rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--gold);
+            background: #fafafa;
+            border-bottom: 1px solid var(--rule);
+        }
+
+        .price-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .price-table__rate {
+            font-weight: 700;
+            white-space: nowrap;
+            color: var(--black);
+        }
+
+        .price-table__note {
+            color: var(--muted);
+            font-size: 0.85rem;
+        }
+
+        .price-table-intro {
+            font-size: 0.9rem;
+            color: var(--muted);
+            margin-bottom: 1.25rem;
+            line-height: 1.6;
+            max-width: 720px;
+        }
+
+        .quote-footnote {
+            font-size: 0.8rem;
+            color: #aaa;
+            margin-top: 0.75rem;
+            line-height: 1.5;
+        }
+
+        .quote-footnote--highlight {
+            color: var(--gold);
+            font-weight: 600;
+        }
+
+        .scenario-list {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+            border: 1px solid var(--rule);
+            border-radius: 16px;
+            background: var(--white);
+            overflow: hidden;
+        }
+
+        .scenario-row {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: flex-start;
+            justify-content: space-between;
+            gap: 1rem 1.5rem;
+            padding: 1.35rem 1.5rem;
+            border-bottom: 1px solid var(--rule);
+        }
+
+        .scenario-row:last-child {
+            border-bottom: none;
+        }
+
+        .scenario-row__main {
+            flex: 1 1 280px;
+            min-width: 0;
+        }
+
+        .scenario-badge {
+            display: inline-block;
+            font-size: 0.65rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            padding: 3px 10px;
+            border-radius: 4px;
+            margin-bottom: 0.5rem;
+        }
+
+        .scenario-badge--yours {
+            background: var(--gold);
+            color: var(--black);
+        }
+
+        .scenario-badge--hands-off {
+            background: var(--black);
+            color: var(--gold);
+        }
+
+        .scenario-row h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.15rem;
+            font-weight: 700;
+            margin: 0 0 0.35rem;
+            color: var(--black);
+        }
+
+        .scenario-row__blurb {
+            font-size: 0.9rem;
+            color: var(--muted);
+            line-height: 1.5;
+            margin: 0;
+            max-width: 52ch;
+        }
+
+        .scenario-row__aside {
+            flex: 0 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 0.75rem;
+            text-align: right;
+        }
+
+        .scenario-row__total-label {
+            font-size: 0.7rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--muted);
+        }
+
+        .scenario-row__total {
+            font-size: 1.75rem;
+            font-weight: 800;
+            color: var(--black);
+            line-height: 1;
+        }
+
+        .scenario-load-btn {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.8rem;
+            font-weight: 700;
+            padding: 0.65rem 1.1rem;
+            border: none;
+            border-radius: 8px;
+            background: var(--black);
+            color: var(--white);
+            cursor: pointer;
+            transition: background 0.2s, transform 0.15s;
+        }
+
+        .scenario-load-btn:hover {
+            background: #2a2626;
+        }
+
+        .scenario-load-btn:focus-visible {
+            outline: 2px solid var(--gold);
+            outline-offset: 2px;
+        }
+
         @media (max-width: 900px) {
+            .scenario-row__aside {
+                align-items: stretch;
+                width: 100%;
+                text-align: left;
+            }
+
+            .scenario-load-btn {
+                width: 100%;
+                text-align: center;
+            }
+
             .calculator-grid {
                 grid-template-columns: 1fr;
             }
@@ -765,6 +999,79 @@
         @media (max-width: 700px) {
             .gate-path-grid {
                 grid-template-columns: 1fr;
+            }
+        }
+
+        /* ─── MOBILE STICKY TOTAL BAR ─── */
+        .mobile-sticky-total-bar {
+            display: none;
+        }
+
+        @media (max-width: 900px) {
+            .mobile-sticky-total-bar {
+                display: flex;
+                position: fixed;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                background: rgba(61, 57, 57, 0.95); /* Matches var(--black) */
+                backdrop-filter: blur(12px);
+                -webkit-backdrop-filter: blur(12px);
+                border-top: 1px solid rgba(255, 255, 255, 0.1);
+                padding: 1rem 1.5rem;
+                justify-content: space-between;
+                align-items: center;
+                z-index: 999;
+                box-shadow: 0 -8px 24px rgba(0, 0, 0, 0.15);
+                transform: translateY(100%);
+                transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease;
+                opacity: 0;
+                cursor: pointer;
+            }
+
+            .mobile-sticky-total-bar.visible {
+                transform: translateY(0);
+                opacity: 1;
+            }
+
+            .mobile-sticky-total-bar__info {
+                display: flex;
+                flex-direction: column;
+                gap: 2px;
+            }
+
+            .mobile-sticky-total-bar__label {
+                font-size: 0.65rem;
+                font-weight: 800;
+                text-transform: uppercase;
+                letter-spacing: 0.08em;
+                color: #c8c0b8;
+            }
+
+            .mobile-sticky-total-bar__value {
+                font-size: 1.65rem;
+                font-weight: 800;
+                color: var(--gold);
+                line-height: 1.1;
+            }
+
+            .mobile-sticky-total-bar__btn {
+                background: var(--gold);
+                color: var(--black);
+                text-decoration: none;
+                padding: 0.75rem 1.25rem;
+                border-radius: 10px;
+                font-weight: 800;
+                font-size: 0.8rem;
+                font-family: 'Montserrat', sans-serif;
+                text-transform: uppercase;
+                letter-spacing: 0.06em;
+                transition: transform 0.2s, background-color 0.2s;
+                box-shadow: 0 4px 12px rgba(253, 194, 48, 0.2);
+            }
+
+            .mobile-sticky-total-bar__btn:active {
+                transform: scale(0.95);
             }
         }
     </style>
@@ -806,8 +1113,7 @@
 
         <!-- PRICING HEADER -->
         <header style="text-align: center; padding: 5rem 24px 4rem;">
-            <p class="eyebrow" style="font-size: 0.85rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 1rem;">Simple 2026 Pricing</p>
-            <h1 style="font-size: 3.5rem; margin-bottom: 1.5rem; letter-spacing: -0.03em;">The QRTick Partnership</h1>
+            <h1 style="font-size: 3.5rem; margin-bottom: 1.5rem; letter-spacing: -0.03em;">Simple 2026 Pricing & Packages</h1>
             <p style="font-size: 1.3rem; color: var(--mid); max-width: 650px; margin: 0 auto 2rem; line-height: 1.5;">Choose a ballpark package below, or build a custom quote with our interactive estimator.</p>
             <a href="#calculator" class="custom-quote-btn" style="font-size: 0.85rem; padding: 0.9rem 2rem;">Build a custom quote</a>
         </header>
@@ -819,16 +1125,16 @@
                 <div style="background: var(--white); padding: 3rem 2.5rem; border-radius: 24px; border: 1px solid var(--rule); display: flex; flex-direction: column;">
                     <div style="font-size: 0.75rem; font-weight: 900; text-transform: uppercase; color: var(--muted); margin-bottom: 1rem; letter-spacing: 0.1em;">Lite Package</div>
                     <h3 style="font-size: 1.75rem; margin-bottom: 1rem;">The Essentials</h3>
-                    <p style="font-size: 1rem; color: var(--muted); margin-bottom: 1rem; flex-grow: 1;">Online platform and ticketing only—for organizers who will handle the door themselves.</p>
+                    <p style="font-size: 1rem; color: var(--muted); margin-bottom: 1rem; flex-grow: 1;">Online platform and ticketing only, for organizers who will handle the door themselves.</p>
                     <p style="font-size: 0.9rem; color: var(--mid); margin-bottom: 2rem; padding: 0.75rem 1rem; background: #f8f8f8; border-radius: 8px; border: 1px solid var(--rule); line-height: 1.5;"><strong>Includes no gate support.</strong> No Basic coordinator, scanning crew, door sales, POS, or card machine. Add only what you need in the quote builder.</p>
                     <div style="margin-bottom: 2.2rem;">
                         <div style="font-size: 3rem; font-weight: 800; color: var(--black);">$10,000</div>
-                        <div style="font-size: 0.9rem; color: var(--muted);">Platform fee only — gate services not included</div>
+                        <div style="font-size: 0.9rem; color: var(--muted);">Platform fee only; gate services not included</div>
                     </div>
                     <ul style="list-style: none; padding: 0; margin-bottom: 3rem; font-size: 0.95rem; color: var(--mid);">
                         <li style="margin-bottom: 0.8rem; display: flex; align-items: center; gap: 0.5rem;"><span style="color: var(--gold);">✓</span> Standard QR Ticketing</li>
                         <li style="margin-bottom: 0.8rem; display: flex; align-items: center; gap: 0.5rem;"><span style="color: var(--gold);">✓</span> Dashboard Reporting</li>
-                        <li style="margin-bottom: 0.8rem; display: flex; align-items: flex-start; gap: 0.5rem; color: #888;"><span style="flex-shrink: 0;">✕</span> <span><strong>No gate support</strong> — no Basic coordination, no scanning team (Gate Experience), no door sales (Gate Sales)</span></li>
+                        <li style="margin-bottom: 0.8rem; display: flex; align-items: flex-start; gap: 0.5rem; color: #888;"><span style="flex-shrink: 0;">✕</span> <span><strong>No gate support:</strong> no Basic coordination, no scanning team (Gate Experience), no door sales (Gate Sales)</span></li>
                         <li style="margin-bottom: 0.8rem; display: flex; align-items: center; gap: 0.5rem; color: #aaa;"><span>✕</span> No discount tools</li>
                         <li style="margin-bottom: 0.8rem; display: flex; align-items: center; gap: 0.5rem; color: #aaa;"><span>✕</span> No Homepage Listing</li>
                     </ul>
@@ -874,8 +1180,7 @@
         </section>
 
         <section class="custom-quote-cta" aria-labelledby="custom-quote-heading">
-            <p class="eyebrow">Not a preset package?</p>
-            <h2 id="custom-quote-heading">Build your custom quote</h2>
+            <h2 id="custom-quote-heading">Need a custom quote?</h2>
             <p>Large venues, multi-show seasons, or mixed gate and ticket needs? Use the quote builder for a real-time estimate, then send it to our team.</p>
             <div class="custom-quote-actions">
                 <a href="#calculator" class="custom-quote-btn">Start your custom quote</a>
@@ -885,9 +1190,8 @@
 
         <section id="calculator" style="max-width: 1000px; margin: 0 auto 6rem; padding: 4rem 24px; background: #fdfdfd; border-radius: 32px; border: 1px solid var(--rule); box-shadow: 0 40px 100px rgba(0,0,0,0.03);">
             <div style="text-align: center; margin-bottom: 3rem;">
-                <p class="eyebrow" style="margin-bottom: 0.75rem;">Interactive estimator</p>
-                <h2 style="font-size: 2.5rem; margin-bottom: 1rem;">Build Your Quote</h2>
-                <p style="color: var(--muted); max-width: 560px; margin: 0 auto;">Select platform, then add <strong>Basic Gate Support</strong> ($10,000 per event, 3h) and/or <strong>Gate Experience</strong> scanning blocks—totals update instantly.</p>
+                <h2 style="font-size: 2.5rem; margin-bottom: 1rem;">Interactive Quote Builder</h2>
+                <p style="color: var(--muted); max-width: 560px; margin: 0 auto;">Select platform, then add <strong>Basic Gate Support</strong> ($10,000 per event, 3h) and/or <strong>Gate Experience</strong> scanning blocks. Upfront totals update instantly; Gate Sales is quoted separately.</p>
             </div>
 
             <div class="calculator-grid">
@@ -906,33 +1210,33 @@
                     <div>
                         <label style="display: block; font-weight: 800; margin-bottom: 1rem; text-transform: uppercase; font-size: 0.75rem; letter-spacing: 0.1em;">1. Choose Your Platform</label>
                         <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
-                            <div onclick="setPlatform('essentials')" id="plat-essentials" style="cursor: pointer; padding: 1.5rem; border: 2px solid var(--rule); border-radius: 12px; transition: all 0.2s;">
+                            <button type="button" class="calc-pick" id="plat-essentials" onclick="setPlatform('essentials')" aria-pressed="true">
                                 <div style="font-weight: 800; margin-bottom: 4px;">Essentials</div>
                                 <div style="font-size: 0.85rem; color: var(--muted);">$10,000 (Lite)</div>
-                                <div style="font-size: 0.75rem; color: #888; margin-top: 8px; line-height: 1.4;">No gate support included — Basic, scanning &amp; door sales are add-ons</div>
-                            </div>
-                            <div onclick="setPlatform('professional')" id="plat-professional" style="cursor: pointer; padding: 1.5rem; border: 2px solid var(--gold); border-radius: 12px; transition: all 0.2s; background: rgba(212, 175, 55, 0.05);">
+                                <div style="font-size: 0.75rem; color: #888; margin-top: 8px; line-height: 1.4;">No gate support included. Basic, scanning, and door sales are add-ons.</div>
+                            </button>
+                            <button type="button" class="calc-pick" id="plat-professional" onclick="setPlatform('professional')" aria-pressed="false">
                                 <div style="font-weight: 800; margin-bottom: 4px;">Professional</div>
                                 <div style="font-size: 0.85rem; color: var(--muted);">$40,000 (Managed)</div>
-                            </div>
+                            </button>
                         </div>
                     </div>
 
                     <div>
                         <label style="display: block; font-weight: 800; margin-bottom: 0.5rem; text-transform: uppercase; font-size: 0.75rem; letter-spacing: 0.1em;">2. On-Site Gate Support</label>
-                        <p style="font-size: 0.85rem; color: var(--muted); line-height: 1.55; margin-bottom: 1rem;">Not included on <strong>Essentials</strong>. Pick the path that matches how you run the door—<a href="#gate-sales" style="color: var(--gold); font-weight: 600;">Gate Sales</a> (selling tickets) is separate from both.</p>
+                        <p style="font-size: 0.85rem; color: var(--muted); line-height: 1.55; margin-bottom: 1rem;">Not included on <strong>Essentials</strong>. Pick the path that matches how you run the door. <a href="#gate-sales" style="color: var(--gold); font-weight: 600;">Gate Sales</a> (selling tickets) is separate from both.</p>
                         <div class="gate-path-grid">
                             <div class="gate-path-card gate-path-card--yours" role="button" tabindex="0" onclick="setVolunteerGatePath()" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();setVolunteerGatePath();}" style="cursor: pointer;" title="Add Basic Gate Support to your quote">
                                 <h4>You have your own team → Basic</h4>
-                                <p>Tap to add <strong>Basic Gate Support</strong> to your quote—one coordinator per event ($10,000 × 3 hours). Your volunteers scan; QRTick guides.</p>
+                                <p>Tap to add <strong>Basic Gate Support</strong> to your quote: one coordinator per event ($10,000 × 3 hours). Your volunteers scan; QRTick guides.</p>
                             </div>
                             <div class="gate-path-card gate-path-card--hands-off" role="button" tabindex="0" onclick="setHandsOffGatePath()" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();setHandsOffGatePath();}" style="cursor: pointer;" title="Add Gate Experience scanning to your quote">
                                 <h4>You want to hand it off → Scanning</h4>
-                                <p>Tap to add <strong>Gate Experience</strong> scanning blocks to your quote—QRTick runs entry so you do not manage the door.</p>
+                                <p>Tap to add <strong>Gate Experience</strong> scanning blocks to your quote. QRTick runs entry so you do not manage the door.</p>
                             </div>
                         </div>
                         <div style="margin-bottom: 2rem; padding: 1.25rem; background: #fff; border: 1px solid var(--rule); border-radius: 12px;">
-                            <div style="font-size: 0.75rem; font-weight: 900; text-transform: uppercase; letter-spacing: 0.08em; color: var(--gold); margin-bottom: 0.75rem;">Basic Gate Support — for teams with volunteers</div>
+                            <div style="font-size: 0.75rem; font-weight: 900; text-transform: uppercase; letter-spacing: 0.08em; color: var(--gold); margin-bottom: 0.75rem;">Basic Gate Support · for teams with volunteers</div>
                             <p style="font-size: 0.85rem; color: var(--muted); line-height: 1.5; margin-bottom: 1rem;">One QRTick team member for <strong>3 hours per event</strong> to coordinate your volunteers and provide on-site guidance. Your people scan; we help them run smoothly. Not a full scanning crew.</p>
                             <div style="display: flex; align-items: center; gap: 1.5rem; flex-wrap: wrap;">
                                 <div style="flex-grow: 1; min-width: 200px;">
@@ -949,8 +1253,8 @@
                                 </div>
                             </div>
                         </div>
-                        <div style="font-size: 0.75rem; font-weight: 900; text-transform: uppercase; letter-spacing: 0.08em; color: var(--mid); margin-bottom: 0.75rem;">Gate Experience — full-service scanning</div>
-                        <p style="font-size: 0.85rem; color: var(--muted); line-height: 1.55; margin-bottom: 1.25rem;">For organizers who want QRTick to <strong>own entry at the door</strong>—manned scanning and validation, priced by support blocks (up to 3 or 6 hours each). Two shows on the same day each needing 6 hours count as <strong>two</strong> 6-hour blocks.</p>
+                        <div style="font-size: 0.75rem; font-weight: 900; text-transform: uppercase; letter-spacing: 0.08em; color: var(--mid); margin-bottom: 0.75rem;">Gate Experience · full-service scanning</div>
+                        <p style="font-size: 0.85rem; color: var(--muted); line-height: 1.55; margin-bottom: 1.25rem;">For organizers who want QRTick to <strong>own entry at the door</strong>: manned scanning and validation, priced by support blocks (up to 3 or 6 hours each). Two shows on the same day each needing 6 hours count as <strong>two</strong> 6-hour blocks.</p>
                         <div style="display: flex; align-items: center; gap: 2rem; margin-bottom: 1.5rem;">
                             <div style="flex-grow: 1;">
                                 <div style="font-size: 0.85rem; margin-bottom: 0.5rem; font-weight: 600;">Number of support blocks</div>
@@ -962,8 +1266,8 @@
                             <div id="gate-blocks-display" style="font-size: 2rem; font-weight: 800; width: 60px; text-align: center;">0</div>
                         </div>
                         <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
-                            <div onclick="setGateType('3h')" id="gate-3h" style="cursor: pointer; padding: 1rem; border: 2px solid var(--rule); border-radius: 12px; text-align: center; font-size: 0.9rem; font-weight: 700;">Up to 3 hours · $18k/block</div>
-                            <div onclick="setGateType('6h')" id="gate-6h" style="cursor: pointer; padding: 1rem; border: 2px solid var(--rule); border-radius: 12px; text-align: center; font-size: 0.9rem; font-weight: 700;">Up to 6 hours · $35k/block</div>
+                            <button type="button" class="calc-pick calc-pick--gate" id="gate-3h" onclick="setGateType('3h')" aria-pressed="true">Up to 3 hours · $18k/block</button>
+                            <button type="button" class="calc-pick calc-pick--gate" id="gate-6h" onclick="setGateType('6h')" aria-pressed="false">Up to 6 hours · $35k/block</button>
                         </div>
                         <div id="bundle-alert" style="margin-top: 1rem; padding: 10px; background: #fffde7; border-radius: 8px; font-size: 0.8rem; color: #827717; display: none; font-weight: 600;">
                             ✨ 3-block scanning bundle pricing applied (same hour tier)
@@ -972,7 +1276,7 @@
 
                     <div id="gate-sales-calculator" style="padding: 1.5rem; background: #f8f8f8; border-radius: 12px; border: 1px solid var(--rule);">
                         <label style="display: block; font-weight: 800; margin-bottom: 0.5rem; text-transform: uppercase; font-size: 0.75rem; letter-spacing: 0.1em;">3. Gate Sales (optional)</label>
-                        <p style="font-size: 0.85rem; color: var(--muted); line-height: 1.55; margin-bottom: 1rem;">Sell tickets at the door with full sales tracking, on-site POS, and card machine support. Priced separately from scanning—add only if you need door sales, not just entry validation.</p>
+                        <p style="font-size: 0.85rem; color: var(--muted); line-height: 1.55; margin-bottom: 1rem;">Sell tickets at the door with full sales tracking, on-site POS, and card machine support. Priced separately from scanning. Add only if you need door sales, not just entry validation.</p>
                         <label style="display: flex; align-items: flex-start; gap: 0.75rem; cursor: pointer; font-size: 0.9rem; font-weight: 600; color: var(--black);">
                             <input type="checkbox" id="gate-sales" onchange="calculate()" style="width: 18px; height: 18px; margin-top: 2px; accent-color: var(--gold);">
                             <span>Include Gate Sales in my quote request</span>
@@ -995,13 +1299,14 @@
                     </div>
                 </div>
 
-                <div style="position: sticky; top: 2rem; align-self: start;">
+                <div id="estimate-card-container" style="position: sticky; top: 2rem; align-self: start;">
                     <div style="background: var(--black); color: var(--white); padding: 2.5rem; border-radius: 24px; box-shadow: 0 30px 60px rgba(0,0,0,0.2);">
-                        <div style="font-size: 0.75rem; font-weight: 900; text-transform: uppercase; color: var(--gold); margin-bottom: 2rem; letter-spacing: 0.1em;">Estimated Investment</div>
+                        <div style="font-size: 0.75rem; font-weight: 900; text-transform: uppercase; color: var(--gold); margin-bottom: 2rem; letter-spacing: 0.1em;">Upfront estimate</div>
                         <div id="line-items" style="font-size: 0.85rem; color: #aaa; margin-bottom: 2rem;"></div>
-                        <div style="border-top: 1px solid #333; padding-top: 1.5rem; margin-bottom: 2rem;">
+                        <div style="border-top: 1px solid #333; padding-top: 1.5rem; margin-bottom: 1rem;">
+                            <div style="font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: #888; margin-bottom: 0.5rem;">Total due upfront</div>
                             <div style="font-size: 3rem; font-weight: 800; color: var(--gold); line-height: 1;">$<span id="total-val">10,000</span></div>
-                            <div style="font-size: 0.8rem; color: #888; margin-top: 8px;">Subject to final confirmation</div>
+                            <div id="quote-footnote" class="quote-footnote">Platform, on-site gate support, physical tickets, and setup fees. Subject to final confirmation.</div>
                         </div>
                         <a href="https://tally.so/r/nW4Nak" style="display: block; text-align: center; padding: 1.2rem; background: var(--gold); color: var(--black); text-decoration: none; border-radius: 12px; font-weight: 800; transition: transform 0.2s;">Request Formal Invoice</a>
                         <a id="email-link" href="#" style="display: block; text-align: center; padding: 1.2rem; background: transparent; color: var(--gold); text-decoration: none; border: 1px solid var(--gold); border-radius: 12px; font-weight: 700; margin-top: 1rem; transition: all 0.2s;">Email Selection to QRTick</a>
@@ -1010,407 +1315,133 @@
             </div>
         </section>
 
-        <p class="calculator-after-note">Configured your quote above? <a href="#price-breakdown">Open the full price list</a> for line-item reference, or jump to <a href="#scenarios">typical scenarios</a>.</p>
+        <p class="calculator-after-note">Configured your quote above? <a href="#price-breakdown">Open the rate table</a> for reference, or jump to <a href="#scenarios">typical scenarios</a>.</p>
 
         <details id="price-breakdown" class="price-breakdown">
             <summary class="price-breakdown__summary">
-                <span class="price-breakdown__title">View full price list</span>
-                <span class="price-breakdown__hint">Platform, gate support, door sales, physical tickets, and payment terms (reference only; use the quote builder to configure)</span>
+                <span class="price-breakdown__title">View rate table</span>
+                <span class="price-breakdown__hint">All line items in one table (reference only; configure in the quote builder)</span>
             </summary>
             <div class="price-breakdown__inner">
 
-        <!-- STEP 1: THE PLATFORM -->
-        <section style="max-width: 1000px; margin: 0 auto 6rem; padding: 0 24px;">
-            <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 2rem;">
-                <span style="background: var(--gold); color: var(--black); width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; border-radius: 50%; font-weight: 900; font-size: 1.25rem;">1</span>
-                <h2 style="margin: 0; font-size: 2rem;">Choose Your Platform</h2>
-            </div>
-            
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
-                <!-- Essentials -->
-                <div style="background: var(--white); padding: 2.5rem; border-radius: 16px; border: 1px solid var(--rule); display: flex; flex-direction: column;">
-                    <h3 style="margin-bottom: 0.5rem;">Essentials</h3>
-                    <p style="font-size: 0.95rem; color: var(--muted); margin-bottom: 1rem; flex-grow: 1;">Self-service platform for single events. You run entry at the door—QRTick does not provide on-site gate staff, scanning teams, POS, or card machines on this tier.</p>
-                    <p style="font-size: 2.5rem; font-weight: 800; color: var(--black); margin-bottom: 1.5rem;">$10,000</p>
-                    <ul style="padding: 0; list-style: none; margin-bottom: 2rem; font-size: 0.95rem; color: var(--mid);">
-                        <li style="margin-bottom: 0.5rem;">✓ Digital QR Tickets</li>
-                        <li style="margin-bottom: 0.5rem;">✓ Dashboard Access</li>
-                        <li style="margin-bottom: 0.5rem;">✓ Self-Managed Entry (your team / your devices)</li>
-                        <li style="margin-bottom: 0.5rem; color: #888;">✕ No Basic Gate Support or scanning crews</li>
-                        <li style="margin-bottom: 0.5rem; color: #888;">✕ No Gate Sales (door POS or card machine)</li>
-                    </ul>
-                    <a href="https://tally.so/r/nW4Nak" style="display: block; text-align: center; padding: 0.8rem; background: var(--black); color: var(--white); text-decoration: none; border-radius: 6px; font-weight: 600;">Get Started</a>
-                </div>
-
-                <!-- Professional -->
-                <div style="background: var(--black); color: var(--white); padding: 3rem 2.5rem; border-radius: 20px; border: 3px solid var(--gold); transform: scale(1.05); box-shadow: 0 30px 60px rgba(0,0,0,0.15); display: flex; flex-direction: column; position: relative;">
-                    <div style="position: absolute; top: -15px; left: 50%; transform: translateX(-50%); background: var(--gold); color: var(--black); padding: 4px 20px; border-radius: 20px; font-size: 0.75rem; font-weight: 900; text-transform: uppercase;">Recommended</div>
-                    <h3 style="color: var(--gold); margin-bottom: 0.5rem; font-size: 1.5rem;">Professional (Managed)</h3>
-                    <p style="font-size: 1rem; color: #c8c0b8; margin-bottom: 1.5rem; flex-grow: 1;">Our full partnership model with discount management for online sales. Gate Sales at the door is priced separately.</p>
-                    <p style="font-size: 3rem; font-weight: 800; color: var(--gold); margin-bottom: 1.5rem;">$40,000</p>
-                    <ul style="padding: 0; list-style: none; margin-bottom: 2rem; font-size: 1rem;">
-                        <li style="margin-bottom: 0.5rem; color: var(--gold);">✓ Discount Management (online)</li>
-                        <li style="margin-bottom: 0.5rem; color: var(--gold);">✓ White-Glove Setup Included</li>
-                        <li style="margin-bottom: 0.5rem; color: var(--gold);">✓ Digital Programme Included</li>
-                        <li style="margin-bottom: 0.5rem; color: var(--gold);">✓ Unlimited Seasonal Events</li>
-                    </ul>
-                    <a href="https://tally.so/r/nW4Nak" style="display: block; text-align: center; padding: 1rem; background: var(--gold); color: var(--black); text-decoration: none; border-radius: 6px; font-weight: 800;">Partner With Us</a>
-                </div>
+        <section class="price-table-section">
+            <p class="price-table-intro">Reference rates only. Configure your package in the <a href="#calculator" style="color: var(--gold); font-weight: 600;">quote builder</a>. The upfront total includes platform, on-site gate support, and physical tickets. <strong>Gate Sales</strong> is quoted separately and is not added to the upfront total.</p>
+            <div class="price-table-wrap">
+                <table class="price-table">
+                    <thead>
+                        <tr>
+                            <th scope="col">Line item</th>
+                            <th scope="col">Rate</th>
+                            <th scope="col">Notes</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="price-table__group"><td colspan="3">Platform</td></tr>
+                        <tr>
+                            <td>Essentials Platform</td>
+                            <td class="price-table__rate">$10,000</td>
+                            <td class="price-table__note">Self-service. No on-site gate staff, scanning crews, POS, or card machine.</td>
+                        </tr>
+                        <tr>
+                            <td>Professional Platform (Managed)</td>
+                            <td class="price-table__rate">$40,000</td>
+                            <td class="price-table__note">Discount management (online), white-glove setup, digital programme, unlimited seasonal events.</td>
+                        </tr>
+                        <tr class="price-table__group"><td colspan="3">On-site gate support (add-ons)</td></tr>
+                        <tr>
+                            <td>Basic Gate Support</td>
+                            <td class="price-table__rate">$10,000 / event</td>
+                            <td class="price-table__note">3 hours on site. One coordinator for your volunteers (not full scanning).</td>
+                        </tr>
+                        <tr>
+                            <td>Gate Experience · scanning block (up to 3h)</td>
+                            <td class="price-table__rate">$18,000 / block</td>
+                            <td class="price-table__note">Full QRTick scanning crew per scheduled block.</td>
+                        </tr>
+                        <tr>
+                            <td>Gate Experience · scanning block (up to 6h)</td>
+                            <td class="price-table__rate">$35,000 / block</td>
+                            <td class="price-table__note">Same day, two performances needing 6h each = two blocks.</td>
+                        </tr>
+                        <tr>
+                            <td>3-block bundle (3h tier)</td>
+                            <td class="price-table__rate">$48,000</td>
+                            <td class="price-table__note">Saves $6,000 vs. three separate 3h blocks.</td>
+                        </tr>
+                        <tr>
+                            <td>3-block bundle (6h tier)</td>
+                            <td class="price-table__rate">$80,000</td>
+                            <td class="price-table__note">Saves $25,000 vs. three separate 6h blocks.</td>
+                        </tr>
+                        <tr>
+                            <td>Seasonal scanning discount</td>
+                            <td class="price-table__rate">5% off</td>
+                            <td class="price-table__note">Applied in quote builder when booking 4+ scanning blocks.</td>
+                        </tr>
+                        <tr class="price-table__group"><td colspan="3">Gate Sales (quoted separately)</td></tr>
+                        <tr id="gate-sales">
+                            <td>Gate Sales</td>
+                            <td class="price-table__rate">Quoted separately</td>
+                            <td class="price-table__note">POS, full door sales tracking, card machine. Not in upfront total. Card payments: 10% fee on processed volume at the gate.</td>
+                        </tr>
+                        <tr class="price-table__group"><td colspan="3" id="price-physical">Physical tickets</td></tr>
+                        <tr>
+                            <td>QR code physical ticket</td>
+                            <td class="price-table__rate">$55 / ticket</td>
+                            <td class="price-table__note">Minimum order 100. Black &amp; white paper with secure QR.</td>
+                        </tr>
+                        <tr>
+                            <td>RFID tap ticket</td>
+                            <td class="price-table__rate">$140 / ticket</td>
+                            <td class="price-table__note">Minimum order 100. Encoding included.</td>
+                        </tr>
+                        <tr>
+                            <td>Ticket setup fee</td>
+                            <td class="price-table__rate">$10,000</td>
+                            <td class="price-table__note">Waived for Professional + any 3-block scanning bundle.</td>
+                        </tr>
+                        <tr class="price-table__group"><td colspan="3" id="price-finance">Finance</td></tr>
+                        <tr>
+                            <td>Standard payout</td>
+                            <td class="price-table__rate">Free</td>
+                            <td class="price-table__note">5–7 days post-event (all tiers).</td>
+                        </tr>
+                        <tr>
+                            <td>Early payout</td>
+                            <td class="price-table__rate">2.5% fee</td>
+                            <td class="price-table__note">Professional + series partners.</td>
+                        </tr>
+                        <tr>
+                            <td>Express payout</td>
+                            <td class="price-table__rate">3.5% fee</td>
+                            <td class="price-table__note">Same-day processing (subject to clearance).</td>
+                        </tr>
+                        <tr>
+                            <td>Prepaid discount</td>
+                            <td class="price-table__rate">5% off total</td>
+                            <td class="price-table__note">When fees are paid upfront instead of deducted from sales.</td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         </section>
-    <section style="max-width: 1000px; margin: 0 auto 6rem; padding: 0 24px;">
-        <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 2rem;">
-            <span style="background: var(--gold); color: var(--black); width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; border-radius: 50%; font-weight: 900; font-size: 1.25rem;">2</span>
-            <h2 style="margin: 0; font-size: 2rem;">On-Site Gate Support</h2>
-        </div>
-        <p style="max-width: 720px; margin: 0 auto 2rem; text-align: center; font-size: 0.9rem; color: var(--muted); line-height: 1.6;">Reference rates for <strong>Basic Gate Support</strong> (your volunteers, our coordinator) and <strong>Gate Experience</strong> (full scanning crews). Configure both in the <a href="#calculator" style="color: var(--gold); font-weight: 600;">quote builder</a>. Door selling is under <a href="#gate-sales" style="color: var(--gold); font-weight: 600;">Gate Sales</a>.</p>
-
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-bottom: 2.5rem;">
-            <div style="background: var(--white); padding: 2.5rem; border-radius: 16px; border: 2px solid var(--gold); display: flex; flex-direction: column;">
-                <div style="font-size: 0.7rem; font-weight: 900; text-transform: uppercase; color: var(--gold); margin-bottom: 0.5rem;">Your team · our coordinator</div>
-                <h3 style="margin-bottom: 0.5rem; font-size: 1.2rem;">Basic Gate Support</h3>
-                <p style="color: var(--muted); font-size: 0.9rem; margin-bottom: 2rem; flex-grow: 1;">Perfect when you already have people at the gate. One QRTick team member for <strong>3 hours per event</strong> helps your volunteers work as a unit, answers questions on site, and keeps entry flowing—you run scanning; we help your team succeed.</p>
-                <div style="font-size: 2.5rem; font-weight: 800; color: var(--black);">$10,000</div>
-                <p style="font-size: 0.9rem; color: var(--muted); margin-top: 0.5rem;">Per event · 3 hours on site</p>
-            </div>
-            <div style="background: var(--black); color: var(--white); padding: 2.5rem; border-radius: 16px; border: 2px solid var(--gold); display: flex; flex-direction: column;">
-                <div style="font-size: 0.7rem; font-weight: 900; text-transform: uppercase; color: var(--gold); margin-bottom: 0.5rem;">Hands-off entry</div>
-                <h3 style="margin-bottom: 0.5rem; font-size: 1.2rem; color: var(--gold);">Gate Experience</h3>
-                <p style="color: #c8c0b8; font-size: 0.9rem; margin-bottom: 2rem; flex-grow: 1;">For events that want entry handled end to end. QRTick provides manned scanning crews so you are not juggling schedules, devices, or line management—see block pricing below.</p>
-                <p style="font-size: 0.95rem; color: var(--gold); font-weight: 700; margin: 0;">From $18,000 per scanning block</p>
-            </div>
-        </div>
-
-        <h3 style="text-align: center; font-size: 1.35rem; margin-bottom: 1.5rem; color: var(--black);">Gate Experience pricing — when you want us to run the door</h3>
-        <p style="max-width: 720px; margin: 0 auto 2rem; text-align: center; font-size: 0.9rem; color: var(--muted); line-height: 1.6;">Full scanning and validation by QRTick staff. Priced by support blocks (up to 3 or 6 hours each). Multiple performances on one day each need their own block when every show requires a full coverage window.</p>
-
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem;">
-            <div style="background: var(--white); padding: 2.5rem; border-radius: 16px; border: 1px solid var(--rule); display: flex; flex-direction: column;">
-                <h3 style="margin-bottom: 0.5rem; font-size: 1.2rem;">Per scanning block</h3>
-                <p style="color: var(--muted); font-size: 0.9rem; margin-bottom: 2rem; flex-grow: 1;">Pay per scheduled scanning block when QRTick runs entry for you. Choose the hour tier for how long our crew needs on site—not the same as Basic, where your volunteers do the scanning.</p>
-                <div style="margin-bottom: 1rem;">
-                    <div style="display: flex; justify-content: space-between; font-weight: 700; border-bottom: 1px solid #eee; padding-bottom: 8px; margin-bottom: 8px;">
-                        <span>Up to 3 hours</span>
-                        <span>$18,000</span>
-                    </div>
-                    <div style="display: flex; justify-content: space-between; font-weight: 700;">
-                        <span>Up to 6 hours</span>
-                        <span>$35,000</span>
-                    </div>
-                </div>
-            </div>
-
-            <div style="background: var(--white); padding: 2.5rem; border-radius: 16px; border: 1px solid var(--rule); display: flex; flex-direction: column;">
-                <h3 style="margin-bottom: 0.5rem; font-size: 1.2rem;">3-block bundle (3h tier)</h3>
-                <p style="color: var(--muted); font-size: 0.9rem; margin-bottom: 2rem; flex-grow: 1;">Three scanning blocks at the 3-hour tier—typical for a short theatre run (e.g. three performances, each with up to 3 hours of entry scanning).</p>
-                <div style="font-size: 2.5rem; font-weight: 800; color: var(--black);">$48,000</div>
-                <p style="font-size: 0.9rem; color: var(--gold); font-weight: 700; margin-top: 0.5rem;">Save $6,000 vs. three separate blocks</p>
-            </div>
-
-            <div style="background: var(--black); color: var(--white); padding: 2.5rem; border-radius: 20px; border: 2px solid var(--gold); display: flex; flex-direction: column; position: relative;">
-                <div style="position: absolute; top: -12px; right: 20px; background: var(--gold); color: var(--black); padding: 4px 12px; border-radius: 4px; font-size: 0.7rem; font-weight: 900; text-transform: uppercase;">Best Value</div>
-                <h3 style="color: var(--gold); margin-bottom: 0.5rem; font-size: 1.2rem;">3-block bundle (6h tier)</h3>
-                <p style="color: #c8c0b8; font-size: 0.9rem; margin-bottom: 2rem; flex-grow: 1;">Three scanning blocks at the 6-hour tier—for high-capacity or long-running entry validation per performance.</p>
-                <div style="font-size: 2.5rem; font-weight: 800; color: var(--gold);">$80,000</div>
-                <p style="font-size: 0.9rem; color: var(--gold); font-weight: 700; margin-top: 0.5rem;">Save $25,000 vs. three separate blocks</p>
-            </div>
-        </div>
-        <p style="text-align: center; font-size: 0.85rem; color: var(--muted); margin-top: 2rem;">*5% seasonal discount automatically applied when you book 4+ scanning blocks in a season.</p>
-    </section>
-
-    <section id="gate-sales" style="max-width: 1000px; margin: 0 auto 6rem; padding: 0 24px; scroll-margin-top: 88px;">
-        <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 2rem;">
-            <span style="background: var(--gold); color: var(--black); width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; border-radius: 50%; font-weight: 900; font-size: 1.25rem;">3</span>
-            <h2 style="margin: 0; font-size: 2rem;">Gate Sales</h2>
-        </div>
-        <p style="max-width: 720px; margin: 0 auto 2.5rem; text-align: center; font-size: 0.95rem; color: var(--muted); line-height: 1.6;">Selling tickets at the gate is a <strong>separate service</strong> from scanning tickets at the gate. Gate Sales covers on-site point-of-sale, full tracking of every door transaction, and card payments—not entry validation.</p>
-
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem;">
-            <div style="background: var(--white); padding: 2.5rem; border-radius: 16px; border: 1px solid var(--rule); display: flex; flex-direction: column;">
-                <h3 style="margin-bottom: 0.5rem; font-size: 1.2rem;">What's included</h3>
-                <ul style="padding: 0; list-style: none; margin: 0; font-size: 0.95rem; color: var(--mid); flex-grow: 1;">
-                    <li style="margin-bottom: 0.6rem;">✓ Track all gate sales in one place</li>
-                    <li style="margin-bottom: 0.6rem;">✓ On-site POS for door purchases</li>
-                    <li style="margin-bottom: 0.6rem;">✓ Card machine for credit/debit at the gate</li>
-                    <li style="margin-bottom: 0.6rem;">✓ Operated by your team or QRTick staff</li>
-                </ul>
-            </div>
-            <div style="background: var(--black); color: var(--white); padding: 2.5rem; border-radius: 20px; border: 2px solid var(--gold); display: flex; flex-direction: column;">
-                <h3 style="color: var(--gold); margin-bottom: 0.5rem; font-size: 1.2rem;">Card processing</h3>
-                <p style="color: #c8c0b8; font-size: 0.95rem; margin-bottom: 1.5rem; flex-grow: 1;">When patrons pay by card at the gate using our card machine, a <strong style="color: var(--gold);">10% processing fee</strong> applies to the transaction amount.</p>
-                <p style="font-size: 0.85rem; color: #888; margin: 0;">Cash and other payment methods follow your event terms; card fees are quoted on processed volume.</p>
-            </div>
-            <div style="background: #f8f8f8; padding: 2.5rem; border-radius: 16px; border: 1px solid var(--rule); display: flex; flex-direction: column;">
-                <h3 style="margin-bottom: 0.5rem; font-size: 1.2rem;">Mix with scanning</h3>
-                <p style="color: var(--muted); font-size: 0.9rem; margin-bottom: 1.5rem; flex-grow: 1;">Many events need scanning only, sales only, or both. Gate Experience blocks and Gate Sales are priced independently—tell us what you need in your quote.</p>
-                <a href="#calculator" style="font-size: 0.9rem; font-weight: 700; color: var(--gold); text-decoration: none;">Configure in quote builder →</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- STEP 4: PHYSICAL TICKETS -->
-    <section id="rfid-tap-tickets" style="max-width: 1000px; margin: 0 auto 6rem; padding: 0 24px; scroll-margin-top: 88px;">
-        <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 2rem;">
-            <span style="background: var(--gold); color: var(--black); width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; border-radius: 50%; font-weight: 900; font-size: 1.25rem;">4</span>
-            <h2 style="margin: 0; font-size: 2rem;">Choose Physical Tickets</h2>
-        </div>
-
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
-            <!-- QR Code Option -->
-            <div style="background: var(--white); padding: 2.5rem; border-radius: 16px; border: 1px solid var(--rule); display: flex; flex-direction: column;">
-                <h3 style="margin-bottom: 1rem;">QR Code Physical</h3>
-                <p style="font-size: 0.95rem; color: var(--muted); margin-bottom: 2rem; flex-grow: 1;">Professional <strong>Black & White</strong> paper tickets with secure QR codes. The budget-friendly physical choice.</p>
-                <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 1rem;">
-                    <span style="font-size: 0.85rem; color: var(--muted); text-transform: uppercase;">Per Ticket</span>
-                    <span style="font-size: 2rem; font-weight: 800;">$55</span>
-                </div>
-                <p style="font-size: 0.85rem; color: var(--muted);">*Minimum order 100 tickets</p>
-            </div>
-
-            <!-- RFID Option -->
-            <div style="background: var(--black); color: var(--white); padding: 2.5rem; border-radius: 20px; border: 2px solid var(--gold); display: flex; flex-direction: column; position: relative;">
-                <div style="position: absolute; top: 1.5rem; right: 1.5rem; background: var(--gold); color: var(--black); font-size: 0.7rem; font-weight: 900; padding: 4px 10px; border-radius: 4px; text-transform: uppercase;">Premium</div>
-                <h3 style="color: var(--gold); margin-bottom: 1rem;">Next-Gen RFID</h3>
-                <p style="font-size: 0.95rem; color: #c8c0b8; margin-bottom: 2rem; flex-grow: 1;">Premium <strong>Black & White</strong> tickets with secure tap-to-enter chips. Elite fraud protection and the fastest possible entry.</p>
-                <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 1rem;">
-                    <span style="font-size: 0.85rem; color: #888; text-transform: uppercase;">Per Ticket</span>
-                    <span style="font-size: 2.5rem; font-weight: 800; color: var(--gold);">$140</span>
-                </div>
-                <p style="font-size: 0.85rem; color: #888;">*Includes encoding & encryption</p>
-            </div>
-        </div>
-        
-        <div style="margin-top: 2rem; padding: 1.5rem; background: #f8f8f8; border-radius: 12px; border: 1px solid var(--rule); display: flex; align-items: center; justify-content: space-between; gap: 1rem; flex-wrap: wrap;">
-            <p style="margin: 0; font-size: 0.95rem; color: var(--mid);"><strong>Ticket Setup Fee:</strong> $10,000 one-time encoding & design setup.</p>
-            <p style="margin: 0; font-size: 0.9rem; color: var(--gold); font-weight: 700;">Waived for Professional Partnership + any 3-block scanning bundle</p>
-        </div>
-    </section>
-
-    <!-- STEP 5: MANAGED FINANCE -->
-    <section style="max-width: 1000px; margin: 0 auto 6rem; padding: 0 24px;">
-        <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 2rem;">
-            <span style="background: var(--gold); color: var(--black); width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; border-radius: 50%; font-weight: 900; font-size: 1.25rem;">5</span>
-            <h2 style="margin: 0; font-size: 2rem;">Managed Finance</h2>
-        </div>
-
-        <div style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); display: grid; gap: 2rem;">
-            <div style="background: #f8f8f8; padding: 2rem; border-radius: 16px; border: 1px solid var(--rule);">
-                <h3 style="font-size: 1.25rem; margin-bottom: 1rem;">Payouts</h3>
-                <ul style="padding: 0; list-style: none; margin: 0; font-size: 0.95rem; color: var(--mid);">
-                    <li style="margin-bottom: 0.75rem;"><strong>Standard:</strong> 5-7 Days Post-Event (Free for all tiers)</li>
-                    <li style="margin-bottom: 0.75rem; color: var(--gold); font-weight: 700;">Early & Express payouts available for Professional + Series partners only:</li>
-                    <li style="margin-bottom: 0.75rem; padding-left: 1rem;">• <strong>Early:</strong> Access funds before your show (2.5% fee)</li>
-                    <li style="margin-bottom: 0.75rem; padding-left: 1rem;">• <strong>Express:</strong> Same-day processing (3.5% fee)</li>
-                </ul>
-            </div>
-            <div style="background: #f8f8f8; padding: 2rem; border-radius: 16px; border: 1px solid var(--rule);">
-                <h3 style="font-size: 1.25rem; margin-bottom: 1rem;">Payment Terms</h3>
-                <ul style="padding: 0; list-style: none; margin: 0; font-size: 0.95rem; color: var(--mid);">
-                    <li style="margin-bottom: 0.75rem;"><strong>Managed:</strong> Fees deducted from ticket sales. No upfront cost.</li>
-                    <li style="margin-bottom: 0.75rem;"><strong>Prepaid:</strong> Pay upfront and save 5% on your total.</li>
-                </ul>
-            </div>
-        </div>
-    </section>
 
             </div>
         </details>
 
     <!-- SCENARIOS -->
     <section id="scenarios" style="max-width: 1000px; margin: 0 auto 6rem; padding: 0 24px; scroll-margin-top: 88px;">
-        <div style="text-align: center; margin-bottom: 4rem;">
-            <p class="eyebrow" style="color: var(--gold); margin-bottom: 1rem;">Decision Guide</p>
-            <h2 style="font-size: 2.5rem; margin-bottom: 1rem;">Typical Investment Scenarios</h2>
-            <p style="color: var(--muted); font-size: 1.1rem; max-width: 640px; margin: 0 auto;">Real configurations organizers choose—whether <strong>your volunteers run the gate</strong> (Basic) or you want <strong>QRTick to run scanning</strong> (Gate Experience). Gate Sales not shown in these examples.</p>
+        <div style="text-align: center; margin-bottom: 2.5rem;">
+            <h2 style="font-size: 2.5rem; margin-bottom: 1rem; text-wrap: balance;">Typical configurations</h2>
+            <p style="color: var(--muted); font-size: 1.05rem; max-width: 640px; margin: 0 auto; line-height: 1.6;">Example upfront totals from the quote builder. Load any row to pre-fill sliders; adjust from there. Gate Sales not included.</p>
         </div>
 
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
-            <!-- Scenario: Volunteer-led -->
-            <div style="background: var(--white); padding: 2.5rem; border-radius: 20px; border: 2px solid var(--gold); display: flex; flex-direction: column; position: relative;">
-                <div style="position: absolute; top: -12px; left: 20px; background: var(--gold); color: var(--black); padding: 4px 12px; border-radius: 4px; font-size: 0.7rem; font-weight: 900; text-transform: uppercase;">Your team</div>
-                <h3 style="margin-bottom: 1rem; font-size: 1.5rem;">The Volunteer-Led Show</h3>
-                <p style="font-size: 0.95rem; color: var(--muted); margin-bottom: 2rem; flex-grow: 1;">You already have people at the door. Essentials plus one coordinator to organize volunteers for a single event—your team scans; QRTick guides.</p>
-                
-                <ul style="list-style: none; padding: 0; margin-bottom: 2rem; font-size: 0.95rem; color: var(--mid);">
-                    <li style="display: flex; justify-content: space-between; padding: 12px 0; border-bottom: 1px solid #eee;">
-                        <span>Essentials Platform</span>
-                        <span style="font-weight: 700;">$10,000</span>
-                    </li>
-                    <li style="display: flex; justify-content: space-between; padding: 12px 0; border-bottom: 1px solid #eee;">
-                        <span>Basic Gate Support (1 event, 3h)</span>
-                        <span style="font-weight: 700;">$10,000</span>
-                    </li>
-                    <li style="display: flex; justify-content: space-between; padding: 12px 0; border-bottom: 1px solid #eee;">
-                        <span>500 QR Tickets</span>
-                        <span style="font-weight: 700;">$27,500</span>
-                    </li>
-                    <li style="display: flex; justify-content: space-between; padding: 12px 0; color: var(--muted); font-style: italic;">
-                        <span>Setup Fee Applies</span>
-                        <span>+$10,000</span>
-                    </li>
-                </ul>
-
-                <div style="display: flex; justify-content: space-between; align-items: baseline; padding-top: 1rem;">
-                    <span style="font-size: 1.1rem; font-weight: 700;">Total Estimate</span>
-                    <span style="font-size: 2.2rem; font-weight: 800; color: var(--black);">$57,500</span>
-                </div>
-            </div>
-
-            <!-- Scenario: Hands-off single -->
-            <div style="background: var(--white); padding: 2.5rem; border-radius: 20px; border: 1px solid var(--rule); display: flex; flex-direction: column; position: relative;">
-                <div style="position: absolute; top: -12px; left: 20px; background: var(--black); color: var(--gold); padding: 4px 12px; border-radius: 4px; font-size: 0.7rem; font-weight: 900; text-transform: uppercase;">Hands-off</div>
-                <h3 style="margin-bottom: 1rem; font-size: 1.5rem;">The Hands-Off Single</h3>
-                <p style="font-size: 0.95rem; color: var(--muted); margin-bottom: 2rem; flex-grow: 1;">One performance where you do not want to manage entry—Professional platform plus a full QRTick scanning crew for the night.</p>
-                
-                <ul style="list-style: none; padding: 0; margin-bottom: 2rem; font-size: 0.95rem; color: var(--mid);">
-                    <li style="display: flex; justify-content: space-between; padding: 12px 0; border-bottom: 1px solid #eee;">
-                        <span>Professional Platform</span>
-                        <span style="font-weight: 700;">$40,000</span>
-                    </li>
-                    <li style="display: flex; justify-content: space-between; padding: 12px 0; border-bottom: 1px solid #eee;">
-                        <span>Gate Experience: 1 × 3h scanning</span>
-                        <span style="font-weight: 700;">$18,000</span>
-                    </li>
-                    <li style="display: flex; justify-content: space-between; padding: 12px 0; border-bottom: 1px solid #eee;">
-                        <span>500 QR Tickets</span>
-                        <span style="font-weight: 700;">$27,500</span>
-                    </li>
-                    <li style="display: flex; justify-content: space-between; padding: 12px 0; color: var(--muted); font-style: italic;">
-                        <span>Setup Fee Applies</span>
-                        <span>+$10,000</span>
-                    </li>
-                </ul>
-
-                <div style="display: flex; justify-content: space-between; align-items: baseline; padding-top: 1rem;">
-                    <span style="font-size: 1.1rem; font-weight: 700;">Total Estimate</span>
-                    <span style="font-size: 2.2rem; font-weight: 800; color: var(--black);">$95,500</span>
-                </div>
-            </div>
-
-            <!-- Scenario 1 -->
-            <div style="background: var(--white); padding: 2.5rem; border-radius: 20px; border: 1px solid var(--rule); display: flex; flex-direction: column; position: relative;">
-                <div style="position: absolute; top: -12px; left: 20px; background: var(--black); color: var(--gold); padding: 4px 12px; border-radius: 4px; font-size: 0.7rem; font-weight: 900; text-transform: uppercase;">Hands-off</div>
-                <h3 style="margin-bottom: 1rem; font-size: 1.5rem;">The Theatre Run</h3>
-                <p style="font-size: 0.95rem; color: var(--muted); margin-bottom: 2rem; flex-grow: 1;">Three-show run where QRTick owns scanning—you focus on production, not line management at the door.</p>
-                
-                <ul style="list-style: none; padding: 0; margin-bottom: 2rem; font-size: 0.95rem; color: var(--mid);">
-                    <li style="display: flex; justify-content: space-between; padding: 12px 0; border-bottom: 1px solid #eee;">
-                        <span>Professional Platform</span>
-                        <span style="font-weight: 700;">$40,000</span>
-                    </li>
-                    <li style="display: flex; justify-content: space-between; padding: 12px 0; border-bottom: 1px solid #eee;">
-                        <span>Gate Experience: 3 × 3h bundle</span>
-                        <span style="font-weight: 700;">$48,000</span>
-                    </li>
-                    <li style="display: flex; justify-content: space-between; padding: 12px 0; border-bottom: 1px solid #eee;">
-                        <span>500 QR Tickets</span>
-                        <span style="font-weight: 700;">$27,500</span>
-                    </li>
-                    <li style="display: flex; justify-content: space-between; padding: 12px 0; color: var(--gold); font-weight: 700;">
-                        <span>Setup Fee Waiver</span>
-                        <span>-$10,000</span>
-                    </li>
-                </ul>
-
-                <div style="display: flex; justify-content: space-between; align-items: baseline; padding-top: 1rem;">
-                    <span style="font-size: 1.1rem; font-weight: 700;">Total Estimate</span>
-                    <span style="font-size: 2.2rem; font-weight: 800; color: var(--black);">$105,500</span>
-                </div>
-            </div>
-
-            <!-- Scenario 2 -->
-            <div style="background: var(--black); color: var(--white); padding: 2.5rem; border-radius: 20px; border: 2px solid var(--gold); display: flex; flex-direction: column; position: relative; box-shadow: 0 20px 40px rgba(0,0,0,0.1);">
-                <div style="position: absolute; top: -15px; left: 50%; transform: translateX(-50%); background: var(--gold); color: var(--black); padding: 4px 20px; border-radius: 20px; font-size: 0.75rem; font-weight: 900; text-transform: uppercase;">Hands-off · Premium</div>
-                <h3 style="margin-bottom: 1rem; font-size: 1.5rem; color: var(--gold);">The Full Production</h3>
-                <p style="font-size: 0.95rem; color: #aaa; margin-bottom: 2rem; flex-grow: 1;">High-capacity entry you do not have to staff—6-hour scanning crews plus elite RFID tickets.</p>
-                
-                <ul style="list-style: none; padding: 0; margin-bottom: 2rem; font-size: 0.95rem; color: #ccc;">
-                    <li style="display: flex; justify-content: space-between; padding: 12px 0; border-bottom: 1px solid #333;">
-                        <span>Professional Platform</span>
-                        <span style="font-weight: 700; color: var(--white);">$40,000</span>
-                    </li>
-                    <li style="display: flex; justify-content: space-between; padding: 12px 0; border-bottom: 1px solid #333;">
-                        <span>Gate Experience: 3 × 6h bundle</span>
-                        <span style="font-weight: 700; color: var(--white);">$80,000</span>
-                    </li>
-                    <li style="display: flex; justify-content: space-between; padding: 12px 0; border-bottom: 1px solid #333;">
-                        <span>500 RFID Tickets</span>
-                        <span style="font-weight: 700; color: var(--white);">$70,000</span>
-                    </li>
-                    <li style="display: flex; justify-content: space-between; padding: 12px 0; color: var(--gold); font-weight: 700;">
-                        <span>Setup Fee Waiver</span>
-                        <span>-$10,000</span>
-                    </li>
-                </ul>
-
-                <div style="display: flex; justify-content: space-between; align-items: baseline; padding-top: 1rem;">
-                    <span style="font-size: 1.1rem; font-weight: 700;">Total Estimate</span>
-                    <span style="font-size: 2.2rem; font-weight: 800; color: var(--gold);">$180,000</span>
-                </div>
-            </div>
-
-            <!-- Scenario: Volunteer season -->
-            <div style="background: var(--white); padding: 2.5rem; border-radius: 20px; border: 1px solid var(--rule); display: flex; flex-direction: column; position: relative;">
-                <div style="position: absolute; top: -12px; left: 20px; background: var(--gold); color: var(--black); padding: 4px 12px; border-radius: 4px; font-size: 0.7rem; font-weight: 900; text-transform: uppercase;">Your team</div>
-                <h3 style="margin-bottom: 1rem; font-size: 1.5rem;">The Community Season</h3>
-                <p style="font-size: 0.95rem; color: var(--muted); margin-bottom: 2rem; flex-grow: 1;">A recurring series with its own volunteer gate team—Basic coordination each night instead of a full scanning crew every show.</p>
-                
-                <ul style="list-style: none; padding: 0; margin-bottom: 2rem; font-size: 0.95rem; color: var(--mid);">
-                    <li style="display: flex; justify-content: space-between; padding: 12px 0; border-bottom: 1px solid #eee;">
-                        <span>Professional Platform</span>
-                        <span style="font-weight: 700;">$40,000</span>
-                    </li>
-                    <li style="display: flex; justify-content: space-between; padding: 12px 0; border-bottom: 1px solid #eee;">
-                        <span>Basic Gate Support (10 events)</span>
-                        <span style="font-weight: 700;">$100,000</span>
-                    </li>
-                </ul>
-
-                <div style="display: flex; justify-content: space-between; align-items: baseline; padding-top: 1rem;">
-                    <span style="font-size: 1.1rem; font-weight: 700;">Total Estimate</span>
-                    <span style="font-size: 2.2rem; font-weight: 800; color: var(--black);">$140,000</span>
-                </div>
-                <p style="font-size: 0.8rem; color: var(--muted); margin-top: 1rem;">About $14k per show for platform plus on-site coordinator—volunteers handle scanning.</p>
-            </div>
-
-            <!-- Scenario: The Grand Season -->
-            <div style="background: var(--white); padding: 2.5rem; border-radius: 20px; border: 1px solid var(--rule); display: flex; flex-direction: column; position: relative;">
-                <div style="position: absolute; top: -12px; left: 20px; background: var(--black); color: var(--gold); padding: 4px 12px; border-radius: 4px; font-size: 0.7rem; font-weight: 900; text-transform: uppercase;">Hands-off</div>
-                <h3 style="margin-bottom: 1rem; font-size: 1.5rem;">The Grand Season</h3>
-                <p style="font-size: 0.95rem; color: var(--muted); margin-bottom: 2rem; flex-grow: 1;">Long-running series where QRTick runs scanning every night—you do not rebuild a volunteer gate plan each show.</p>
-                
-                <ul style="list-style: none; padding: 0; margin-bottom: 2rem; font-size: 0.95rem; color: var(--mid);">
-                    <li style="display: flex; justify-content: space-between; padding: 12px 0; border-bottom: 1px solid #eee;">
-                        <span>Professional Platform</span>
-                        <span style="font-weight: 700;">$40,000</span>
-                    </li>
-                    <li style="display: flex; justify-content: space-between; padding: 12px 0; border-bottom: 1px solid #eee;">
-                        <span>Gate Experience: 10 × 3h scanning</span>
-                        <span style="font-weight: 700;">$180,000</span>
-                    </li>
-                    <li style="display: flex; justify-content: space-between; padding: 12px 0; color: var(--gold); font-weight: 700;">
-                        <span>5% Seasonal Discount</span>
-                        <span>-$9,000</span>
-                    </li>
-                    <li style="display: flex; justify-content: space-between; padding: 12px 0; color: var(--gold); font-weight: 700;">
-                        <span>Setup Fee Waiver</span>
-                        <span>-$10,000</span>
-                    </li>
-                </ul>
-
-                <div style="display: flex; justify-content: space-between; align-items: baseline; padding-top: 1rem;">
-                    <span style="font-size: 1.1rem; font-weight: 700;">Total Estimate</span>
-                    <span style="font-size: 2.2rem; font-weight: 800; color: var(--black);">$201,000</span>
-                </div>
-                <p style="font-size: 0.8rem; color: var(--muted); margin-top: 1rem;">Roughly $20k per show for full-service managed entry.</p>
-            </div>
-        </div>
+        <ul class="scenario-list" id="scenario-list"></ul>
     </section>
 
     <!-- FINAL CTA -->
     <section style="text-align: center; padding: 8rem 24px; background: var(--black); color: var(--white); border-radius: 40px 40px 0 0; margin-top: 4rem;">
-        <p class="eyebrow" style="color: var(--gold); font-weight: 800; letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 1rem;">Let's Build Your Season</p>
-        <h2 style="font-size: 3.5rem; margin-bottom: 2rem; letter-spacing: -0.04em;">Ready to go live?</h2>
+        <h2 style="font-size: 3.5rem; margin-bottom: 2rem; letter-spacing: -0.04em;">Ready to build your season?</h2>
         <p style="font-size: 1.25rem; color: #aaa; max-width: 600px; margin: 0 auto 3rem; line-height: 1.6;">
             Contact our team to design the perfect entry experience for your upcoming event season.
         </p>
@@ -1428,6 +1459,15 @@
 
     <div id="toast-packages" role="status" aria-live="polite"></div>
 
+    <!-- MOBILE STICKY TOTAL BAR -->
+    <div id="mobile-sticky-total" class="mobile-sticky-total-bar">
+        <div class="mobile-sticky-total-bar__info">
+            <span class="mobile-sticky-total-bar__label">Upfront Estimate</span>
+            <span class="mobile-sticky-total-bar__value">$<span id="mobile-total-val">10,000</span></span>
+        </div>
+        <a href="https://tally.so/r/nW4Nak" class="mobile-sticky-total-bar__btn">Request Invoice</a>
+    </div>
+
     <script>
         function showPackagesToast(message) {
             const el = document.getElementById('toast-packages');
@@ -1444,9 +1484,9 @@
                 if (!res.ok) throw new Error('fetch failed');
                 var text = await res.text();
                 await navigator.clipboard.writeText(text);
-                showPackagesToast('Markdown copied — paste into your AI tool.');
+                showPackagesToast('Markdown copied. Paste into your AI tool.');
             } catch (e) {
-                showPackagesToast('Copy failed — use the .md link to open or download the file.');
+                showPackagesToast('Copy failed. Use the .md link to open or download the file.');
             }
         }
     </script>
@@ -1464,19 +1504,199 @@
             rfid: 0
         };
 
+        const SCENARIO_PRESETS = {
+            'volunteer-led': {
+                title: 'Volunteer-Led Show',
+                badge: 'yours',
+                blurb: 'Essentials plus one Basic coordinator for a single event. Your volunteers scan.',
+                platform: 'essentials',
+                basicGateEvents: 1,
+                nights: 0,
+                gateType: '3h',
+                qr: 500,
+                rfid: 0
+            },
+            'hands-off-single': {
+                title: 'Hands-Off Single',
+                badge: 'hands-off',
+                blurb: 'Professional platform and one 3-hour scanning block for one performance.',
+                platform: 'professional',
+                basicGateEvents: 0,
+                nights: 1,
+                gateType: '3h',
+                qr: 500,
+                rfid: 0
+            },
+            'theatre-run': {
+                title: 'Theatre Run',
+                badge: 'hands-off',
+                blurb: 'Three-show run with the 3-block scanning bundle and 500 QR tickets.',
+                platform: 'professional',
+                basicGateEvents: 0,
+                nights: 3,
+                gateType: '3h',
+                qr: 500,
+                rfid: 0
+            },
+            'full-production': {
+                title: 'Full Production',
+                badge: 'hands-off',
+                blurb: '6-hour scanning bundle plus 500 RFID tickets for high-capacity entry.',
+                platform: 'professional',
+                basicGateEvents: 0,
+                nights: 3,
+                gateType: '6h',
+                qr: 0,
+                rfid: 500
+            },
+            'community-season': {
+                title: 'Community Season',
+                badge: 'yours',
+                blurb: 'Professional platform and Basic coordination for 10 volunteer-led shows.',
+                platform: 'professional',
+                basicGateEvents: 10,
+                nights: 0,
+                gateType: '3h',
+                qr: 0,
+                rfid: 0
+            },
+            'grand-season': {
+                title: 'Grand Season',
+                badge: 'hands-off',
+                blurb: 'Ten 3-hour scanning blocks with seasonal discount (no physical tickets in this example).',
+                platform: 'professional',
+                basicGateEvents: 0,
+                nights: 10,
+                gateType: '3h',
+                qr: 0,
+                rfid: 0
+            }
+        };
+
+        function estimateTotal(cfg) {
+            var platformPrice = cfg.platform === 'essentials' ? 10000 : 40000;
+            var basicGatePrice = (cfg.basicGateEvents || 0) * 10000;
+            var gatePrice = 0;
+            var gatePriceBeforeDiscount = 0;
+
+            if (cfg.nights === 3) {
+                gatePrice = cfg.gateType === '3h' ? 48000 : 80000;
+            } else if (cfg.nights > 0) {
+                var blockRate = cfg.gateType === '3h' ? 18000 : 35000;
+                gatePriceBeforeDiscount = cfg.nights * blockRate;
+                gatePrice = gatePriceBeforeDiscount;
+                if (cfg.nights >= 4) {
+                    gatePrice = gatePrice * 0.95;
+                }
+            }
+
+            var ticketPrice = (cfg.qr || 0) * 55 + (cfg.rfid || 0) * 140;
+            var setupFee = (cfg.qr > 0 || cfg.rfid > 0) ? 10000 : 0;
+            if (cfg.platform === 'professional' && cfg.nights >= 3) {
+                setupFee = 0;
+            }
+
+            return platformPrice + basicGatePrice + gatePrice + ticketPrice + setupFee;
+        }
+
+        function renderScenarioList() {
+            var list = document.getElementById('scenario-list');
+            if (!list) return;
+            list.innerHTML = '';
+
+            Object.keys(SCENARIO_PRESETS).forEach(function (id) {
+                var preset = SCENARIO_PRESETS[id];
+                var total = estimateTotal(preset);
+                var badgeClass = preset.badge === 'yours' ? 'scenario-badge--yours' : 'scenario-badge--hands-off';
+                var badgeLabel = preset.badge === 'yours' ? 'Your team' : 'Hands-off';
+
+                var li = document.createElement('li');
+                li.className = 'scenario-row';
+                li.innerHTML =
+                    '<div class="scenario-row__main">' +
+                    '<span class="scenario-badge ' + badgeClass + '">' + badgeLabel + '</span>' +
+                    '<h3>' + preset.title + '</h3>' +
+                    '<p class="scenario-row__blurb">' + preset.blurb + '</p>' +
+                    '</div>' +
+                    '<div class="scenario-row__aside">' +
+                    '<div><span class="scenario-row__total-label">Upfront estimate</span>' +
+                    '<div class="scenario-row__total">$' + total.toLocaleString() + '</div></div>' +
+                    '<button type="button" class="scenario-load-btn" data-scenario="' + id + '">Load in quote builder</button>' +
+                    '</div>';
+                list.appendChild(li);
+            });
+
+            list.querySelectorAll('.scenario-load-btn').forEach(function (btn) {
+                btn.addEventListener('click', function () {
+                    loadScenarioPreset(btn.getAttribute('data-scenario'), true);
+                });
+            });
+        }
+
+        function applyConfigToForm() {
+            document.getElementById('user-name').value = config.name || '';
+            document.getElementById('user-org').value = config.org || '';
+            document.getElementById('basic-gate-events').value = config.basicGateEvents;
+            document.getElementById('gate-nights').value = config.nights;
+            document.getElementById('gate-sales').checked = config.gateSales;
+            document.getElementById('qr-count').value = config.qr;
+            document.getElementById('rfid-count').value = config.rfid;
+            setPlatform(config.platform);
+            setGateType(config.gateType);
+        }
+
+        function loadScenarioPreset(id, scrollToCalculator) {
+            var preset = SCENARIO_PRESETS[id];
+            if (!preset) return;
+
+            var preservedName = config.name;
+            var preservedOrg = config.org;
+
+            config.platform = preset.platform;
+            config.gateType = preset.gateType;
+            config.nights = preset.nights;
+            config.basicGateEvents = preset.basicGateEvents;
+            config.qr = preset.qr;
+            config.rfid = preset.rfid;
+            config.gateSales = false;
+            config.name = preservedName;
+            config.org = preservedOrg;
+
+            applyConfigToForm();
+            calculate();
+
+            var shareParams = new URLSearchParams(window.location.search);
+            shareParams.set('scenario', id);
+            history.replaceState(null, '', window.location.pathname + '?' + shareParams.toString() + window.location.hash);
+
+            if (scrollToCalculator) {
+                var calc = document.getElementById('calculator');
+                if (calc) {
+                    calc.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+                showPackagesToast('Loaded "' + preset.title + '" into the quote builder.');
+            }
+        }
+
+        function setCalcPickActive(id, active) {
+            var el = document.getElementById(id);
+            if (!el) return;
+            el.setAttribute('aria-pressed', active ? 'true' : 'false');
+            el.style.borderColor = active ? 'var(--gold)' : 'var(--rule)';
+            el.style.background = active ? 'rgba(212, 175, 55, 0.05)' : 'transparent';
+        }
+
         function setPlatform(type) {
             config.platform = type;
-            document.getElementById('plat-essentials').style.borderColor = type === 'essentials' ? 'var(--gold)' : 'var(--rule)';
-            document.getElementById('plat-essentials').style.background = type === 'essentials' ? 'rgba(212, 175, 55, 0.05)' : 'transparent';
-            document.getElementById('plat-professional').style.borderColor = type === 'professional' ? 'var(--gold)' : 'var(--rule)';
-            document.getElementById('plat-professional').style.background = type === 'professional' ? 'rgba(212, 175, 55, 0.05)' : 'transparent';
+            setCalcPickActive('plat-essentials', type === 'essentials');
+            setCalcPickActive('plat-professional', type === 'professional');
             calculate();
         }
 
         function setGateType(type) {
             config.gateType = type;
-            document.getElementById('gate-3h').style.borderColor = type === '3h' ? 'var(--gold)' : 'var(--rule)';
-            document.getElementById('gate-6h').style.borderColor = type === '6h' ? 'var(--gold)' : 'var(--rule)';
+            setCalcPickActive('gate-3h', type === '3h');
+            setCalcPickActive('gate-6h', type === '6h');
             calculate();
         }
 
@@ -1505,11 +1725,11 @@
             config.name = document.getElementById('user-name').value;
             config.org = document.getElementById('user-org').value;
             config.gateSales = document.getElementById('gate-sales').checked;
-            config.basicGateEvents = parseInt(document.getElementById('basic-gate-events').value) || 0;
-            config.nights = parseInt(document.getElementById('gate-nights').value);
-            config.qr = parseInt(document.getElementById('qr-count').value) || 0;
-            config.rfid = parseInt(document.getElementById('rfid-count').value) || 0;
-            
+            config.basicGateEvents = parseInt(document.getElementById('basic-gate-events').value, 10) || 0;
+            config.nights = parseInt(document.getElementById('gate-nights').value, 10) || 0;
+            config.qr = parseInt(document.getElementById('qr-count').value, 10) || 0;
+            config.rfid = parseInt(document.getElementById('rfid-count').value, 10) || 0;
+
             document.getElementById('gate-blocks-display').innerText = config.nights;
             document.getElementById('basic-gate-display').innerText = config.basicGateEvents;
 
@@ -1518,20 +1738,17 @@
             let gatePrice = 0;
             let gatePriceBeforeDiscount = 0;
             let scanningDiscountApplied = false;
-            let bundleApplied = false;
+            let bundleApplied = config.nights === 3;
 
             document.getElementById('basic-gate-subtotal').innerText = '$' + basicGatePrice.toLocaleString();
 
-            // Gate Experience: scanning blocks (priced by hour tier)
             if (config.nights === 3) {
                 gatePrice = config.gateType === '3h' ? 48000 : 80000;
                 gatePriceBeforeDiscount = gatePrice;
-                bundleApplied = true;
             } else if (config.nights > 0) {
                 let blockRate = config.gateType === '3h' ? 18000 : 35000;
                 gatePriceBeforeDiscount = config.nights * blockRate;
                 gatePrice = gatePriceBeforeDiscount;
-                
                 if (config.nights >= 4) {
                     gatePrice = gatePrice * 0.95;
                     scanningDiscountApplied = true;
@@ -1540,19 +1757,20 @@
 
             document.getElementById('bundle-alert').style.display = bundleApplied ? 'block' : 'none';
 
-            // Ticket Logic
             let ticketPrice = (config.qr * 55) + (config.rfid * 140);
             let setupFee = (config.qr > 0 || config.rfid > 0) ? 10000 : 0;
-            
-            // Waiver logic: Professional + 3-block bundle
             if (config.platform === 'professional' && config.nights >= 3) {
                 setupFee = 0;
             }
 
-            let total = platformPrice + basicGatePrice + gatePrice + ticketPrice + setupFee;
+            let total = estimateTotal(config);
 
             // Update UI
             document.getElementById('total-val').innerText = total.toLocaleString();
+            const mobileTotalVal = document.getElementById('mobile-total-val');
+            if (mobileTotalVal) {
+                mobileTotalVal.innerText = total.toLocaleString();
+            }
             
             let hasGateAddOns = basicGatePrice > 0 || gatePrice > 0 || config.gateSales;
             let lines = `
@@ -1577,11 +1795,13 @@
                     <span>−$${(gatePriceBeforeDiscount - gatePrice).toLocaleString()}</span>
                 </div>` : ''}
                 ${!basicGatePrice && !gatePrice && !config.gateSales ? `
-                <div style="margin-bottom: 8px; font-size: 0.8rem; color: #888; line-height: 1.45;">No on-site gate add-ons selected—use Basic and/or scanning sliders above if needed.</div>` : ''}
+                <div style="margin-bottom: 8px; font-size: 0.8rem; color: #888; line-height: 1.45;">No on-site gate add-ons selected. Use Basic and/or scanning sliders above if needed.</div>` : ''}
                 ${config.gateSales ? `
-                <div style="margin-bottom: 8px; font-size: 0.8rem; color: #aaa; line-height: 1.45;">
-                    <span>Gate Sales requested (POS + tracking + card machine). Card payments: 10% processing fee on transaction amount—quoted separately.</span>
-                </div>` : ''}
+                <div style="display: flex; justify-content: space-between; margin-bottom: 4px; align-items: flex-start; gap: 0.75rem;">
+                    <span>Gate Sales (POS, tracking, card machine)</span>
+                    <span style="text-align: right; color: var(--gold); font-weight: 700; white-space: nowrap;">Quoted separately</span>
+                </div>
+                <div style="margin-bottom: 8px; font-size: 0.75rem; color: #888; line-height: 1.45;">Not included in upfront total. Card payments: 10% fee on processed volume at the gate.</div>` : ''}
                 ${ticketPrice > 0 ? `
                 <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
                     <span>Physical Tickets</span>
@@ -1599,6 +1819,13 @@
             `;
             document.getElementById('line-items').innerHTML = lines;
 
+            var footnote = document.getElementById('quote-footnote');
+            if (config.gateSales) {
+                footnote.innerHTML = 'Upfront total above excludes <span class="quote-footnote--highlight">Gate Sales</span> (quoted separately) and the 10% card processing fee on door card volume.';
+            } else {
+                footnote.textContent = 'Platform, on-site gate support, physical tickets, and setup fees. Subject to final confirmation.';
+            }
+
             // Update Email Link
             let namePart = config.name ? `${config.name} ` : '';
             let orgPart = config.org ? `(${config.org})` : '';
@@ -1611,10 +1838,10 @@ I have built a custom quote on your website:
 - Organization: ${config.org || 'Not provided'}
 - Platform: ${config.platform.toUpperCase()}
 - Basic Gate Support: ${config.basicGateEvents > 0 ? config.basicGateEvents + ' event(s) × $10,000 = $' + basicGatePrice.toLocaleString() + ' (3h coordination & volunteer guidance each)' : 'None'}
-- Gate Experience (scanning): ${config.nights > 0 ? gateExperienceSummary(config.nights, config.gateType) + ' — $' + gatePrice.toLocaleString() : 'None'}
-- Gate Sales: ${config.gateSales ? 'Yes — include POS, sales tracking, and card machine (10% processing fee on card transactions at the gate)' : 'No'}
+- Gate Experience (scanning): ${config.nights > 0 ? gateExperienceSummary(config.nights, config.gateType) + ': $' + gatePrice.toLocaleString() : 'None'}
+- Gate Sales: ${config.gateSales ? 'Requested (quoted separately; POS, sales tracking, card machine; 10% card processing fee on gate card volume)' : 'No'}
 - Physical Tickets: ${config.qr} QR, ${config.rfid} RFID
-- Estimated Total: $${total.toLocaleString()}
+- Estimated upfront total: $${total.toLocaleString()} (excludes Gate Sales pricing and card processing fees)
 
 Link to my configuration: ${window.location.href}
 
@@ -1635,49 +1862,35 @@ I would like to discuss a formal invoice for this configuration.`;
             else params.delete('gs');
             params.set('qr', config.qr);
             params.set('rf', config.rfid);
-            history.replaceState(null, '', '?' + params.toString());
+            params.delete('scenario');
+            history.replaceState(null, '', window.location.pathname + '?' + params.toString() + window.location.hash);
         }
 
         function loadFromURL() {
-            let params = new URLSearchParams(window.location.search);
-            if (params.has('name')) {
-                config.name = params.get('name');
-                document.getElementById('user-name').value = config.name;
+            var params = new URLSearchParams(window.location.search);
+
+            if (params.has('scenario') && SCENARIO_PRESETS[params.get('scenario')]) {
+                if (params.has('name')) config.name = params.get('name');
+                if (params.has('org')) config.org = params.get('org');
+                loadScenarioPreset(params.get('scenario'), params.get('scroll') !== '0');
+                return;
             }
-            if (params.has('org')) {
-                config.org = params.get('org');
-                document.getElementById('user-org').value = config.org;
-            }
+
+            if (params.has('name')) config.name = params.get('name');
+            if (params.has('org')) config.org = params.get('org');
             if (params.has('p')) config.platform = params.get('p') === 'e' ? 'essentials' : 'professional';
-            if (params.has('n')) {
-                config.nights = parseInt(params.get('n'));
-                document.getElementById('gate-nights').value = config.nights;
-            }
-            if (params.has('bg')) {
-                config.basicGateEvents = parseInt(params.get('bg')) || 0;
-                document.getElementById('basic-gate-events').value = config.basicGateEvents;
-            }
+            if (params.has('n')) config.nights = parseInt(params.get('n'), 10) || 0;
+            if (params.has('bg')) config.basicGateEvents = parseInt(params.get('bg'), 10) || 0;
             if (params.has('gt')) config.gateType = params.get('gt') === '3' ? '3h' : '6h';
-            if (params.get('gs') === '1') {
-                config.gateSales = true;
-                document.getElementById('gate-sales').checked = true;
-            }
-            if (params.has('qr')) {
-                config.qr = parseInt(params.get('qr'));
-                document.getElementById('qr-count').value = config.qr;
-            }
-            if (params.has('rf')) {
-                config.rfid = parseInt(params.get('rf'));
-                document.getElementById('rfid-count').value = config.rfid;
-            }
-            
-            // Sync UI
-            setPlatform(config.platform);
-            setGateType(config.gateType);
+            if (params.get('gs') === '1') config.gateSales = true;
+            if (params.has('qr')) config.qr = parseInt(params.get('qr'), 10) || 0;
+            if (params.has('rf')) config.rfid = parseInt(params.get('rf'), 10) || 0;
+
+            applyConfigToForm();
             calculate();
         }
 
-        const PRICE_BREAKDOWN_ANCHORS = ['price-breakdown', 'gate-sales', 'rfid-tap-tickets'];
+        const PRICE_BREAKDOWN_ANCHORS = ['price-breakdown', 'gate-sales', 'price-physical', 'price-finance'];
 
         function syncPriceBreakdownFromHash() {
             var hash = window.location.hash.slice(1);
@@ -1688,9 +1901,58 @@ I would like to discuss a formal invoice for this configuration.`;
 
         window.addEventListener('hashchange', syncPriceBreakdownFromHash);
 
+        function initMobileStickyTotal() {
+            var stickyBar = document.getElementById('mobile-sticky-total');
+            var calculator = document.getElementById('calculator');
+            var estimateCard = document.getElementById('estimate-card-container');
+
+            if (!stickyBar || !calculator || !estimateCard) return;
+
+            var calcVisible = false;
+            var cardVisible = false;
+
+            function updateStickyBarVisibility() {
+                if (calcVisible && !cardVisible) {
+                    stickyBar.classList.add('visible');
+                } else {
+                    stickyBar.classList.remove('visible');
+                }
+            }
+
+            var calcObserver = new IntersectionObserver(function (entries) {
+                entries.forEach(function (entry) {
+                    calcVisible = entry.isIntersecting;
+                    updateStickyBarVisibility();
+                });
+            }, {
+                root: null,
+                threshold: 0
+            });
+
+            var cardObserver = new IntersectionObserver(function (entries) {
+                entries.forEach(function (entry) {
+                    cardVisible = entry.isIntersecting;
+                    updateStickyBarVisibility();
+                });
+            }, {
+                root: null,
+                threshold: 0
+            });
+
+            calcObserver.observe(calculator);
+            cardObserver.observe(estimateCard);
+
+            stickyBar.addEventListener('click', function (e) {
+                if (e.target.classList.contains('mobile-sticky-total-bar__btn')) return;
+                estimateCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            });
+        }
+
         // Init
+        renderScenarioList();
         syncPriceBreakdownFromHash();
         loadFromURL();
+        initMobileStickyTotal();
     </script>
 </body>
 </html>

@@ -2,7 +2,7 @@
 
 **Canonical Document for Invoice Generation & Customer Support**
 
-**Web page flow (`packages.html`):** Ballpark packages → custom quote CTA → **interactive quote builder** (`#calculator`, primary spine) → collapsed **full price list** (`#price-breakdown`, Steps 1–5 reference) → typical scenarios → invoice CTA. Prefer the quote builder for configuration; use the price list only for line-item reference.
+**Web page flow (`packages.html`):** Ballpark packages → custom quote CTA → **interactive quote builder** (`#calculator`, primary spine) → collapsed **rate table** (`#price-breakdown`, single comparison table) → typical scenarios → invoice CTA. **Upfront total** in the builder includes platform, Basic/scanning gate support, physical tickets, and setup fees. **Gate Sales** is never added to that dollar total; when checked it appears as “Quoted separately” with 10% card fee noted.
 
 ---
 
@@ -52,6 +52,8 @@ Includes:
 Gate Experience blocks and Gate Sales are priced **independently**—customers may need scanning only, sales only, or both.
 
 **Quote builder URL parameters:** `p` (e|p platform), `bg` (Basic Gate event count × $10,000), `n` (scanning block count), `gt` (3|6 hour tier), `gs` (1 = Gate Sales requested), `qr`, `rf`, `name`, `org`.
+
+**Scenario presets (`?scenario=`):** `volunteer-led`, `hands-off-single`, `theatre-run`, `full-production`, `community-season`, `grand-season`. Loads the matching configuration into the quote builder (same math as the scenario list upfront totals). Manual slider changes clear `scenario` from the URL.
 
 ## 3. Physical Entry Options
 *   **QR Code Ticket**: $55 per ticket (Minimum 100). Black & White paper tickets with secure QR codes.
