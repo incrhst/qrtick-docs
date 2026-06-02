@@ -1139,7 +1139,7 @@
                         <li style="margin-bottom: 0.8rem; display: flex; align-items: center; gap: 0.5rem; color: #aaa;"><span>✕</span> No discount tools</li>
                         <li style="margin-bottom: 0.8rem; display: flex; align-items: center; gap: 0.5rem; color: #aaa;"><span>✕</span> No Homepage Listing</li>
                     </ul>
-                    <a href="#calculator" onclick="loadBallparkPackage('essentials'); return false;" style="text-align: center; padding: 1.2rem; background: var(--black); color: var(--white); text-decoration: none; border-radius: 12px; font-weight: 700; transition: transform 0.2s;">Configure Essentials</a>
+                    <a href="#calculator" onclick="loadBallparkPackage('essentials'); return false;" style="text-align: center; padding: 1.2rem; background: var(--black); color: var(--white); text-decoration: none; border-radius: 12px; font-weight: 700; transition: transform 0.2s;">Select Essentials Path</a>
                 </div>
 
                 <!-- 40k -->
@@ -1158,7 +1158,7 @@
                         <li style="margin-bottom: 0.8rem; display: flex; align-items: center; gap: 0.5rem;"><span style="color: var(--gold);">✓</span> Early Payout Access</li>
                     </ul>
                     <p style="font-size: 0.75rem; color: var(--muted); margin-top: -2rem; margin-bottom: 2rem;">*Discretionary and subject to availability.</p>
-                    <a href="#calculator" onclick="loadBallparkPackage('professional'); return false;" style="text-align: center; padding: 1.2rem; background: var(--gold); color: var(--black); text-decoration: none; border-radius: 12px; font-weight: 800; transition: transform 0.2s;">Configure Professional</a>
+                    <a href="#calculator" onclick="loadBallparkPackage('professional'); return false;" style="text-align: center; padding: 1.2rem; background: var(--gold); color: var(--black); text-decoration: none; border-radius: 12px; font-weight: 800; transition: transform 0.2s;">Select Professional Path</a>
                 </div>
 
                 <!-- 80k ish -->
@@ -1175,7 +1175,7 @@
                         <li style="margin-bottom: 0.8rem; display: flex; align-items: center; gap: 0.5rem;"><span style="color: var(--gold);">✓</span> <strong>Gate Experience:</strong> 3 scanning blocks (up to 3h each)</li>
                         <li style="margin-bottom: 0.8rem; display: flex; align-items: center; gap: 0.5rem;"><span style="color: var(--gold);">✓</span> Waived Setup Fees</li>
                     </ul>
-                    <a href="#calculator" onclick="loadBallparkPackage('managed-weekend'); return false;" style="text-align: center; padding: 1.2rem; background: var(--gold); color: var(--black); text-decoration: none; border-radius: 12px; font-weight: 900; transition: transform 0.2s;">The Full Weekend Package</a>
+                    <a href="#calculator" onclick="loadBallparkPackage('managed-weekend'); return false;" style="text-align: center; padding: 1.2rem; background: var(--gold); color: var(--black); text-decoration: none; border-radius: 12px; font-weight: 900; transition: transform 0.2s;">Select Managed Weekend Path</a>
                 </div>
             </div>
         </section>
@@ -1197,17 +1197,6 @@
 
             <div class="calculator-grid">
                 <div style="display: flex; flex-direction: column; gap: 2.5rem;">
-                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; padding-bottom: 1.5rem; border-bottom: 1px solid var(--rule);">
-                        <div>
-                            <label style="display: block; font-weight: 800; margin-bottom: 0.5rem; text-transform: uppercase; font-size: 0.7rem; letter-spacing: 0.1em;">Contact Name <span style="font-weight: 400; color: #888;">(Optional)</span></label>
-                            <input type="text" id="user-name" oninput="calculate()" placeholder="Your Name" style="width: 100%; padding: 12px; border: 1px solid var(--rule); border-radius: 8px; font-family: inherit;">
-                        </div>
-                        <div>
-                            <label style="display: block; font-weight: 800; margin-bottom: 0.5rem; text-transform: uppercase; font-size: 0.7rem; letter-spacing: 0.1em;">Organization <span style="font-weight: 400; color: #888;">(Optional)</span></label>
-                            <input type="text" id="user-org" oninput="calculate()" placeholder="Production Co / Org" style="width: 100%; padding: 12px; border: 1px solid var(--rule); border-radius: 8px; font-family: inherit;">
-                        </div>
-                    </div>
-
                     <div>
                         <label style="display: block; font-weight: 800; margin-bottom: 1rem; text-transform: uppercase; font-size: 0.75rem; letter-spacing: 0.1em;">1. Choose Your Platform</label>
                         <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
@@ -1298,6 +1287,20 @@
                             </div>
                         </div>
                     </div>
+
+                    <div>
+                        <label style="display: block; font-weight: 800; margin-bottom: 1rem; text-transform: uppercase; font-size: 0.75rem; letter-spacing: 0.1em;">5. Contact Details</label>
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                            <div>
+                                <label style="display: block; font-size: 0.85rem; margin-bottom: 0.5rem; font-weight: 600;">Contact Name <span style="font-weight: 400; color: #888;">(Optional)</span></label>
+                                <input type="text" id="user-name" oninput="calculate()" placeholder="Your Name" style="width: 100%; padding: 12px; border: 1px solid var(--rule); border-radius: 8px; font-family: inherit;">
+                            </div>
+                            <div>
+                                <label style="display: block; font-size: 0.85rem; margin-bottom: 0.5rem; font-weight: 600;">Organization <span style="font-weight: 400; color: #888;">(Optional)</span></label>
+                                <input type="text" id="user-org" oninput="calculate()" placeholder="Production Co / Org" style="width: 100%; padding: 12px; border: 1px solid var(--rule); border-radius: 8px; font-family: inherit;">
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
                 <div id="estimate-card-container" style="position: sticky; top: 2rem; align-self: start;">
@@ -1309,7 +1312,7 @@
                             <div style="font-size: 3rem; font-weight: 800; color: var(--gold); line-height: 1;">$<span id="total-val">10,000</span></div>
                             <div id="quote-footnote" class="quote-footnote">Platform, on-site gate support, physical tickets, and setup fees. Subject to final confirmation.</div>
                         </div>
-                        <a id="email-link" href="#" style="display: block; text-align: center; padding: 1.2rem; background: var(--gold); color: var(--black); text-decoration: none; border-radius: 12px; font-weight: 800; transition: transform 0.2s;">Request Formal Invoice</a>
+                        <a id="email-link" href="#" style="display: block; text-align: center; padding: 1.2rem; background: var(--gold); color: var(--black); text-decoration: none; border-radius: 12px; font-weight: 800; transition: transform 0.2s;">Submit Selection to QRTick</a>
                     </div>
                 </div>
             </div>
@@ -1445,7 +1448,7 @@
         <p style="font-size: 1.25rem; color: #aaa; max-width: 600px; margin: 0 auto 3rem; line-height: 1.6;">
             Contact our team to design the perfect entry experience for your upcoming event season.
         </p>
-        <a id="final-email-link" href="#" style="display: inline-block; background: var(--gold); color: var(--black); padding: 1.5rem 4rem; border-radius: 12px; text-decoration: none; font-weight: 900; font-size: 1.5rem; box-shadow: 0 20px 40px rgba(253, 194, 48, 0.2); transition: transform 0.2s;">Request Sample Invoice</a>
+        <a id="final-email-link" href="#" style="display: inline-block; background: var(--gold); color: var(--black); padding: 1.5rem 4rem; border-radius: 12px; text-decoration: none; font-weight: 900; font-size: 1.5rem; box-shadow: 0 20px 40px rgba(253, 194, 48, 0.2); transition: transform 0.2s;">Submit Selection to QRTick</a>
         <p style="margin-top: 2rem; font-size: 0.95rem; color: #aaa;">Still configuring? <a href="#calculator" style="color: var(--gold); font-weight: 700; text-decoration: none;">Return to the custom quote builder</a></p>
     </section>
 
@@ -1465,7 +1468,7 @@
             <span class="mobile-sticky-total-bar__label">Upfront Estimate</span>
             <span class="mobile-sticky-total-bar__value">$<span id="mobile-total-val">10,000</span></span>
         </div>
-        <a id="mobile-email-link" href="#" class="mobile-sticky-total-bar__btn">Request Invoice</a>
+        <a id="mobile-email-link" href="#" class="mobile-sticky-total-bar__btn">Submit Selection</a>
     </div>
 
     <script>
