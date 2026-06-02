@@ -703,14 +703,14 @@
                 <div style="background: var(--black); color: var(--white); padding: 3rem 2.5rem; border-radius: 24px; border: 3px solid var(--gold); display: flex; flex-direction: column; box-shadow: 0 30px 60px rgba(0,0,0,0.2);">
                     <div style="font-size: 0.75rem; font-weight: 900; text-transform: uppercase; color: var(--gold); margin-bottom: 1rem; letter-spacing: 0.1em;">Series Tier</div>
                     <h3 style="font-size: 1.75rem; margin-bottom: 1rem; color: var(--gold);">The Managed Weekend</h3>
-                    <p style="font-size: 1rem; color: #aaa; margin-bottom: 2rem; flex-grow: 1;">Complete on-site peace of mind. Includes the professional platform plus a full weekend of physical gate deployment.</p>
+                    <p style="font-size: 1rem; color: #aaa; margin-bottom: 2rem; flex-grow: 1;">Complete on-site peace of mind. Includes the professional platform plus three manned gate support blocks (up to 3 hours each).</p>
                     <div style="margin-bottom: 2.2rem;">
                         <div style="font-size: 3rem; font-weight: 800; color: var(--gold);">$88,000</div>
-                        <div style="font-size: 0.9rem; color: #888;">Platform + On-Site 3-Night Team</div>
+                        <div style="font-size: 0.9rem; color: #888;">Platform + 3 × 3-hour support blocks</div>
                     </div>
                     <ul style="list-style: none; padding: 0; margin-bottom: 3rem; font-size: 0.95rem; color: #ccc;">
                         <li style="margin-bottom: 0.8rem; display: flex; align-items: center; gap: 0.5rem;"><span style="color: var(--gold);">✓</span> All Professional Features</li>
-                        <li style="margin-bottom: 0.8rem; display: flex; align-items: center; gap: 0.5rem;"><span style="color: var(--gold);">✓</span> <strong>Gate:</strong> Manned 3-Night Team</li>
+                        <li style="margin-bottom: 0.8rem; display: flex; align-items: center; gap: 0.5rem;"><span style="color: var(--gold);">✓</span> <strong>Gate:</strong> 3 manned blocks (up to 3h each)</li>
                         <li style="margin-bottom: 0.8rem; display: flex; align-items: center; gap: 0.5rem;"><span style="color: var(--gold);">✓</span> Waived Setup Fees</li>
                     </ul>
                     <a href="https://tally.so/r/nW4Nak" style="text-align: center; padding: 1.2rem; background: var(--gold); color: var(--black); text-decoration: none; border-radius: 12px; font-weight: 900; transition: transform 0.2s;">The Full Weekend Package</a>
@@ -763,23 +763,24 @@
                     </div>
 
                     <div>
-                        <label style="display: block; font-weight: 800; margin-bottom: 1rem; text-transform: uppercase; font-size: 0.75rem; letter-spacing: 0.1em;">2. Gate Support</label>
+                        <label style="display: block; font-weight: 800; margin-bottom: 0.5rem; text-transform: uppercase; font-size: 0.75rem; letter-spacing: 0.1em;">2. On-Site Gate Support</label>
+                        <p style="font-size: 0.85rem; color: var(--muted); line-height: 1.55; margin-bottom: 1.25rem;">Price by <strong>support blocks</strong>—each block is one scheduled period of on-site coverage, up to 3 or 6 hours. Two shows on the same day each needing 6 hours count as <strong>two</strong> 6-hour blocks, not one.</p>
                         <div style="display: flex; align-items: center; gap: 2rem; margin-bottom: 1.5rem;">
                             <div style="flex-grow: 1;">
-                                <div style="font-size: 0.85rem; margin-bottom: 0.5rem; font-weight: 600;">Number of Nights</div>
+                                <div style="font-size: 0.85rem; margin-bottom: 0.5rem; font-weight: 600;">Number of support blocks</div>
                                 <input type="range" min="0" max="12" value="0" id="gate-nights" oninput="calculate()" style="width: 100%; accent-color: var(--gold);">
                                 <div style="display: flex; justify-content: space-between; font-size: 0.7rem; color: var(--muted); margin-top: 4px;">
                                     <span>0</span><span>3</span><span>6</span><span>9</span><span>12</span>
                                 </div>
                             </div>
-                            <div id="night-display" style="font-size: 2rem; font-weight: 800; width: 60px; text-align: center;">0</div>
+                            <div id="gate-blocks-display" style="font-size: 2rem; font-weight: 800; width: 60px; text-align: center;">0</div>
                         </div>
                         <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
-                            <div onclick="setGateType('3h')" id="gate-3h" style="cursor: pointer; padding: 1rem; border: 2px solid var(--rule); border-radius: 12px; text-align: center; font-size: 0.9rem; font-weight: 700;">3h Shift ($18k/n)</div>
-                            <div onclick="setGateType('6h')" id="gate-6h" style="cursor: pointer; padding: 1rem; border: 2px solid var(--rule); border-radius: 12px; text-align: center; font-size: 0.9rem; font-weight: 700;">6h Shift ($35k/n)</div>
+                            <div onclick="setGateType('3h')" id="gate-3h" style="cursor: pointer; padding: 1rem; border: 2px solid var(--rule); border-radius: 12px; text-align: center; font-size: 0.9rem; font-weight: 700;">Up to 3 hours · $18k/block</div>
+                            <div onclick="setGateType('6h')" id="gate-6h" style="cursor: pointer; padding: 1rem; border: 2px solid var(--rule); border-radius: 12px; text-align: center; font-size: 0.9rem; font-weight: 700;">Up to 6 hours · $35k/block</div>
                         </div>
                         <div id="bundle-alert" style="margin-top: 1rem; padding: 10px; background: #fffde7; border-radius: 8px; font-size: 0.8rem; color: #827717; display: none; font-weight: 600;">
-                            ✨ 3-Night Bundle pricing applied!
+                            ✨ 3-block bundle pricing applied (same hour tier)
                         </div>
                     </div>
 
@@ -858,44 +859,42 @@
     <section style="max-width: 1000px; margin: 0 auto 6rem; padding: 0 24px;">
         <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 2rem;">
             <span style="background: var(--gold); color: var(--black); width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; border-radius: 50%; font-weight: 900; font-size: 1.25rem;">2</span>
-            <h2 style="margin: 0; font-size: 2rem;">Add Your Gate Experience</h2>
+            <h2 style="margin: 0; font-size: 2rem;">Add On-Site Gate Support</h2>
         </div>
+        <p style="max-width: 720px; margin: 0 auto 2rem; text-align: center; font-size: 0.95rem; color: var(--muted); line-height: 1.6;">Gate support is priced by <strong>hours of on-site coverage</strong>, not calendar nights. Each support block covers up to 3 or 6 hours. Multiple performances on one day each need their own block when every show requires a full coverage window.</p>
 
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem;">
-            <!-- Option 1: Nightly -->
             <div style="background: var(--white); padding: 2.5rem; border-radius: 16px; border: 1px solid var(--rule); display: flex; flex-direction: column;">
-                <h3 style="margin-bottom: 0.5rem; font-size: 1.2rem;">Book Nightly</h3>
-                <p style="color: var(--muted); font-size: 0.9rem; margin-bottom: 2rem; flex-grow: 1;">Pay as you go for individual event nights. Perfect for one-off shows or single event days.</p>
+                <h3 style="margin-bottom: 0.5rem; font-size: 1.2rem;">Per support block</h3>
+                <p style="color: var(--muted); font-size: 0.9rem; margin-bottom: 2rem; flex-grow: 1;">Pay per scheduled block. Choose the hour tier that matches how long your team needs on site for that performance or session.</p>
                 <div style="margin-bottom: 1rem;">
                     <div style="display: flex; justify-content: space-between; font-weight: 700; border-bottom: 1px solid #eee; padding-bottom: 8px; margin-bottom: 8px;">
-                        <span>3h Team</span>
+                        <span>Up to 3 hours</span>
                         <span>$18,000</span>
                     </div>
                     <div style="display: flex; justify-content: space-between; font-weight: 700;">
-                        <span>6h Team</span>
+                        <span>Up to 6 hours</span>
                         <span>$35,000</span>
                     </div>
                 </div>
             </div>
 
-            <!-- Option 2: 3h Bundle -->
             <div style="background: var(--white); padding: 2.5rem; border-radius: 16px; border: 1px solid var(--rule); display: flex; flex-direction: column;">
-                <h3 style="margin-bottom: 0.5rem; font-size: 1.2rem;">Full Weekend (3h)</h3>
-                <p style="color: var(--muted); font-size: 0.9rem; margin-bottom: 2rem; flex-grow: 1;">3 nights of coverage. The standard choice for theatre runs.</p>
+                <h3 style="margin-bottom: 0.5rem; font-size: 1.2rem;">3-block bundle (3h tier)</h3>
+                <p style="color: var(--muted); font-size: 0.9rem; margin-bottom: 2rem; flex-grow: 1;">Three support blocks at the 3-hour tier—typical for a short theatre run (e.g. three performances, each with up to 3 hours of gate coverage).</p>
                 <div style="font-size: 2.5rem; font-weight: 800; color: var(--black);">$48,000</div>
-                <p style="font-size: 0.9rem; color: var(--gold); font-weight: 700; margin-top: 0.5rem;">Save $6,000 vs. nightly</p>
+                <p style="font-size: 0.9rem; color: var(--gold); font-weight: 700; margin-top: 0.5rem;">Save $6,000 vs. three separate blocks</p>
             </div>
 
-            <!-- Option 3: 6h Bundle -->
             <div style="background: var(--black); color: var(--white); padding: 2.5rem; border-radius: 20px; border: 2px solid var(--gold); display: flex; flex-direction: column; position: relative;">
                 <div style="position: absolute; top: -12px; right: 20px; background: var(--gold); color: var(--black); padding: 4px 12px; border-radius: 4px; font-size: 0.7rem; font-weight: 900; text-transform: uppercase;">Best Value</div>
-                <h3 style="color: var(--gold); margin-bottom: 0.5rem; font-size: 1.2rem;">Full Weekend (6h)</h3>
-                <p style="color: #c8c0b8; font-size: 0.9rem; margin-bottom: 2rem; flex-grow: 1;">Complete gate management for high-capacity shows.</p>
+                <h3 style="color: var(--gold); margin-bottom: 0.5rem; font-size: 1.2rem;">3-block bundle (6h tier)</h3>
+                <p style="color: #c8c0b8; font-size: 0.9rem; margin-bottom: 2rem; flex-grow: 1;">Three support blocks at the 6-hour tier—for high-capacity or long-running entry operations per performance.</p>
                 <div style="font-size: 2.5rem; font-weight: 800; color: var(--gold);">$80,000</div>
-                <p style="font-size: 0.9rem; color: var(--gold); font-weight: 700; margin-top: 0.5rem;">Save $25,000 vs. nightly</p>
+                <p style="font-size: 0.9rem; color: var(--gold); font-weight: 700; margin-top: 0.5rem;">Save $25,000 vs. three separate blocks</p>
             </div>
         </div>
-        <p style="text-align: center; font-size: 0.85rem; color: var(--muted); margin-top: 2rem;">*5% Seasonal discount automatically applied for seasons with 4+ events.</p>
+        <p style="text-align: center; font-size: 0.85rem; color: var(--muted); margin-top: 2rem;">*5% seasonal discount automatically applied when you book 4+ support blocks in a season.</p>
     </section>
 
     <!-- STEP 3: PHYSICAL TICKETS -->
@@ -932,7 +931,7 @@
         
         <div style="margin-top: 2rem; padding: 1.5rem; background: #f8f8f8; border-radius: 12px; border: 1px solid var(--rule); display: flex; align-items: center; justify-content: space-between; gap: 1rem; flex-wrap: wrap;">
             <p style="margin: 0; font-size: 0.95rem; color: var(--mid);"><strong>Ticket Setup Fee:</strong> $10,000 one-time encoding & design setup.</p>
-            <p style="margin: 0; font-size: 0.9rem; color: var(--gold); font-weight: 700;">Waived for Professional Partnership + any 3-Night Bundle</p>
+            <p style="margin: 0; font-size: 0.9rem; color: var(--gold); font-weight: 700;">Waived for Professional Partnership + any 3-block gate bundle</p>
         </div>
     </section>
 
@@ -983,7 +982,7 @@
                         <span style="font-weight: 700;">$10,000</span>
                     </li>
                     <li style="display: flex; justify-content: space-between; padding: 12px 0; border-bottom: 1px solid #eee;">
-                        <span>1-Night Gate (3h)</span>
+                        <span>1 × 3-hour support block</span>
                         <span style="font-weight: 700;">$18,000</span>
                     </li>
                     <li style="display: flex; justify-content: space-between; padding: 12px 0; border-bottom: 1px solid #eee;">
@@ -1005,7 +1004,7 @@
             <!-- Scenario 1 -->
             <div style="background: var(--white); padding: 2.5rem; border-radius: 20px; border: 1px solid var(--rule); display: flex; flex-direction: column;">
                 <h3 style="margin-bottom: 1rem; font-size: 1.5rem;">The Theatre Run</h3>
-                <p style="font-size: 0.95rem; color: var(--muted); margin-bottom: 2rem; flex-grow: 1;">Our most popular configuration for a 3-night professional production.</p>
+                <p style="font-size: 0.95rem; color: var(--muted); margin-bottom: 2rem; flex-grow: 1;">Our most popular configuration: three performances, each with up to 3 hours of manned gate support.</p>
                 
                 <ul style="list-style: none; padding: 0; margin-bottom: 2rem; font-size: 0.95rem; color: var(--mid);">
                     <li style="display: flex; justify-content: space-between; padding: 12px 0; border-bottom: 1px solid #eee;">
@@ -1013,7 +1012,7 @@
                         <span style="font-weight: 700;">$40,000</span>
                     </li>
                     <li style="display: flex; justify-content: space-between; padding: 12px 0; border-bottom: 1px solid #eee;">
-                        <span>3-Night Gate (3h)</span>
+                        <span>3 × 3-hour blocks (bundle)</span>
                         <span style="font-weight: 700;">$48,000</span>
                     </li>
                     <li style="display: flex; justify-content: space-between; padding: 12px 0; border-bottom: 1px solid #eee;">
@@ -1044,7 +1043,7 @@
                         <span style="font-weight: 700; color: var(--white);">$40,000</span>
                     </li>
                     <li style="display: flex; justify-content: space-between; padding: 12px 0; border-bottom: 1px solid #333;">
-                        <span>3-Night Gate (6h)</span>
+                        <span>3 × 6-hour blocks (bundle)</span>
                         <span style="font-weight: 700; color: var(--white);">$80,000</span>
                     </li>
                     <li style="display: flex; justify-content: space-between; padding: 12px 0; border-bottom: 1px solid #333;">
@@ -1074,7 +1073,7 @@
                         <span style="font-weight: 700;">$40,000</span>
                     </li>
                     <li style="display: flex; justify-content: space-between; padding: 12px 0; border-bottom: 1px solid #eee;">
-                        <span>10-Night Gate (3h)</span>
+                        <span>10 × 3-hour support blocks</span>
                         <span style="font-weight: 700;">$180,000</span>
                     </li>
                     <li style="display: flex; justify-content: space-between; padding: 12px 0; color: var(--gold); font-weight: 700;">
@@ -1167,6 +1166,15 @@
             calculate();
         }
 
+        function gateHoursLabel(gateType) {
+            return gateType === '3h' ? 'up to 3 hours' : 'up to 6 hours';
+        }
+
+        function gateSupportSummary(blockCount, gateType) {
+            const blockWord = blockCount === 1 ? 'block' : 'blocks';
+            return `${blockCount} × ${gateHoursLabel(gateType)} support ${blockWord}`;
+        }
+
         function calculate() {
             config.name = document.getElementById('user-name').value;
             config.org = document.getElementById('user-org').value;
@@ -1174,21 +1182,20 @@
             config.qr = parseInt(document.getElementById('qr-count').value) || 0;
             config.rfid = parseInt(document.getElementById('rfid-count').value) || 0;
             
-            document.getElementById('night-display').innerText = config.nights;
+            document.getElementById('gate-blocks-display').innerText = config.nights;
 
             let platformPrice = config.platform === 'essentials' ? 10000 : 40000;
             let gatePrice = 0;
             let bundleApplied = false;
 
-            // Gate Logic
+            // Gate support blocks (priced by hour tier)
             if (config.nights === 3) {
                 gatePrice = config.gateType === '3h' ? 48000 : 80000;
                 bundleApplied = true;
             } else if (config.nights > 0) {
-                let nightlyRate = config.gateType === '3h' ? 18000 : 35000;
-                gatePrice = config.nights * nightlyRate;
+                let blockRate = config.gateType === '3h' ? 18000 : 35000;
+                gatePrice = config.nights * blockRate;
                 
-                // Seasonal discount for 4+ nights
                 if (config.nights >= 4) {
                     gatePrice = gatePrice * 0.95;
                 }
@@ -1200,7 +1207,7 @@
             let ticketPrice = (config.qr * 55) + (config.rfid * 140);
             let setupFee = (config.qr > 0 || config.rfid > 0) ? 10000 : 0;
             
-            // Waiver logic: Professional + 3 nights
+            // Waiver logic: Professional + 3-block bundle
             if (config.platform === 'professional' && config.nights >= 3) {
                 setupFee = 0;
             }
@@ -1217,7 +1224,7 @@
                 </div>
                 ${gatePrice > 0 ? `
                 <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
-                    <span>Gate: ${config.nights} nights (${config.gateType})</span>
+                    <span>Gate: ${gateSupportSummary(config.nights, config.gateType)}</span>
                     <span>$${gatePrice.toLocaleString()}</span>
                 </div>` : ''}
                 ${ticketPrice > 0 ? `
@@ -1248,7 +1255,7 @@ I have built a custom quote on your website:
 - Contact: ${config.name || 'Not provided'}
 - Organization: ${config.org || 'Not provided'}
 - Platform: ${config.platform.toUpperCase()}
-- Gate Support: ${config.nights} nights (${config.gateType} shifts)
+- Gate Support: ${gateSupportSummary(config.nights, config.gateType)}
 - Physical Tickets: ${config.qr} QR, ${config.rfid} RFID
 - Estimated Total: $${total.toLocaleString()}
 
