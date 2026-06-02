@@ -2,6 +2,8 @@
 
 **Canonical Document for Invoice Generation & Customer Support**
 
+**Web page flow (`packages.html`):** Ballpark packages → custom quote CTA → **interactive quote builder** (`#calculator`, primary spine) → collapsed **full price list** (`#price-breakdown`, Steps 1–5 reference) → typical scenarios → invoice CTA. Prefer the quote builder for configuration; use the price list only for line-item reference.
+
 ---
 
 ## 1. Primary Ballpark Packages
@@ -17,13 +19,17 @@
 ### On-Site Gate Support (Add-ons)
 Not included on **Essentials**. Separate from **Gate Sales** (selling at the door).
 
-#### Basic Gate Support (minimal)
-The lightest on-site option. **Not full scanning**—coordination and guidance only.
+**How to choose (explain this clearly to customers):**
+*   **Their own team → Basic Gate Support:** The event already has volunteers or staff at the gate. They only need one QRTick person for ~3 hours to coordinate volunteers and provide on-site guidance. The organizer's team handles scanning; QRTick does not send a full crew.
+*   **Hands-off → Gate Experience:** The organizer does not want to manage entry. QRTick provides full manned scanning crews so they "don't have to think about" the gate.
+
+#### Basic Gate Support (minimal — for events with their own team)
+The lightest on-site option. **Not full scanning**—coordination and guidance for the organizer's volunteers.
 *   **$10,000 per event** for **3 hours** on site.
 *   **One QRTick team member** per event to coordinate volunteers and provide on-site guidance at the gate.
 
-#### Gate Experience — ticket scanning (full crew)
-**Scanning and validating tickets at the gate.** Not selling tickets.
+#### Gate Experience — ticket scanning (full crew — hands-off)
+**QRTick owns scanning and validating tickets at the gate.** For customers who want full-service entry, not volunteer coordination. Not selling tickets.
 
 Priced by **support blocks** (scheduled on-site scanning coverage), not calendar nights. Each block is priced by hour tier (up to 3 or up to 6 hours). Multiple performances on the same day need separate blocks when each requires its own full coverage window.
 *   **Up to 3 hours per scanning block**: $18,000 per block.
@@ -44,6 +50,8 @@ Includes:
 **Card processing at the gate:** **10% processing fee** on the transaction amount when patrons pay by card using QRTick's card machine. Quoted separately from scanning block fees; not included in the upfront scanning estimate.
 
 Gate Experience blocks and Gate Sales are priced **independently**—customers may need scanning only, sales only, or both.
+
+**Quote builder URL parameters:** `p` (e|p platform), `bg` (Basic Gate event count × $10,000), `n` (scanning block count), `gt` (3|6 hour tier), `gs` (1 = Gate Sales requested), `qr`, `rf`, `name`, `org`.
 
 ## 3. Physical Entry Options
 *   **QR Code Ticket**: $55 per ticket (Minimum 100). Black & White paper tickets with secure QR codes.
