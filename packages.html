@@ -1139,7 +1139,7 @@
                         <li style="margin-bottom: 0.8rem; display: flex; align-items: center; gap: 0.5rem; color: #aaa;"><span>✕</span> No discount tools</li>
                         <li style="margin-bottom: 0.8rem; display: flex; align-items: center; gap: 0.5rem; color: #aaa;"><span>✕</span> No Homepage Listing</li>
                     </ul>
-                    <a href="https://tally.so/r/nW4Nak" style="text-align: center; padding: 1.2rem; background: var(--black); color: var(--white); text-decoration: none; border-radius: 12px; font-weight: 700; transition: transform 0.2s;">Get Started</a>
+                    <a href="#calculator" onclick="loadBallparkPackage('essentials'); return false;" style="text-align: center; padding: 1.2rem; background: var(--black); color: var(--white); text-decoration: none; border-radius: 12px; font-weight: 700; transition: transform 0.2s;">Configure Essentials</a>
                 </div>
 
                 <!-- 40k -->
@@ -1158,7 +1158,7 @@
                         <li style="margin-bottom: 0.8rem; display: flex; align-items: center; gap: 0.5rem;"><span style="color: var(--gold);">✓</span> Early Payout Access</li>
                     </ul>
                     <p style="font-size: 0.75rem; color: var(--muted); margin-top: -2rem; margin-bottom: 2rem;">*Discretionary and subject to availability.</p>
-                    <a href="https://tally.so/r/nW4Nak" style="text-align: center; padding: 1.2rem; background: var(--gold); color: var(--black); text-decoration: none; border-radius: 12px; font-weight: 800; transition: transform 0.2s;">Partner With Us</a>
+                    <a href="#calculator" onclick="loadBallparkPackage('professional'); return false;" style="text-align: center; padding: 1.2rem; background: var(--gold); color: var(--black); text-decoration: none; border-radius: 12px; font-weight: 800; transition: transform 0.2s;">Configure Professional</a>
                 </div>
 
                 <!-- 80k ish -->
@@ -1175,7 +1175,7 @@
                         <li style="margin-bottom: 0.8rem; display: flex; align-items: center; gap: 0.5rem;"><span style="color: var(--gold);">✓</span> <strong>Gate Experience:</strong> 3 scanning blocks (up to 3h each)</li>
                         <li style="margin-bottom: 0.8rem; display: flex; align-items: center; gap: 0.5rem;"><span style="color: var(--gold);">✓</span> Waived Setup Fees</li>
                     </ul>
-                    <a href="https://tally.so/r/nW4Nak" style="text-align: center; padding: 1.2rem; background: var(--gold); color: var(--black); text-decoration: none; border-radius: 12px; font-weight: 900; transition: transform 0.2s;">The Full Weekend Package</a>
+                    <a href="#calculator" onclick="loadBallparkPackage('managed-weekend'); return false;" style="text-align: center; padding: 1.2rem; background: var(--gold); color: var(--black); text-decoration: none; border-radius: 12px; font-weight: 900; transition: transform 0.2s;">The Full Weekend Package</a>
                 </div>
             </div>
         </section>
@@ -1309,8 +1309,7 @@
                             <div style="font-size: 3rem; font-weight: 800; color: var(--gold); line-height: 1;">$<span id="total-val">10,000</span></div>
                             <div id="quote-footnote" class="quote-footnote">Platform, on-site gate support, physical tickets, and setup fees. Subject to final confirmation.</div>
                         </div>
-                        <a href="https://tally.so/r/nW4Nak" style="display: block; text-align: center; padding: 1.2rem; background: var(--gold); color: var(--black); text-decoration: none; border-radius: 12px; font-weight: 800; transition: transform 0.2s;">Request Formal Invoice</a>
-                        <a id="email-link" href="#" style="display: block; text-align: center; padding: 1.2rem; background: transparent; color: var(--gold); text-decoration: none; border: 1px solid var(--gold); border-radius: 12px; font-weight: 700; margin-top: 1rem; transition: all 0.2s;">Email Selection to QRTick</a>
+                        <a id="email-link" href="#" style="display: block; text-align: center; padding: 1.2rem; background: var(--gold); color: var(--black); text-decoration: none; border-radius: 12px; font-weight: 800; transition: transform 0.2s;">Request Formal Invoice</a>
                     </div>
                 </div>
             </div>
@@ -1446,7 +1445,7 @@
         <p style="font-size: 1.25rem; color: #aaa; max-width: 600px; margin: 0 auto 3rem; line-height: 1.6;">
             Contact our team to design the perfect entry experience for your upcoming event season.
         </p>
-        <a href="https://tally.so/r/nW4Nak" style="display: inline-block; background: var(--gold); color: var(--black); padding: 1.5rem 4rem; border-radius: 12px; text-decoration: none; font-weight: 900; font-size: 1.5rem; box-shadow: 0 20px 40px rgba(253, 194, 48, 0.2); transition: transform 0.2s;">Request Sample Invoice</a>
+        <a id="final-email-link" href="#" style="display: inline-block; background: var(--gold); color: var(--black); padding: 1.5rem 4rem; border-radius: 12px; text-decoration: none; font-weight: 900; font-size: 1.5rem; box-shadow: 0 20px 40px rgba(253, 194, 48, 0.2); transition: transform 0.2s;">Request Sample Invoice</a>
         <p style="margin-top: 2rem; font-size: 0.95rem; color: #aaa;">Still configuring? <a href="#calculator" style="color: var(--gold); font-weight: 700; text-decoration: none;">Return to the custom quote builder</a></p>
     </section>
 
@@ -1466,7 +1465,7 @@
             <span class="mobile-sticky-total-bar__label">Upfront Estimate</span>
             <span class="mobile-sticky-total-bar__value">$<span id="mobile-total-val">10,000</span></span>
         </div>
-        <a href="https://tally.so/r/nW4Nak" class="mobile-sticky-total-bar__btn">Request Invoice</a>
+        <a id="mobile-email-link" href="#" class="mobile-sticky-total-bar__btn">Request Invoice</a>
     </div>
 
     <script>
@@ -1644,6 +1643,38 @@
             document.getElementById('rfid-count').value = config.rfid;
             setPlatform(config.platform);
             setGateType(config.gateType);
+        }
+
+        function loadBallparkPackage(packageType) {
+            var preservedName = config.name;
+            var preservedOrg = config.org;
+
+            config.basicGateEvents = 0;
+            config.gateSales = false;
+            config.qr = 0;
+            config.rfid = 0;
+            config.gateType = '3h';
+            config.name = preservedName;
+            config.org = preservedOrg;
+
+            if (packageType === 'essentials') {
+                config.platform = 'essentials';
+                config.nights = 0;
+            } else if (packageType === 'professional') {
+                config.platform = 'professional';
+                config.nights = 0;
+            } else if (packageType === 'managed-weekend') {
+                config.platform = 'professional';
+                config.nights = 3;
+            }
+
+            applyConfigToForm();
+            calculate();
+
+            var calculator = document.getElementById('calculator');
+            if (calculator) {
+                calculator.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
         }
 
         function loadScenarioPreset(id, scrollToCalculator) {
@@ -1848,7 +1879,14 @@ Link to my configuration: ${window.location.href}
 
 I would like to discuss a formal invoice for this configuration.`;
 
-            document.getElementById('email-link').href = `mailto:hello@qrtick.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+            var mailtoUrl = `mailto:hello@qrtick.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+            document.getElementById('email-link').href = mailtoUrl;
+
+            var finalEmailLink = document.getElementById('final-email-link');
+            if (finalEmailLink) finalEmailLink.href = mailtoUrl;
+
+            var mobileEmailLink = document.getElementById('mobile-email-link');
+            if (mobileEmailLink) mobileEmailLink.href = mailtoUrl;
 
             // Update URL Parameters
             let params = new URLSearchParams();
