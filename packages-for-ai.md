@@ -25,7 +25,7 @@ Not included on **Essentials**. Separate from **Gate Sales** (selling at the doo
 
 #### Basic Gate Support (minimal — for events with their own team)
 The lightest on-site option. **Not full scanning**—coordination and guidance for the organizer's volunteers.
-*   **$10,000 per event** for **3 hours** on site.
+*   **$8,000 per event** for **3 hours** on site.
 *   **One QRTick team member** per event to coordinate volunteers and provide on-site guidance at the gate.
 
 #### Gate Experience — ticket scanning (full crew — hands-off)
@@ -51,7 +51,7 @@ Includes:
 
 Gate Experience blocks and Gate Sales are priced **independently**—customers may need scanning only, sales only, or both.
 
-**Quote builder URL parameters:** `p` (e|p platform), `bg` (Basic Gate event count × $10,000), `n` (scanning block count), `gt` (3|6 hour tier), `gs` (1 = Gate Sales requested), `qr`, `rf`, `name`, `org`.
+**Quote builder URL parameters:** `p` (e|p platform), `bg` (Basic Gate event count × $8,000), `n` (scanning block count), `gt` (3|6 hour tier), `gs` (1 = Gate Sales requested), `qr`, `rf`, `name`, `org`.
 
 **Scenario presets (`?scenario=`):** `volunteer-led`, `hands-off-single`, `theatre-run`, `full-production`, `community-season`, `grand-season`. Loads the matching configuration into the quote builder (same math as the scenario list upfront totals). Manual slider changes clear `scenario` from the URL.
 
