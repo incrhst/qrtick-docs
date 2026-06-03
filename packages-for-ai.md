@@ -31,7 +31,7 @@ The lightest on-site option. **Not full scanning**—coordination and guidance f
 #### Scanning Crew — ticket scanning (full crew — hands-off)
 **QRTick owns scanning and validating tickets at the gate.** For customers who want full-service entry, not volunteer coordination. Not selling tickets.
 
-Priced by **support blocks** (scheduled on-site scanning coverage), not calendar nights. Each block is priced by hour/crew tier. Multiple performances on the same day need separate blocks when each requires its own full coverage window.
+Priced by **support blocks** (scheduled on-site scanning coverage), not calendar nights. Each block is priced by hour/crew tier and represents a single, continuous shift on site (no split shifts/breaks). Multiple performances on the same day require separate blocks unless they can be covered in one continuous block.
 *   **Up to 3 hours, Team of 2**: $15,000 per block.
 *   **Up to 3 hours, Team of 3**: $21,000 per block.
 *   **Up to 6 hours, Team of 3**: $35,000 per block.
