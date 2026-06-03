@@ -9,7 +9,7 @@
 ## 1. Primary Ballpark Packages
 *   **The Essentials ($10,000)**: Entry tier. Essentials Platform + self-managed entry only. **Includes no gate support of any kind** — no Basic Gate Support, no Gate Experience (scanning), no Gate Sales (door POS/card machine). No discount tools. All gate services are paid add-ons if required.
 *   **The Professional ($40,000)**: Managed tier. Professional Platform + discount management (online) + white-glove setup + digital programs. Gate Sales at the door is a separate add-on.
-*   **The Managed Weekend ($88,000)**: Series tier. Professional Platform + 3 × 3-hour **Gate Experience** scanning blocks. Gate Sales not included.
+*   **The Managed Weekend ($80,000)**: Series tier. Professional Platform + 3 × 3-hour **Gate Experience** scanning blocks (Team of 2). Gate Sales not included.
 
 ## 2. Component Breakdown (For Custom Scenarios)
 ### Platform Choice
@@ -31,11 +31,13 @@ The lightest on-site option. **Not full scanning**—coordination and guidance f
 #### Gate Experience — ticket scanning (full crew — hands-off)
 **QRTick owns scanning and validating tickets at the gate.** For customers who want full-service entry, not volunteer coordination. Not selling tickets.
 
-Priced by **support blocks** (scheduled on-site scanning coverage), not calendar nights. Each block is priced by hour tier (up to 3 or up to 6 hours). Multiple performances on the same day need separate blocks when each requires its own full coverage window.
-*   **Up to 3 hours per scanning block**: $18,000 per block.
-*   **Up to 6 hours per scanning block**: $35,000 per block.
-*   **3-block bundle (3h tier)**: $48,000 (Saves $6,000 vs. three separate blocks).
-*   **3-block bundle (6h tier)**: $80,000 (Saves $25,000 vs. three separate blocks).
+Priced by **support blocks** (scheduled on-site scanning coverage), not calendar nights. Each block is priced by hour/crew tier. Multiple performances on the same day need separate blocks when each requires its own full coverage window.
+*   **Up to 3 hours, Team of 2**: $15,000 per block.
+*   **Up to 3 hours, Team of 3**: $21,000 per block.
+*   **Up to 6 hours, Team of 3**: $35,000 per block.
+*   **3-block bundle (3h, Team of 2)**: $40,000 (Saves $5,000 vs. three separate blocks).
+*   **3-block bundle (3h, Team of 3)**: $56,000 (Saves $7,000 vs. three separate blocks).
+*   **3-block bundle (6h, Team of 3)**: $80,000 (Saves $25,000 vs. three separate blocks).
 *   **Volume Discount**: 5% off scanning total when booking 4+ blocks in a season.
 
 ### Gate Sales — selling at the door (Add-on)

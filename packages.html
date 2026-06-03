@@ -1168,14 +1168,14 @@
                 <div style="background: var(--black); color: var(--white); padding: 3rem 2.5rem; border-radius: 24px; border: 3px solid var(--gold); display: flex; flex-direction: column; box-shadow: 0 30px 60px rgba(0,0,0,0.2);">
                     <div style="font-size: 0.75rem; font-weight: 900; text-transform: uppercase; color: var(--gold); margin-bottom: 1rem; letter-spacing: 0.1em;">Series Tier</div>
                     <h3 style="font-size: 1.75rem; margin-bottom: 1rem; color: var(--gold);">The Managed Weekend</h3>
-                    <p style="font-size: 1rem; color: #aaa; margin-bottom: 2rem; flex-grow: 1;">Complete on-site scanning peace of mind. Includes the professional platform plus three manned gate experience blocks for ticket scanning (up to 3 hours each). Gate Sales not included.</p>
+                    <p style="font-size: 1rem; color: #aaa; margin-bottom: 2rem; flex-grow: 1;">Complete on-site scanning peace of mind. Includes the professional platform plus three manned gate experience blocks for ticket scanning (up to 3 hours each, Team of 2). Gate Sales not included.</p>
                     <div style="margin-bottom: 2.2rem;">
-                        <div style="font-size: 3rem; font-weight: 800; color: var(--gold);">$88,000</div>
-                        <div style="font-size: 0.9rem; color: #888;">Platform + 3 × 3-hour scanning blocks</div>
+                        <div style="font-size: 3rem; font-weight: 800; color: var(--gold);">$80,000</div>
+                        <div style="font-size: 0.9rem; color: #888;">Platform + 3 × 3-hour scanning blocks (Team of 2)</div>
                     </div>
                     <ul style="list-style: none; padding: 0; margin-bottom: 3rem; font-size: 0.95rem; color: #ccc;">
                         <li style="margin-bottom: 0.8rem; display: flex; align-items: center; gap: 0.5rem;"><span style="color: var(--gold);">✓</span> All Professional Features</li>
-                        <li style="margin-bottom: 0.8rem; display: flex; align-items: center; gap: 0.5rem;"><span style="color: var(--gold);">✓</span> <strong>Gate Experience:</strong> 3 scanning blocks (up to 3h each)</li>
+                        <li style="margin-bottom: 0.8rem; display: flex; align-items: center; gap: 0.5rem;"><span style="color: var(--gold);">✓</span> <strong>Gate Experience:</strong> 3 scanning blocks (Team of 2)</li>
                         <li style="margin-bottom: 0.8rem; display: flex; align-items: center; gap: 0.5rem;"><span style="color: var(--gold);">✓</span> Waived Setup Fees</li>
                     </ul>
                     <a href="#calculator" onclick="loadBallparkPackage('managed-weekend'); return false;" style="text-align: center; padding: 1.2rem; background: var(--gold); color: var(--black); text-decoration: none; border-radius: 12px; font-weight: 900; transition: transform 0.2s;">Select Managed Weekend Path</a>
@@ -1258,9 +1258,10 @@
                             </div>
                             <div id="gate-blocks-display" style="font-size: 2rem; font-weight: 800; width: 60px; text-align: center;">0</div>
                         </div>
-                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
-                            <button type="button" class="calc-pick calc-pick--gate" id="gate-3h" onclick="setGateType('3h')" aria-pressed="true">Up to 3 hours · $18k/block</button>
-                            <button type="button" class="calc-pick calc-pick--gate" id="gate-6h" onclick="setGateType('6h')" aria-pressed="false">Up to 6 hours · $35k/block</button>
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1rem;">
+                            <button type="button" class="calc-pick calc-pick--gate" id="gate-3h-2p" onclick="setGateType('3h-2p')" aria-pressed="true">3h (Team of 2) · $15k/block</button>
+                            <button type="button" class="calc-pick calc-pick--gate" id="gate-3h-3p" onclick="setGateType('3h-3p')" aria-pressed="false">3h (Team of 3) · $21k/block</button>
+                            <button type="button" class="calc-pick calc-pick--gate" id="gate-6h" onclick="setGateType('6h')" aria-pressed="false">6h (Team of 3) · $35k/block</button>
                         </div>
                         <div id="bundle-alert" style="margin-top: 1rem; padding: 10px; background: #fffde7; border-radius: 8px; font-size: 0.8rem; color: #827717; display: none; font-weight: 600;">
                             ✨ 3-block scanning bundle pricing applied (same hour tier)
@@ -1360,24 +1361,34 @@
                             <td class="price-table__note">3 hours on site. One coordinator for your volunteers (not full scanning).</td>
                         </tr>
                         <tr>
-                            <td>Gate Experience · scanning block (up to 3h)</td>
-                            <td class="price-table__rate">$18,000 / block</td>
-                            <td class="price-table__note">Full QRTick scanning crew per scheduled block.</td>
+                            <td>Gate Experience · scanning block (up to 3h, Team of 2)</td>
+                            <td class="price-table__rate">$15,000 / block</td>
+                            <td class="price-table__note">3 hours on site. Full scanning crew (2 people). Equivalent to $7,500 per person.</td>
                         </tr>
                         <tr>
-                            <td>Gate Experience · scanning block (up to 6h)</td>
+                            <td>Gate Experience · scanning block (up to 3h, Team of 3)</td>
+                            <td class="price-table__rate">$21,000 / block</td>
+                            <td class="price-table__note">3 hours on site. Full scanning crew (3 people). Equivalent to $7,000 per person.</td>
+                        </tr>
+                        <tr>
+                            <td>Gate Experience · scanning block (up to 6h, Team of 3)</td>
                             <td class="price-table__rate">$35,000 / block</td>
-                            <td class="price-table__note">Same day, two performances needing 6h each = two blocks.</td>
+                            <td class="price-table__note">6 hours on site. Full scanning crew (3 people). Equivalent to $11,667 per person.</td>
                         </tr>
                         <tr>
-                            <td>3-block bundle (3h tier)</td>
-                            <td class="price-table__rate">$48,000</td>
-                            <td class="price-table__note">Saves $6,000 vs. three separate 3h blocks.</td>
+                            <td>3-block bundle (3h, Team of 2)</td>
+                            <td class="price-table__rate">$40,000</td>
+                            <td class="price-table__note">Saves $5,000 vs. three separate blocks.</td>
                         </tr>
                         <tr>
-                            <td>3-block bundle (6h tier)</td>
+                            <td>3-block bundle (3h, Team of 3)</td>
+                            <td class="price-table__rate">$56,000</td>
+                            <td class="price-table__note">Saves $7,000 vs. three separate blocks.</td>
+                        </tr>
+                        <tr>
+                            <td>3-block bundle (6h, Team of 3)</td>
                             <td class="price-table__rate">$80,000</td>
-                            <td class="price-table__note">Saves $25,000 vs. three separate 6h blocks.</td>
+                            <td class="price-table__note">Saves $25,000 vs. three separate blocks.</td>
                         </tr>
                         <tr>
                             <td>Seasonal scanning discount</td>
@@ -1502,7 +1513,7 @@
             name: '',
             org: '',
             platform: 'essentials',
-            gateType: '3h',
+            gateType: '3h-2p',
             nights: 0,
             basicGateEvents: 0,
             gateSales: false,
@@ -1518,36 +1529,36 @@
                 platform: 'essentials',
                 basicGateEvents: 1,
                 nights: 0,
-                gateType: '3h',
+                gateType: '3h-2p',
                 qr: 500,
                 rfid: 0
             },
             'hands-off-single': {
                 title: 'Hands-Off Single',
                 badge: 'hands-off',
-                blurb: 'Professional platform and one 3-hour scanning block for one performance.',
+                blurb: 'Professional platform and one 3-hour scanning block (Team of 2) for one performance.',
                 platform: 'professional',
                 basicGateEvents: 0,
                 nights: 1,
-                gateType: '3h',
+                gateType: '3h-2p',
                 qr: 500,
                 rfid: 0
             },
             'theatre-run': {
                 title: 'Theatre Run',
                 badge: 'hands-off',
-                blurb: 'Three-show run with the 3-block scanning bundle and 500 QR tickets.',
+                blurb: 'Three-show run with the 3-block scanning bundle (Team of 2) and 500 QR tickets.',
                 platform: 'professional',
                 basicGateEvents: 0,
                 nights: 3,
-                gateType: '3h',
+                gateType: '3h-2p',
                 qr: 500,
                 rfid: 0
             },
             'full-production': {
                 title: 'Full Production',
                 badge: 'hands-off',
-                blurb: '6-hour scanning bundle plus 500 RFID tickets for high-capacity entry.',
+                blurb: '6-hour scanning bundle (Team of 3) plus 500 RFID tickets for high-capacity entry.',
                 platform: 'professional',
                 basicGateEvents: 0,
                 nights: 3,
@@ -1562,18 +1573,18 @@
                 platform: 'professional',
                 basicGateEvents: 10,
                 nights: 0,
-                gateType: '3h',
+                gateType: '3h-2p',
                 qr: 0,
                 rfid: 0
             },
             'grand-season': {
                 title: 'Grand Season',
                 badge: 'hands-off',
-                blurb: 'Ten 3-hour scanning blocks with seasonal discount (no physical tickets in this example).',
+                blurb: 'Ten 3-hour scanning blocks (Team of 2) with seasonal discount.',
                 platform: 'professional',
                 basicGateEvents: 0,
                 nights: 10,
-                gateType: '3h',
+                gateType: '3h-2p',
                 qr: 0,
                 rfid: 0
             }
@@ -1586,9 +1597,15 @@
             var gatePriceBeforeDiscount = 0;
 
             if (cfg.nights === 3) {
-                gatePrice = cfg.gateType === '3h' ? 48000 : 80000;
+                if (cfg.gateType === '3h-2p') {
+                    gatePrice = 40000;
+                } else if (cfg.gateType === '3h-3p') {
+                    gatePrice = 56000;
+                } else {
+                    gatePrice = 80000;
+                }
             } else if (cfg.nights > 0) {
-                var blockRate = cfg.gateType === '3h' ? 18000 : 35000;
+                var blockRate = cfg.gateType === '3h-2p' ? 15000 : (cfg.gateType === '3h-3p' ? 21000 : 35000);
                 gatePriceBeforeDiscount = cfg.nights * blockRate;
                 gatePrice = gatePriceBeforeDiscount;
                 if (cfg.nights >= 4) {
@@ -1659,7 +1676,7 @@
             config.gateSales = false;
             config.qr = 0;
             config.rfid = 0;
-            config.gateType = '3h';
+            config.gateType = '3h-2p';
             config.name = preservedName;
             config.org = preservedOrg;
 
@@ -1733,13 +1750,16 @@
 
         function setGateType(type) {
             config.gateType = type;
-            setCalcPickActive('gate-3h', type === '3h');
+            setCalcPickActive('gate-3h-2p', type === '3h-2p');
+            setCalcPickActive('gate-3h-3p', type === '3h-3p');
             setCalcPickActive('gate-6h', type === '6h');
             calculate();
         }
 
         function gateHoursLabel(gateType) {
-            return gateType === '3h' ? 'up to 3 hours' : 'up to 6 hours';
+            if (gateType === '3h-2p') return 'up to 3h (Team of 2)';
+            if (gateType === '3h-3p') return 'up to 3h (Team of 3)';
+            return 'up to 6h (Team of 3)';
         }
 
         function gateExperienceSummary(blockCount, gateType) {
@@ -1781,10 +1801,16 @@
             document.getElementById('basic-gate-subtotal').innerText = '$' + basicGatePrice.toLocaleString();
 
             if (config.nights === 3) {
-                gatePrice = config.gateType === '3h' ? 48000 : 80000;
+                if (config.gateType === '3h-2p') {
+                    gatePrice = 40000;
+                } else if (config.gateType === '3h-3p') {
+                    gatePrice = 56000;
+                } else {
+                    gatePrice = 80000;
+                }
                 gatePriceBeforeDiscount = gatePrice;
             } else if (config.nights > 0) {
-                let blockRate = config.gateType === '3h' ? 18000 : 35000;
+                let blockRate = config.gateType === '3h-2p' ? 15000 : (config.gateType === '3h-3p' ? 21000 : 35000);
                 gatePriceBeforeDiscount = config.nights * blockRate;
                 gatePrice = gatePriceBeforeDiscount;
                 if (config.nights >= 4) {
@@ -1902,7 +1928,8 @@ I would like to discuss a formal invoice for this configuration.`;
             params.set('n', config.nights);
             if (config.basicGateEvents > 0) params.set('bg', config.basicGateEvents);
             else params.delete('bg');
-            params.set('gt', config.gateType === '3h' ? '3' : '6');
+            var gtVal = config.gateType === '3h-2p' ? '32' : (config.gateType === '3h-3p' ? '33' : '6');
+            params.set('gt', gtVal);
             if (config.gateSales) params.set('gs', '1');
             else params.delete('gs');
             params.set('qr', config.qr);
@@ -1926,7 +1953,13 @@ I would like to discuss a formal invoice for this configuration.`;
             if (params.has('p')) config.platform = params.get('p') === 'e' ? 'essentials' : 'professional';
             if (params.has('n')) config.nights = parseInt(params.get('n'), 10) || 0;
             if (params.has('bg')) config.basicGateEvents = parseInt(params.get('bg'), 10) || 0;
-            if (params.has('gt')) config.gateType = params.get('gt') === '3' ? '3h' : '6h';
+            if (params.has('gt')) {
+                let gt = params.get('gt');
+                if (gt === '32') config.gateType = '3h-2p';
+                else if (gt === '33') config.gateType = '3h-3p';
+                else if (gt === '3') config.gateType = '3h-2p';
+                else if (gt === '6') config.gateType = '6h';
+            }
             if (params.get('gs') === '1') config.gateSales = true;
             if (params.has('qr')) config.qr = parseInt(params.get('qr'), 10) || 0;
             if (params.has('rf')) config.rfid = parseInt(params.get('rf'), 10) || 0;
