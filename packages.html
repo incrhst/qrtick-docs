@@ -1116,7 +1116,10 @@
         <header style="text-align: center; padding: 5rem 24px 4rem;">
             <h1 style="font-size: 3.5rem; margin-bottom: 1.5rem; letter-spacing: -0.03em;">Simple 2026 Pricing & Packages</h1>
             <p style="font-size: 1.3rem; color: var(--mid); max-width: 650px; margin: 0 auto 2rem; line-height: 1.5;">Choose a ballpark package below, or build a custom quote with our interactive estimator.</p>
-            <a href="#calculator" class="custom-quote-btn" style="font-size: 0.85rem; padding: 0.9rem 2rem;">Build a custom quote</a>
+            <div style="display: flex; gap: 1.5rem; justify-content: center; align-items: center; flex-wrap: wrap;">
+                <a href="#calculator" class="custom-quote-btn" style="font-size: 0.85rem; padding: 0.9rem 2rem;">Build a custom quote</a>
+                <a href="#price-breakdown" onclick="openPriceBreakdown(); return false;" class="custom-quote-secondary" style="font-size: 0.85rem;">View Rates</a>
+            </div>
         </header>
 
         <!-- THE BALLPARKS -->
@@ -1942,6 +1945,15 @@ I would like to discuss a formal invoice for this configuration.`;
         }
 
         window.addEventListener('hashchange', syncPriceBreakdownFromHash);
+
+        function openPriceBreakdown() {
+            var el = document.getElementById('price-breakdown');
+            if (el) {
+                el.open = true;
+                el.scrollIntoView({ behavior: 'smooth' });
+                window.location.hash = 'price-breakdown';
+            }
+        }
 
         function initMobileStickyTotal() {
             var stickyBar = document.getElementById('mobile-sticky-total');
