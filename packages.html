@@ -1258,10 +1258,20 @@
                             </div>
                             <div id="gate-blocks-display" style="font-size: 2rem; font-weight: 800; width: 60px; text-align: center;">0</div>
                         </div>
-                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1rem;">
-                            <button type="button" class="calc-pick calc-pick--gate" id="gate-3h-2p" onclick="setGateType('3h-2p')" aria-pressed="true">3h (Team of 2) · $15k/block</button>
-                            <button type="button" class="calc-pick calc-pick--gate" id="gate-3h-3p" onclick="setGateType('3h-3p')" aria-pressed="false">3h (Team of 3) · $21k/block</button>
-                            <button type="button" class="calc-pick calc-pick--gate" id="gate-6h" onclick="setGateType('6h')" aria-pressed="false">6h (Team of 3) · $35k/block</button>
+                        <div style="display: flex; flex-direction: column; gap: 1rem;">
+                            <div>
+                                <div style="font-size: 0.75rem; font-weight: 700; color: var(--muted); margin-bottom: 0.5rem; text-transform: uppercase; letter-spacing: 0.05em;">3-Hour Shift Offers</div>
+                                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                                    <button type="button" class="calc-pick calc-pick--gate" id="gate-3h-2p" onclick="setGateType('3h-2p')" aria-pressed="true" style="padding: 0.85rem 1rem; font-size: 0.85rem;">Team of 2 · $15k/block</button>
+                                    <button type="button" class="calc-pick calc-pick--gate" id="gate-3h-3p" onclick="setGateType('3h-3p')" aria-pressed="false" style="padding: 0.85rem 1rem; font-size: 0.85rem;">Team of 3 · $21k/block</button>
+                                </div>
+                            </div>
+                            <div>
+                                <div style="font-size: 0.75rem; font-weight: 700; color: var(--muted); margin-bottom: 0.5rem; text-transform: uppercase; letter-spacing: 0.05em;">6-Hour Shift Offer</div>
+                                <div>
+                                    <button type="button" class="calc-pick calc-pick--gate" id="gate-6h" onclick="setGateType('6h')" aria-pressed="false" style="width: 100%; padding: 0.85rem 1rem; font-size: 0.85rem;">Team of 3 · $35k/block</button>
+                                </div>
+                            </div>
                         </div>
                         <div id="bundle-alert" style="margin-top: 1rem; padding: 10px; background: #fffde7; border-radius: 8px; font-size: 0.8rem; color: #827717; display: none; font-weight: 600;">
                             ✨ 3-block scanning bundle pricing applied (same hour tier)
@@ -1354,42 +1364,44 @@
                             <td class="price-table__rate">$40,000</td>
                             <td class="price-table__note">Discount management (online), white-glove setup, digital programme, unlimited seasonal events.</td>
                         </tr>
-                        <tr class="price-table__group"><td colspan="3">On-site gate support (add-ons)</td></tr>
+                        <tr class="price-table__group"><td colspan="3">3-Hour Gate Support (Add-ons)</td></tr>
                         <tr>
                             <td>Basic Gate Support</td>
                             <td class="price-table__rate">$8,000 / event</td>
                             <td class="price-table__note">3 hours on site. One coordinator for your volunteers (not full scanning).</td>
                         </tr>
                         <tr>
-                            <td>Gate Experience · scanning block (up to 3h, Team of 2)</td>
+                            <td>Gate Experience · scanning block (Team of 2)</td>
                             <td class="price-table__rate">$15,000 / block</td>
                             <td class="price-table__note">3 hours on site. Full scanning crew (2 people). Equivalent to $7,500 per person.</td>
                         </tr>
                         <tr>
-                            <td>Gate Experience · scanning block (up to 3h, Team of 3)</td>
+                            <td>Gate Experience · scanning block (Team of 3)</td>
                             <td class="price-table__rate">$21,000 / block</td>
                             <td class="price-table__note">3 hours on site. Full scanning crew (3 people). Equivalent to $7,000 per person.</td>
                         </tr>
                         <tr>
-                            <td>Gate Experience · scanning block (up to 6h, Team of 3)</td>
-                            <td class="price-table__rate">$35,000 / block</td>
-                            <td class="price-table__note">6 hours on site. Full scanning crew (3 people). Equivalent to $11,667 per person.</td>
-                        </tr>
-                        <tr>
-                            <td>3-block bundle (3h, Team of 2)</td>
+                            <td>3-block bundle (Team of 2)</td>
                             <td class="price-table__rate">$40,000</td>
                             <td class="price-table__note">Saves $5,000 vs. three separate blocks.</td>
                         </tr>
                         <tr>
-                            <td>3-block bundle (3h, Team of 3)</td>
+                            <td>3-block bundle (Team of 3)</td>
                             <td class="price-table__rate">$56,000</td>
                             <td class="price-table__note">Saves $7,000 vs. three separate blocks.</td>
                         </tr>
+                        <tr class="price-table__group"><td colspan="3">6-Hour Gate Support (Add-ons)</td></tr>
                         <tr>
-                            <td>3-block bundle (6h, Team of 3)</td>
+                            <td>Gate Experience · scanning block (Team of 3)</td>
+                            <td class="price-table__rate">$35,000 / block</td>
+                            <td class="price-table__note">6 hours on site. Full scanning crew (3 people). Equivalent to $11,667 per person.</td>
+                        </tr>
+                        <tr>
+                            <td>3-block bundle (Team of 3)</td>
                             <td class="price-table__rate">$80,000</td>
                             <td class="price-table__note">Saves $25,000 vs. three separate blocks.</td>
                         </tr>
+                        <tr class="price-table__group"><td colspan="3">Gate Discounts (Scanning Only)</td></tr>
                         <tr>
                             <td>Seasonal scanning discount</td>
                             <td class="price-table__rate">5% off</td>
