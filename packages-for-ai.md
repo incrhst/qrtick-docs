@@ -2,6 +2,8 @@
 
 **Canonical Document for Invoice Generation & Customer Support**
 
+*Note: The ballpark packages and quote builder calculator rates specified in this document apply exclusively to events with **300 or less patrons**. Events exceeding 300 patrons require manual assessment and custom quoting.*
+
 **Web page flow (`packages.html`):** Ballpark packages → custom quote CTA → **interactive quote builder** (`#calculator`, primary spine) → collapsed **rate table** (`#price-breakdown`, single comparison table) → typical scenarios → invoice CTA. **Upfront total** in the builder includes platform, Admission & Scanning Support (Volunteer Coordination / Scanning Crew), physical tickets, and setup fees. **Gate Card Sales (Card Reader & POS)** is never added to that dollar total; when checked it appears as “Quoted separately” with 10% card fee noted.
 
 ---
@@ -44,18 +46,15 @@ Priced by **support blocks** (scheduled on-site scanning coverage), not calendar
 ### Gate Card Sales (Card Reader & POS) — selling tickets at the gate (Add-on)
 **Separate from Scanning Crew blocks.** For organizers who sell tickets on site, not only scan them.
 
-Includes:
-*   Full tracking of all gate sales
-*   On-site point-of-sale (POS) app for door purchases
-*   Card reader hardware for credit/debit payments at the gate (swipe/tap/chip)
-*   Can be operated by the organizer's team or QRTick staff
-*   $0 upfront hardware rental fee
+Hardware rental fees (added to upfront total):
+*   **Gate Card Reader**: **$10,000 per day** (physical tap/swipe/chip hardware + POS app)
+*   **Bluetooth Check-in Scanners**: **$2,500 per scanner per day** (up to 2 scanners, for rapid check-in queue processing)
 
-**Card processing at the gate:** **10% processing fee** on the transaction amount when patrons pay by card using QRTick's provided card reader. Quoted separately; not included in the upfront estimate.
+**Card processing at the gate:** **10% processing fee** on the transaction amount when patrons pay by card using QRTick's provided card reader. Quoted separately; calculated on post-event door card sales volume.
 
 Scanning Crew blocks and Gate Card Sales are priced **independently**—customers may need scanning only, sales only, or both.
 
-**Quote builder URL parameters:** `p` (e|p|n platform where n = already subscribed / $0), `bg` (Volunteer Coordination event count × $8,000), `n` (scanning block count), `gt` (3|6 hour tier), `gs` (1 = Gate Card Sales requested), `qr`, `rf`, `name`, `org`.
+**Quote builder URL parameters:** `p` (e|p|n platform where n = already subscribed / $0), `bg` (Volunteer Coordination event count × $8,000), `n` (scanning block count), `gt` (3|6 hour tier), `gs` (1 = Gate Card Sales requested), `cr` (1 = Card Reader requested), `crd` (Card Reader days count), `bt` (Bluetooth scanner count, 1 or 2), `btd` (Bluetooth scanner days count), `qr`, `rf`, `name`, `org`.
 
 **Scenario presets (`?scenario=`):** `volunteer-led`, `hands-off-single`, `theatre-run`, `full-production`, `community-season`, `grand-season`. Loads the matching configuration into the quote builder (same math as the scenario list upfront totals). Manual slider changes clear `scenario` from the URL.
 

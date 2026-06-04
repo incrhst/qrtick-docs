@@ -1111,7 +1111,10 @@
         <!-- PRICING HEADER -->
         <header style="text-align: center; padding: 5rem 24px 4rem;">
             <h1 style="font-size: 3.5rem; margin-bottom: 1.5rem; letter-spacing: -0.03em;">Simple 2026 Pricing & Packages</h1>
-            <p style="font-size: 1.3rem; color: var(--mid); max-width: 650px; margin: 0 auto 2rem; line-height: 1.5;">Choose a ballpark package below, or build a custom quote with our interactive estimator.</p>
+            <p style="font-size: 1.3rem; color: var(--mid); max-width: 650px; margin: 0 auto 1.5rem; line-height: 1.5;">Choose a ballpark package below, or build a custom quote with our interactive estimator.</p>
+            <div style="font-size: 0.95rem; color: #b58900; background: #fffde7; border: 1px solid #fedd85; border-radius: 8px; padding: 0.75rem 1.5rem; display: inline-block; max-width: 650px; margin: 0 auto 2rem; font-weight: 600; line-height: 1.4;">
+                ⚠️ Note: The pricing plans and custom quote builder below are for events with <strong>300 or less patrons</strong>. For events with more than 300 patrons, please contact us for a tailored custom quote.
+            </div>
             <div style="display: flex; gap: 1.5rem; justify-content: center; align-items: center; flex-wrap: wrap;">
                 <a href="#calculator" class="custom-quote-btn" style="font-size: 0.85rem; padding: 0.9rem 2rem;">Build a custom quote</a>
                 <a href="#price-breakdown" onclick="openPriceBreakdown(); return false;" class="custom-quote-secondary" style="font-size: 0.85rem;">View Rates</a>
@@ -1191,7 +1194,10 @@
         <section id="calculator" style="max-width: 1000px; margin: 0 auto 6rem; padding: 4rem 24px; background: #fdfdfd; border-radius: 32px; border: 1px solid var(--rule); box-shadow: 0 40px 100px rgba(0,0,0,0.03);">
             <div style="text-align: center; margin-bottom: 3rem;">
                 <h2 style="font-size: 2.5rem; margin-bottom: 1rem;">Interactive Quote Builder</h2>
-                <p style="color: var(--muted); max-width: 560px; margin: 0 auto;">Select platform, then add <strong>Volunteer Coordination</strong> ($8,000 per event, 3h) and/or a <strong>Scanning Crew</strong>. Upfront totals update instantly; Gate Card Sales is quoted separately.</p>
+                <p style="color: var(--muted); max-width: 560px; margin: 0 auto 1.25rem;">Select platform, then add <strong>Volunteer Coordination</strong> ($8,000 per event, 3h) and/or a <strong>Scanning Crew</strong>. Upfront totals update instantly.</p>
+                <div style="font-size: 0.85rem; color: #b58900; background: #fffde7; border: 1px solid #fedd85; border-radius: 8px; padding: 6px 12px; display: inline-block; font-weight: 600;">
+                    ⚠️ This builder is for events with 300 or less patrons. We can do custom quotes for events with a higher number of patrons.
+                </div>
             </div>
 
             <div class="calculator-grid">
@@ -1297,14 +1303,56 @@
                         </div>
                     </div>
 
-                    <div id="gate-sales-calculator" style="padding: 1.5rem; background: #f8f8f8; border-radius: 12px; border: 1px solid var(--rule);">
-                        <label style="display: block; font-weight: 800; margin-bottom: 0.5rem; text-transform: uppercase; font-size: 0.75rem; letter-spacing: 0.1em;">3. Sell Tickets at the Gate (Credit & Debit Cards)</label>
-                        <p style="font-size: 0.85rem; color: var(--muted); line-height: 1.55; margin-bottom: 1rem;">Accept credit and debit card payments for tickets at the gate. We provide physical card reader machines (swipe/tap/chip) and a door sales POS app. No upfront rental fee for the hardware.</p>
-                        <label style="display: flex; align-items: flex-start; gap: 0.75rem; cursor: pointer; font-size: 0.9rem; font-weight: 600; color: var(--black);">
-                            <input type="checkbox" id="gate-sales" onchange="calculate()" style="width: 18px; height: 18px; margin-top: 2px; accent-color: var(--gold);">
-                            <span>Include Card Readers for Gate Ticket Sales in my quote</span>
-                        </label>
-                        <p style="font-size: 0.8rem; color: var(--muted); margin-top: 0.75rem; margin-bottom: 0;">Gate card payments: <strong>10% card processing fee</strong> on door transaction volume (quoted separately; card reader provided at no upfront rental cost).</p>
+                    <div id="gate-sales-calculator" style="padding: 1.5rem; background: #f8f8f8; border-radius: 12px; border: 1px solid var(--rule); display: flex; flex-direction: column; gap: 1rem;">
+                        <div>
+                            <label style="display: block; font-weight: 800; margin-bottom: 0.5rem; text-transform: uppercase; font-size: 0.75rem; letter-spacing: 0.1em;">3. Sell Tickets at the Gate (Credit & Debit Cards)</label>
+                            <p style="font-size: 0.85rem; color: var(--muted); line-height: 1.55; margin-bottom: 1rem;">Accept credit and debit card payments for tickets at the gate. We provide physical card reader hardware (swipe/tap/chip) and a door sales POS app.</p>
+                            
+                            <label style="display: flex; align-items: flex-start; gap: 0.75rem; cursor: pointer; font-size: 0.9rem; font-weight: 600; color: var(--black);">
+                                <input type="checkbox" id="gate-sales" onchange="toggleGateSalesOptions()" style="width: 18px; height: 18px; margin-top: 2px; accent-color: var(--gold);">
+                                <span>Include Gate Card Sales (Credit/Debit) in my quote</span>
+                            </label>
+                        </div>
+                        
+                        <!-- Collapsible hardware options -->
+                        <div id="gate-sales-options" style="display: none; border-top: 1px solid var(--rule); padding-top: 1rem; flex-direction: column; gap: 1.25rem;">
+                            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem;">
+                                <!-- Card Reader Option -->
+                                <div style="background: var(--white); padding: 1rem; border-radius: 8px; border: 1px solid var(--rule);">
+                                    <label style="display: flex; align-items: center; gap: 0.5rem; font-weight: 700; font-size: 0.85rem; color: var(--black); margin-bottom: 0.75rem; cursor: pointer;">
+                                        <input type="checkbox" id="card-reader-opt" onchange="calculate()" style="accent-color: var(--gold); width: 16px; height: 16px;"> Gate Card Reader ($10k/day)
+                                    </label>
+                                    <div id="card-reader-days-container" style="display: none;">
+                                        <div style="font-size: 0.75rem; margin-bottom: 6px; color: var(--muted); display: flex; justify-content: space-between;">
+                                            <span>Rental Days:</span> <strong id="card-reader-days-val" style="color: var(--black);">1</strong>
+                                        </div>
+                                        <input type="range" id="card-reader-days" min="1" max="14" value="1" oninput="calculate()" style="width: 100%; accent-color: var(--gold);">
+                                    </div>
+                                </div>
+                                <!-- Bluetooth Scanner Option -->
+                                <div style="background: var(--white); padding: 1rem; border-radius: 8px; border: 1px solid var(--rule);">
+                                    <label style="display: flex; align-items: center; gap: 0.5rem; font-weight: 700; font-size: 0.85rem; color: var(--black); margin-bottom: 0.75rem; cursor: pointer;">
+                                        <input type="checkbox" id="bluetooth-scanners-opt" onchange="calculate()" style="accent-color: var(--gold); width: 16px; height: 16px;"> Bluetooth Scanners ($2.5k/day)
+                                    </label>
+                                    <div id="bluetooth-scanners-container" style="display: none; display: flex; flex-direction: column; gap: 0.75rem;">
+                                        <div>
+                                            <div style="font-size: 0.75rem; margin-bottom: 6px; color: var(--muted); display: flex; justify-content: space-between;">
+                                                <span>Quantity (Max 2):</span> <strong id="bluetooth-qty-val" style="color: var(--black);">1</strong>
+                                            </div>
+                                            <input type="range" id="bluetooth-qty" min="1" max="2" value="1" oninput="calculate()" style="width: 100%; accent-color: var(--gold);">
+                                        </div>
+                                        <div>
+                                            <div style="font-size: 0.75rem; margin-bottom: 6px; color: var(--muted); display: flex; justify-content: space-between;">
+                                                <span>Rental Days:</span> <strong id="bluetooth-days-val" style="color: var(--black);">1</strong>
+                                            </div>
+                                            <input type="range" id="bluetooth-days" min="1" max="14" value="1" oninput="calculate()" style="width: 100%; accent-color: var(--gold);">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <p style="font-size: 0.8rem; color: var(--muted); margin-top: 0.25rem; margin-bottom: 0; line-height: 1.45;">Gate card payments: <strong>10% card processing fee</strong> on door transaction volume (quoted separately in addition to upfront hardware rental).</p>
                     </div>
 
                     <div>
@@ -1350,6 +1398,9 @@
                             <div style="font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: #888; margin-bottom: 0.5rem;">Total due upfront</div>
                             <div style="font-size: 3rem; font-weight: 800; color: var(--gold); line-height: 1;">$<span id="total-val">10,000</span></div>
                             <div id="quote-footnote" class="quote-footnote">Platform, admission & scanning support, physical tickets, and setup fees. Subject to final confirmation.</div>
+                        </div>
+                        <div style="font-size: 0.75rem; color: #aaa; margin-bottom: 1.5rem; text-align: center; border-top: 1px dashed #333; padding-top: 1rem; line-height: 1.45;">
+                            ⚠️ Estimate is for events with <strong>300 or less patrons</strong>. We do custom quotes for larger events.
                         </div>
                         <a id="email-link" href="#" style="display: block; text-align: center; padding: 1.2rem; background: var(--gold); color: var(--black); text-decoration: none; border-radius: 12px; font-weight: 800; transition: transform 0.2s;">Submit Selection to QRTick</a>
                         <button type="button" id="share-quote-btn" onclick="copyQuoteLink()" style="display: block; width: 100%; text-align: center; padding: 1.2rem; background: transparent; color: var(--gold); border: 2px solid var(--gold); border-radius: 12px; font-weight: 800; transition: background 0.2s, color 0.2s, transform 0.2s; cursor: pointer; margin-top: 1rem; font-family: inherit; font-size: 0.95rem;" onmouseover="this.style.background='rgba(253, 194, 48, 0.1)'" onmouseout="this.style.background='transparent'">Share Quote (Copy Link)</button>
@@ -1433,11 +1484,16 @@
                             <td class="price-table__rate">5% off</td>
                             <td class="price-table__note">Applied in quote builder when booking 4+ scanning blocks.</td>
                         </tr>
-                        <tr class="price-table__group"><td colspan="3">Gate Card Sales (quoted separately)</td></tr>
+                        <tr class="price-table__group"><td colspan="3">Gate Card Sales Hardware</td></tr>
                         <tr id="gate-sales">
-                            <td>Gate Card Sales (Card Reader & POS)</td>
-                            <td class="price-table__rate">Quoted separately</td>
-                            <td class="price-table__note">Physical card reader hardware provided + door sales POS app. Sell tickets at the door to patrons paying by card. 10% fee on processed card volume.</td>
+                            <td>Gate Card Reader</td>
+                            <td class="price-table__rate">$10,000 / day</td>
+                            <td class="price-table__note">Physical tap/swipe/chip hardware + POS app. (Requires 10% card processing fee on gate transaction volume, quoted separately).</td>
+                        </tr>
+                        <tr>
+                            <td>Bluetooth Check-in Scanners</td>
+                            <td class="price-table__rate">$2,500 / scanner / day</td>
+                            <td class="price-table__note">Wireless bluetooth scanners for faster check-in at the gate (up to 2 available).</td>
                         </tr>
                         <tr class="price-table__group"><td colspan="3" id="price-physical">Physical tickets</td></tr>
                         <tr>
@@ -1518,10 +1574,29 @@
     <!-- MOBILE STICKY TOTAL BAR -->
     <div id="mobile-sticky-total" class="mobile-sticky-total-bar">
         <div class="mobile-sticky-total-bar__info">
-            <span class="mobile-sticky-total-bar__label">Upfront Estimate</span>
+            <span class="mobile-sticky-total-bar__label" style="display: flex; align-items: center; gap: 4px;">Upfront Estimate <span style="font-size: 0.6rem; color: var(--gold); opacity: 0.9;">(Tap to view details ▴)</span></span>
             <span class="mobile-sticky-total-bar__value">$<span id="mobile-total-val">10,000</span></span>
         </div>
         <a id="mobile-email-link" href="#" class="mobile-sticky-total-bar__btn">Submit Selection</a>
+    </div>
+
+    <!-- MOBILE PREVIEW DRAWER -->
+    <div id="mobile-preview-backdrop" onclick="toggleMobilePreviewDrawer(false)" style="position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.5); display: none; z-index: 1001; backdrop-filter: blur(2px); -webkit-backdrop-filter: blur(2px);"></div>
+    <div id="mobile-preview-drawer" style="position: fixed; bottom: -100%; left: 0; right: 0; background: var(--black); color: var(--white); border-radius: 24px 24px 0 0; box-shadow: 0 -10px 30px rgba(0,0,0,0.3); transition: bottom 0.3s cubic-bezier(0.16, 1, 0.3, 1); z-index: 1002; padding: 2rem 1.5rem 6rem; max-height: 80vh; overflow-y: auto;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; border-bottom: 1px solid #333; padding-bottom: 0.75rem;">
+            <span style="font-size: 1.05rem; font-weight: 800; text-transform: uppercase; color: var(--gold); letter-spacing: 0.05em;">Quote Summary</span>
+            <button type="button" onclick="toggleMobilePreviewDrawer(false)" style="background: none; border: none; color: #aaa; font-size: 1.5rem; font-weight: 300; cursor: pointer; padding: 0 0.5rem; line-height: 1;">&times;</button>
+        </div>
+        <div id="mobile-drawer-line-items" style="font-size: 0.85rem; color: #aaa; margin-bottom: 2rem; line-height: 1.6;"></div>
+        <div style="border-top: 1px solid #333; padding-top: 1.5rem; margin-bottom: 1.5rem;">
+            <div style="font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: #888; margin-bottom: 0.5rem;">Total due upfront</div>
+            <div style="font-size: 2.5rem; font-weight: 800; color: var(--gold); line-height: 1;">$<span id="mobile-drawer-total-val">10,000</span></div>
+            <div id="mobile-drawer-footnote" style="font-size: 0.75rem; color: #888; margin-top: 0.75rem; line-height: 1.4;"></div>
+            <div style="font-size: 0.75rem; color: #aaa; margin-top: 1.25rem; text-align: center; border-top: 1px dashed #333; padding-top: 1rem; line-height: 1.45;">
+                ⚠️ Estimate is for events with <strong>300 or less patrons</strong>. We do custom quotes for larger events.
+            </div>
+        </div>
+        <a id="mobile-drawer-email-link" href="#" style="display: block; text-align: center; padding: 1.2rem; background: var(--gold); color: var(--black); text-decoration: none; border-radius: 12px; font-weight: 800; transition: transform 0.2s;">Submit Selection to QRTick</a>
     </div>
 
     <script>
@@ -1532,6 +1607,25 @@
             setTimeout(function () {
                 el.classList.remove('show');
             }, 2200);
+        }
+
+        function toggleMobilePreviewDrawer(open) {
+            var drawer = document.getElementById('mobile-preview-drawer');
+            var backdrop = document.getElementById('mobile-preview-backdrop');
+            if (drawer && backdrop) {
+                if (open) {
+                    drawer.style.bottom = '0';
+                    backdrop.style.display = 'block';
+                    // Populate drawer data
+                    document.getElementById('mobile-drawer-line-items').innerHTML = document.getElementById('line-items').innerHTML;
+                    document.getElementById('mobile-drawer-total-val').innerText = document.getElementById('total-val').innerText;
+                    document.getElementById('mobile-drawer-footnote').innerHTML = document.getElementById('quote-footnote').innerHTML;
+                    document.getElementById('mobile-drawer-email-link').href = document.getElementById('email-link').href;
+                } else {
+                    drawer.style.bottom = '-100%';
+                    backdrop.style.display = 'none';
+                }
+            }
         }
 
         async function copyQuoteLink() {
@@ -1583,6 +1677,11 @@
             nights: 0,
             basicGateEvents: 0,
             gateSales: false,
+            cardReader: false,
+            cardReaderDays: 1,
+            bluetoothScannersOpt: false,
+            bluetoothQty: 1,
+            bluetoothDays: 1,
             qr: 0,
             rfid: 0
         };
@@ -1687,7 +1786,10 @@
                 setupFee = 0;
             }
 
-            return platformPrice + basicGatePrice + gatePrice + ticketPrice + setupFee;
+            var cardReaderCost = cfg.cardReader ? (cfg.cardReaderDays || 0) * 10000 : 0;
+            var bluetoothScannerCost = cfg.bluetoothScannersOpt ? (cfg.bluetoothQty || 0) * (cfg.bluetoothDays || 0) * 2500 : 0;
+
+            return platformPrice + basicGatePrice + gatePrice + ticketPrice + setupFee + cardReaderCost + bluetoothScannerCost;
         }
 
         function getScenarioMathBreakdown(cfg) {
@@ -1795,7 +1897,21 @@
             document.getElementById('user-org').value = config.org || '';
             document.getElementById('basic-gate-events').value = config.basicGateEvents;
             document.getElementById('gate-nights').value = config.nights;
+            
+            // Primary Gate Sales checkbox
             document.getElementById('gate-sales').checked = config.gateSales;
+            var optionsDiv = document.getElementById('gate-sales-options');
+            if (optionsDiv) {
+                optionsDiv.style.display = config.gateSales ? 'flex' : 'none';
+            }
+            
+            // Sub-options
+            document.getElementById('card-reader-opt').checked = config.cardReader;
+            document.getElementById('card-reader-days').value = config.cardReaderDays;
+            document.getElementById('bluetooth-scanners-opt').checked = config.bluetoothScannersOpt;
+            document.getElementById('bluetooth-qty').value = config.bluetoothQty;
+            document.getElementById('bluetooth-days').value = config.bluetoothDays;
+
             document.getElementById('qr-count').value = config.qr;
             document.getElementById('rfid-count').value = config.rfid;
             setPlatform(config.platform);
@@ -1808,6 +1924,11 @@
 
             config.basicGateEvents = 0;
             config.gateSales = false;
+            config.cardReader = false;
+            config.cardReaderDays = 1;
+            config.bluetoothScannersOpt = false;
+            config.bluetoothQty = 1;
+            config.bluetoothDays = 1;
             config.qr = 0;
             config.rfid = 0;
             config.gateType = '3h-2p';
@@ -1848,6 +1969,11 @@
             config.qr = preset.qr;
             config.rfid = preset.rfid;
             config.gateSales = false;
+            config.cardReader = false;
+            config.cardReaderDays = 1;
+            config.bluetoothScannersOpt = false;
+            config.bluetoothQty = 1;
+            config.bluetoothDays = 1;
             config.name = preservedName;
             config.org = preservedOrg;
 
@@ -1998,14 +2124,55 @@
             }
         }
 
+        function toggleGateSalesOptions() {
+            var gateSalesChecked = document.getElementById('gate-sales').checked;
+            if (gateSalesChecked) {
+                // Auto-check Card Reader option by default if nothing is selected yet
+                var cardReaderChecked = document.getElementById('card-reader-opt').checked;
+                var btChecked = document.getElementById('bluetooth-scanners-opt').checked;
+                if (!cardReaderChecked && !btChecked) {
+                    document.getElementById('card-reader-opt').checked = true;
+                    // set default days to event days
+                    var eventDays = Math.max(1, config.basicGateEvents + config.nights);
+                    document.getElementById('card-reader-days').value = eventDays;
+                    document.getElementById('bluetooth-days').value = eventDays;
+                }
+            } else {
+                // Reset sub-options if primary gate sales is unchecked
+                document.getElementById('card-reader-opt').checked = false;
+                document.getElementById('bluetooth-scanners-opt').checked = false;
+            }
+            calculate();
+        }
+
         function calculate() {
             config.name = document.getElementById('user-name').value;
             config.org = document.getElementById('user-org').value;
             config.gateSales = document.getElementById('gate-sales').checked;
+            config.cardReader = document.getElementById('card-reader-opt').checked;
+            config.cardReaderDays = parseInt(document.getElementById('card-reader-days').value, 10) || 1;
+            config.bluetoothScannersOpt = document.getElementById('bluetooth-scanners-opt').checked;
+            config.bluetoothQty = parseInt(document.getElementById('bluetooth-qty').value, 10) || 1;
+            config.bluetoothDays = parseInt(document.getElementById('bluetooth-days').value, 10) || 1;
             config.basicGateEvents = parseInt(document.getElementById('basic-gate-events').value, 10) || 0;
             config.nights = parseInt(document.getElementById('gate-nights').value, 10) || 0;
             config.qr = parseInt(document.getElementById('qr-count').value, 10) || 0;
             config.rfid = parseInt(document.getElementById('rfid-count').value, 10) || 0;
+
+            // Show/hide sub-options dynamically
+            var optionsDiv = document.getElementById('gate-sales-options');
+            if (optionsDiv) {
+                optionsDiv.style.display = config.gateSales ? 'flex' : 'none';
+            }
+            var readerDaysCont = document.getElementById('card-reader-days-container');
+            if (readerDaysCont) readerDaysCont.style.display = config.cardReader ? 'block' : 'none';
+            var btCont = document.getElementById('bluetooth-scanners-container');
+            if (btCont) btCont.style.display = config.bluetoothScannersOpt ? 'block' : 'none';
+
+            // Update sub-option display values
+            document.getElementById('card-reader-days-val').innerText = config.cardReaderDays;
+            document.getElementById('bluetooth-qty-val').innerText = config.bluetoothQty;
+            document.getElementById('bluetooth-days-val').innerText = config.bluetoothDays;
 
             document.getElementById('gate-blocks-display').innerText = config.nights;
             document.getElementById('basic-gate-display').innerText = config.basicGateEvents;
@@ -2047,6 +2214,9 @@
             if (config.platform === 'professional' && config.nights >= 3) {
                 setupFee = 0;
             }
+
+            let cardReaderCost = config.cardReader ? config.cardReaderDays * 10000 : 0;
+            let bluetoothScannerCost = config.bluetoothScannersOpt ? config.bluetoothQty * config.bluetoothDays * 2500 : 0;
 
             let total = estimateTotal(config);
 
@@ -2107,14 +2277,23 @@
                     <span>5% seasonal discount (scanning)</span>
                     <span>−$${(gatePriceBeforeDiscount - gatePrice).toLocaleString()}</span>
                 </div>` : ''}
+                ${cardReaderCost > 0 ? `
+                <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
+                    <span>Gate Card Reader: ${config.cardReaderDays} day${config.cardReaderDays === 1 ? '' : 's'} × $10k</span>
+                    <span>$${cardReaderCost.toLocaleString()}</span>
+                </div>` : ''}
+                ${bluetoothScannerCost > 0 ? `
+                <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
+                    <span>Bluetooth Scanner: ${config.bluetoothQty} scanner${config.bluetoothQty === 1 ? '' : 's'} × ${config.bluetoothDays} day${config.bluetoothDays === 1 ? '' : 's'} × $2.5k</span>
+                    <span>$${bluetoothScannerCost.toLocaleString()}</span>
+                </div>` : ''}
                 ${!basicGatePrice && !gatePrice && !config.gateSales ? `
                 <div style="margin-bottom: 8px; font-size: 0.8rem; color: #888; line-height: 1.45;">No on-site admission add-ons selected. Use Volunteer and/or scanning sliders above if needed.</div>` : ''}
-                ${config.gateSales ? `
+                ${config.gateSales && !config.cardReader && !config.bluetoothScannersOpt ? `
                 <div style="display: flex; justify-content: space-between; margin-bottom: 4px; align-items: flex-start; gap: 0.75rem;">
                     <span>Gate Card Sales (Card Reader & POS)</span>
-                    <span style="text-align: right; color: var(--gold); font-weight: 700; white-space: nowrap;">Quoted separately</span>
-                </div>
-                <div style="margin-bottom: 8px; font-size: 0.75rem; color: #888; line-height: 1.45;">Not included in upfront total. Card payments: 10% fee on door card sales volume.</div>` : ''}
+                    <span style="text-align: right; color: var(--gold); font-weight: 700; white-space: nowrap;">No hardware selected</span>
+                </div>` : ''}
                 ${ticketPrice > 0 ? `
                 <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
                     <span>Physical Tickets</span>
@@ -2134,7 +2313,7 @@
 
             var footnote = document.getElementById('quote-footnote');
             if (config.gateSales) {
-                footnote.innerHTML = 'Upfront total above excludes <span class="quote-footnote--highlight">Gate Card Sales</span> (quoted separately) and the 10% processing fee on door card sales volume.';
+                footnote.innerHTML = 'Upfront total above includes daily hardware rentals, but excludes the 10% processing fee on door card sales volume.';
             } else {
                 let text = (config.platform !== 'none' ? 'Platform, ' : '') + 'admission & scanning support, physical tickets, and setup fees. Subject to final confirmation.';
                 footnote.textContent = text.charAt(0).toUpperCase() + text.slice(1);
@@ -2153,9 +2332,11 @@ I have built a custom quote on your website:
 - Platform: ${config.platform === 'essentials' ? 'ESSENTIALS' : (config.platform === 'none' ? 'ALREADY SUBSCRIBED (ADD-ONS ONLY)' : 'PROFESSIONAL')}
 - Volunteer Coordination: ${config.basicGateEvents > 0 ? config.basicGateEvents + ' event(s) × $8,000 = $' + basicGatePrice.toLocaleString() + ' (3h guidance each)' : 'None'}
 - Scanning Crew: ${config.nights > 0 ? gateExperienceSummary(config.nights, config.gateType) + ': $' + gatePrice.toLocaleString() : 'None'}
-- Gate Card Sales (Credit/Debit): ${config.gateSales ? 'Requested (quoted separately; card reader hardware + POS app; 10% processing fee on gate card sales volume)' : 'No'}
+- Gate Card Sales: ${config.gateSales ? 'Enabled (10% processing fee on door card volume)' : 'No'}
+  * Card Reader Rental: ${config.cardReader ? config.cardReaderDays + ' day(s) × $10,000 = $' + cardReaderCost.toLocaleString() : 'None'}
+  * Bluetooth Scanner Rental: ${config.bluetoothScannersOpt ? config.bluetoothQty + ' scanner(s) × ' + config.bluetoothDays + ' day(s) × $2,500 = $' + bluetoothScannerCost.toLocaleString() : 'None'}
 - Physical Tickets: ${config.qr} QR, ${config.rfid} RFID
-- Estimated upfront total: $${total.toLocaleString()} (excludes Gate Card Sales pricing and card processing fees)
+- Estimated upfront total: $${total.toLocaleString()} (excludes 10% gate card sales transaction processing fees)
 
 Link to my configuration: ${window.location.href}
 
@@ -2170,6 +2351,15 @@ I would like to discuss a formal invoice for this configuration.`;
             var mobileEmailLink = document.getElementById('mobile-email-link');
             if (mobileEmailLink) mobileEmailLink.href = mailtoUrl;
 
+            // If mobile preview drawer is open, update drawer elements in real-time
+            var drawer = document.getElementById('mobile-preview-drawer');
+            if (drawer && drawer.style.bottom === '0px') {
+                document.getElementById('mobile-drawer-line-items').innerHTML = lines;
+                document.getElementById('mobile-drawer-total-val').innerText = total.toLocaleString();
+                document.getElementById('mobile-drawer-footnote').innerHTML = footnote.innerHTML;
+                document.getElementById('mobile-drawer-email-link').href = mailtoUrl;
+            }
+
             // Update URL Parameters
             let params = new URLSearchParams();
             if (config.name) params.set('name', config.name);
@@ -2180,8 +2370,29 @@ I would like to discuss a formal invoice for this configuration.`;
             else params.delete('bg');
             var gtVal = config.gateType === '3h-2p' ? '32' : (config.gateType === '3h-3p' ? '33' : '6');
             params.set('gt', gtVal);
-            if (config.gateSales) params.set('gs', '1');
-            else params.delete('gs');
+            if (config.gateSales) {
+                params.set('gs', '1');
+                if (config.cardReader) {
+                    params.set('cr', '1');
+                    params.set('crd', config.cardReaderDays);
+                } else {
+                    params.delete('cr');
+                    params.delete('crd');
+                }
+                if (config.bluetoothScannersOpt) {
+                    params.set('bt', config.bluetoothQty);
+                    params.set('btd', config.bluetoothDays);
+                } else {
+                    params.delete('bt');
+                    params.delete('btd');
+                }
+            } else {
+                params.delete('gs');
+                params.delete('cr');
+                params.delete('crd');
+                params.delete('bt');
+                params.delete('btd');
+            }
             params.set('qr', config.qr);
             params.set('rf', config.rfid);
             params.delete('scenario');
@@ -2215,7 +2426,18 @@ I would like to discuss a formal invoice for this configuration.`;
                 else if (gt === '3') config.gateType = '3h-2p';
                 else if (gt === '6') config.gateType = '6h';
             }
-            if (params.get('gs') === '1') config.gateSales = true;
+            if (params.get('gs') === '1') {
+                config.gateSales = true;
+                if (params.get('cr') === '1') {
+                    config.cardReader = true;
+                    config.cardReaderDays = parseInt(params.get('crd'), 10) || 1;
+                }
+                if (params.has('bt')) {
+                    config.bluetoothScannersOpt = true;
+                    config.bluetoothQty = parseInt(params.get('bt'), 10) || 1;
+                    config.bluetoothDays = parseInt(params.get('btd'), 10) || 1;
+                }
+            }
             if (params.has('qr')) config.qr = parseInt(params.get('qr'), 10) || 0;
             if (params.has('rf')) config.rfid = parseInt(params.get('rf'), 10) || 0;
 
@@ -2300,7 +2522,7 @@ I would like to discuss a formal invoice for this configuration.`;
 
             stickyBar.addEventListener('click', function (e) {
                 if (e.target.classList.contains('mobile-sticky-total-bar__btn')) return;
-                estimateCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                toggleMobilePreviewDrawer(true);
             });
         }
 
