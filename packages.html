@@ -1352,6 +1352,7 @@
                             <div id="quote-footnote" class="quote-footnote">Platform, admission & scanning support, physical tickets, and setup fees. Subject to final confirmation.</div>
                         </div>
                         <a id="email-link" href="#" style="display: block; text-align: center; padding: 1.2rem; background: var(--gold); color: var(--black); text-decoration: none; border-radius: 12px; font-weight: 800; transition: transform 0.2s;">Submit Selection to QRTick</a>
+                        <button type="button" id="share-quote-btn" onclick="copyQuoteLink()" style="display: block; width: 100%; text-align: center; padding: 1.2rem; background: transparent; color: var(--gold); border: 2px solid var(--gold); border-radius: 12px; font-weight: 800; transition: background 0.2s, color 0.2s, transform 0.2s; cursor: pointer; margin-top: 1rem; font-family: inherit; font-size: 0.95rem;" onmouseover="this.style.background='rgba(253, 194, 48, 0.1)'" onmouseout="this.style.background='transparent'">Share Quote (Copy Link)</button>
                     </div>
                 </div>
             </div>
@@ -1531,6 +1532,33 @@
             setTimeout(function () {
                 el.classList.remove('show');
             }, 2200);
+        }
+
+        async function copyQuoteLink() {
+            try {
+                var url = window.location.href;
+                await navigator.clipboard.writeText(url);
+                
+                var btn = document.getElementById('share-quote-btn');
+                if (btn) {
+                    var origText = btn.textContent;
+                    var origBorder = btn.style.borderColor;
+                    var origColor = btn.style.color;
+                    
+                    btn.textContent = 'Link Copied! ✓';
+                    btn.style.borderColor = '#81c784';
+                    btn.style.color = '#81c784';
+                    
+                    setTimeout(function() {
+                        btn.textContent = origText;
+                        btn.style.borderColor = origBorder || 'var(--gold)';
+                        btn.style.color = origColor || 'var(--gold)';
+                    }, 2000);
+                }
+                showPackagesToast('Quote link copied to clipboard!');
+            } catch (e) {
+                showPackagesToast('Failed to copy link. Please copy the URL from your address bar.');
+            }
         }
 
         async function copyPackagesMarkdownForAI() {
