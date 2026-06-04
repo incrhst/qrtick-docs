@@ -1413,6 +1413,9 @@
                         </div>
                         <a id="email-link" href="#" style="display: block; text-align: center; padding: 1.2rem; background: var(--gold); color: var(--black); text-decoration: none; border-radius: 12px; font-weight: 800; transition: transform 0.2s;">Submit Selection to QRTick</a>
                         <button type="button" id="share-quote-btn" onclick="copyQuoteLink()" style="display: block; width: 100%; text-align: center; padding: 1.2rem; background: transparent; color: var(--gold); border: 2px solid var(--gold); border-radius: 12px; font-weight: 800; transition: background 0.2s, color 0.2s, transform 0.2s; cursor: pointer; margin-top: 1rem; font-family: inherit; font-size: 0.95rem;" onmouseover="this.style.background='rgba(253, 194, 48, 0.1)'" onmouseout="this.style.background='transparent'">Share Quote (Copy Link)</button>
+                        <p style="font-size: 0.72rem; color: #888; text-align: center; margin-top: 0.75rem; line-height: 1.4; margin-bottom: 0;">
+                            Copies a link to your clipboard. Anyone who opens the link can view or modify this quote configuration.
+                        </p>
                     </div>
                 </div>
             </div>
@@ -1607,6 +1610,9 @@
         </div>
         <a id="mobile-drawer-email-link" href="#" style="display: block; text-align: center; padding: 1.2rem; background: var(--gold); color: var(--black); text-decoration: none; border-radius: 12px; font-weight: 800; transition: transform 0.2s;">Submit Selection to QRTick</a>
         <button type="button" id="mobile-share-quote-btn" onclick="copyQuoteLink()" style="display: block; width: 100%; text-align: center; padding: 1.2rem; background: transparent; color: var(--gold); border: 2px solid var(--gold); border-radius: 12px; font-weight: 800; transition: background 0.2s, color 0.2s, transform 0.2s; cursor: pointer; margin-top: 1rem; font-family: inherit; font-size: 0.95rem;">Share Quote (Copy Link)</button>
+        <p style="font-size: 0.72rem; color: #888; text-align: center; margin-top: 0.75rem; line-height: 1.4; margin-bottom: 0;">
+            Copies a link to your clipboard. Anyone who opens the link can view or modify this quote configuration.
+        </p>
     </div>
 
     <script>
@@ -2224,6 +2230,23 @@
             const mobileTotalVal = document.getElementById('mobile-total-val');
             if (mobileTotalVal) {
                 mobileTotalVal.innerText = total.toLocaleString();
+            }
+
+            // Update document title dynamically based on selections
+            let platformLabel = 'Custom';
+            if (config.platform === 'essentials') {
+                platformLabel = 'Essentials';
+            } else if (config.platform === 'professional') {
+                platformLabel = 'Professional';
+            } else if (config.platform === 'none') {
+                platformLabel = 'Add-on';
+            }
+            
+            let titleOrgPart = config.org || config.name;
+            if (titleOrgPart) {
+                document.title = `QRTick Quote: ${platformLabel} - $${total.toLocaleString()} (${titleOrgPart})`;
+            } else {
+                document.title = `QRTick Quote: ${platformLabel} - $${total.toLocaleString()}`;
             }
 
             // Toggle Remove/Clear button visibilities
