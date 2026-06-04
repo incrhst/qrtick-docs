@@ -1662,6 +1662,71 @@
             return platformPrice + basicGatePrice + gatePrice + ticketPrice + setupFee;
         }
 
+        function getScenarioMathBreakdown(cfg) {
+            var parts = [];
+            
+            // 1. Platform
+            if (cfg.platform === 'essentials') {
+                parts.push('$10,000 platform');
+            } else if (cfg.platform === 'professional') {
+                parts.push('$40,000 platform');
+            }
+            
+            // 2. Basic Gate (Volunteer Coordination)
+            if (cfg.basicGateEvents > 0) {
+                var basicGatePrice = cfg.basicGateEvents * 8000;
+                parts.push('$' + basicGatePrice.toLocaleString() + ' (' + cfg.basicGateEvents + ' coordinator event' + (cfg.basicGateEvents > 1 ? 's' : '') + ')');
+            }
+            
+            // 3. Scanning Crew
+            if (cfg.nights > 0) {
+                var gatePrice = 0;
+                var rateDesc = '';
+                if (cfg.nights === 3) {
+                    if (cfg.gateType === '3h-2p') {
+                        gatePrice = 40000;
+                        rateDesc = '3-block 3h bundle';
+                    } else if (cfg.gateType === '3h-3p') {
+                        gatePrice = 56000;
+                        rateDesc = '3-block 3h bundle';
+                    } else {
+                        gatePrice = 80000;
+                        rateDesc = '3-block 6h bundle';
+                    }
+                } else {
+                    var blockRate = cfg.gateType === '3h-2p' ? 15000 : (cfg.gateType === '3h-3p' ? 21000 : 35000);
+                    var rawPrice = cfg.nights * blockRate;
+                    gatePrice = rawPrice;
+                    rateDesc = cfg.nights + ' block' + (cfg.nights > 1 ? 's' : '') + ' @ $' + (blockRate/1000) + 'k';
+                    if (cfg.nights >= 4) {
+                        gatePrice = rawPrice * 0.95;
+                        rateDesc += ' minus 5% discount';
+                    }
+                }
+                parts.push('$' + gatePrice.toLocaleString() + ' (' + rateDesc + ')');
+            }
+            
+            // 4. Physical Tickets
+            if (cfg.qr > 0 || cfg.rfid > 0) {
+                var ticketPrice = (cfg.qr || 0) * 55 + (cfg.rfid || 0) * 140;
+                var ticketDesc = [];
+                if (cfg.qr > 0) ticketDesc.push(cfg.qr + ' QR');
+                if (cfg.rfid > 0) ticketDesc.push(cfg.rfid + ' RFID');
+                parts.push('$' + ticketPrice.toLocaleString() + ' (' + ticketDesc.join(' + ') + ' tickets)');
+            }
+            
+            // 5. Setup Fee
+            var setupFee = (cfg.qr > 0 || cfg.rfid > 0) ? 10000 : 0;
+            if (cfg.platform === 'professional' && cfg.nights >= 3) {
+                setupFee = 0;
+            }
+            if (setupFee > 0) {
+                parts.push('$10,000 ticket setup fee');
+            }
+            
+            return parts.join(' + ');
+        }
+
         function renderScenarioList() {
             var list = document.getElementById('scenario-list');
             if (!list) return;
@@ -1680,6 +1745,7 @@
                     '<span class="scenario-badge ' + badgeClass + '">' + badgeLabel + '</span>' +
                     '<h3>' + preset.title + '</h3>' +
                     '<p class="scenario-row__blurb">' + preset.blurb + '</p>' +
+                    '<div style="font-size: 0.72rem; color: #888; margin-top: 8px; font-weight: 500; font-family: monospace; letter-spacing: -0.01em;">' + getScenarioMathBreakdown(preset) + '</div>' +
                     '</div>' +
                     '<div class="scenario-row__aside">' +
                     '<div><span class="scenario-row__total-label">Upfront estimate</span>' +
