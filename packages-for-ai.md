@@ -2,23 +2,23 @@
 
 **Canonical Document for Invoice Generation & Customer Support**
 
-**Web page flow (`packages.html`):** Ballpark packages → custom quote CTA → **interactive quote builder** (`#calculator`, primary spine) → collapsed **rate table** (`#price-breakdown`, single comparison table) → typical scenarios → invoice CTA. **Upfront total** in the builder includes platform, Admission & Scanning Support (Volunteer Coordination / Scanning Crew), physical tickets, and setup fees. **Box Office & Door Sales** is never added to that dollar total; when checked it appears as “Quoted separately” with 10% card fee noted.
+**Web page flow (`packages.html`):** Ballpark packages → custom quote CTA → **interactive quote builder** (`#calculator`, primary spine) → collapsed **rate table** (`#price-breakdown`, single comparison table) → typical scenarios → invoice CTA. **Upfront total** in the builder includes platform, Admission & Scanning Support (Volunteer Coordination / Scanning Crew), physical tickets, and setup fees. **Gate Card Sales (Card Reader & POS)** is never added to that dollar total; when checked it appears as “Quoted separately” with 10% card fee noted.
 
 ---
 
 ## 1. Primary Ballpark Packages
-*   **The Essentials ($10,000)**: Entry tier. Essentials Platform + self-managed entry only. **Includes no admission support of any kind** — no Volunteer Coordination, no Scanning Crew, no Box Office & Door Sales (door POS/card machine). No discount tools. All gate services are paid add-ons if required.
-*   **The Professional ($40,000)**: Managed tier. Professional Platform + discount management (online) + white-glove setup + digital programs. Box Office & Door Sales at the door is a separate add-on.
-*   **The Managed Weekend ($80,000)**: Series tier. Professional Platform + 3 × 3-hour **Scanning Crew** blocks (Team of 2). Box Office & Door Sales not included.
+*   **The Essentials ($10,000)**: Entry tier. Essentials Platform + self-managed entry only. **Includes no admission support of any kind** — no Volunteer Coordination, no Scanning Crew, no Gate Card Sales (Card Reader & POS). No discount tools. All gate services are paid add-ons if required.
+*   **The Professional ($40,000)**: Managed tier. Professional Platform + discount management (online) + white-glove setup + digital programs. Gate Card Sales (Card Reader & POS) is a separate add-on.
+*   **The Managed Weekend ($80,000)**: Series tier. Professional Platform + 3 × 3-hour **Scanning Crew** blocks (Team of 2). Gate Card Sales not included.
 
 ## 2. Component Breakdown (For Custom Scenarios)
 ### Platform Choice
-*   **Essentials Platform ($10,000)**: Single event access, self-service tools, digital QR tickets. Organizer handles the door themselves; **zero included admission support** (Volunteer Coordination, Scanning Crew, and Box Office & Door Sales are separate add-ons).
-*   **Professional Platform ($40,000)**: Managed partnership, unlimited seasonal events, white-glove setup, digital programs, early payout access, discount management for **online** sales (not Box Office & Door Sales).
+*   **Essentials Platform ($10,000)**: Single event access, self-service tools, digital QR tickets. Organizer handles the door themselves; **zero included admission support** (Volunteer Coordination, Scanning Crew, and Gate Card Sales are separate add-ons).
+*   **Professional Platform ($40,000)**: Managed partnership, unlimited seasonal events, white-glove setup, digital programs, early payout access, discount management for **online** sales (not Gate Card Sales).
 *   **Already Subscribed ($0)**: For organizers who already have an active subscription or season agreement with QRTick and only need a quote for gate add-ons (staffing, physical tickets, etc.).
 
 ### On-Site Admission & Scanning Support (Add-ons)
-Not included on **Essentials**. Separate from **Box Office & Door Sales** (selling at the door).
+Not included on **Essentials**. Separate from **Gate Card Sales** (selling tickets at the gate).
 
 **How to choose (explain this clearly to customers):**
 *   **Their own team → Volunteer Coordination:** The event already has volunteers or staff at the gate. They only need one QRTick person for ~3 hours to coordinate volunteers and provide on-site guidance. The organizer's team handles scanning; QRTick does not send a full crew.
@@ -41,20 +41,21 @@ Priced by **support blocks** (scheduled on-site scanning coverage), not calendar
 *   **3-block bundle (6h, Team of 3)**: $80,000 (Saves $25,000 vs. three separate blocks).
 *   **Volume Discount**: 5% off scanning total when booking 4+ blocks in a season.
 
-### Box Office & Door Sales — selling at the door (Add-on)
+### Gate Card Sales (Card Reader & POS) — selling tickets at the gate (Add-on)
 **Separate from Scanning Crew blocks.** For organizers who sell tickets on site, not only scan them.
 
 Includes:
 *   Full tracking of all gate sales
-*   On-site point-of-sale (POS) for door purchases
-*   Card machine for credit/debit payments at the gate
+*   On-site point-of-sale (POS) app for door purchases
+*   Card reader hardware for credit/debit payments at the gate (swipe/tap/chip)
 *   Can be operated by the organizer's team or QRTick staff
+*   $0 upfront hardware rental fee
 
-**Card processing at the gate:** **10% processing fee** on the transaction amount when patrons pay by card using QRTick's card machine. Quoted separately from scanning block fees; not included in the upfront scanning estimate.
+**Card processing at the gate:** **10% processing fee** on the transaction amount when patrons pay by card using QRTick's provided card reader. Quoted separately; not included in the upfront estimate.
 
-Scanning Crew blocks and Box Office & Door Sales are priced **independently**—customers may need scanning only, sales only, or both.
+Scanning Crew blocks and Gate Card Sales are priced **independently**—customers may need scanning only, sales only, or both.
 
-**Quote builder URL parameters:** `p` (e|p|n platform where n = already subscribed / $0), `bg` (Volunteer Coordination event count × $8,000), `n` (scanning block count), `gt` (3|6 hour tier), `gs` (1 = Box Office & Door Sales requested), `qr`, `rf`, `name`, `org`.
+**Quote builder URL parameters:** `p` (e|p|n platform where n = already subscribed / $0), `bg` (Volunteer Coordination event count × $8,000), `n` (scanning block count), `gt` (3|6 hour tier), `gs` (1 = Gate Card Sales requested), `qr`, `rf`, `name`, `org`.
 
 **Scenario presets (`?scenario=`):** `volunteer-led`, `hands-off-single`, `theatre-run`, `full-production`, `community-season`, `grand-season`. Loads the matching configuration into the quote builder (same math as the scenario list upfront totals). Manual slider changes clear `scenario` from the URL.
 
