@@ -1123,7 +1123,7 @@
         </header>
 
         <!-- THE BALLPARKS -->
-        <section style="max-width: 1100px; margin: 0 auto 8rem; padding: 0 24px;">
+        <section id="ballparks" style="max-width: 1100px; margin: 0 auto 8rem; padding: 0 24px;">
             <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem;">
                 <!-- 10k -->
                 <div style="background: var(--white); padding: 3rem 2.5rem; border-radius: 24px; border: 1px solid var(--rule); display: flex; flex-direction: column;">
@@ -1220,10 +1220,12 @@
                         <p style="font-size: 0.85rem; color: var(--muted); line-height: 1.55; margin-bottom: 1rem;">Not included on <strong>Essentials</strong>. Choose how you manage entry. <a href="#gate-sales" style="color: var(--gold); font-weight: 600;">Box Office & Door Sales</a> (selling tickets) is separate from both.</p>
                         <div class="gate-path-grid">
                             <div class="gate-path-card gate-path-card--yours" role="button" tabindex="0" onclick="setVolunteerGatePath()" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();setVolunteerGatePath();}" style="cursor: pointer;" title="Add Volunteer Coordination to your quote">
+                                <span style="display: inline-block; font-size: 0.65rem; background: #f5f5f5; color: #666; padding: 2px 8px; border-radius: 4px; font-weight: 700; margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.05em; border: 1px solid #ddd;">Best for Volunteer-rich Teams</span>
                                 <h4>You have your own team → Volunteer Coordination</h4>
                                 <p>Tap to add <strong>Volunteer Coordination</strong> to your quote: one QRTick expert per event ($8,000 × 3 hours) to guide your crew. Your volunteers scan; QRTick guides.</p>
                             </div>
                             <div class="gate-path-card gate-path-card--hands-off" role="button" tabindex="0" onclick="setHandsOffGatePath()" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();setHandsOffGatePath();}" style="cursor: pointer;" title="Add Full-Service Scanning Crew to your quote">
+                                <span style="display: inline-block; font-size: 0.65rem; background: rgba(253, 194, 48, 0.15); color: var(--gold); padding: 2px 8px; border-radius: 4px; font-weight: 800; margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.05em; border: 1px solid var(--gold);">★ Recommended for Seamless Entry</span>
                                 <h4>You want to hand it off → Scanning Crew</h4>
                                 <p>Tap to add a <strong>Full-Service Scanning Crew</strong> to your quote. QRTick manages entrance scanning so you don't have to.</p>
                             </div>
@@ -1262,14 +1264,23 @@
                             <div>
                                 <div style="font-size: 0.75rem; font-weight: 700; color: var(--muted); margin-bottom: 0.5rem; text-transform: uppercase; letter-spacing: 0.05em;">3-Hour Shift Offers</div>
                                 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
-                                    <button type="button" class="calc-pick calc-pick--gate" id="gate-3h-2p" onclick="setGateType('3h-2p')" aria-pressed="true" style="padding: 0.85rem 1rem; font-size: 0.85rem;">Team of 2 · $15k/block</button>
-                                    <button type="button" class="calc-pick calc-pick--gate" id="gate-3h-3p" onclick="setGateType('3h-3p')" aria-pressed="false" style="padding: 0.85rem 1rem; font-size: 0.85rem;">Team of 3 · $21k/block</button>
+                                    <button type="button" class="calc-pick calc-pick--gate" id="gate-3h-2p" onclick="setGateType('3h-2p')" aria-pressed="true" style="padding: 0.85rem 1rem; font-size: 0.85rem; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px; min-height: 72px;">
+                                        <div style="font-weight: 800;">Team of 2 · $15k/block</div>
+                                        <div style="font-size: 0.7rem; color: var(--muted); font-weight: 600;">Best for &lt; 500 guests</div>
+                                    </button>
+                                    <button type="button" class="calc-pick calc-pick--gate" id="gate-3h-3p" onclick="setGateType('3h-3p')" aria-pressed="false" style="padding: 0.85rem 1rem; font-size: 0.85rem; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px; min-height: 72px;">
+                                        <div style="font-weight: 800;">Team of 3 · $21k/block</div>
+                                        <div style="font-size: 0.7rem; color: var(--muted); font-weight: 600;">Recommended for 500+ guests</div>
+                                    </button>
                                 </div>
                             </div>
                             <div>
                                 <div style="font-size: 0.75rem; font-weight: 700; color: var(--muted); margin-bottom: 0.5rem; text-transform: uppercase; letter-spacing: 0.05em;">6-Hour Shift Offer</div>
                                 <div>
-                                    <button type="button" class="calc-pick calc-pick--gate" id="gate-6h" onclick="setGateType('6h')" aria-pressed="false" style="width: 100%; padding: 0.85rem 1rem; font-size: 0.85rem;">Team of 3 · $35k/block</button>
+                                    <button type="button" class="calc-pick calc-pick--gate" id="gate-6h" onclick="setGateType('6h')" aria-pressed="false" style="width: 100%; padding: 0.85rem 1rem; font-size: 0.85rem; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px; min-height: 72px;">
+                                        <div style="font-weight: 800;">Team of 3 · $35k/block</div>
+                                        <div style="font-size: 0.7rem; color: var(--muted); font-weight: 600;">Recommended for festivals & long runs</div>
+                                    </button>
                                 </div>
                             </div>
                         </div>
@@ -1364,7 +1375,7 @@
                             <td class="price-table__rate">$40,000</td>
                             <td class="price-table__note">Discount management (online), white-glove setup, digital programme, unlimited seasonal events.</td>
                         </tr>
-                        <tr class="price-table__group"><td colspan="3">3-Hour Admission & Scanning (Add-ons)</td></tr>
+                        <tr class="price-table__group"><td colspan="3" id="price-3h">3-Hour Admission & Scanning (Add-ons)</td></tr>
                         <tr>
                             <td>Volunteer Coordination</td>
                             <td class="price-table__rate">$8,000 / event</td>
@@ -1390,7 +1401,7 @@
                             <td class="price-table__rate">$56,000</td>
                             <td class="price-table__note">Saves $7,000 vs. three separate blocks.</td>
                         </tr>
-                        <tr class="price-table__group"><td colspan="3">6-Hour Admission & Scanning (Add-ons)</td></tr>
+                        <tr class="price-table__group"><td colspan="3" id="price-6h">6-Hour Admission & Scanning (Add-ons)</td></tr>
                         <tr>
                             <td>Scanning Crew (Team of 3)</td>
                             <td class="price-table__rate">$35,000 / block</td>
@@ -1401,7 +1412,7 @@
                             <td class="price-table__rate">$80,000</td>
                             <td class="price-table__note">Saves $25,000 vs. three separate blocks.</td>
                         </tr>
-                        <tr class="price-table__group"><td colspan="3">Discounts (Scanning Only)</td></tr>
+                        <tr class="price-table__group"><td colspan="3" id="price-discounts">Discounts (Scanning Only)</td></tr>
                         <tr>
                             <td>Seasonal scanning discount</td>
                             <td class="price-table__rate">5% off</td>
@@ -2047,11 +2058,98 @@ I would like to discuss a formal invoice for this configuration.`;
             });
         }
 
+        function setupAnchorCopying() {
+            var targets = [
+                { id: 'ballparks', label: 'Ballpark Packages' },
+                { id: 'calculator', label: 'Quote Builder' },
+                { id: 'price-breakdown', label: 'Rate Details' },
+                { id: 'price-3h', label: '3-Hour Admission Rates' },
+                { id: 'price-6h', label: '6-Hour Admission Rates' },
+                { id: 'price-discounts', label: 'Scanning Volume Discounts' },
+                { id: 'gate-sales', label: 'Box Office & Door Sales' },
+                { id: 'price-physical', label: 'Physical Ticket Rates' },
+                { id: 'price-finance', label: 'Finance & Payout Rates' },
+                { id: 'scenarios', label: 'Typical Scenarios' }
+            ];
+
+            targets.forEach(function (item) {
+                var el = document.getElementById(item.id);
+                if (!el) return;
+
+                var header = el;
+                if (el.tagName === 'SECTION') {
+                    header = el.querySelector('h2') || el.querySelector('h1');
+                } else if (el.tagName === 'TR') {
+                    header = el.querySelector('td') || el;
+                } else if (el.tagName === 'DETAILS') {
+                    header = el.querySelector('.price-breakdown__title') || el;
+                }
+
+                if (!header) return;
+
+                header.style.position = 'relative';
+                
+                var btn = document.createElement('button');
+                btn.type = 'button';
+                btn.className = 'copy-anchor-btn';
+                btn.title = 'Copy link to this section';
+                btn.innerHTML = '<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: middle;"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>';
+                
+                btn.style.marginLeft = '8px';
+                btn.style.opacity = '0.3';
+                btn.style.transition = 'opacity 0.2s, color 0.2s';
+                btn.style.background = 'none';
+                btn.style.border = 'none';
+                btn.style.cursor = 'pointer';
+                btn.style.padding = '2px';
+                btn.style.verticalAlign = 'middle';
+                btn.style.color = 'inherit';
+
+                header.appendChild(btn);
+
+                header.addEventListener('mouseenter', function () { btn.style.opacity = '1'; });
+                header.addEventListener('mouseleave', function () { btn.style.opacity = '0.3'; });
+                btn.addEventListener('mouseenter', function () { btn.style.color = 'var(--gold)'; });
+                btn.addEventListener('mouseleave', function () { btn.style.color = 'inherit'; });
+
+                btn.addEventListener('click', function (e) {
+                    e.stopPropagation();
+                    var link = window.location.origin + window.location.pathname + '#' + item.id;
+                    
+                    if (navigator.clipboard && navigator.clipboard.writeText) {
+                        navigator.clipboard.writeText(link).then(function () {
+                            showPackagesToast('Link to ' + item.label + ' copied to clipboard!');
+                        }).catch(function () {
+                            fallbackCopy(link, item.label);
+                        });
+                    } else {
+                        fallbackCopy(link, item.label);
+                    }
+                });
+            });
+
+            function fallbackCopy(link, label) {
+                var textarea = document.createElement('textarea');
+                textarea.value = link;
+                textarea.style.position = 'fixed';
+                document.body.appendChild(textarea);
+                textarea.select();
+                try {
+                    document.execCommand('copy');
+                    showPackagesToast('Link to ' + label + ' copied!');
+                } catch (err) {
+                    showPackagesToast('Failed to copy link.');
+                }
+                document.body.removeChild(textarea);
+            }
+        }
+
         // Init
         renderScenarioList();
         syncPriceBreakdownFromHash();
         loadFromURL();
         initMobileStickyTotal();
+        setupAnchorCopying();
     </script>
 </body>
 </html>
