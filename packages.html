@@ -1357,7 +1357,7 @@
             </div>
         </section>
 
-        <p class="calculator-after-note">Configured your quote above? <a href="#price-breakdown">Open the rate table</a> for reference, or jump to <a href="#scenarios">typical scenarios</a>.</p>
+        <p class="calculator-after-note">Configured your quote above? <a href="#price-breakdown" onclick="openPriceBreakdown(); return false;">Open the rate table</a> for reference, or jump to <a href="#scenarios" onclick="openScenarios(); return false;">typical scenarios</a>.</p>
 
         <details id="price-breakdown" class="price-breakdown">
             <summary class="price-breakdown__summary">
@@ -1484,14 +1484,15 @@
         </details>
 
     <!-- SCENARIOS -->
-    <section id="scenarios" style="max-width: 1000px; margin: 0 auto 6rem; padding: 0 24px; scroll-margin-top: 88px;">
-        <div style="text-align: center; margin-bottom: 2.5rem;">
-            <h2 style="font-size: 2.5rem; margin-bottom: 1rem; text-wrap: balance;">Typical configurations</h2>
-            <p style="color: var(--muted); font-size: 1.05rem; max-width: 640px; margin: 0 auto; line-height: 1.6;">Example upfront totals from the quote builder. Load any row to pre-fill sliders; adjust from there. Gate Card Sales not included.</p>
+    <details id="scenarios" class="price-breakdown" style="scroll-margin-top: 88px; margin-bottom: 6rem;">
+        <summary class="price-breakdown__summary">
+            <span class="price-breakdown__title">Typical configurations</span>
+            <span class="price-breakdown__hint">Example upfront totals from the quote builder. Click to view typical configurations and load them into the sliders. Gate Card Sales not included.</span>
+        </summary>
+        <div class="price-breakdown__inner" style="padding: 2rem 24px;">
+            <ul class="scenario-list" id="scenario-list" style="margin-top: 0;"></ul>
         </div>
-
-        <ul class="scenario-list" id="scenario-list"></ul>
-    </section>
+    </details>
 
     <!-- FINAL CTA -->
     <section style="text-align: center; padding: 8rem 24px; background: var(--black); color: var(--white); border-radius: 40px 40px 0 0; margin-top: 4rem;">
@@ -1567,7 +1568,7 @@
                 basicGateEvents: 1,
                 nights: 0,
                 gateType: '3h-2p',
-                qr: 500,
+                qr: 0,
                 rfid: 0
             },
             'hands-off-single': {
@@ -1578,18 +1579,18 @@
                 basicGateEvents: 0,
                 nights: 1,
                 gateType: '3h-2p',
-                qr: 500,
+                qr: 0,
                 rfid: 0
             },
             'theatre-run': {
                 title: 'Theatre Run',
                 badge: 'hands-off',
-                blurb: 'Three-show run with the 3-block scanning bundle (Team of 2) and 500 QR tickets.',
+                blurb: 'Three-show run with the 3-block scanning bundle (Team of 2).',
                 platform: 'professional',
                 basicGateEvents: 0,
                 nights: 3,
                 gateType: '3h-2p',
-                qr: 500,
+                qr: 0,
                 rfid: 0
             },
             'full-production': {
@@ -2132,9 +2133,14 @@ I would like to discuss a formal invoice for this configuration.`;
 
         function syncPriceBreakdownFromHash() {
             var hash = window.location.hash.slice(1);
-            if (PRICE_BREAKDOWN_ANCHORS.indexOf(hash) === -1) return;
-            var el = document.getElementById('price-breakdown');
-            if (el) el.open = true;
+            if (PRICE_BREAKDOWN_ANCHORS.indexOf(hash) !== -1) {
+                var el = document.getElementById('price-breakdown');
+                if (el) el.open = true;
+            }
+            if (hash === 'scenarios') {
+                var el = document.getElementById('scenarios');
+                if (el) el.open = true;
+            }
         }
 
         window.addEventListener('hashchange', syncPriceBreakdownFromHash);
@@ -2145,6 +2151,15 @@ I would like to discuss a formal invoice for this configuration.`;
                 el.open = true;
                 el.scrollIntoView({ behavior: 'smooth' });
                 window.location.hash = 'price-breakdown';
+            }
+        }
+
+        function openScenarios() {
+            var el = document.getElementById('scenarios');
+            if (el) {
+                el.open = true;
+                el.scrollIntoView({ behavior: 'smooth' });
+                window.location.hash = 'scenarios';
             }
         }
 
