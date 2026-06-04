@@ -1585,7 +1585,7 @@
             'theatre-run': {
                 title: 'Theatre Run',
                 badge: 'hands-off',
-                blurb: 'Three-show run with the 3-block scanning bundle (Team of 2).',
+                blurb: 'Three-show run with the 3-block scanning bundle (Team of 2) – benefiting from package bundle pricing.',
                 platform: 'professional',
                 basicGateEvents: 0,
                 nights: 3,
@@ -1596,7 +1596,7 @@
             'full-production': {
                 title: 'Full Production',
                 badge: 'hands-off',
-                blurb: '6-hour scanning bundle (Team of 3) plus 500 RFID tickets for high-capacity entry.',
+                blurb: '6-hour scanning bundle (Team of 3) plus 500 RFID tickets for high-capacity entry – benefiting from package bundle pricing.',
                 platform: 'professional',
                 basicGateEvents: 0,
                 nights: 3,
@@ -1685,13 +1685,13 @@
                 if (cfg.nights === 3) {
                     if (cfg.gateType === '3h-2p') {
                         gatePrice = 40000;
-                        rateDesc = '3-block 3h bundle';
+                        rateDesc = '3-block 3h bundle - saves $5,000';
                     } else if (cfg.gateType === '3h-3p') {
                         gatePrice = 56000;
-                        rateDesc = '3-block 3h bundle';
+                        rateDesc = '3-block 3h bundle - saves $7,000';
                     } else {
                         gatePrice = 80000;
-                        rateDesc = '3-block 6h bundle';
+                        rateDesc = '3-block 6h bundle - saves $25,000';
                     }
                 } else {
                     var blockRate = cfg.gateType === '3h-2p' ? 15000 : (cfg.gateType === '3h-3p' ? 21000 : 35000);
