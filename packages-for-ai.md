@@ -47,7 +47,7 @@ Priced by **support blocks** (scheduled on-site scanning coverage), not calendar
 **Separate from Scanning Crew blocks.** For organizers who sell tickets on site, not only scan them.
 
 Hardware rental fees (added to upfront total):
-*   **Gate Card Reader**: **$10,000 per day** (physical tap/swipe/chip hardware + POS app)
+*   **Gate Card Reader**: **$10,000 per day** (physical tap/swipe/chip hardware + POS app, required for selling tickets directly to debit and credit card holders at the gate)
 *   **Bluetooth Check-in Scanners**: **$2,500 per scanner per day** (up to 2 scanners, for rapid check-in queue processing)
 
 **Card processing at the gate:** **10% processing fee** on the transaction amount when patrons pay by card using QRTick's provided card reader. Quoted separately; calculated on post-event door card sales volume.

@@ -1319,9 +1319,12 @@
                             <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem;">
                                 <!-- Card Reader Option -->
                                 <div style="background: var(--white); padding: 1rem; border-radius: 8px; border: 1px solid var(--rule);">
-                                    <label style="display: flex; align-items: center; gap: 0.5rem; font-weight: 700; font-size: 0.85rem; color: var(--black); margin-bottom: 0.75rem; cursor: pointer;">
+                                    <label style="display: flex; align-items: center; gap: 0.5rem; font-weight: 700; font-size: 0.85rem; color: var(--black); margin-bottom: 0.5rem; cursor: pointer;">
                                         <input type="checkbox" id="card-reader-opt" onchange="calculate()" style="accent-color: var(--gold); width: 16px; height: 16px;"> Gate Card Reader ($10k/day)
                                     </label>
+                                    <div style="font-size: 0.75rem; color: var(--muted); margin-bottom: 0.75rem; line-height: 1.35;">
+                                        Required for selling tickets directly to debit and credit card holders at the door.
+                                    </div>
                                     <div id="card-reader-days-container" style="display: none;">
                                         <div style="font-size: 0.75rem; margin-bottom: 6px; color: var(--muted); display: flex; justify-content: space-between;">
                                             <span>Rental Days:</span> <strong id="card-reader-days-val" style="color: var(--black);">1</strong>
@@ -1488,7 +1491,7 @@
                         <tr id="gate-sales">
                             <td>Gate Card Reader</td>
                             <td class="price-table__rate">$10,000 / day</td>
-                            <td class="price-table__note">Physical tap/swipe/chip hardware + POS app. (Requires 10% card processing fee on gate transaction volume, quoted separately).</td>
+                            <td class="price-table__note">Required for selling tickets directly to debit and credit card holders at the door. Includes physical tap/swipe/chip hardware + POS app. (Requires 10% card processing fee on gate transaction volume, quoted separately).</td>
                         </tr>
                         <tr>
                             <td>Bluetooth Check-in Scanners</td>
@@ -2309,7 +2312,7 @@ I have built a custom quote on your website:
 - Volunteer Coordination: ${config.basicGateEvents > 0 ? config.basicGateEvents + ' event(s) × $8,000 = $' + basicGatePrice.toLocaleString() + ' (3h guidance each)' : 'None'}
 - Scanning Crew: ${config.nights > 0 ? gateExperienceSummary(config.nights, config.gateType) + ': $' + gatePrice.toLocaleString() : 'None'}
 - Gate Card Sales: ${config.gateSales ? 'Enabled (10% processing fee on door card volume)' : 'No'}
-  * Card Reader Rental: ${config.cardReader ? config.cardReaderDays + ' day(s) × $10,000 = $' + cardReaderCost.toLocaleString() : 'None'}
+  * Card Reader Rental (Debit/Credit Door Sales): ${config.cardReader ? config.cardReaderDays + ' day(s) × $10,000 = $' + cardReaderCost.toLocaleString() : 'None'}
   * Bluetooth Scanner Rental: ${config.bluetoothScannersOpt ? config.bluetoothQty + ' scanner(s) × ' + config.bluetoothDays + ' day(s) × $2,500 = $' + bluetoothScannerCost.toLocaleString() : 'None'}
 - Physical Tickets: ${config.qr} QR, ${config.rfid} RFID
 - Estimated upfront total: $${total.toLocaleString()} (excludes 10% gate card sales transaction processing fees)
@@ -2619,7 +2622,7 @@ I would like to discuss a formal invoice for this configuration.`;
                 let cardReaderCost = config.cardReader ? config.cardReaderDays * 10000 : 0;
                 let bluetoothScannerCost = config.bluetoothScannersOpt ? config.bluetoothQty * config.bluetoothDays * 2500 : 0;
                 if (config.cardReader) {
-                    hardwareParts.push(`Card Reader Rental (${config.cardReaderDays} day(s) = $${cardReaderCost.toLocaleString()})`);
+                    hardwareParts.push(`Card Reader Rental (Debit/Credit Sales) (${config.cardReaderDays} day(s) = $${cardReaderCost.toLocaleString()})`);
                 }
                 if (config.bluetoothScannersOpt) {
                     hardwareParts.push(`Bluetooth Scanner Rental (${config.bluetoothQty} scanner(s) for ${config.bluetoothDays} day(s) = $${bluetoothScannerCost.toLocaleString()})`);
