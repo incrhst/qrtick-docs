@@ -1597,6 +1597,7 @@
             </div>
         </div>
         <a id="mobile-drawer-email-link" href="#" style="display: block; text-align: center; padding: 1.2rem; background: var(--gold); color: var(--black); text-decoration: none; border-radius: 12px; font-weight: 800; transition: transform 0.2s;">Submit Selection to QRTick</a>
+        <button type="button" id="mobile-share-quote-btn" onclick="copyQuoteLink()" style="display: block; width: 100%; text-align: center; padding: 1.2rem; background: transparent; color: var(--gold); border: 2px solid var(--gold); border-radius: 12px; font-weight: 800; transition: background 0.2s, color 0.2s, transform 0.2s; cursor: pointer; margin-top: 1rem; font-family: inherit; font-size: 0.95rem;">Share Quote (Copy Link)</button>
     </div>
 
     <script>
@@ -1628,32 +1629,7 @@
             }
         }
 
-        async function copyQuoteLink() {
-            try {
-                var url = window.location.href;
-                await navigator.clipboard.writeText(url);
-                
-                var btn = document.getElementById('share-quote-btn');
-                if (btn) {
-                    var origText = btn.textContent;
-                    var origBorder = btn.style.borderColor;
-                    var origColor = btn.style.color;
-                    
-                    btn.textContent = 'Link Copied! ✓';
-                    btn.style.borderColor = '#81c784';
-                    btn.style.color = '#81c784';
-                    
-                    setTimeout(function() {
-                        btn.textContent = origText;
-                        btn.style.borderColor = origBorder || 'var(--gold)';
-                        btn.style.color = origColor || 'var(--gold)';
-                    }, 2000);
-                }
-                showPackagesToast('Quote link copied to clipboard!');
-            } catch (e) {
-                showPackagesToast('Failed to copy link. Please copy the URL from your address bar.');
-            }
-        }
+
 
         async function copyPackagesMarkdownForAI() {
             try {
@@ -2609,6 +2585,139 @@ I would like to discuss a formal invoice for this configuration.`;
                     showPackagesToast('Failed to copy link.');
                 }
                 document.body.removeChild(textarea);
+            }
+        }
+
+        function getQuoteSummaryText() {
+            let platformName = config.platform === 'essentials' ? 'Essentials Platform ($10,000)' : 
+                               (config.platform === 'none' ? 'Platform (Already Subscribed, $0)' : 'Professional Platform ($40,000)');
+            
+            let parts = [];
+            parts.push(`- Platform: ${platformName}`);
+            
+            if (config.basicGateEvents > 0) {
+                let basicPrice = config.basicGateEvents * 8000;
+                parts.push(`- Volunteer Coordination: ${config.basicGateEvents} event(s) ($${basicPrice.toLocaleString()})`);
+            }
+            
+            if (config.nights > 0) {
+                let gatePrice = 0;
+                if (config.nights === 3) {
+                    if (config.gateType === '3h-2p') gatePrice = 40000;
+                    else if (config.gateType === '3h-3p') gatePrice = 56000;
+                    else gatePrice = 80000;
+                } else {
+                    let blockRate = config.gateType === '3h-2p' ? 15000 : (config.gateType === '3h-3p' ? 21000 : 35000);
+                    gatePrice = config.nights * blockRate;
+                    if (config.nights >= 4) gatePrice = gatePrice * 0.95;
+                }
+                parts.push(`- Scanning Crew: ${gateExperienceSummary(config.nights, config.gateType)} ($${gatePrice.toLocaleString()})`);
+            }
+            
+            if (config.gateSales) {
+                let hardwareParts = [];
+                let cardReaderCost = config.cardReader ? config.cardReaderDays * 10000 : 0;
+                let bluetoothScannerCost = config.bluetoothScannersOpt ? config.bluetoothQty * config.bluetoothDays * 2500 : 0;
+                if (config.cardReader) {
+                    hardwareParts.push(`Card Reader Rental (${config.cardReaderDays} day(s) = $${cardReaderCost.toLocaleString()})`);
+                }
+                if (config.bluetoothScannersOpt) {
+                    hardwareParts.push(`Bluetooth Scanner Rental (${config.bluetoothQty} scanner(s) for ${config.bluetoothDays} day(s) = $${bluetoothScannerCost.toLocaleString()})`);
+                }
+                let hardwareDesc = hardwareParts.length > 0 ? hardwareParts.join(', ') : 'No hardware selected';
+                parts.push(`- Gate Card Sales: Enabled (${hardwareDesc}) [10% processing fee applies on door card volume]`);
+            }
+            
+            let ticketPrice = (config.qr * 55) + (config.rfid * 140);
+            if (config.qr > 0 || config.rfid > 0) {
+                let ticketParts = [];
+                if (config.qr > 0) ticketParts.push(`${config.qr} QR`);
+                if (config.rfid > 0) ticketParts.push(`${config.rfid} RFID`);
+                parts.push(`- Physical Tickets: ${ticketParts.join(', ')} ($${ticketPrice.toLocaleString()})`);
+                
+                let setupFee = (config.qr > 0 || config.rfid > 0) ? 10000 : 0;
+                if (config.platform === 'professional' && config.nights >= 3) setupFee = 0;
+                if (setupFee > 0) {
+                    parts.push(`- Ticket Setup Fee: $${setupFee.toLocaleString()}`);
+                }
+            }
+            
+            let total = estimateTotal(config);
+            let summary = `Here is my QRTick Custom Pricing Quote:\n` + parts.join('\n') + `\n- Estimated Upfront Total: $${total.toLocaleString()}\n\n(Note: This estimate is for events with 300 or less patrons. Higher patron counts require a custom quote.)`;
+            return summary;
+        }
+
+        async function copyQuoteLink() {
+            var summaryText = getQuoteSummaryText();
+            var url = window.location.href;
+            var fullShareText = summaryText + '\n\nView or edit this quote here: ' + url;
+
+            function showFeedback() {
+                var btnIds = ['share-quote-btn', 'mobile-share-quote-btn'];
+                btnIds.forEach(function(id) {
+                    var btn = document.getElementById(id);
+                    if (btn) {
+                        var origText = btn.textContent;
+                        var origBorder = btn.style.borderColor;
+                        var origColor = btn.style.color;
+                        
+                        btn.textContent = 'Quote Copied! ✓';
+                        btn.style.borderColor = '#81c784';
+                        btn.style.color = '#81c784';
+                        
+                        setTimeout(function() {
+                            btn.textContent = origText;
+                            btn.style.borderColor = origBorder || 'var(--gold)';
+                            btn.style.color = origColor || 'var(--gold)';
+                        }, 2000);
+                    }
+                });
+                showPackagesToast('Quote summary & link copied to clipboard!');
+            }
+
+            function fallbackCopy(val) {
+                var textarea = document.createElement('textarea');
+                textarea.value = val;
+                textarea.style.position = 'fixed';
+                document.body.appendChild(textarea);
+                textarea.select();
+                try {
+                    document.execCommand('copy');
+                    showFeedback();
+                } catch (err) {
+                    showPackagesToast('Failed to copy. Please copy the URL from your address bar.');
+                }
+                document.body.removeChild(textarea);
+            }
+
+            // Try Web Share API first
+            if (navigator.share) {
+                try {
+                    await navigator.share({
+                        title: 'QRTick Custom Pricing Quote',
+                        text: summaryText,
+                        url: url
+                    });
+                    showPackagesToast('Quote shared successfully!');
+                    return;
+                } catch (err) {
+                    if (err.name === 'AbortError') {
+                        return; // User cancelled, do nothing
+                    }
+                    // Fall back to copy
+                }
+            }
+
+            // Fallback to Clipboard Copy
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+                try {
+                    await navigator.clipboard.writeText(fullShareText);
+                    showFeedback();
+                } catch (e) {
+                    fallbackCopy(fullShareText);
+                }
+            } else {
+                fallbackCopy(fullShareText);
             }
         }
 
