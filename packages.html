@@ -1298,13 +1298,13 @@
                     </div>
 
                     <div id="gate-sales-calculator" style="padding: 1.5rem; background: #f8f8f8; border-radius: 12px; border: 1px solid var(--rule);">
-                        <label style="display: block; font-weight: 800; margin-bottom: 0.5rem; text-transform: uppercase; font-size: 0.75rem; letter-spacing: 0.1em;">3. Box Office & Door Sales (optional)</label>
-                        <p style="font-size: 0.85rem; color: var(--muted); line-height: 1.55; margin-bottom: 1rem;">Sell tickets at the door with full sales tracking, on-site POS, and card machine support. Priced separately from scanning. Add only if you need door sales, not just entry validation.</p>
+                        <label style="display: block; font-weight: 800; margin-bottom: 0.5rem; text-transform: uppercase; font-size: 0.75rem; letter-spacing: 0.1em;">3. Box Office & Card Reader (optional)</label>
+                        <p style="font-size: 0.85rem; color: var(--muted); line-height: 1.55; margin-bottom: 1rem;">Accept card payments and track sales at the gate. We provide physical card reader machines (swipe/tap/chip) and a door sales POS app. No upfront rental fee for the hardware.</p>
                         <label style="display: flex; align-items: flex-start; gap: 0.75rem; cursor: pointer; font-size: 0.9rem; font-weight: 600; color: var(--black);">
                             <input type="checkbox" id="gate-sales" onchange="calculate()" style="width: 18px; height: 18px; margin-top: 2px; accent-color: var(--gold);">
-                            <span>Include Box Office & Door Sales in my quote request</span>
+                            <span>Include Box Office & Card Reader in my quote request</span>
                         </label>
-                        <p style="font-size: 0.8rem; color: var(--muted); margin-top: 0.75rem; margin-bottom: 0;">Card payments at the gate via our card machine: <strong>10% processing fee</strong> on the transaction amount (quoted separately from scanning blocks).</p>
+                        <p style="font-size: 0.8rem; color: var(--muted); margin-top: 0.75rem; margin-bottom: 0;">Card payments at the gate via our card reader: <strong>10% card processing fee</strong> on door card transaction volume (quoted separately; no upfront rental fee).</p>
                     </div>
 
                     <div>
@@ -1432,11 +1432,11 @@
                             <td class="price-table__rate">5% off</td>
                             <td class="price-table__note">Applied in quote builder when booking 4+ scanning blocks.</td>
                         </tr>
-                        <tr class="price-table__group"><td colspan="3">Box Office & Door Sales (quoted separately)</td></tr>
+                        <tr class="price-table__group"><td colspan="3">Box Office & Card Reader (quoted separately)</td></tr>
                         <tr id="gate-sales">
-                            <td>Box Office & Door Sales</td>
+                            <td>Box Office & Card Reader</td>
                             <td class="price-table__rate">Quoted separately</td>
-                            <td class="price-table__note">POS, door sales tracking, card reader. Not in upfront total. Card payments: 10% fee on processed volume at the gate.</td>
+                            <td class="price-table__note">Physical card reader hardware provided + door POS app. Not in upfront total. Card payments: 10% fee on processed card volume.</td>
                         </tr>
                         <tr class="price-table__group"><td colspan="3" id="price-physical">Physical tickets</td></tr>
                         <tr>
