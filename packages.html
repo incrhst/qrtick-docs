@@ -2203,7 +2203,10 @@
                 }
             }
 
-            document.getElementById('bundle-alert').style.display = bundleApplied ? 'block' : 'none';
+            var bundleAlert = document.getElementById('bundle-alert');
+            if (bundleAlert) {
+                bundleAlert.style.display = bundleApplied ? 'block' : 'none';
+            }
 
             let ticketPrice = (config.qr * 55) + (config.rfid * 140);
             let setupFee = (config.qr > 0 || config.rfid > 0) ? 10000 : 0;
