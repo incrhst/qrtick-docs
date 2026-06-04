@@ -620,13 +620,17 @@
 
         .gate-path-card--yours {
             background: #fff;
-            border-color: var(--gold);
+            border-color: var(--rule);
+            border-width: 1px;
+            transition: background 0.2s, border-color 0.2s, border-width 0.2s;
         }
 
         .gate-path-card--hands-off {
-            background: var(--black);
-            color: var(--white);
-            border-color: var(--black);
+            background: #fff;
+            color: var(--black);
+            border-color: var(--rule);
+            border-width: 1px;
+            transition: background 0.2s, color 0.2s, border-color 0.2s, border-width 0.2s;
         }
 
         .gate-path-card h4 {
@@ -634,23 +638,15 @@
             font-size: 0.95rem;
             font-weight: 800;
             margin-bottom: 0.5rem;
-        }
-
-        .gate-path-card--hands-off h4 {
-            color: var(--gold);
+            color: var(--black);
+            transition: color 0.2s;
         }
 
         .gate-path-card p {
             font-size: 0.85rem;
             margin: 0;
-        }
-
-        .gate-path-card--yours p {
             color: var(--mid);
-        }
-
-        .gate-path-card--hands-off p {
-            color: #c8c0b8;
+            transition: color 0.2s;
         }
 
         .price-breakdown {
@@ -1226,12 +1222,12 @@
                         <p style="font-size: 0.85rem; color: var(--muted); line-height: 1.55; margin-bottom: 1rem;">Not included on <strong>Essentials</strong>. Choose how you manage entry. <a href="#gate-sales" style="color: var(--gold); font-weight: 600;">Box Office & Door Sales</a> (selling tickets) is separate from both.</p>
                         <div class="gate-path-grid">
                             <div class="gate-path-card gate-path-card--yours" role="button" tabindex="0" onclick="setVolunteerGatePath()" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();setVolunteerGatePath();}" style="cursor: pointer;" title="Add Volunteer Coordination to your quote">
-                                <span style="display: inline-block; font-size: 0.65rem; background: #f5f5f5; color: #666; padding: 2px 8px; border-radius: 4px; font-weight: 700; margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.05em; border: 1px solid #ddd;">Best for Volunteer-rich Teams</span>
+                                <span class="path-badge" style="display: inline-block; font-size: 0.65rem; background: #f5f5f5; color: #666; padding: 2px 8px; border-radius: 4px; font-weight: 700; margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.05em; border: 1px solid #ddd; transition: all 0.2s;">Best for Volunteer-rich Teams</span>
                                 <h4>You have your own team → Volunteer Coordination</h4>
                                 <p>Tap to add <strong>Volunteer Coordination</strong> to your quote: one QRTick expert per event ($8,000 × 3 hours) to guide your crew. Your volunteers scan; QRTick guides.</p>
                             </div>
                             <div class="gate-path-card gate-path-card--hands-off" role="button" tabindex="0" onclick="setHandsOffGatePath()" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();setHandsOffGatePath();}" style="cursor: pointer;" title="Add Full-Service Scanning Crew to your quote">
-                                <span style="display: inline-block; font-size: 0.65rem; background: rgba(253, 194, 48, 0.15); color: var(--gold); padding: 2px 8px; border-radius: 4px; font-weight: 800; margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.05em; border: 1px solid var(--gold);">★ Recommended for Seamless Entry</span>
+                                <span class="path-badge" style="display: inline-block; font-size: 0.65rem; background: #f5f5f5; color: #666; padding: 2px 8px; border-radius: 4px; font-weight: 700; margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.05em; border: 1px solid #ddd; transition: all 0.2s;">Recommended for Seamless Entry</span>
                                 <h4>You want to hand it off → Scanning Crew</h4>
                                 <p>Tap to add a <strong>Full-Service Scanning Crew</strong> to your quote. QRTick manages entrance scanning so you don't have to.</p>
                             </div>
@@ -1248,7 +1244,10 @@
                                     </div>
                                 </div>
                                 <div style="text-align: right; min-width: 120px;">
-                                    <div style="font-size: 0.75rem; color: var(--muted); margin-bottom: 4px;"><span id="basic-gate-display">0</span> event(s)</div>
+                                    <div style="font-size: 0.75rem; color: var(--muted); margin-bottom: 4px; display: flex; justify-content: flex-end; align-items: center; gap: 8px;">
+                                        <span><span id="basic-gate-display">0</span> event(s)</span>
+                                        <button type="button" onclick="removeVolunteerCoordination()" id="btn-remove-volunteer" style="display: none; background: none; border: none; padding: 0; color: #c62828; font-weight: 700; cursor: pointer; text-decoration: underline; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.03em;">Remove</button>
+                                    </div>
                                     <div id="basic-gate-subtotal" style="font-size: 1.75rem; font-weight: 800; color: var(--black);">$0</div>
                                     <div style="font-size: 0.8rem; color: var(--muted);">$8,000 per event · 3h</div>
                                 </div>
@@ -1257,15 +1256,18 @@
                         <div style="font-size: 0.75rem; font-weight: 900; text-transform: uppercase; letter-spacing: 0.08em; color: var(--mid); margin-bottom: 0.75rem;">Full-Service Scanning Crew · hands-off entry</div>
                         <p style="font-size: 0.85rem; color: var(--muted); line-height: 1.55; margin-bottom: 1.25rem;">For organizers who want QRTick to <strong>own entry scanning at the door</strong>: manned scanning and validation, priced by support blocks (up to 3 or 6 hours each). Each block represents a single, continuous shift (no split shifts/breaks). Two performances on the same day require separate blocks unless they can be covered in one continuous shift.</p>
                         <div style="display: flex; align-items: center; gap: 2rem; margin-bottom: 1.5rem;">
-                            <div style="flex-grow: 1;">
-                                <div style="font-size: 0.85rem; margin-bottom: 0.5rem; font-weight: 600;">Number of support blocks</div>
-                                <input type="range" min="0" max="12" value="0" id="gate-nights" oninput="calculate()" style="width: 100%; accent-color: var(--gold);">
-                                <div style="display: flex; justify-content: space-between; font-size: 0.7rem; color: var(--muted); margin-top: 4px;">
-                                    <span>0</span><span>3</span><span>6</span><span>9</span><span>12</span>
+                                <div style="flex-grow: 1;">
+                                    <div style="font-size: 0.85rem; margin-bottom: 0.5rem; font-weight: 600;">Number of support blocks</div>
+                                    <input type="range" min="0" max="12" value="0" id="gate-nights" oninput="calculate()" style="width: 100%; accent-color: var(--gold);">
+                                    <div style="display: flex; justify-content: space-between; font-size: 0.7rem; color: var(--muted); margin-top: 4px;">
+                                        <span>0</span><span>3</span><span>6</span><span>9</span><span>12</span>
+                                    </div>
+                                </div>
+                                <div style="display: flex; flex-direction: column; align-items: center; gap: 4px;">
+                                    <div id="gate-blocks-display" style="font-size: 2rem; font-weight: 800; width: 60px; text-align: center; line-height: 1;">0</div>
+                                    <button type="button" onclick="removeScanningCrew()" id="btn-remove-scanning" style="display: none; background: none; border: none; padding: 0; color: #c62828; font-weight: 700; cursor: pointer; text-decoration: underline; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.03em;">Remove</button>
                                 </div>
                             </div>
-                            <div id="gate-blocks-display" style="font-size: 2rem; font-weight: 800; width: 60px; text-align: center;">0</div>
-                        </div>
                         <div style="display: flex; flex-direction: column; gap: 1rem;">
                             <div>
                                 <div style="font-size: 0.75rem; font-weight: 700; color: var(--muted); margin-bottom: 0.5rem; text-transform: uppercase; letter-spacing: 0.05em;">3-Hour Shift Offers</div>
@@ -1309,11 +1311,17 @@
                         <label style="display: block; font-weight: 800; margin-bottom: 1rem; text-transform: uppercase; font-size: 0.75rem; letter-spacing: 0.1em;">4. Physical Tickets</label>
                         <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;">
                             <div>
-                                <div style="font-size: 0.85rem; margin-bottom: 0.5rem; font-weight: 600;">QR Tickets ($55)</div>
+                                <div style="font-size: 0.85rem; margin-bottom: 0.5rem; font-weight: 600; display: flex; justify-content: space-between; align-items: center;">
+                                    <span>QR Tickets ($55)</span>
+                                    <button type="button" onclick="clearQRTickets()" id="btn-clear-qr" style="display: none; background: none; border: none; padding: 0; color: #c62828; font-weight: 700; cursor: pointer; text-decoration: underline; font-size: 0.7rem; text-transform: uppercase;">Clear</button>
+                                </div>
                                 <input type="number" id="qr-count" value="0" step="100" min="0" oninput="calculate()" style="width: 100%; padding: 12px; border: 1px solid var(--rule); border-radius: 8px;">
                             </div>
                             <div>
-                                <div style="font-size: 0.85rem; margin-bottom: 0.5rem; font-weight: 600;">RFID Tickets ($140)</div>
+                                <div style="font-size: 0.85rem; margin-bottom: 0.5rem; font-weight: 600; display: flex; justify-content: space-between; align-items: center;">
+                                    <span>RFID Tickets ($140)</span>
+                                    <button type="button" onclick="clearRFIDTickets()" id="btn-clear-rfid" style="display: none; background: none; border: none; padding: 0; color: #c62828; font-weight: 700; cursor: pointer; text-decoration: underline; font-size: 0.7rem; text-transform: uppercase;">Clear</button>
+                                </div>
                                 <input type="number" id="rfid-count" value="0" step="100" min="0" oninput="calculate()" style="width: 100%; padding: 12px; border: 1px solid var(--rule); border-radius: 8px;">
                             </div>
                         </div>
@@ -1799,16 +1807,100 @@
             return `${blockCount} × ${gateHoursLabel(gateType)} scanning ${blockWord}`;
         }
 
+        function removeVolunteerCoordination() {
+            document.getElementById('basic-gate-events').value = '0';
+            calculate();
+        }
+
+        function removeScanningCrew() {
+            document.getElementById('gate-nights').value = '0';
+            calculate();
+        }
+
+        function clearQRTickets() {
+            document.getElementById('qr-count').value = '0';
+            calculate();
+        }
+
+        function clearRFIDTickets() {
+            document.getElementById('rfid-count').value = '0';
+            calculate();
+        }
+
         function setVolunteerGatePath() {
             var basic = document.getElementById('basic-gate-events');
-            if (parseInt(basic.value, 10) < 1) basic.value = '1';
+            if (parseInt(basic.value, 10) > 0) basic.value = '0';
+            else basic.value = '1';
             calculate();
         }
 
         function setHandsOffGatePath() {
             var blocks = document.getElementById('gate-nights');
-            if (parseInt(blocks.value, 10) < 1) blocks.value = '1';
+            if (parseInt(blocks.value, 10) > 0) blocks.value = '0';
+            else blocks.value = '1';
             calculate();
+        }
+
+        function updateGatePathCards() {
+            var cardYours = document.querySelector('.gate-path-card--yours');
+            var cardHandsOff = document.querySelector('.gate-path-card--hands-off');
+            if (!cardYours || !cardHandsOff) return;
+
+            // Yours / Volunteer Coordination
+            var basicCount = config.basicGateEvents;
+            var badgeYours = cardYours.querySelector('.path-badge');
+            if (basicCount > 0) {
+                cardYours.style.background = 'rgba(212, 175, 55, 0.05)';
+                cardYours.style.borderColor = 'var(--gold)';
+                cardYours.style.borderWidth = '2px';
+                if (badgeYours) {
+                    badgeYours.style.background = 'var(--gold)';
+                    badgeYours.style.color = 'var(--black)';
+                    badgeYours.style.borderColor = 'var(--gold)';
+                    badgeYours.textContent = '✓ Volunteer Coordination Added';
+                }
+            } else {
+                cardYours.style.background = '#fff';
+                cardYours.style.borderColor = 'var(--rule)';
+                cardYours.style.borderWidth = '1px';
+                if (badgeYours) {
+                    badgeYours.style.background = '#f5f5f5';
+                    badgeYours.style.color = '#666';
+                    badgeYours.style.borderColor = '#ddd';
+                    badgeYours.textContent = 'Best for Volunteer-rich Teams';
+                }
+            }
+
+            // Hands-Off / Scanning Crew
+            var nightCount = config.nights;
+            var badgeHandsOff = cardHandsOff.querySelector('.path-badge');
+            if (nightCount > 0) {
+                cardHandsOff.style.background = 'var(--black)';
+                cardHandsOff.style.color = 'var(--white)';
+                cardHandsOff.style.borderColor = 'var(--gold)';
+                cardHandsOff.style.borderWidth = '2px';
+                cardHandsOff.querySelector('h4').style.color = 'var(--gold)';
+                cardHandsOff.querySelector('p').style.color = '#c8c0b8';
+                if (badgeHandsOff) {
+                    badgeHandsOff.style.background = 'var(--gold)';
+                    badgeHandsOff.style.color = 'var(--black)';
+                    badgeHandsOff.style.borderColor = 'var(--gold)';
+                    badgeHandsOff.textContent = '✓ Scanning Crew Added';
+                }
+            } else {
+                cardHandsOff.style.background = '#fff';
+                cardHandsOff.style.color = 'var(--black)';
+                cardHandsOff.style.borderColor = 'var(--rule)';
+                cardHandsOff.style.borderWidth = '1px';
+                cardHandsOff.querySelector('h4').style.color = 'var(--black)';
+                cardHandsOff.querySelector('p').style.color = 'var(--mid)';
+                if (badgeHandsOff) {
+                    badgeHandsOff.style.background = '#f5f5f5';
+                    badgeHandsOff.style.color = '#666';
+                    badgeHandsOff.style.borderColor = '#ddd';
+                    badgeHandsOff.textContent = 'Recommended for Seamless Entry';
+                }
+            }
         }
 
         function calculate() {
@@ -1869,6 +1961,34 @@
             if (mobileTotalVal) {
                 mobileTotalVal.innerText = total.toLocaleString();
             }
+
+            // Toggle Remove/Clear button visibilities
+            var removeVol = document.getElementById('btn-remove-volunteer');
+            if (removeVol) removeVol.style.display = config.basicGateEvents > 0 ? 'inline-block' : 'none';
+
+            var removeScan = document.getElementById('btn-remove-scanning');
+            if (removeScan) removeScan.style.display = config.nights > 0 ? 'inline-block' : 'none';
+
+            var clearQr = document.getElementById('btn-clear-qr');
+            if (clearQr) clearQr.style.display = config.qr > 0 ? 'inline-block' : 'none';
+
+            var clearRfid = document.getElementById('btn-clear-rfid');
+            if (clearRfid) clearRfid.style.display = config.rfid > 0 ? 'inline-block' : 'none';
+
+            // Box Office selection highlight
+            var gateSalesCalc = document.getElementById('gate-sales-calculator');
+            if (gateSalesCalc) {
+                if (config.gateSales) {
+                    gateSalesCalc.style.borderColor = 'var(--gold)';
+                    gateSalesCalc.style.background = 'rgba(212, 175, 55, 0.03)';
+                } else {
+                    gateSalesCalc.style.borderColor = 'var(--rule)';
+                    gateSalesCalc.style.background = '#f8f8f8';
+                }
+            }
+
+            // Path cards selection highlight
+            updateGatePathCards();
             
             let hasGateAddOns = basicGatePrice > 0 || gatePrice > 0 || config.gateSales;
             let lines = `
