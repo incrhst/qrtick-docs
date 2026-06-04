@@ -15,6 +15,7 @@
 ### Platform Choice
 *   **Essentials Platform ($10,000)**: Single event access, self-service tools, digital QR tickets. Organizer handles the door themselves; **zero included admission support** (Volunteer Coordination, Scanning Crew, and Box Office & Door Sales are separate add-ons).
 *   **Professional Platform ($40,000)**: Managed partnership, unlimited seasonal events, white-glove setup, digital programs, early payout access, discount management for **online** sales (not Box Office & Door Sales).
+*   **Already Subscribed ($0)**: For organizers who already have an active subscription or season agreement with QRTick and only need a quote for gate add-ons (staffing, physical tickets, etc.).
 
 ### On-Site Admission & Scanning Support (Add-ons)
 Not included on **Essentials**. Separate from **Box Office & Door Sales** (selling at the door).
@@ -53,7 +54,7 @@ Includes:
 
 Scanning Crew blocks and Box Office & Door Sales are priced **independently**—customers may need scanning only, sales only, or both.
 
-**Quote builder URL parameters:** `p` (e|p platform), `bg` (Volunteer Coordination event count × $8,000), `n` (scanning block count), `gt` (3|6 hour tier), `gs` (1 = Box Office & Door Sales requested), `qr`, `rf`, `name`, `org`.
+**Quote builder URL parameters:** `p` (e|p|n platform where n = already subscribed / $0), `bg` (Volunteer Coordination event count × $8,000), `n` (scanning block count), `gt` (3|6 hour tier), `gs` (1 = Box Office & Door Sales requested), `qr`, `rf`, `name`, `org`.
 
 **Scenario presets (`?scenario=`):** `volunteer-led`, `hands-off-single`, `theatre-run`, `full-production`, `community-season`, `grand-season`. Loads the matching configuration into the quote builder (same math as the scenario list upfront totals). Manual slider changes clear `scenario` from the URL.
 

@@ -1202,15 +1202,21 @@
                 <div style="display: flex; flex-direction: column; gap: 2.5rem;">
                     <div>
                         <label style="display: block; font-weight: 800; margin-bottom: 1rem; text-transform: uppercase; font-size: 0.75rem; letter-spacing: 0.1em;">1. Choose Your Platform</label>
-                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem;">
                             <button type="button" class="calc-pick" id="plat-essentials" onclick="setPlatform('essentials')" aria-pressed="true">
                                 <div style="font-weight: 800; margin-bottom: 4px;">Essentials</div>
                                 <div style="font-size: 0.85rem; color: var(--muted);">$10,000 (Lite)</div>
-                                <div style="font-size: 0.75rem; color: #888; margin-top: 8px; line-height: 1.4;">No admission support included. Volunteer coordination, scanning crew, and door sales are add-ons.</div>
+                                <div style="font-size: 0.75rem; color: #888; margin-top: 8px; line-height: 1.4;">Self-service platform. Ticketing and standard scanning tools. No included admission staff or box office.</div>
                             </button>
                             <button type="button" class="calc-pick" id="plat-professional" onclick="setPlatform('professional')" aria-pressed="false">
                                 <div style="font-weight: 800; margin-bottom: 4px;">Professional</div>
                                 <div style="font-size: 0.85rem; color: var(--muted);">$40,000 (Managed)</div>
+                                <div style="font-size: 0.75rem; color: #888; margin-top: 8px; line-height: 1.4;">Managed platform. White-glove setup, online discount tools, early payouts, and seasonal events.</div>
+                            </button>
+                            <button type="button" class="calc-pick" id="plat-none" onclick="setPlatform('none')" aria-pressed="false">
+                                <div style="font-weight: 800; margin-bottom: 4px;">Already Subscribed</div>
+                                <div style="font-size: 0.85rem; color: var(--muted);">$0 (Add-ons Only)</div>
+                                <div style="font-size: 0.75rem; color: #888; margin-top: 8px; line-height: 1.4;">Skip the platform fee. Create a custom quote for staffing, physical tickets, or other gate add-ons.</div>
                             </button>
                         </div>
                     </div>
@@ -1614,7 +1620,9 @@
         };
 
         function estimateTotal(cfg) {
-            var platformPrice = cfg.platform === 'essentials' ? 10000 : 40000;
+            var platformPrice = 0;
+            if (cfg.platform === 'essentials') platformPrice = 10000;
+            else if (cfg.platform === 'professional') platformPrice = 40000;
             var basicGatePrice = (cfg.basicGateEvents || 0) * 8000;
             var gatePrice = 0;
             var gatePriceBeforeDiscount = 0;
@@ -1768,6 +1776,7 @@
             config.platform = type;
             setCalcPickActive('plat-essentials', type === 'essentials');
             setCalcPickActive('plat-professional', type === 'professional');
+            setCalcPickActive('plat-none', type === 'none');
             calculate();
         }
 
@@ -1814,7 +1823,9 @@
             document.getElementById('gate-blocks-display').innerText = config.nights;
             document.getElementById('basic-gate-display').innerText = config.basicGateEvents;
 
-            let platformPrice = config.platform === 'essentials' ? 10000 : 40000;
+            let platformPrice = 0;
+            if (config.platform === 'essentials') platformPrice = 10000;
+            else if (config.platform === 'professional') platformPrice = 40000;
             let basicGatePrice = config.basicGateEvents * 8000;
             let gatePrice = 0;
             let gatePriceBeforeDiscount = 0;
@@ -1862,7 +1873,7 @@
             let hasGateAddOns = basicGatePrice > 0 || gatePrice > 0 || config.gateSales;
             let lines = `
                 <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
-                    <span>${config.platform === 'essentials' ? 'Essentials' : 'Professional'} Platform</span>
+                    <span>${config.platform === 'essentials' ? 'Essentials Platform' : (config.platform === 'none' ? 'Platform (Already Subscribed)' : 'Professional Platform')}</span>
                     <span>$${platformPrice.toLocaleString()}</span>
                 </div>
                 ${hasGateAddOns ? `<div style="font-size: 0.7rem; font-weight: 800; text-transform: uppercase; color: #888; margin: 12px 0 8px; letter-spacing: 0.06em;">On-site gate (add-ons)</div>` : ''}
@@ -1910,7 +1921,8 @@
             if (config.gateSales) {
                 footnote.innerHTML = 'Upfront total above excludes <span class="quote-footnote--highlight">Box Office & Door Sales</span> (quoted separately) and the 10% card processing fee on door card volume.';
             } else {
-                footnote.textContent = 'Platform, admission & scanning support, physical tickets, and setup fees. Subject to final confirmation.';
+                let text = (config.platform !== 'none' ? 'Platform, ' : '') + 'admission & scanning support, physical tickets, and setup fees. Subject to final confirmation.';
+                footnote.textContent = text.charAt(0).toUpperCase() + text.slice(1);
             }
 
             // Update Email Link
@@ -1923,7 +1935,7 @@ I have built a custom quote on your website:
 
 - Contact: ${config.name || 'Not provided'}
 - Organization: ${config.org || 'Not provided'}
-- Platform: ${config.platform.toUpperCase()}
+- Platform: ${config.platform === 'essentials' ? 'ESSENTIALS' : (config.platform === 'none' ? 'ALREADY SUBSCRIBED (ADD-ONS ONLY)' : 'PROFESSIONAL')}
 - Volunteer Coordination: ${config.basicGateEvents > 0 ? config.basicGateEvents + ' event(s) × $8,000 = $' + basicGatePrice.toLocaleString() + ' (3h guidance each)' : 'None'}
 - Scanning Crew: ${config.nights > 0 ? gateExperienceSummary(config.nights, config.gateType) + ': $' + gatePrice.toLocaleString() : 'None'}
 - Box Office & Door Sales: ${config.gateSales ? 'Requested (quoted separately; POS, sales tracking, card reader; 10% card processing fee on door card volume)' : 'No'}
@@ -1947,7 +1959,7 @@ I would like to discuss a formal invoice for this configuration.`;
             let params = new URLSearchParams();
             if (config.name) params.set('name', config.name);
             if (config.org) params.set('org', config.org);
-            params.set('p', config.platform === 'essentials' ? 'e' : 'p');
+            params.set('p', config.platform === 'essentials' ? 'e' : (config.platform === 'none' ? 'n' : 'p'));
             params.set('n', config.nights);
             if (config.basicGateEvents > 0) params.set('bg', config.basicGateEvents);
             else params.delete('bg');
@@ -1973,7 +1985,12 @@ I would like to discuss a formal invoice for this configuration.`;
 
             if (params.has('name')) config.name = params.get('name');
             if (params.has('org')) config.org = params.get('org');
-            if (params.has('p')) config.platform = params.get('p') === 'e' ? 'essentials' : 'professional';
+            if (params.has('p')) {
+                let p = params.get('p');
+                if (p === 'e') config.platform = 'essentials';
+                else if (p === 'n') config.platform = 'none';
+                else config.platform = 'professional';
+            }
             if (params.has('n')) config.nights = parseInt(params.get('n'), 10) || 0;
             if (params.has('bg')) config.basicGateEvents = parseInt(params.get('bg'), 10) || 0;
             if (params.has('gt')) {
