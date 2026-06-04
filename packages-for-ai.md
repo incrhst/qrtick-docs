@@ -43,16 +43,19 @@ Priced by **support blocks** (scheduled on-site scanning coverage), not calendar
 *   **3-block bundle (6h, Team of 3)**: $80,000 (Saves $25,000 vs. three separate blocks).
 *   **Volume Discount**: 5% off scanning total when booking 4+ blocks in a season.
 
+### Queue Busting & Rapid Check-in (Bluetooth Scanners Add-on)
+High-speed Bluetooth scanners to speed up check-in queues at the gate. Can be paired with Volunteer Coordination or Scanning Crew. Added to upfront total.
+*   **Bluetooth Check-in Scanners**: **$2,500 per scanner per day** (up to 2 scanners)
+
 ### Gate Card Sales (Card Reader & POS) — selling tickets at the gate (Add-on)
 **Separate from Scanning Crew blocks.** For organizers who sell tickets on site, not only scan them.
 
 Hardware rental fees (added to upfront total):
 *   **Gate Card Reader**: **$10,000 per day** (physical tap/swipe/chip hardware + POS app, required for selling tickets directly to debit and credit card holders at the gate)
-*   **Bluetooth Check-in Scanners**: **$2,500 per scanner per day** (up to 2 scanners, for rapid check-in queue processing)
 
 **Card processing at the gate:** **10% processing fee** on the transaction amount when patrons pay by card using QRTick's provided card reader. Quoted separately; calculated on post-event door card sales volume.
 
-Scanning Crew blocks and Gate Card Sales are priced **independently**—customers may need scanning only, sales only, or both.
+Scanning Crew blocks, Bluetooth Scanners, and Gate Card Sales are priced **independently**—customers may need scanning only, sales only, or both/all.
 
 **Quote builder URL parameters:** `p` (e|p|n platform where n = already subscribed / $0), `bg` (Volunteer Coordination event count × $8,000), `n` (scanning block count), `gt` (3|6 hour tier), `gs` (1 = Gate Card Sales requested), `cr` (1 = Card Reader requested), `crd` (Card Reader days count), `bt` (Bluetooth scanner count, 1 or 2), `btd` (Bluetooth scanner days count), `qr`, `rf`, `name`, `org`.
 
