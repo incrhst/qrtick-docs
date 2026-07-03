@@ -74,4 +74,30 @@ Scanning Crew blocks, Bluetooth Scanners, and Gate Card Sales are priced **indep
 *   **Payment Policy**: Fees deducted from sales. 5% discount for full upfront payment.
 
 ---
+
+## 5. Premium Feature Explanations
+
+### Event Add-ons Management
+This feature allows event organizers to configure and sell auxiliary products or services alongside standard tickets during the checkout process.
+
+*   **What it does:** Organizers can offer optional or mandatory items (like parking passes, VIP upgrades, merchandise, or meal vouchers) that attendees can add to their order before completing their purchase.
+*   **How it works:** It's managed via the `addons_enabled` capability flag. When enabled, organizers get access to an "Add-ons" configuration tab for their event series, and the add-ons become visible to buyers during checkout.
+*   **Examples:**
+    *   *Meet & Greet:* Book 15 minutes of exclusive 1-on-1 time with a keynote presenter or artist backstage.
+    *   *Exclusive Merchandise:* Pre-order limited edition event t-shirts, signed posters, or branded tote bags for priority pickup at the gate.
+    *   *Curated Experiences:* Offer a post-event networking dinner, early venue access, or a signed copy of the presenter's new book.
+    *   *VIP Perks:* Add a premium open-bar wristband, reserved front-row seating, or a VIP parking pass.
+
+### Physical Ticket Registration
+This feature bridges the gap between digital ticketing and traditional pre-printed physical tickets.
+
+*   **What it does:** It allows event organizers to register and track pre-printed physical tickets (which have QR codes on them) by bulk-attributing them to specific events.
+*   **Why it's useful:** Instead of just generating digital tickets via email, this system ensures that pre-printed physical tickets are properly counted against the event's total inventory and can be successfully validated by scanners at the door during check-in.
+*   **How it works:** Governed by the `physical_tickets_enabled` capability flag, it adds a dedicated "Physical Ticket Registration" tab to the existing sales interface, complete with its own strict admin permission model and comprehensive audit logging to track exactly who registered which physical tickets.
+*   **Examples:**
+    *   *Promoter Distribution:* Handing out physical tickets to local street team promoters to sell for cash, while still ensuring scanners validate them.
+    *   *VIP Mailers:* Mailing high-quality, physical collector's edition tickets to VIPs ahead of the event that can be successfully scanned at the door.
+    *   *Retail Outlets:* Selling physical QR tickets at local retail shops (like a record store) while keeping inventory perfectly synced with online sales.
+
+---
 **CTA**: Direct users to [Request Sample Invoice](https://tally.so/r/nW4Nak)
