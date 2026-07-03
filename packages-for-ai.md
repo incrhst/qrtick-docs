@@ -9,14 +9,15 @@
 ---
 
 ## 1. Primary Ballpark Packages
-*   **The Essentials ($10,000)**: Entry tier. Essentials Platform + self-managed entry only. **Includes no admission support of any kind** — no Volunteer Coordination, no Scanning Crew, no Gate Card Sales (Card Reader & POS). No discount tools. All gate services are paid add-ons if required.
-*   **The Professional ($40,000)**: Managed tier. Professional Platform + discount management (online) + white-glove setup + digital programs. Gate Card Sales (Card Reader & POS) is a separate add-on.
-*   **The Managed Weekend ($80,000)**: Series tier. Professional Platform + 3 × 3-hour **Scanning Crew** blocks (Team of 2). Gate Card Sales not included.
+*   **The Essentials ($10,000)**: Core ticketing with discounts and complimentary tickets. Default tier for new organizations. Uses default platform fee schedule with no additional tier withholding. Includes no admission support of any kind. All gate services are paid add-ons.
+*   **The Professional ($40,000)**: Engagement tools, prompt assistant, add-ons, and ticket office (POS) sales. Additional platform fee will be withheld from ticket revenue. All gate services are paid add-ons.
+*   **The Managed Weekend ($60,000)**: Full platform capabilities including merchandise, patron engagement hub, and physical ticket registration. Additional platform fee will be withheld from ticket revenue. All gate services are paid add-ons.
 
 ## 2. Component Breakdown (For Custom Scenarios)
 ### Platform Choice
-*   **Essentials Platform ($10,000)**: Single event access, self-service tools, digital QR tickets. Organizer handles the door themselves; **zero included admission support** (Volunteer Coordination, Scanning Crew, and Gate Card Sales are separate add-ons).
-*   **Professional Platform ($40,000)**: Managed partnership, unlimited seasonal events, white-glove setup, digital programs, early payout access, discount management for **online** sales (not Gate Card Sales).
+*   **Essentials Platform ($10,000)**: Core ticketing, discounts, complimentary tickets. Organizer handles the door themselves; zero included admission support.
+*   **Professional Platform ($40,000)**: Includes everything in Essentials plus Engagement tools, prompt assistant, add-ons, and ticket office (POS) sales.
+*   **Managed Weekend Platform ($60,000)**: Full platform capabilities including merchandise, patron engagement hub, and physical ticket registration.
 *   **Already Subscribed ($0)**: For organizers who already have an active subscription or season agreement with QRTick and only need a quote for gate add-ons (staffing, physical tickets, etc.).
 
 ### On-Site Admission & Scanning Support (Add-ons)
