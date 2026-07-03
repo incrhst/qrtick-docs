@@ -1175,10 +1175,55 @@
                     <ul style="list-style: none; padding: 0; margin-bottom: 3rem; font-size: 0.95rem; color: #ccc;">
                         <li style="margin-bottom: 0.8rem; display: flex; align-items: center; gap: 0.5rem;"><span style="color: var(--gold);">✓</span> All Professional Features</li>
                         <li style="margin-bottom: 0.8rem; display: flex; align-items: center; gap: 0.5rem;"><span style="color: var(--gold);">✓</span> <strong>Merchandise Store</strong></li>
-                        <li style="margin-bottom: 0.8rem; display: flex; align-items: center; gap: 0.5rem;"><span style="color: var(--gold);">✓</span> Event Add-ons Management</li>
-                        <li style="margin-bottom: 0.8rem; display: flex; align-items: center; gap: 0.5rem;"><span style="color: var(--gold);">✓</span> Physical Ticket Registration</li>
+                        <li style="margin-bottom: 0.8rem; display: flex; align-items: center; justify-content: space-between;">
+                            <div style="display: flex; align-items: center; gap: 0.5rem;"><span style="color: var(--gold);">✓</span> Event Add-ons Management</div>
+                            <a href="#feature-addons" style="color: var(--gold); font-size: 0.8rem; text-decoration: underline;">Learn more</a>
+                        </li>
+                        <li style="margin-bottom: 0.8rem; display: flex; align-items: center; justify-content: space-between;">
+                            <div style="display: flex; align-items: center; gap: 0.5rem;"><span style="color: var(--gold);">✓</span> Physical Ticket Registration</div>
+                            <a href="#feature-physical-tickets" style="color: var(--gold); font-size: 0.8rem; text-decoration: underline;">Learn more</a>
+                        </li>
                     </ul>
                     <a href="#calculator" onclick="loadBallparkPackage('managed-weekend'); return false;" style="text-align: center; padding: 1.2rem; background: var(--gold); color: var(--black); text-decoration: none; border-radius: 12px; font-weight: 900; transition: transform 0.2s;">Select Managed Weekend Path</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="feature-details" style="max-width: 900px; margin: 0 auto 6rem; padding: 0 24px;">
+            <h2 style="font-size: 2rem; margin-bottom: 2rem; text-align: center;">Premium Feature Details</h2>
+            
+            <div style="background: var(--white); padding: 2.5rem; border-radius: 16px; border: 1px solid var(--rule); margin-bottom: 2rem; scroll-margin-top: 100px;" id="feature-addons">
+                <h3 style="font-size: 1.5rem; margin-bottom: 1rem; color: var(--gold);">Event Add-ons Management</h3>
+                <p style="margin-bottom: 1rem; color: var(--mid); line-height: 1.6;">Configure and sell auxiliary products or services alongside standard tickets during the checkout process.</p>
+                <ul style="list-style: none; padding: 0; margin-bottom: 1.5rem; color: var(--muted); line-height: 1.6;">
+                    <li style="margin-bottom: 0.5rem;"><strong>What it does:</strong> Offer optional or mandatory items that attendees can add to their order before completing their purchase.</li>
+                    <li><strong>How it works:</strong> You get access to an "Add-ons" configuration tab for your event series, and the add-ons become dynamically visible to buyers during checkout.</li>
+                </ul>
+                <div style="background: #f8f8f8; padding: 1.5rem; border-radius: 12px; border: 1px solid var(--rule);">
+                    <h4 style="font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--black); margin-bottom: 1rem;">Creative Examples</h4>
+                    <ul style="margin: 0; padding-left: 1.2rem; color: var(--mid); line-height: 1.6; font-size: 0.95rem;">
+                        <li style="margin-bottom: 0.5rem;"><strong>Meet & Greet:</strong> Book 15 minutes of exclusive 1-on-1 time with a keynote presenter or artist backstage.</li>
+                        <li style="margin-bottom: 0.5rem;"><strong>Exclusive Merchandise:</strong> Pre-order limited edition event t-shirts, signed posters, or branded tote bags for priority pickup at the gate.</li>
+                        <li style="margin-bottom: 0.5rem;"><strong>Curated Experiences:</strong> Offer a post-event networking dinner, early venue access, or a signed copy of the presenter's new book.</li>
+                        <li><strong>VIP Perks:</strong> Add a premium open-bar wristband, reserved front-row seating, or a VIP parking pass.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div style="background: var(--white); padding: 2.5rem; border-radius: 16px; border: 1px solid var(--rule); scroll-margin-top: 100px;" id="feature-physical-tickets">
+                <h3 style="font-size: 1.5rem; margin-bottom: 1rem; color: var(--gold);">Physical Ticket Registration</h3>
+                <p style="margin-bottom: 1rem; color: var(--mid); line-height: 1.6;">Bridge the gap between digital ticketing and traditional pre-printed physical tickets.</p>
+                <ul style="list-style: none; padding: 0; margin-bottom: 1.5rem; color: var(--muted); line-height: 1.6;">
+                    <li style="margin-bottom: 0.5rem;"><strong>What it does:</strong> Register and track pre-printed physical tickets (with secure QR codes) by bulk-attributing them to specific events.</li>
+                    <li><strong>Why it's useful:</strong> Ensures that pre-printed physical tickets are properly counted against the event's total inventory and can be successfully validated by scanners at the door, rather than relying solely on email delivery.</li>
+                </ul>
+                <div style="background: #f8f8f8; padding: 1.5rem; border-radius: 12px; border: 1px solid var(--rule);">
+                    <h4 style="font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--black); margin-bottom: 1rem;">Creative Examples</h4>
+                    <ul style="margin: 0; padding-left: 1.2rem; color: var(--mid); line-height: 1.6; font-size: 0.95rem;">
+                        <li style="margin-bottom: 0.5rem;"><strong>Promoter Distribution:</strong> Handing out physical tickets to local street team promoters to sell for cash, while still ensuring scanners validate them.</li>
+                        <li style="margin-bottom: 0.5rem;"><strong>VIP Mailers:</strong> Mailing high-quality, physical collector's edition tickets to VIPs ahead of the event that can be successfully scanned at the door.</li>
+                        <li><strong>Retail Outlets:</strong> Selling physical QR tickets at local retail shops (like a record store) while keeping inventory perfectly synced with online sales.</li>
+                    </ul>
                 </div>
             </div>
         </section>
