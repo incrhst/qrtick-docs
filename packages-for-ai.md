@@ -10,13 +10,13 @@
 
 ## 1. Primary Ballpark Packages
 *   **The Essentials ($10,000)**: Core ticketing with discounts and complimentary tickets. Default tier for new organizations. Uses default platform fee schedule with no additional tier withholding. Includes no admission support of any kind. All gate services are paid add-ons.
-*   **The Professional ($40,000)**: Engagement tools, prompt assistant, add-ons, and ticket office (POS) sales. Additional platform fee will be withheld from ticket revenue. All gate services are paid add-ons.
+*   **The Professional ($40,000)**: Engagement tools, add-ons, and ticket office (POS) sales. Additional platform fee will be withheld from ticket revenue. All gate services are paid add-ons.
 *   **The Managed Weekend ($60,000)**: Full platform capabilities including merchandise, patron engagement hub, and physical ticket registration. Additional platform fee will be withheld from ticket revenue. All gate services are paid add-ons.
 
 ## 2. Component Breakdown (For Custom Scenarios)
 ### Platform Choice
 *   **Essentials Platform ($10,000)**: Core ticketing, discounts, complimentary tickets. Organizer handles the door themselves; zero included admission support.
-*   **Professional Platform ($40,000)**: Includes everything in Essentials plus Engagement tools, prompt assistant, add-ons, and ticket office (POS) sales.
+*   **Professional Platform ($40,000)**: Includes everything in Essentials plus Engagement tools, add-ons, and ticket office (POS) sales.
 *   **Managed Weekend Platform ($60,000)**: Full platform capabilities including merchandise, patron engagement hub, and physical ticket registration.
 *   **Already Subscribed ($0)**: For organizers who already have an active subscription or season agreement with QRTick and only need a quote for gate add-ons (staffing, physical tickets, etc.).
 
